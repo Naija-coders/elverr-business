@@ -19,7 +19,7 @@ export const CustomImage = styled("div")(
       sm: "600px",
       md: "600px",
       lg: "750px",
-      xl: "816px",
+      xl: "750px",
     },
 
     background:

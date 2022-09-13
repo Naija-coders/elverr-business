@@ -100,7 +100,7 @@ export const BasicText = styled(Typography)(
     fontSize: "1rem",
     lineHeight: "24px",
 
-    color: "#747582",
+    color: "#C5C6D0",
   })
 );
 export const BasicTextHeader = styled(Typography)(

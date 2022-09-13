@@ -96,8 +96,8 @@ export const BasicText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontStyle: "normal",
-    fontWeight: "700",
-    fontSize: { xs: "1rem", lg: "20px" },
+    fontWeight: "lighter",
+    fontSize: { xs: "1rem", lg: "1.2rem" },
     lineHeight: "24px",
 
     color: "#C5C6D0",

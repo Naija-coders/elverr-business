@@ -222,7 +222,7 @@ export const HeaderButton = styled(Button)(
     "width": "145px",
     "background": "#34A422",
     "borderRadius": "10px",
-    "boxShadow": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+
     "&:hover": { background: "#34A422" },
     "color": "#FFFFFF",
     "height": "54px",

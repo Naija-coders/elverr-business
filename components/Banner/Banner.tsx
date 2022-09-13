@@ -11,6 +11,8 @@ import {
   Div1,
   Div2,
   GetStartedBtnTypo,
+  HeaderButton,
+  BasicHeader,
 } from "./styles";
 import {
   BasicText,
@@ -48,19 +50,21 @@ export default function Banner({}: Props) {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            <h1>logo</h1>
+            <img src="logo.png" style={{ height: "67px" }} />
             <div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 gap: "1rem",
+                alignItems: "center",
               }}
             >
               {" "}
-              <h1>Become a seller</h1>
-              <h1>Sign In</h1>
+              <BasicHeader>Become a seller</BasicHeader>
+              <HeaderButton>Login</HeaderButton>
             </div>
           </div>
           <div></div>
@@ -93,8 +97,15 @@ export default function Banner({}: Props) {
               </GetStartedBtn>
             </Div1>
           </div>
-          <br></br>
-          <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "1rem",
+              marginTop: "50px",
+            }}
+          >
             {" "}
             <GetStartedBtnTypo size="small" variant="outlined">
               Design

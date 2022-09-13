@@ -97,7 +97,7 @@ export const BasicText = styled(Typography)(
     fontFamily: "DM Sans",
     fontStyle: "normal",
     fontWeight: "700",
-    fontSize: "1rem",
+    fontSize: { xs: "1rem", lg: "20px" },
     lineHeight: "24px",
 
     color: "#C5C6D0",

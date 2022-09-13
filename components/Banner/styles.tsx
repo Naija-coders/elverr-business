@@ -59,7 +59,7 @@ export const CustomDiv1 = styled("div")(
 );
 export const CustomTypography = styled(Typography)(
   sx({
-    fontSize: { xs: "20px", sm: "30px", md: "50px", lg: "76px" },
+    fontSize: { xs: "20px", sm: "30px", md: "50px", lg: "80px" },
 
     color: " #FFFFFF",
     fontWeight: "700",
@@ -69,7 +69,7 @@ export const CustomTypography = styled(Typography)(
       sm: "100px",
       md: "70px",
       lg: "100px",
-      xl: "200px",
+      xl: "120px",
     },
 
     lineHeight: { md: "60px", lg: "91px" },
@@ -218,7 +218,20 @@ export const StyledPaper = styled(Paper)(
     height: "90%",
   })
 );
-
+export const HeaderButton = styled(Button)(
+  sx({
+    "width": "145px",
+    "background": "#34A422",
+    "borderRadius": "10px",
+    "boxShadow": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    "&:hover": { background: "#34A422" },
+    "color": "#FFFFFF",
+    "height": "54px",
+    "fontSize": "20px",
+    "textTransform": "none",
+    "fontFamily": "DM Sans",
+  })
+);
 export const StyledButton = styled(Button)(
   sx({
     "borderStyle": "solid",
@@ -240,6 +253,15 @@ export const StyledDivBanner = styled("div")(
   sx({
     width: { xs: "185%", sm: "100%" },
     marginTop: { xs: "80px", md: "3%" },
+  })
+);
+export const BasicHeader = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "24px",
+    color: "#FFFFFF",
   })
 );
 export const StyledTypography = styled(Typography)(

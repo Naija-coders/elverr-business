@@ -1,0 +1,101 @@
+.flexitems {
+  &__avalableservice {
+    margin-top: 10px;
+    display: flex;
+
+    overflow-x: scroll;
+  }
+  &__mobilelatestservices {
+    margin-top: 10px;
+
+    justify-content: space-evenly;
+
+    display: grid;
+    grid-template-columns: 49% 49%;
+    width: 100%;
+
+    @include atSmall {
+      display: "none";
+    }
+    @include atSmallMax {
+      width: 100%;
+      grid-template-columns: 50% 50%;
+      gap: 10px;
+      margin-left: 6px;
+    }
+    @include atFold {
+      width: 100%;
+      grid-template-columns: 48% 48%;
+    }
+  }
+  &__recaptchadesgin {
+    @include atSmallMax {
+      transform: scale(0.81);
+      transform-origin: 0 0;
+      display: flex;
+      width: 80%;
+    }
+    @include atLarge {
+      width: auto;
+    }
+  }
+
+  &__latestservices {
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+
+    overflow-x: scroll;
+    @include atSmallMax {
+      display: none;
+    }
+    @include atMedium {
+      grid-template-columns: auto auto auto;
+      width: 100%;
+    }
+
+    @include atMediumMax {
+      grid-template-columns: auto auto auto;
+      width: 100%;
+    }
+
+    @include atLarge {
+      grid-template-columns: auto auto auto auto auto;
+      width: 100%;
+      gap: 5px;
+      row-gap: 20px;
+    }
+
+    @include atLargeMax {
+      grid-template-columns: auto auto auto auto;
+      width: 100%;
+    }
+  }
+  &__flexsignin {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background: #f6f9f5;
+    border-radius: 25px;
+    flex-direction: column;
+  }
+
+  &__avalableservice::-webkit-scrollbar {
+    height: 0.2rem;
+    background-color: #0d3b97;
+  }
+  &__avalableservice::-webkit-scrollbar-thumb {
+    background-color: #f68b1e;
+  }
+}
+.rands {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 100;
+
+  z-index: 1;
+}

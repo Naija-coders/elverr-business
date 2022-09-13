@@ -1,0 +1,316 @@
+.navbar {
+  background-color: $nav-color;
+  width: 100%;
+  &__mycontainer {
+    display: flex;
+    margin-left: 20%;
+    flex-direction: column;
+
+    @include atSmall {
+      display: none;
+    }
+    @include atSmallMax {
+      display: none;
+    }
+    @include atMedium {
+      display: flex;
+      margin-left: 5%;
+    }
+  }
+  &__rand {
+    display: flex;
+    margin-left: 5%;
+    flex-direction: column;
+
+    @include atSmall {
+      display: flex;
+      justify-content: center;
+    }
+    @include atSmallMax {
+      display: flex;
+      justify-content: center;
+      margin-left: 0%;
+      padding: 1rem;
+    }
+    @include atMedium {
+      display: flex;
+      margin-left: 5%;
+    }
+  }
+  &__container {
+    display: flex;
+
+    justify-content: space-between;
+
+    @include atSmallMax {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    @include atMedium {
+      display: flex;
+      gap: 20px;
+    }
+    @include atSmall {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  &__nav_mobile {
+    @include atSmall {
+      display: flex;
+    }
+    @include atSmallMax {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+    @include atMedium {
+      display: none;
+    }
+  }
+  &__navbarwrapper {
+    display: flex;
+
+    justify-content: left;
+    justify-items: center;
+  }
+  &__mainwrapper {
+    display: flex;
+
+    justify-content: space-around;
+    justify-items: center;
+  }
+  &__catfeaturemobile {
+    background: #23395d;
+    margin-top: 1%;
+    @include atMedium {
+      height: 100px;
+    }
+    @include atSmallMax {
+      width: 100%;
+      height: 60px;
+    }
+    @include atFold {
+      width: 110%;
+      height: 60px;
+    }
+  }
+  &__catwrappermobile {
+    margin-top: 3%;
+    @include atFold {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      justify-items: center;
+      width: 200%;
+    }
+    @include atSmallMax {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 0%;
+      justify-content: space-between;
+      justify-items: center;
+      width: 200%;
+    }
+    @include atMedium {
+      display: none;
+    }
+  }
+  &__sizewidth {
+    @include atSmallMax {
+      width: 100%;
+    }
+    @include atFold {
+      width: 100%;
+    }
+  }
+  &__catwrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+  }
+  &__subitem {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: self-start;
+    position: relative;
+    bottom: 4px;
+  }
+  &__childcontainer {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+  &__moveleft {
+    margin-left: 10%;
+  }
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper3 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.myCustomSwiper {
+  width: "100%";
+  @include atFold {
+    width: 110%;
+  }
+  @include atSmallMax {
+    width: 110%;
+  }
+  @include atSmall {
+    width: 110%;
+  }
+  @include atMedium {
+    width: 100%;
+  }
+}
+.mySwiper3 .swiper-slide {
+  width: 20%;
+  height: 60%;
+
+  opacity: 0.4;
+}
+.mySwiper3 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.swiper-button-next {
+  color: #152238 !important;
+  display: flex;
+
+  &:after {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    position: absolute;
+    right: -10;
+    color: white;
+    background: #222325;
+
+    padding: 1rem;
+    position: absolute;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    width: 1rem !important;
+    @include atSmallMax {
+      font-size: 10px !important;
+      font-weight: bold !important;
+      position: absolute;
+      right: -10;
+      color: white;
+      background: #222325;
+
+      padding: 0.6rem;
+      position: absolute;
+      border-top-left-radius: 45px;
+      border-bottom-left-radius: 45px;
+      width: 1rem !important;
+      margin-left: 12px;
+    }
+  }
+}
+.swiper-button-disabled {
+  opacity: 0 !important;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-button-prev {
+  color: #152238 !important;
+  display: flex;
+
+  &:after {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    position: absolute;
+
+    left: -10;
+    color: white;
+    background: #222325;
+
+    border-top-left-radius: 1px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    padding: 1rem;
+    position: absolute;
+
+    width: 1rem !important;
+    @include atSmallMax {
+      font-size: 10px !important;
+      font-weight: bold !important;
+      position: absolute;
+      margin-right: 12px;
+
+      left: -10;
+      color: white;
+      background: #222325;
+
+      border-top-left-radius: 1px;
+      border-top-right-radius: 45px;
+      border-bottom-right-radius: 45px;
+      padding: 0.6rem;
+      position: absolute;
+
+      width: 1rem !important;
+    }
+  }
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

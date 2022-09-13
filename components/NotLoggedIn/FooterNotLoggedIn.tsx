@@ -43,6 +43,7 @@ const FooterNotLoggedIn: React.FC<Props> = ({}) => {
             <div>
               <img
                 src={"elverrlogos.png"}
+                alt={"logo"}
                 style={{
                   width: "148.49px",
                   height: " 52.59px",

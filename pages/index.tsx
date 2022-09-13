@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Banner from "../components/Banner";
 import CompaniesFeatured from "../components/Featured/CompaniesFeatured";
+import FooterNotLoggedIn from "../components/NotLoggedIn/FooterNotLoggedIn";
 
 interface Props {
   query: any;
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
           <Banner />
           <CompaniesFeatured />
+          <FooterNotLoggedIn />
         </div>
       </Head>
     </div>

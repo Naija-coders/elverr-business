@@ -16,7 +16,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Elverr - The Market Place</title>
+        <title>
+          Elverr - Run your business on one platform, seamlessly across all
+          digital channels{" "}
+        </title>
         <meta
           name="google-site-verification"
           content="akR2jwmrZi2Uam2Y0H-VUckRGWE7VSQyxO676zfQg_Y"

@@ -72,6 +72,7 @@ export default function Banner({}: Props) {
             <CustomTypography>
               All your business need in one place
             </CustomTypography>
+            <br></br>
             <BasicText>
               {
                 "We’re different. Elverr is the only saas business platform that lets you run your business on one platform, seamlessly across all digital channels."
@@ -103,7 +104,7 @@ export default function Banner({}: Props) {
               display: "flex",
               flexDirection: "row",
               gap: "1rem",
-              marginTop: "50px",
+              marginTop: "30px",
             }}
           >
             {" "}

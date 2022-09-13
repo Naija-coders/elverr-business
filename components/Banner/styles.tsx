@@ -18,8 +18,8 @@ export const CustomImage = styled("div")(
       xs: "400px",
       sm: "600px",
       md: "600px",
-      lg: "750px",
-      xl: "750px",
+      lg: "670px",
+      xl: "700px",
     },
 
     background:
@@ -68,8 +68,7 @@ export const CustomTypography = styled(Typography)(
       xs: "150px",
       sm: "100px",
       md: "70px",
-      lg: "100px",
-      xl: "120px",
+      lg: "80px",
     },
 
     lineHeight: { md: "60px", lg: "91px" },

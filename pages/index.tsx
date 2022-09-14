@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import CompaniesFeatured from "../components/Featured/CompaniesFeatured";
 import FooterNotLoggedIn from "../components/NotLoggedIn/FooterNotLoggedIn";
 import Swiper from "../components/Slider/Swiper";
+import SmartChoice from "../components/Featured/SmartChoice";
 
 interface Props {
   query: any;
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
         <Banner />
         <CompaniesFeatured />
         <Swiper />
-
+        <SmartChoice />
         <FooterNotLoggedIn />
       </div>
     </div>

@@ -189,7 +189,7 @@ export const BasicPaper = styled(Paper)(
   sx({
     minHeight: "315.4px",
 
-    filter: "drop-shadow(0px 21.5532px 53.8831px rgba(119, 115, 170, 0.1))",
+    filter: "drop-shadow(0px 22.2652px 55.663px rgba(119, 115, 170, 0.1))",
     borderRadius: "21.5532px 21.5532px 21.5532px  21.5532px ",
   })
 );

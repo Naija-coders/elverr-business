@@ -21,7 +21,6 @@ import {
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
-      infinite: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 3,
@@ -70,7 +69,11 @@ export default class SimpleSlider extends Component {
               </BasicTextbody>
             </div>
           </div>
-          <div style={{ marginTop: "50px" }}>
+          <div
+            style={{
+              marginTop: "50px",
+            }}
+          >
             <Slider {...settings}>
               <div>
                 <BasicPaper elevation={0}>
@@ -89,7 +92,46 @@ export default class SimpleSlider extends Component {
                 <BasicPaper elevation={0}>
                   <BasicImage src="servicesit.jpeg" />
                   <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicServiceTitle> Event Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicelogistics.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> Logistics Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="serviceautomative.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="serviceimage.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> Cleaning Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -102,7 +144,7 @@ export default class SimpleSlider extends Component {
                 <BasicPaper elevation={0}>
                   <BasicImage src="servicesit.jpeg" />
                   <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicServiceTitle> Repair Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -115,7 +157,7 @@ export default class SimpleSlider extends Component {
                 <BasicPaper elevation={0}>
                   <BasicImage src="servicesit.jpeg" />
                   <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicServiceTitle> Fitness Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -124,58 +166,6 @@ export default class SimpleSlider extends Component {
                   </BasicDiv>
                 </BasicPaper>
               </div>{" "}
-              <div>
-                <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
-                  <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
-                    <BasicTextbody align="center">
-                      {" "}
-                      We’ll get you directly seated and inside for you to enjoy
-                      the show.
-                    </BasicTextbody>
-                  </BasicDiv>
-                </BasicPaper>
-              </div>{" "}
-              <div>
-                <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
-                  <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
-                    <BasicTextbody align="center">
-                      {" "}
-                      We’ll get you directly seated and inside for you to enjoy
-                      the show.
-                    </BasicTextbody>
-                  </BasicDiv>
-                </BasicPaper>
-              </div>{" "}
-              <div>
-                <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
-                  <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
-                    <BasicTextbody align="center">
-                      {" "}
-                      We’ll get you directly seated and inside for you to enjoy
-                      the show.
-                    </BasicTextbody>
-                  </BasicDiv>
-                </BasicPaper>
-              </div>{" "}
-              <div>
-                <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
-                  <BasicDiv>
-                    <BasicServiceTitle> IT Services</BasicServiceTitle>
-                    <BasicTextbody align="center">
-                      {" "}
-                      We’ll get you directly seated and inside for you to enjoy
-                      the show.
-                    </BasicTextbody>
-                  </BasicDiv>
-                </BasicPaper>
-              </div>
             </Slider>
           </div>
         </StyleContainer>

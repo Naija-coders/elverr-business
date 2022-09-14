@@ -20,3 +20,144 @@ th,
 td {
   border: 1px solid;
 }
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 80%;
+  color: #333;
+  display: inline-block !important;
+}
+
+h3 {
+  background: blue;
+  color: #fff;
+  font-size: 36px;
+  line-height: 100px;
+  margin: 10px;
+  padding: 2%;
+  position: relative;
+  text-align: center;
+}
+.variable-width .slick-slide p {
+  background: blue;
+  height: 100px;
+  color: #fff;
+  margin: 5px;
+  line-height: 100px;
+  text-align: center;
+}
+.center .slick-center h3 {
+  color: #e67e22;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.center h3 {
+  opacity: 0.8;
+  transition: all 300ms ease;
+}
+.content {
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+}
+.slick-slide .image {
+  padding: 10px;
+}
+.slick-slide img {
+  border: 5px solid #fff;
+  display: block;
+  margin: auto;
+}
+.slick-slide img.slick-loading {
+  border: 0;
+}
+.slick-slider {
+  margin: 30px auto 50px;
+}
+.slick-dots {
+  margin-left: 0;
+}
+.slick-thumb {
+  bottom: -45px;
+}
+
+.slick-next:before {
+  content: "\279D" !important;
+  color: #ffffff !important;
+  display: inline-block;
+
+  background-color: black !important;
+  opacity: 100 !important;
+  padding: 4px !important;
+  width: 35px !important;
+  border-radius: 50% !important;
+  font-weight: bolder !important;
+
+  font-size: 35px !important;
+}
+.slick-prev:before {
+  content: "\279D" !important;
+  color: #ffffff !important;
+  display: inline-block;
+  transform: rotate(180deg) !important;
+  padding: 4px !important;
+  background-color: black !important;
+  width: 35px !important;
+  border-radius: 50% !important;
+  opacity: 100 !important;
+  font-weight: bolder !important;
+
+  font-size: 35px !important;
+}
+.slick-thumb li {
+  width: 60px;
+  height: 45px;
+}
+.slick-thumb li img {
+  filter: grayscale(100%);
+}
+.slick-thumb li.slick-active img {
+  filter: white !important;
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+  .center {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  .center .slick-center h3 {
+    color: #e67e22;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .center h3 {
+    opacity: 0.8;
+    transform: scale(0.95);
+    transition: all 300ms ease;
+  }
+}
+.slick-vertical .slick-slide {
+  height: 180px;
+}
+.slick-arrow {
+  width: 53px !important;
+  height: 53px !important;
+  border-radius: 50% !important;
+}
+.slick-arrow:hover {
+  color: black !important;
+}
+.slick-prev {
+  z-index: 1000;
+  left: -10px !important;
+
+  background-color: #d9d9d9 !important;
+}
+.slick-next {
+  z-index: 1000;
+  right: -10px !important;
+
+  background-color: #d9d9d9 !important;
+}

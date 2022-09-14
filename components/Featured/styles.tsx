@@ -118,10 +118,21 @@ export const BasicTextbody = styled(Typography)(
     fontFamily: "DM Sans",
     fontStyle: "normal",
     fontWeight: "700",
-    fontSize: "1rem",
+    fontSize: "0.85rem",
 
     lineHeight: "21px",
-    color: "#747582",
+    color: "#525252",
+  })
+);
+export const MainHeaderText = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontStyle: "normal",
+    fontWeight: "700",
+    fontSize: "1.9rem",
+
+    lineHeight: "46px",
+    color: "#525252",
   })
 );
 export const CustomPaper = styled(Paper)(
@@ -177,7 +188,7 @@ export const BasicIDiv = styled("div")(
 export const BasicPaper = styled(Paper)(
   sx({
     minHeight: "315.4px",
-    width: { sm: "260.4px", md: "280px", lg: "300.4px" },
+
     filter: "drop-shadow(0px 21.5532px 53.8831px rgba(119, 115, 170, 0.1))",
     borderRadius: "21.5532px 21.5532px 21.5532px  21.5532px ",
   })

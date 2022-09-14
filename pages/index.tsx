@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         content="akR2jwmrZi2Uam2Y0H-VUckRGWE7VSQyxO676zfQg_Y"
       />
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
         <Banner />
         <CompaniesFeatured />
         <Swiper />

@@ -46,7 +46,6 @@ export default function CompaniesFeatured({}: Props) {
             src={"zoover.png"}
           />
         </StyledDiv>
-        <br></br>
       </div>
     </StyledBox>
   );

@@ -2,20 +2,32 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import {
+  BasicTextbody,
+  MainHeaderText,
+  BasicImage,
+  BasicPaper,
+  BasicText,
+  BasicTextHeader,
+  CustomPaper,
+  BasicTextTitle,
+  BasicServiceTitle,
+  BasicDiv,
+  BasicServiceButton,
+  BasicServiceDiv,
+  BasicServiceGrid,
+} from "../Featured/styles";
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
-      dots: true,
       infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear",
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 3,
     };
     return (
-      <div className="">
+      <StyledBox className="">
         <link
           rel="stylesheet"
           type="text/css"
@@ -28,28 +40,146 @@ export default class SimpleSlider extends Component {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
 
-        <h2> Single Item</h2>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
+        <StyleContainer>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ maxWidth: "530px", width: "100%" }}>
+              <div
+                style={{
+                  display: "inline-flex",
+                  width: "100%",
+                  justifyContent: "space-around",
+                }}
+              >
+                {" "}
+                <MainHeaderText align="center" style={{ color: "#34A422" }}>
+                  Explore
+                </MainHeaderText>
+                <MainHeaderText align="center">
+                  trending categories on Elverr
+                </MainHeaderText>
+              </div>
+              <BasicTextbody align="center">
+                Check out our popular services on Elverr and meet your project
+                goals in less than no time.
+              </BasicTextbody>
+            </div>
           </div>
-          <div>
-            <h3>2</h3>
+          <div style={{ marginTop: "50px" }}>
+            <Slider {...settings}>
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>{" "}
+              <div>
+                <BasicPaper elevation={0}>
+                  <BasicImage src="servicesit.jpeg" />
+                  <BasicDiv>
+                    <BasicServiceTitle> IT Services</BasicServiceTitle>
+                    <BasicTextbody align="center">
+                      {" "}
+                      We’ll get you directly seated and inside for you to enjoy
+                      the show.
+                    </BasicTextbody>
+                  </BasicDiv>
+                </BasicPaper>
+              </div>
+            </Slider>
           </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-      </div>
+        </StyleContainer>
+      </StyledBox>
     );
   }
 }

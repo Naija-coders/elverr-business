@@ -15,6 +15,7 @@ import {
   BasicServiceGrid,
 } from "../Featured/styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import { Avatar } from "@mui/material";
 interface IAppProps {}
 
 const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
@@ -49,6 +50,112 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
               goals in less than no time.
             </BasicTextbody>
           </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              marginTop: "60px",
+            }}
+          >
+            {" "}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              <Avatar
+                variant="rounded"
+                sx={{ width: "70px", height: "70px" }}
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <MainHeaderText style={{ fontSize: "1.4rem" }}>
+                  {" "}
+                  Discover high quality talent
+                </MainHeaderText>
+                <div>
+                  {" "}
+                  <BasicTextbody>
+                    Check out our popular services on Elverr and meet your
+                    project goals in less than no time.
+                  </BasicTextbody>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              <Avatar
+                variant="rounded"
+                sx={{ width: "70px", height: "70px" }}
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <MainHeaderText style={{ fontSize: "1.4rem" }}>
+                  {" "}
+                  Ready-to- use assets
+                </MainHeaderText>
+                <div>
+                  {" "}
+                  <BasicTextbody>
+                    Check out our popular services on Elverr and meet your
+                    project goals in less than no time.
+                  </BasicTextbody>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              <Avatar
+                variant="rounded"
+                sx={{ width: "70px", height: "70px" }}
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <MainHeaderText style={{ fontSize: "1.4rem" }}>
+                  {" "}
+                  Access our top talents
+                </MainHeaderText>
+                <div>
+                  {" "}
+                  <BasicTextbody>
+                    Check out our popular services on Elverr and meet your
+                    project goals in less than no time.
+                  </BasicTextbody>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="companyimage.png"
+            style={{
+              maxWidth: "530px",
+              width: "100%",
+
+              objectFit: "contain",
+              height: "500px",
+            }}
+          />
         </div>
       </StyleContainer>
     </StyledBox>

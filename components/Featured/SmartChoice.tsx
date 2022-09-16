@@ -93,6 +93,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                     height: "50px",
                     objectFit: "contain",
                   }}
+                  alt={"groupicon"}
                 />
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -135,6 +136,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                     height: "50px",
                     objectFit: "contain",
                   }}
+                  alt={"menuicon"}
                 />
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -177,6 +179,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                     height: "50px",
                     objectFit: "contain",
                   }}
+                  alt={"jobicon"}
                 />
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -203,6 +206,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
               objectFit: "contain",
               height: "500px",
             }}
+            alt={"companyimag"}
           />
         </div>
       </StyleContainer>

@@ -75,10 +75,26 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 gap: "20px",
               }}
             >
-              <Avatar
-                variant="rounded"
-                sx={{ width: "70px", height: "70px" }}
-              />
+              <div
+                style={{
+                  width: "87px",
+                  height: "70px",
+                  display: "flex",
+                  alignItems: "center",
+                  background: "#22C55E",
+                  justifyContent: "center",
+                  borderRadius: "8.15625px",
+                }}
+              >
+                <img
+                  src={"groupicon.png"}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <MainHeaderText style={{ fontSize: "1.4rem" }}>
                   {" "}
@@ -101,10 +117,26 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 gap: "20px",
               }}
             >
-              <Avatar
-                variant="rounded"
-                sx={{ width: "70px", height: "70px" }}
-              />
+              <div
+                style={{
+                  width: "87px",
+                  height: "70px",
+                  display: "flex",
+                  alignItems: "center",
+                  background: "#22C55E",
+                  justifyContent: "center",
+                  borderRadius: "8.15625px",
+                }}
+              >
+                <img
+                  src={"menuicon.png"}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <MainHeaderText style={{ fontSize: "1.4rem" }}>
                   {" "}
@@ -127,10 +159,26 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 gap: "20px",
               }}
             >
-              <Avatar
-                variant="rounded"
-                sx={{ width: "70px", height: "70px" }}
-              />
+              <div
+                style={{
+                  width: "87px",
+                  height: "70px",
+                  display: "flex",
+                  alignItems: "center",
+                  background: "#22C55E",
+                  justifyContent: "center",
+                  borderRadius: "8.15625px",
+                }}
+              >
+                <img
+                  src={"jobicon.png"}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <MainHeaderText style={{ fontSize: "1.4rem" }}>
                   {" "}

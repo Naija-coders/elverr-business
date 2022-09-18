@@ -185,6 +185,26 @@ export const BasicIDiv = styled("div")(
     width: "424px",
   })
 );
+export const Divs2 = styled("div")(
+  sx({
+    display: "flex",
+    flexDirection: "column",
+    gap: "1rem",
+    alignItems: "center",
+  })
+);
+export const Divs3 = styled("div")(
+  sx({
+    width: "55px",
+    height: "55px",
+    background: "rgba(128, 204, 40, 0.09)",
+    display: "flex",
+    alignItems: "center",
+    borderRadius: "50%",
+    justifyContent: "center",
+  })
+);
+
 export const BasicPaper = styled(Paper)(
   sx({
     minHeight: "315.4px",

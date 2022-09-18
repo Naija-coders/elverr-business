@@ -9,7 +9,7 @@ import Swiper from "../components/Slider/Swiper";
 import SmartChoice from "../components/Featured/SmartChoice";
 import PopularServices from "../components/Featured/PopularServices";
 import TopAgencies from "../components/Featured/TopAgencies";
-
+import Joinus from "../components/Featured/Joinus";
 interface Props {
   query: any;
   ourService: any;
@@ -38,6 +38,7 @@ const Home: NextPage = () => {
         <SmartChoice />
         <PopularServices />
         <TopAgencies />
+        <Joinus />
         <FooterNotLoggedIn />
       </div>
     </div>

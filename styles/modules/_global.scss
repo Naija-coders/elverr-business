@@ -82,31 +82,38 @@ h3 {
 }
 
 .slick-next:before {
-  content: "\279D" !important;
-  color: #ffffff !important;
-  display: inline-block;
+  content: "\203A" !important;
+  color: black !important;
+  display: inline-block !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-content: center !important;
 
-  background-color: black !important;
+  background-color: #ffffff !important;
   opacity: 100 !important;
   padding: 4px !important;
   width: 35px !important;
   border-radius: 50% !important;
   font-weight: bolder !important;
+  margin-top: -10px !important;
 
   font-size: 35px !important;
 }
 .slick-prev:before {
-  content: "\279D" !important;
-  color: #ffffff !important;
-  display: inline-block;
-  transform: rotate(180deg) !important;
+  content: "\2039" !important;
+  color: black !important;
+  display: inline-block !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-content: center !important;
+
+  background-color: #ffffff !important;
+  opacity: 100 !important;
   padding: 4px !important;
-  background-color: black !important;
   width: 35px !important;
   border-radius: 50% !important;
-  opacity: 100 !important;
   font-weight: bolder !important;
-
+  margin-top: -10px !important;
   font-size: 35px !important;
 }
 .slick-thumb li {
@@ -151,13 +158,15 @@ h3 {
 }
 .slick-prev {
   z-index: 1000;
-  left: -10px !important;
+  left: -20px !important;
 
-  background-color: #d9d9d9 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06) !important;
 }
 .slick-next {
   z-index: 1000;
-  right: -10px !important;
+  right: -20px !important;
 
-  background-color: #d9d9d9 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06) !important;
 }

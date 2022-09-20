@@ -77,7 +77,7 @@ export default class SimpleSlider extends Component {
             <Slider {...settings}>
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
+                  <BasicImage src="mainitservice.jpeg" />
                   <BasicDiv>
                     <BasicServiceTitle> IT Services</BasicServiceTitle>
                     <BasicTextbody align="center">
@@ -116,7 +116,7 @@ export default class SimpleSlider extends Component {
               </div>{" "}
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="serviceautomative.jpeg" />
+                  <BasicImage src="automativeservices.jpeg" />
                   <BasicDiv>
                     <BasicServiceTitle> Automative Services</BasicServiceTitle>
                     <BasicTextbody align="center">

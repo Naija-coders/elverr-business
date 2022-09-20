@@ -10,6 +10,7 @@ import SmartChoice from "../components/Featured/SmartChoice";
 import PopularServices from "../components/Featured/PopularServices";
 import TopAgencies from "../components/Featured/TopAgencies";
 import Joinus from "../components/Featured/Joinus";
+import FAQ from "../components/Featured/FAQ";
 interface Props {
   query: any;
   ourService: any;
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
         <SmartChoice />
         <PopularServices />
         <TopAgencies />
+        <FAQ />
         <Joinus />
         <FooterNotLoggedIn />
       </div>

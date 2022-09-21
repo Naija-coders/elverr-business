@@ -29,10 +29,16 @@ import {
   BasicServiceGrid,
 } from "../Featured/styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import { LoginModal } from "../LoginModal/LoginModal";
 
 type Props = {};
 
 export default function Banner({}: Props) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <CustomImage
       style={{
@@ -63,7 +69,7 @@ export default function Banner({}: Props) {
               }}
             >
               {" "}
-              <BasicHeader>Login</BasicHeader>
+              <BasicHeader onClick={handleOpen}>Login</BasicHeader>
               <HeaderButton>Become a seller</HeaderButton>
             </div>
           </div>
@@ -119,6 +125,7 @@ export default function Banner({}: Props) {
             </GetStartedBtnTypo>
           </div>
         </StyleContainer>
+        <LoginModal OpenModalForm={open} CloseModalForm={handleClose} />
       </StyledBox>
     </CustomImage>
   );

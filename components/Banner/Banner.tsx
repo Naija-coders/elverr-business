@@ -63,8 +63,8 @@ export default function Banner({}: Props) {
               }}
             >
               {" "}
-              <BasicHeader>Become a seller</BasicHeader>
-              <HeaderButton>Login</HeaderButton>
+              <BasicHeader>Login</BasicHeader>
+              <HeaderButton>Become a seller</HeaderButton>
             </div>
           </div>
           <div></div>

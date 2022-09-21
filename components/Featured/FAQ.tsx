@@ -246,7 +246,17 @@ export default function NestedList() {
             >
               <ListItemText primary="Why is Elverr business the best freelance agency out there?" />
               {freelance ? (
-                <ExpandLess />
+                <ExpandLess
+                  sx={{
+                    background: "#FFFFFF",
+
+                    borderRadius: "50%",
+                    boxShadow: "0px 5px 16px rgba(8, 15, 52, 0.06)",
+                    fontSize: "30px",
+                    transform: " rotate(180deg)",
+                    color: "#34A422",
+                  }}
+                />
               ) : (
                 <ExpandMore
                   sx={{

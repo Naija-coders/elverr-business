@@ -219,7 +219,6 @@ export const StyledPaper = styled(Paper)(
 );
 export const HeaderButton = styled(Button)(
   sx({
-    "width": "145px",
     "background": "#34A422",
     "borderRadius": "10px",
 
@@ -259,7 +258,7 @@ export const BasicHeader = styled(Typography)(
     fontFamily: "DM Sans",
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: "24px",
+    fontSize: "20px",
     color: "#FFFFFF",
   })
 );

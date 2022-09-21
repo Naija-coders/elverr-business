@@ -99,3 +99,6 @@
 
   z-index: 1;
 }
+.agency:nth-child(even):not(:nth-child(3n + 3)) {
+  background-color: green !important;
+}

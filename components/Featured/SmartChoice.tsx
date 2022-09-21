@@ -132,7 +132,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 <img
                   src={"menuicon.png"}
                   style={{
-                    width: "50px",
+                    width: "40px",
                     height: "50px",
                     objectFit: "contain",
                   }}
@@ -175,7 +175,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 <img
                   src={"jobicon.png"}
                   style={{
-                    width: "50px",
+                    width: "40px",
                     height: "50px",
                     objectFit: "contain",
                   }}

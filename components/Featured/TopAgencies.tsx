@@ -1,4 +1,8 @@
 import * as React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import AgenciesSlider from "../Slider/AgenciesSlider";
 import {
   BasicTextbody,
   MainHeaderText,
@@ -41,6 +45,7 @@ export default function TopAgencies({}: Props) {
             </BasicTextbody>
           </div>
         </div>
+        <AgenciesSlider />
       </StyleContainer>
     </StyledBox>
   );

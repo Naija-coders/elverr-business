@@ -69,7 +69,14 @@ export default function Banner({}: Props) {
               }}
             >
               {" "}
-              <BasicHeader onClick={handleOpen}>Login</BasicHeader>
+              <BasicHeader
+                sx={{
+                  "&:hover": { textDecoration: "underline", cursor: "pointer" },
+                }}
+                onClick={handleOpen}
+              >
+                Login
+              </BasicHeader>
               <HeaderButton>Become a seller</HeaderButton>
             </div>
           </div>

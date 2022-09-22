@@ -53,7 +53,7 @@ export default class AgenciesSlider extends Component {
           <div style={{ width: "30%" }}>
             <BasicPaper
               sx={{
-                padding: "2rem",
+                padding: "1rem 2rem",
                 display: "flex",
                 flexDirection: "column",
                 gap: "10px",
@@ -202,10 +202,12 @@ export default class AgenciesSlider extends Component {
           <div style={{ width: "30%" }}>
             <BasicPaper
               sx={{
-                padding: "2rem",
+                padding: "1rem 2rem",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem",
+                gap: "10px",
+
+                boxShadow: "0px 0px 57.19px rgba(0, 0, 0, 0.05)",
               }}
               elevation={0}
             >

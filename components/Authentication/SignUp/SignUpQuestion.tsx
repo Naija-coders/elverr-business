@@ -1,7 +1,8 @@
 import React from "react";
 import { StyledBox, StyleContainer } from "../../NotLoggedIn/style";
 import { StyledPaper, Div1, Div2, Div3, TextTypography } from "./styles";
-import { Button } from "@mui/material";
+import { Button, Divider } from "@mui/material";
+import { useRouter } from "next/router";
 import {
   BasicTextbody,
   MainHeaderText,
@@ -23,17 +24,26 @@ import {
 type Props = {};
 
 export default function SignUp({}: Props) {
+  const route = useRouter();
   return (
     <StyledBox>
       <StyleContainer>
         <div
+          onClick={() => {
+            route.push("/");
+          }}
+        >
+          <img
+            src="businesslogo.png"
+            style={{ width: "250px", objectFit: "contain", marginTop: "-30px" }}
+          />
+        </div>
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
-            width: "100%",
-            height: "100%",
             alignItems: "center",
+            gap: "50px",
           }}
         >
           <Div3>
@@ -60,8 +70,7 @@ export default function SignUp({}: Props) {
             <Div1>
               <StyledPaper
                 sx={{
-                  "border": " 1px solid #34A422",
-                  "&:hover": { border: " 1px solid blue" },
+                  border: " 1px solid #34A422",
                 }}
               >
                 <TextTypography align="center">
@@ -94,6 +103,51 @@ export default function SignUp({}: Props) {
           }}
         >
           {" "}
+        </div>
+        <div
+          style={{ position: "absolute", left: 0, bottom: 10, width: "100%" }}
+        >
+          <div
+            style={{ position: "relative", marginLeft: "10%", width: "80%" }}
+          >
+            <Divider />
+          </div>
+          <br></br>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              gap: "2rem",
+            }}
+          >
+            <TextTypography sx={{ fontSize: "0.9rem", color: "grey" }}>
+              © Copyright 2022, All Rights Reserved by Elverr
+            </TextTypography>
+            <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+              <TextTypography
+                sx={{
+                  "fontSize": "0.9rem",
+                  "&:hover": { textDecoration: "underline" },
+                  "cursor": "pointer",
+                }}
+              >
+                Privacy Policy
+              </TextTypography>
+              <Divider orientation="vertical" flexItem />
+              <TextTypography sx={{ fontSize: "0.9rem" }}>
+                <TextTypography
+                  sx={{
+                    "fontSize": "0.9rem",
+                    "&:hover": { textDecoration: "underline" },
+                    "cursor": "pointer",
+                  }}
+                >
+                  Terms of Service
+                </TextTypography>
+              </TextTypography>
+            </div>
+          </div>
         </div>
       </StyleContainer>
     </StyledBox>

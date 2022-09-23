@@ -61,13 +61,17 @@ export default function Banner({}: Props) {
               alignItems: "center",
             }}
           >
-            <img src="logo.png" style={{ height: "67px" }} />
+            <img
+              src="logo.png"
+              style={{ height: "67px", marginTop: "-20px" }}
+            />
             <div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 gap: "1rem",
                 alignItems: "center",
+                marginTop: "-20px",
               }}
             >
               {" "}

@@ -51,11 +51,7 @@ export const Div2 = styled("div")(
     gap: "2rem",
   })
 );
-export const Div3 = styled("div")(
-  sx({
-    width: { md: "75%", lg: "80%", xl: "65%" },
-  })
-);
+export const Div3 = styled("div")(sx({}));
 
 export const TextTypography = styled(Typography)(
   sx({

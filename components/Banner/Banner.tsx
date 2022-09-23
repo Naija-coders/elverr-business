@@ -30,12 +30,14 @@ import {
 } from "../Featured/styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { LoginModal } from "../LoginModal/LoginModal";
+import { useRouter } from "next/router";
 
 type Props = {};
 
 export default function Banner({}: Props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
+  const route = useRouter();
   const handleClose = () => {
     setOpen(false);
   };
@@ -77,7 +79,13 @@ export default function Banner({}: Props) {
               >
                 Login
               </BasicHeader>
-              <HeaderButton>Become a seller</HeaderButton>
+              <HeaderButton
+                onClick={() => {
+                  route.push("register");
+                }}
+              >
+                Become a seller
+              </HeaderButton>
             </div>
           </div>
           <div></div>

@@ -17,7 +17,15 @@ export default function CompanyRegister({}: Props) {
         }}
       >
         <StyledBox>
-          <img src="" alt="logo" />
+          <img
+            src="logoforbusiness.png"
+            alt="logo"
+            style={{
+              width: "180px",
+              height: "45px",
+              objectFit: "contain",
+            }}
+          />
           <StyleContainer>
             <div
               style={{
@@ -26,6 +34,7 @@ export default function CompanyRegister({}: Props) {
                 height: "304px",
                 alignItems: "center",
                 justifyContent: "center",
+                marginLeft: "-100px",
               }}
             >
               <TextTypography>Get Started</TextTypography>
@@ -60,51 +69,6 @@ export default function CompanyRegister({}: Props) {
             </div>
           </div>
         </StyleContainer>
-        <div
-          style={{ position: "absolute", left: 0, bottom: 10, width: "100%" }}
-        >
-          <div
-            style={{ position: "relative", marginLeft: "10%", width: "80%" }}
-          >
-            <Divider />
-          </div>
-          <br></br>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              gap: "2rem",
-            }}
-          >
-            <TextTypography sx={{ fontSize: "0.9rem", color: "grey" }}>
-              © Copyright 2022, All Rights Reserved by Elverr
-            </TextTypography>
-            <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
-              <TextTypography
-                sx={{
-                  "fontSize": "0.9rem",
-                  "&:hover": { textDecoration: "underline" },
-                  "cursor": "pointer",
-                }}
-              >
-                Privacy Policy
-              </TextTypography>
-              <Divider orientation="vertical" flexItem />
-              <TextTypography sx={{ fontSize: "0.9rem" }}>
-                <TextTypography
-                  sx={{
-                    "fontSize": "0.9rem",
-                    "&:hover": { textDecoration: "underline" },
-                    "cursor": "pointer",
-                  }}
-                >
-                  Terms of Service
-                </TextTypography>
-              </TextTypography>
-            </div>
-          </div>
-        </div>
       </StyledBox>
     </div>
   );

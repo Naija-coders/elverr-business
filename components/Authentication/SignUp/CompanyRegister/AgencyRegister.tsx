@@ -19,6 +19,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import MenuItem from "@mui/material/MenuItem";
+import axios from "axios";
 type Props = {};
 
 const companysize = [
@@ -38,7 +39,9 @@ const companysize = [
 
 export default function AgencyRegister({}: Props) {
   const [size, setSize] = React.useState("10-99");
+
   const [showPassword, setShowPassword] = React.useState(false);
+  const [ip, setIP] = React.useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSize(event.target.value);
@@ -46,6 +49,17 @@ export default function AgencyRegister({}: Props) {
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  const getData = async () => {
+    const res = await axios.get("https://geolocation-db.com/json/");
+    console.log(res.data);
+    setIP(res.data.IPv4);
+  };
+
+  React.useEffect(() => {
+    //passing getData method to the lifecycle method
+    getData();
+  }, []);
+
   const route = useRouter();
   return (
     <div>
@@ -84,7 +98,7 @@ export default function AgencyRegister({}: Props) {
                 marginTop: "-50px",
               }}
             >
-              <TextTypography>Get Started</TextTypography>
+              <TextTypography>Get Started your ip {ip}</TextTypography>
               <BodyText>
                 {"We’d love to hear from you. Please fill out this form."}
               </BodyText>

@@ -265,7 +265,7 @@ export default function NestedList() {
                     borderRadius: "50%",
                     boxShadow: "0px 5px 16px rgba(8, 15, 52, 0.06)",
                     fontSize: "30px",
-                    transform: " rotate(180deg)",
+                    transform: " rotate(270deg)",
                     color: "#34A422",
                   }}
                 />

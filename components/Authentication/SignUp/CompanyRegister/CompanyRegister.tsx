@@ -62,12 +62,16 @@ export default function CompanyRegister({}: Props) {
           <StyleContainer>
             <img
               src="logoforbusiness.png"
+              onClick={() => {
+                route.push("/");
+              }}
               alt="logo"
               style={{
                 width: "180px",
                 height: "45px",
                 objectFit: "contain",
                 marginTop: "-20px",
+                cursor: "pointer",
               }}
             />
             <div

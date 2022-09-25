@@ -1,6 +1,6 @@
 import * as React from "react";
-import { StyledBox } from "../NotLoggedIn/style";
-import { StyledTextField, StyledButton } from "./styles";
+import { StyledBox } from "../../NotLoggedIn/style";
+import { StyledTextField, StyledButton } from "../styles";
 import GoogleOauth from "./GoogleAuth";
 
 import {
@@ -16,7 +16,7 @@ import {
   BasicServiceButton,
   BasicServiceDiv,
   BasicServiceGrid,
-} from "../Featured/styles";
+} from "../../Featured/styles";
 
 import {
   Paper,
@@ -29,7 +29,7 @@ import {
 } from "@mui/material";
 type Props = {};
 
-export const Signin: React.FC<Props> = ({}) => {
+export const SignUp: React.FC<Props> = ({}) => {
   return (
     <div
       style={{
@@ -47,6 +47,18 @@ export const Signin: React.FC<Props> = ({}) => {
       >
         <GoogleOauth />
 
+        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
+          {"First & Last Name"}{" "}
+        </BasicTextbody>
+        <StyledTextField
+          size="small"
+          placeholder="i.e Davon Lean"
+          type="text"
+          /*  {...register("email", {
+                  required: true,
+                  pattern: /^\S+@\S+$/i,
+                })} */
+        />
         <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
           Email Address{" "}
         </BasicTextbody>
@@ -103,7 +115,7 @@ export const Signin: React.FC<Props> = ({}) => {
         <StyledButton variant="contained">Sign In</StyledButton>
         <div style={{ display: "flex", gap: "10px" }}>
           <BasicTextbody sx={{ fontSize: "0.9rem" }}>
-            {"Don't have an account?"}
+            {"Already have an account?"}
           </BasicTextbody>
           <BasicTextbody
             sx={{
@@ -115,7 +127,7 @@ export const Signin: React.FC<Props> = ({}) => {
               },
             }}
           >
-            {"Create free account"}
+            {"Sign In"}
           </BasicTextbody>
         </div>
       </form>
@@ -123,4 +135,4 @@ export const Signin: React.FC<Props> = ({}) => {
   );
 };
 
-export default Signin;
+export default SignUp;

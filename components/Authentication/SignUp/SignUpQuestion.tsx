@@ -2,6 +2,7 @@ import React from "react";
 import { StyledBox, StyleContainer } from "../../NotLoggedIn/style";
 import { StyledPaper, Div1, Div2, Div3, TextTypography } from "./styles";
 import { Button, Divider } from "@mui/material";
+import { LoginModal } from "./LoginModal";
 import { useRouter } from "next/router";
 import {
   BasicTextbody,
@@ -25,6 +26,12 @@ type Props = {};
 
 export default function SignUp({}: Props) {
   const route = useRouter();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <StyledBox>
       <StyleContainer>
@@ -40,6 +47,7 @@ export default function SignUp({}: Props) {
               height: "60px",
               objectFit: "contain",
               marginTop: "-30px",
+              cursor: "pointer",
             }}
           />
         </div>
@@ -76,7 +84,7 @@ export default function SignUp({}: Props) {
                 />
               </StyledPaper>
             </Div1>
-            <Div1>
+            <Div1 onClick={handleOpen}>
               <StyledPaper
                 sx={{
                   border: " 1px solid #34A422",
@@ -162,6 +170,7 @@ export default function SignUp({}: Props) {
             </div>
           </div>
         </div>
+        <LoginModal OpenModalForm={open} CloseModalForm={handleClose} />
       </StyleContainer>
     </StyledBox>
   );

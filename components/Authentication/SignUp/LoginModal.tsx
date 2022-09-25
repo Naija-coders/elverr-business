@@ -8,7 +8,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux";
 /* import { addArticle } from "../../store/actions/actionCreators";
 import { Dispatch } from "redux"; */
 
-import Signin from "../Authentication/SignIn/SignIn";
+import Signin from "./SignUp";
 
 import CloseIcon from "@mui/icons-material/Close";
 // make login reusable

@@ -49,6 +49,8 @@ export default function AgencyRegister({}: Props) {
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  //getting user ip on site registration
+
   const getData = async () => {
     const res = await axios.get("https://geolocation-db.com/json/");
     console.log(res.data);
@@ -98,7 +100,7 @@ export default function AgencyRegister({}: Props) {
                 marginTop: "-50px",
               }}
             >
-              <TextTypography>Get Started your ip {ip}</TextTypography>
+              <TextTypography>Get Started </TextTypography>
               <BodyText>
                 {"We’d love to hear from you. Please fill out this form."}
               </BodyText>

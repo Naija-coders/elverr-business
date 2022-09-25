@@ -35,7 +35,12 @@ export default function SignUp({}: Props) {
         >
           <img
             src="businesslogo.png"
-            style={{ width: "250px", objectFit: "contain", marginTop: "-30px" }}
+            style={{
+              width: "250px",
+              height: "60px",
+              objectFit: "contain",
+              marginTop: "-30px",
+            }}
           />
         </div>
         <div

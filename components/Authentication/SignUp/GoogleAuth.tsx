@@ -67,7 +67,7 @@ const GoogleOauth: React.FC<Props> = ({}) => {
         variant="contained"
         style={{ borderRadius: "10px" }}
       >
-        Signup in with Google
+        Continue with Google
       </Button>
       {/*  {loading ? (
         <OverlayLoader

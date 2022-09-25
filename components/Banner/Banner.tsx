@@ -63,7 +63,7 @@ export default function Banner({}: Props) {
           >
             <img
               src="logo.png"
-              style={{ height: "67px", marginTop: "-20px" }}
+              style={{ height: "55px", marginTop: "-20px" }}
             />
             <div
               style={{

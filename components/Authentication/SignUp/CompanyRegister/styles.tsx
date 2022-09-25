@@ -46,6 +46,34 @@ export const TextTypography = styled(Typography)(
     color: "#FFFFFF",
   })
 );
+export const TitleText = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontStyle: "normal",
+    fontWeight: 700,
+    fontSize: "1.4rem",
+
+    /* identical to box height, or 122% */
+
+    color: "#170F49",
+  })
+);
+export const StyledTextField = styled(TextField)(
+  sx({
+    "border": "1px solid #334155",
+    "borderStyle": "none",
+    "display": { xs: "flex", md: "flex", lg: "flex", xl: "flex" },
+
+    "background": "#ffff",
+    "borderRadius": "10px",
+
+    "outline": 0,
+    "& fieldset": {
+      borderRadius: "10px",
+    },
+  })
+);
+
 export const BodyText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",

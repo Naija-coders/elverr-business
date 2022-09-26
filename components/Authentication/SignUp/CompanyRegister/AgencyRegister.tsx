@@ -10,6 +10,9 @@ import { StyledBox, StyleContainer } from "../../../NotLoggedIn/style";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Clientapi from "../../../../pages/api/client";
+import { AxiosError, AxiosResponse } from "axios";
+import { useForm } from "react-hook-form";
 import {
   Button,
   Divider,
@@ -41,9 +44,14 @@ export default function AgencyRegister({}: Props) {
   const [size, setSize] = React.useState("10-99");
 
   const [showPassword, setShowPassword] = React.useState(false);
-  const [ip, setIP] = React.useState("");
+  const [ip, setIp] = React.useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSize(event.target.value);
   };
   const handleClickShowPassword = () => {
@@ -51,10 +59,24 @@ export default function AgencyRegister({}: Props) {
   };
   //getting user ip on site registration
 
+  const onSubmit = async (data: any) => {
+    const datas = { ...data, agency_size: size, location: ip };
+    console.log("the submited data", datas);
+    await Clientapi.post("api/business/agencyregister", datas)
+      .then((response: any) => {
+        console.log("it worked hahha", response);
+        const user = response.data;
+        console.log("your auth token is", response.data.auth_token);
+      })
+
+      .catch((err: AxiosError) => {
+        console.log("invalid data entered");
+      });
+  };
   const getData = async () => {
     const res = await axios.get("https://geolocation-db.com/json/");
     console.log(res.data);
-    setIP(res.data.IPv4);
+    setIp(res.data.country_name);
   };
 
   React.useEffect(() => {
@@ -110,8 +132,9 @@ export default function AgencyRegister({}: Props) {
       </Div1>
       <StyledBox>
         <StyleContainer>
-          <div
+          <form
             style={{ display: "flex", flexDirection: "column", gap: "30px" }}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div
               style={{
@@ -150,6 +173,10 @@ export default function AgencyRegister({}: Props) {
                   size="small"
                   placeholder="Elverr..."
                   sx={{ width: "100%" }}
+                  {...register("agency_name", {
+                    required: true,
+                    maxLength: 100,
+                  })}
                 />
               </div>
 
@@ -167,7 +194,7 @@ export default function AgencyRegister({}: Props) {
                 <StyledTextField
                   select
                   value={size}
-                  onChange={handleChange}
+                  onChange={handleChanges}
                   size="small"
                   placeholder="Company Size"
                   sx={{ width: "100%" }}
@@ -202,6 +229,11 @@ export default function AgencyRegister({}: Props) {
                 <StyledTextField
                   placeholder="davon@mail.com"
                   size="small"
+                  type="text"
+                  {...register("email", {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
                   sx={{ width: "100%" }}
                 />
               </div>
@@ -221,6 +253,10 @@ export default function AgencyRegister({}: Props) {
                   type={showPassword ? "text" : "password"}
                   size="small"
                   sx={{ width: "100%" }}
+                  {...register("password", {
+                    required: true,
+                    maxLength: 100,
+                  })}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -281,6 +317,7 @@ export default function AgencyRegister({}: Props) {
               <Button
                 variant="contained"
                 size="large"
+                type="submit"
                 sx={{
                   "fontFamily": "DM Sans",
                   "fontStyle": "normal",
@@ -306,7 +343,7 @@ export default function AgencyRegister({}: Props) {
                 Submit
               </Button>
             </div>
-          </div>
+          </form>
         </StyleContainer>
       </StyledBox>
     </div>

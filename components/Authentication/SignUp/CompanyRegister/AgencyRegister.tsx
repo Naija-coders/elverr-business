@@ -67,8 +67,8 @@ export default function AgencyRegister({}: Props) {
     <div>
       <Div1
         style={{
-          backgroundImage: `url("agencyregisterimage.jpeg")`,
-          backgroundSize: "100% 230%",
+          backgroundImage: `linear-gradient(180deg, rgba(69, 68, 68, 0) 0%, #170F0F 98.65%),url("agencyclass.jpeg")`,
+          backgroundSize: "100% 220%",
           backgroundRepeat: "no-repeat",
 
           backgroundPosition: "center",

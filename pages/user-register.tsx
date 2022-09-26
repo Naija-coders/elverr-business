@@ -10,6 +10,7 @@ const CompanyRegistration: React.FunctionComponent<IAppProps> = (props) => {
   const handle = query["type"];
   const [company, setCompany] = React.useState("");
   const [business, setBusiness] = React.useState("");
+  console.log("handle", handle);
 
   React.useEffect(() => {
     if (handle == "company") {
@@ -17,7 +18,7 @@ const CompanyRegistration: React.FunctionComponent<IAppProps> = (props) => {
     } else if (handle == "business") {
       setBusiness("business");
     }
-  }, [company, business]);
+  }, [company, business, handle]);
 
   return (
     <div>

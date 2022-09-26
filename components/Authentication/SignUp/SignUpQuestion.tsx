@@ -72,7 +72,7 @@ export default function SignUp({}: Props) {
             <Div1>
               <StyledPaper
                 onClick={() => {
-                  route.push("business-register");
+                  route.push("/user-register?type=business");
                 }}
               >
                 <TextTypography align="center">
@@ -102,7 +102,7 @@ export default function SignUp({}: Props) {
             <Div1>
               <StyledPaper
                 onClick={() => {
-                  route.push("company-register");
+                  route.push("/user-register?type=company");
                 }}
               >
                 <TextTypography align="center">

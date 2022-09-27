@@ -12,6 +12,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Clientapi from "../../../../pages/api/client";
 import { AxiosError, AxiosResponse } from "axios";
+import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import {
   Button,
@@ -66,7 +67,9 @@ export default function AgencyRegister({}: Props) {
       .then((response: any) => {
         console.log("it worked hahha", response);
         const user = response.data;
-        console.log("your auth token is", response.data.auth_token);
+
+        Cookies.set("auth_token", response.data.auth_token);
+        route.push("/");
       })
 
       .catch((err: AxiosError) => {

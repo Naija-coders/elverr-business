@@ -9,7 +9,7 @@ import { AxiosError, AxiosResponse } from "axios";
 
 import { GoogleLogin } from "@react-oauth/google";
 import { useGoogleLogin } from "@react-oauth/google";
-
+import Clientapi from "../../../pages/api/client";
 import { Button, Avatar } from "@mui/material";
 
 import axios from "axios";
@@ -18,9 +18,11 @@ import Image from "next/image";
 import { resolve } from "path";
 import { route } from "next/dist/server/router";
 
-interface Props {}
+interface Props {
+  isLogin: any;
+}
 
-const GoogleOauth: React.FC<Props> = ({}) => {
+const GoogleOauth: React.FC<Props> = ({ isLogin }) => {
   const [loading, setLoading] = React.useState(false);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -39,7 +41,21 @@ const GoogleOauth: React.FC<Props> = ({}) => {
             },
           }
         );
-        console.log("the data is", data);
+        console.log("user data", data);
+        const userdata = {
+          name: data?.data?.name,
+          email: data?.data?.email,
+          picture: data?.data?.picture,
+        };
+
+        await Clientapi.post("api/googleregister", data.data)
+          .then((res) => {
+            Cookies.set("auth_token", res?.data.auth_token);
+            isLogin();
+          })
+          .catch((err: AxiosError) => {
+            console.log("failed to regsiter this user");
+          });
       } catch (err) {
         console.log(err);
       }

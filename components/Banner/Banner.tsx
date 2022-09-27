@@ -144,7 +144,11 @@ export default function Banner({}: Props) {
             </GetStartedBtnTypo>
           </div>
         </StyleContainer>
-        <LoginModal OpenModalForm={open} CloseModalForm={handleClose} />
+        <LoginModal
+          OpenModalForm={open}
+          CloseModalForm={handleClose}
+          onSuccess={handleClose}
+        />
       </StyledBox>
     </CustomImage>
   );

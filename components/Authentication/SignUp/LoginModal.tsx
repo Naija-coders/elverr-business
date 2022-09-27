@@ -17,12 +17,14 @@ type Props = {
   OpenModalForm: any;
   CloseModalForm: any;
   isSignup?: boolean;
+  onSuccess: any;
 };
 
 export const LoginModal: React.FC<Props> = ({
   CloseModalForm,
   OpenModalForm,
   isSignup,
+  onSuccess,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -53,7 +55,7 @@ export const LoginModal: React.FC<Props> = ({
             <CloseIcon />
           </IconButton>
 
-          <Signin />
+          <Signin onSuccess={CloseModalForm} />
         </Paper>
       </Box>
     </Modal>

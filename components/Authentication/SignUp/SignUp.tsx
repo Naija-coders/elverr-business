@@ -29,9 +29,9 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
-type Props = {};
+type Props = { onSuccess: any };
 
-export const SignUp: React.FC<Props> = ({}) => {
+export const SignUp: React.FC<Props> = ({ onSuccess }) => {
   return (
     <div
       style={{
@@ -47,7 +47,12 @@ export const SignUp: React.FC<Props> = ({}) => {
           gap: "1.2rem",
         }}
       >
-        <GoogleOauth />
+        <GoogleOauth
+          isLogin={() => {
+            console.log("checking if user is loggedin");
+            onSuccess();
+          }}
+        />
         <Divider orientation="horizontal">
           <Typography variant="body1"> Or</Typography>
         </Divider>

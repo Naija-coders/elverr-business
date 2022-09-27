@@ -170,7 +170,11 @@ export default function SignUp({}: Props) {
             </div>
           </div>
         </div>
-        <LoginModal OpenModalForm={open} CloseModalForm={handleClose} />
+        <LoginModal
+          OpenModalForm={open}
+          CloseModalForm={handleClose}
+          onSuccess={handleClose}
+        />
       </StyleContainer>
     </StyledBox>
   );

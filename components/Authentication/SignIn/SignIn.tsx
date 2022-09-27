@@ -23,6 +23,8 @@ import {
   Button,
   TextField,
   Checkbox,
+  Divider,
+  Typography,
   FormControlLabel,
   Avatar,
   IconButton,
@@ -46,25 +48,24 @@ export const Signin: React.FC<Props> = ({}) => {
         }}
       >
         <GoogleOauth />
-
-        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
-          Email Address{" "}
-        </BasicTextbody>
+        <Divider orientation="horizontal">
+          <Typography variant="body1"> Or</Typography>
+        </Divider>
         <StyledTextField
           size="small"
-          placeholder="i.e davon@gmail.com"
+          required
+          label="Email"
           type="text"
           /*  {...register("email", {
                   required: true,
                   pattern: /^\S+@\S+$/i,
                 })} */
         />
-        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
-          Password{" "}
-        </BasicTextbody>
+
         <StyledTextField
           type={"password"}
-          placeholder="********"
+          required
+          label="Password"
           size="small"
           /*  {...register("password", { required: true, maxLength: 100 })}
            */

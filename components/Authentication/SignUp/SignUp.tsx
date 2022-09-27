@@ -26,6 +26,8 @@ import {
   FormControlLabel,
   Avatar,
   IconButton,
+  Typography,
+  Divider,
 } from "@mui/material";
 type Props = {};
 
@@ -46,38 +48,37 @@ export const SignUp: React.FC<Props> = ({}) => {
         }}
       >
         <GoogleOauth />
+        <Divider orientation="horizontal">
+          <Typography variant="body1"> Or</Typography>
+        </Divider>
 
-        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
-          {"First & Last Name"}{" "}
-        </BasicTextbody>
         <StyledTextField
           size="small"
-          placeholder="i.e Davon Lean"
+          label="First Name"
+          required
           type="text"
           /*  {...register("email", {
                   required: true,
                   pattern: /^\S+@\S+$/i,
                 })} */
         />
-        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
-          Email Address{" "}
-        </BasicTextbody>
+
         <StyledTextField
           size="small"
-          placeholder="i.e davon@gmail.com"
+          label="Email"
+          required
           type="text"
           /*  {...register("email", {
                   required: true,
                   pattern: /^\S+@\S+$/i,
                 })} */
         />
-        <BasicTextbody sx={{ fontSize: "0.9rem", color: "#747582" }}>
-          Password{" "}
-        </BasicTextbody>
+
         <StyledTextField
           type={"password"}
-          placeholder="********"
+          label="Password"
           size="small"
+          required
           /*  {...register("password", { required: true, maxLength: 100 })}
            */
         />

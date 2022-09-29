@@ -30,7 +30,14 @@ export default function RightSide({}: Props) {
           marginLeft: "-30px",
         }}
       >
-        <List style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <List
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "50px",
+          }}
+        >
           <StyledListItem disablePadding>
             <ListItemButton
               selected={selectedIndex === 0}

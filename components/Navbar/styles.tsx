@@ -28,12 +28,25 @@ export const StyledDiv = styled("div")(
     marginTop: "-50px",
   })
 );
+export const CommonText = styled(Typography)(
+  sx({
+    "fontFamily": "DM Sans",
+    "fontWeight": "400",
+    "fontSize": "0.8rem !important",
+    "color": "#747582",
+
+    "&:hover": {
+      background: "#F5F5F5",
+      borderRadius: " 3px",
+    },
+  })
+);
 
 export const StyledText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bold",
-    fontSize: "0.8rem",
+    fontSize: "0.9rem",
   })
 );
 export const StyledTextField = styled(TextField)(

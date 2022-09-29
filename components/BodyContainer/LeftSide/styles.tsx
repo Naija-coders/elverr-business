@@ -36,3 +36,11 @@ export const StyledListItemText = styled(Typography)(
     fontSize: "0.9rem !important",
   })
 );
+
+export const CommonText = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontWeight: 400,
+    fontSize: "0.8rem !important",
+  })
+);

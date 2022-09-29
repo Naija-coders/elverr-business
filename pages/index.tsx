@@ -17,6 +17,7 @@ import Navbar from "../components/Navbar";
 import DispatchContext from "../context/DispatchContext";
 import HomePageLayout from "./homepagelayout";
 import Child from "../components/BodyContainer/Child";
+import ListingCategories from "../components/Navbar/ListingCategories";
 
 interface Props {
   query: any;
@@ -45,8 +46,15 @@ const Home: NextPage = () => {
         <div>
           <Navbar />
           <Child>
-            <div>
-              <h1>mano</h1>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "50px",
+                width: "100%",
+              }}
+            >
+              <ListingCategories />
             </div>
           </Child>
         </div>

@@ -6,6 +6,7 @@ import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 import Clientapi from "../../pages/api/client";
 import SearchTextField from "./SearchTextField/SearchTextField";
+
 interface Props {}
 
 const Navbar: React.FunctionComponent<Props> = ({}) => {
@@ -32,7 +33,8 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
         borderBottom: "1px solid #EBEBEB",
         padding: "0rem 1rem",
         height: "88px",
-        marginTop: "-10px",
+
+        width: "100%",
       }}
     >
       <StyledBox>

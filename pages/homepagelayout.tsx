@@ -1,4 +1,4 @@
-import LeftSide from "../components/BodyContainer/LeftSide";
+import LeftSide from "../components/BodyContainer/LeftSide/LeftSide";
 import RightSide from "../components/BodyContainer/RightSide/RightSide";
 import React from "react";
 

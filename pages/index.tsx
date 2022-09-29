@@ -12,6 +12,7 @@ import TopAgencies from "../components/Featured/TopAgencies";
 import Joinus from "../components/Featured/Joinus";
 import FAQ from "../components/Featured/FAQ";
 import StateContext from "../context/StateContext";
+import Navbar from "../components/Navbar";
 
 import DispatchContext from "../context/DispatchContext";
 
@@ -22,9 +23,8 @@ interface Props {
 
 const Home: NextPage = () => {
   const [categories, setCategories] = useState([]);
-  const { AuthState } = useContext(StateContext);
-
-  const { AuthDispatcher } = useContext(DispatchContext);
+  const { AuthState } = useContext<any>(StateContext);
+  const { AuthDispatcher } = useContext<any>(DispatchContext);
 
   return (
     <div>
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 
       {AuthState.isLoggedIn ? (
         <div>
-          <h1>you have loggedIn mano eyii using the context</h1>
+          <Navbar />
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>

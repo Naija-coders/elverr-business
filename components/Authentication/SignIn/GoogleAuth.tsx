@@ -52,6 +52,7 @@ const GoogleOauth: React.FC<Props> = ({ isLogin }) => {
           .then((res) => {
             Cookies.set("auth_token", res?.data.auth_token);
             isLogin();
+            route.replace("/");
           })
           .catch((err: AxiosError) => {
             console.log("failed to regsiter this user");

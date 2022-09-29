@@ -1,18 +1,17 @@
-import HeaderNotLoggedIn from "../components/NotLoggedIn/HeaderNotLoggedIn";
-import FooterNotLoggedIn from "../components/NotLoggedIn/FooterNotLoggedIn";
-
+import LeftSide from "../components/BodyContainer/LeftSide";
+import RightSide from "../components/BodyContainer/RightSide/RightSide";
 import React from "react";
 
 type Props = {
   children: any;
 };
 const HomePageLayout: React.FC<Props> = ({ children }) => (
-  <>
-    <HeaderNotLoggedIn />
+  <div style={{ display: "flex" }}>
+    <LeftSide />
     {children}
 
-    <FooterNotLoggedIn />
-  </>
+    <RightSide />
+  </div>
 );
 
 export default HomePageLayout;

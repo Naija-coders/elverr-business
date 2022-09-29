@@ -15,6 +15,8 @@ import StateContext from "../context/StateContext";
 import Navbar from "../components/Navbar";
 
 import DispatchContext from "../context/DispatchContext";
+import HomePageLayout from "./homepagelayout";
+import Child from "../components/BodyContainer/Child";
 
 interface Props {
   query: any;
@@ -42,6 +44,11 @@ const Home: NextPage = () => {
       {AuthState.isLoggedIn ? (
         <div>
           <Navbar />
+          <Child>
+            <div>
+              <h1>mano</h1>
+            </div>
+          </Child>
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>

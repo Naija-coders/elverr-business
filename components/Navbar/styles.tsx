@@ -28,17 +28,32 @@ export const StyledDiv = styled("div")(
     marginTop: "-50px",
   })
 );
-export const CommonText = styled(Typography)(
+export const CommonText = styled(Button)(
   sx({
     "fontFamily": "DM Sans",
     "fontWeight": "400",
     "fontSize": "0.8rem !important",
+    "textTransform": "none",
     "color": "#747582",
 
     "&:hover": {
       background: "#F5F5F5",
       borderRadius: " 3px",
+
+      color: "#747582",
     },
+  })
+);
+export const HeaderText = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontStyle: "normal",
+    fontWeight: 700,
+    fontSize: "2rem",
+    lineHeight: "57px",
+    /* identical to box height, or 119% */
+
+    color: "#222222",
   })
 );
 

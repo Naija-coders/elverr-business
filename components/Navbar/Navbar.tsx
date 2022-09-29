@@ -146,7 +146,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                     fontFamily: "DM Sans",
                   }}
                 >
-                  Upload
+                  Publish
                 </Button>
                 <Avatar sx={{ height: "40px", width: "40px" }} />
               </div>

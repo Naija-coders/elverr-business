@@ -50,7 +50,7 @@ const Home: NextPage = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "50px",
+                gap: "20px",
                 width: "100%",
               }}
             >

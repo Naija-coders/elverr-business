@@ -11,6 +11,10 @@ import PopularServices from "../components/Featured/PopularServices";
 import TopAgencies from "../components/Featured/TopAgencies";
 import Joinus from "../components/Featured/Joinus";
 import FAQ from "../components/Featured/FAQ";
+import StateContext from "../context/StateContext";
+
+import DispatchContext from "../context/DispatchContext";
+
 interface Props {
   query: any;
   ourService: any;
@@ -18,6 +22,9 @@ interface Props {
 
 const Home: NextPage = () => {
   const [categories, setCategories] = useState([]);
+  const { AuthState } = useContext(StateContext);
+
+  const { AuthDispatcher } = useContext(DispatchContext);
 
   return (
     <div>
@@ -32,17 +39,23 @@ const Home: NextPage = () => {
         content="akR2jwmrZi2Uam2Y0H-VUckRGWE7VSQyxO676zfQg_Y"
       />
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
-        <Banner />
-        <CompaniesFeatured />
-        <Swiper />
-        <SmartChoice />
-        <PopularServices />
-        <TopAgencies />
-        <FAQ />
-        <Joinus />
-        <FooterNotLoggedIn />
-      </div>
+      {AuthState.isLoggedIn ? (
+        <div>
+          <h1>you have loggedIn mano eyii using the context</h1>
+        </div>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+          <Banner />
+          <CompaniesFeatured />
+          <Swiper />
+          <SmartChoice />
+          <PopularServices />
+          <TopAgencies />
+          <FAQ />
+          <Joinus />
+          <FooterNotLoggedIn />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useContext, useState } from "react";
 import { StyledBox } from "../../NotLoggedIn/style";
 import { StyledTextField, StyledButton, StyleLoadingButton } from "../styles";
 import GoogleOauth from "./GoogleAuth";
 import Clientapi from "../../../pages/api/client";
+import StateContext from "../../../context/StateContext";
+import DispatchContext from "../../../context/DispatchContext";
 import { AxiosError, AxiosResponse } from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -38,6 +40,8 @@ type Props = {
 };
 
 export const Signin: React.FC<Props> = ({ onSuccess }) => {
+  const { AuthState } = useContext<any>(StateContext);
+  const { AuthDispatcher } = useContext<any>(DispatchContext);
   const {
     register,
     handleSubmit,
@@ -62,6 +66,9 @@ export const Signin: React.FC<Props> = ({ onSuccess }) => {
         setLoading(false);
 
         Cookies.set("auth_token", response.data.auth_token);
+        AuthDispatcher({ type: "login" });
+        AuthDispatcher({ type: "addUser", payload: response.data });
+
         route.push("/");
       })
       .catch((err: AxiosError) => {

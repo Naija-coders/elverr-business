@@ -30,7 +30,7 @@ export const StyledBox = styled(Box)(
     paddingLeft: { md: "40px", lg: "4rem" },
     paddingTop: "2rem",
     paddingBottom: "1rem",
-    display: "flex",
+    display: { xs: "none", md: "flex" },
     justifyContent: "center",
     width: "100%",
   })

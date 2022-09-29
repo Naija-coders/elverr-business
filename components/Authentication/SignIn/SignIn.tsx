@@ -65,7 +65,7 @@ export const Signin: React.FC<Props> = ({ onSuccess }) => {
 
         setLoading(false);
 
-        Cookies.set("auth_token", response.data.auth_token);
+        Cookies.set("auth_token", response.data.auth_token, { expires: 10 });
         AuthDispatcher({ type: "login" });
         AuthDispatcher({ type: "addUser", payload: response.data });
 

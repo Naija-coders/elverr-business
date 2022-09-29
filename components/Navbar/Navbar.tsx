@@ -1,18 +1,37 @@
 import { Avatar, Button, TextField } from "@mui/material";
-import * as React from "react";
+import React, { useContext, useState } from "react";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { StyledText } from "./styles";
-
+import StateContext from "../../context/StateContext";
+import DispatchContext from "../../context/DispatchContext";
+import Clientapi from "../../pages/api/client";
+import SearchTextField from "./SearchTextField/SearchTextField";
 interface Props {}
 
 const Navbar: React.FunctionComponent<Props> = ({}) => {
   console.log("this is it");
+  const { AuthState } = useContext<any>(StateContext);
+  const { AuthDispatcher } = useContext<any>(DispatchContext);
+
+  React.useEffect(() => {
+    if (AuthState.isLoggedIn) {
+      Clientapi.get("api/user").then((response: any) => {
+        const user = response.data;
+        AuthDispatcher({ type: "addUser", payload: user });
+        console.log(AuthState.user);
+
+        //checking dispatch for reducer
+      });
+    }
+  }, []);
+
   return (
     <div
       style={{
         background: " #FFFFFF",
         borderBottom: "1px solid #EBEBEB",
         padding: "0rem 1rem",
+        height: "88px",
         marginTop: "-10px",
       }}
     >
@@ -29,7 +48,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
           >
             <img
               src="businesslogo.png"
-              alt="logo"
+              alt="businesslogo"
               style={{
                 width: "160px",
                 objectFit: "contain",
@@ -51,24 +70,18 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                   display: "flex",
                   gap: "1.2rem",
                   alignItems: "center",
-                  width: "100%",
+                  width: "70%",
                 }}
               >
-                <TextField
-                  size="small"
-                  style={{
-                    maxWidth: " 300px",
-                    width: "100%",
-
-                    background: "#F5F5F5",
-                    borderRadius: " 8.4585px",
-                  }}
-                  placeholder="Search or type keywords.."
-                ></TextField>
+                <SearchTextField />
                 <StyledText style={{ color: "#34A422" }}>Explore</StyledText>
                 <StyledText>Categories</StyledText>
-                <StyledText>Projects</StyledText>
-                <StyledText>Contact Us</StyledText>
+                <StyledText
+                  sx={{ display: { xs: "none", lg: "flex" } }}
+                ></StyledText>
+                <StyledText sx={{ display: { xs: "none", lg: "flex" } }}>
+                  Contact Us
+                </StyledText>
               </div>
               <div
                 style={{
@@ -88,9 +101,9 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                     <path
                       d="M15.8554 8.12111L10.1916 13.8227L3.56064 9.74147C2.69176 9.20657 2.86787 7.88697 3.8467 7.60287L19.5022 3.04743C20.3925 2.78978 21.2156 3.62446 20.949 4.51889L16.304 20.1582C16.013 21.1369 14.7082 21.3064 14.1809 20.4325L10.1916 13.8227"
                       stroke="#7C7C8D"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </div>

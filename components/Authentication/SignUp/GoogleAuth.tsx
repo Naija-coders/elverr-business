@@ -50,7 +50,7 @@ const GoogleOauth: React.FC<Props> = ({ isLogin }) => {
 
         await Clientapi.post("api/googleregister", data.data)
           .then((res) => {
-            Cookies.set("auth_token", res?.data.auth_token);
+            Cookies.set("auth_token", res?.data.auth_token, { expires: 10 });
             isLogin();
           })
           .catch((err: AxiosError) => {

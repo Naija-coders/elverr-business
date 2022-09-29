@@ -68,7 +68,7 @@ export default function AgencyRegister({}: Props) {
         console.log("it worked hahha", response);
         const user = response.data;
 
-        Cookies.set("auth_token", response.data.auth_token);
+        Cookies.set("auth_token", response.data.auth_token, { expires: 10 });
         route.push("/");
       })
 

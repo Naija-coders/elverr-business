@@ -33,7 +33,7 @@ export const StyledText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bold",
-    fontSize: "0.85rem",
+    fontSize: "0.8rem",
   })
 );
 export const StyledTextField = styled(TextField)(

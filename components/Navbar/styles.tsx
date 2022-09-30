@@ -48,7 +48,7 @@ export const HeaderText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontStyle: "normal",
-    fontWeight: 700,
+    fontWeight: "bolder",
     fontSize: "2rem",
     lineHeight: "57px",
     /* identical to box height, or 119% */
@@ -61,7 +61,7 @@ export const StyledText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bold",
-    fontSize: "0.9rem",
+    fontSize: "1rem",
   })
 );
 export const StyledTextField = styled(TextField)(

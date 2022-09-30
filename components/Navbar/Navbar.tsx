@@ -6,6 +6,7 @@ import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 import Clientapi from "../../pages/api/client";
 import SearchTextField from "./SearchTextField/SearchTextField";
+import Cookies from "js-cookie";
 
 interface Props {}
 
@@ -16,7 +17,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
 
   React.useEffect(() => {
     if (AuthState.isLoggedIn) {
-      Clientapi.get("api/user").then((response: any) => {
+      Clientapi.get("api/getuserprofile").then((response: any) => {
         const user = response.data;
         AuthDispatcher({ type: "addUser", payload: user });
         console.log(AuthState.user);
@@ -33,6 +34,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
         borderBottom: "1px solid #EBEBEB",
         padding: "0rem 1rem",
         height: "88px",
+        marginTop: "-20px",
 
         width: "100%",
       }}
@@ -139,6 +141,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                 <Button
                   variant="contained"
                   size="large"
+                  disableElevation
                   style={{
                     background: "#34A422",
                     textTransform: "none",

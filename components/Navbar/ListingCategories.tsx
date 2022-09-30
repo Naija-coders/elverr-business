@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { BodyText } from "../Authentication/SignUp/CompanyRegister/styles";
 import { CommonText, HeaderText } from "./styles";
 
 type Props = {};
@@ -36,7 +37,13 @@ export default function ListingCategories({}: Props) {
         <CommonText>OnSite</CommonText>
       </div>
       <div style={{ padding: "20px 2rem" }}>
-        <HeaderText>Discover Talent</HeaderText>
+        <HeaderText>Discover new talents</HeaderText>
+        <BodyText
+          sx={{ fontSize: "1rem", color: "#515151", textAlign: "left" }}
+        >
+          Get access to unlimited talents on elverr - execute projects from
+          start to finish
+        </BodyText>
       </div>
     </div>
   );

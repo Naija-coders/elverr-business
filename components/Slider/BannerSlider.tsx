@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import DiscoverBanner from "../Banner/DiscoverBanner";
 
 export default function App() {
@@ -18,7 +18,11 @@ export default function App() {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>

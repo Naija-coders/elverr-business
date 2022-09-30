@@ -17,7 +17,7 @@ export default function DiscoverBanner({}: Props) {
       <div
         style={{
           width: "100%",
-          height: "200px",
+          height: "170px",
           borderRadius: "20px",
           background: "#001847",
           display: "flex",
@@ -53,7 +53,7 @@ export default function DiscoverBanner({}: Props) {
         <img
           src="content.png"
           style={{
-            height: "190px",
+            height: "180px",
             width: "300px",
             objectFit: "contain",
             zIndex: 10000,

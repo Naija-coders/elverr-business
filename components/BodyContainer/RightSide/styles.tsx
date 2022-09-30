@@ -37,6 +37,6 @@ export const StyledDiv = styled("div")(
     display: "flex",
     flexDirection: "column",
     gap: "20px",
-    width: { md: "60%", lg: "66%" },
+    width: { md: "60%", lg: "68%" },
   })
 );

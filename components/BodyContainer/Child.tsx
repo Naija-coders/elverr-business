@@ -2,8 +2,15 @@ import React from "react";
 import LeftSide from "./LeftSide/LeftSide";
 import RightSide from "./RightSide/RightSide";
 import { StyledBox1, StyleContainer } from "../NotLoggedIn/style";
+import ListingCategories from "../Navbar/ListingCategories";
+
+import dynamic from "next/dynamic";
+const BannerSlider = dynamic(() => import("../Slider/BannerSlider"), {
+  ssr: false,
+});
+import { StyledDiv } from "./RightSide/styles";
 type Props = {
-  children: any;
+  children?: any;
 };
 const Child: React.FC<Props> = ({ children }) => (
   <div style={{ marginTop: "-31px", height: "100%", width: "100%" }}>
@@ -16,7 +23,10 @@ const Child: React.FC<Props> = ({ children }) => (
           }}
         >
           <RightSide />
-          {children}
+          <StyledDiv>
+            <ListingCategories />
+            <BannerSlider />
+          </StyledDiv>
 
           <LeftSide />
         </div>

@@ -25,8 +25,6 @@ export default function RightSide({}: Props) {
         style={{
           height: "100%",
           width: "220px",
-          position: "sticky",
-          top: 0,
 
           background: "#FFFFFF",
           borderLeft: "1px solid #EBEBEB",

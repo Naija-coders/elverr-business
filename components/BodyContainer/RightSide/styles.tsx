@@ -32,3 +32,11 @@ export const StyledListItemText = styled(Typography)(
     fontSize: "1rem !important",
   })
 );
+export const StyledDiv = styled("div")(
+  sx({
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    width: { md: "60%", lg: "66%" },
+  })
+);

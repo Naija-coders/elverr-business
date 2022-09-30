@@ -12,14 +12,19 @@ import TopAgencies from "../components/Featured/TopAgencies";
 import Joinus from "../components/Featured/Joinus";
 import FAQ from "../components/Featured/FAQ";
 import StateContext from "../context/StateContext";
-import Navbar from "../components/Navbar";
+
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("../components/Navbar"), {
+  ssr: false,
+});
 
 import DispatchContext from "../context/DispatchContext";
 import HomePageLayout from "./homepagelayout";
 import Child from "../components/BodyContainer/Child";
 import ListingCategories from "../components/Navbar/ListingCategories";
 import DiscoverBanner from "../components/Banner/DiscoverBanner";
-
+import BannerSlider from "../components/Slider/BannerSlider";
 interface Props {
   query: any;
   ourService: any;
@@ -46,19 +51,7 @@ const Home: NextPage = () => {
       {AuthState.isLoggedIn ? (
         <div>
           <Navbar />
-          <Child>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                width: "100%",
-              }}
-            >
-              <ListingCategories />
-              <DiscoverBanner />
-            </div>
-          </Child>
+          <Child />
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>

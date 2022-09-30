@@ -17,7 +17,8 @@ import {
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { Avatar } from "@mui/material";
 interface IAppProps {}
-
+let imageurls =
+  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/";
 const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <StyledBox className="">
@@ -198,7 +199,7 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
             </div>
           </div>
           <img
-            src="companyimage.png"
+            src={imageurls + "companyimage.png"}
             style={{
               maxWidth: "530px",
               width: "100%",

@@ -51,7 +51,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
             }}
           >
             <img
-              src="businesslogo.png"
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558625/businesselverr_yf57tg.png"
               alt="businesslogo"
               style={{
                 width: "160px",

@@ -18,6 +18,8 @@ import {
   BasicServiceDiv,
   BasicServiceGrid,
 } from "../Featured/styles";
+let imageurls =
+  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/";
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
@@ -77,7 +79,7 @@ export default class SimpleSlider extends Component {
             <Slider {...settings}>
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="mainitservice.jpeg" />
+                  <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558639/mainitservice_cboygo.jpg" />
                   <BasicDiv>
                     <BasicServiceTitle> IT Services</BasicServiceTitle>
                     <BasicTextbody align="center">
@@ -90,7 +92,7 @@ export default class SimpleSlider extends Component {
               </div>
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="servicesit.jpeg" />
+                  <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicesit_noaztv.jpg" />
                   <BasicDiv>
                     <BasicServiceTitle> Event Services</BasicServiceTitle>
                     <BasicTextbody align="center">
@@ -103,7 +105,7 @@ export default class SimpleSlider extends Component {
               </div>{" "}
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="servicelogistics.jpeg" />
+                  <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicelogistics_pulxcr.jpg" />
                   <BasicDiv>
                     <BasicServiceTitle> Logistics Services</BasicServiceTitle>
                     <BasicTextbody align="center">
@@ -116,7 +118,9 @@ export default class SimpleSlider extends Component {
               </div>{" "}
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="automativeservices.jpeg" />
+                  <BasicImage
+                    src={imageurls + "serviceautomative_tanxmr.jpg"}
+                  />
                   <BasicDiv>
                     <BasicServiceTitle> Automative Services</BasicServiceTitle>
                     <BasicTextbody align="center">
@@ -129,7 +133,7 @@ export default class SimpleSlider extends Component {
               </div>{" "}
               <div>
                 <BasicPaper elevation={0}>
-                  <BasicImage src="serviceimage.jpeg" />
+                  <BasicImage src={imageurls + "serviceimage_wf07h3.jpg"} />
                   <BasicDiv>
                     <BasicServiceTitle> Cleaning Services</BasicServiceTitle>
                     <BasicTextbody align="center">

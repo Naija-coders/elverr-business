@@ -23,6 +23,8 @@ import {
 } from "../../Featured/styles";
 
 type Props = {};
+let imageurls =
+  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/";
 
 export default function SignUp({}: Props) {
   const route = useRouter();
@@ -80,7 +82,7 @@ export default function SignUp({}: Props) {
                   Are you a business?
                 </TextTypography>{" "}
                 <img
-                  src="agentimage.png"
+                  src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558635/agentimage.png"
                   style={{ height: "100px", objectFit: "contain" }}
                 />
               </StyledPaper>
@@ -95,7 +97,7 @@ export default function SignUp({}: Props) {
                   Are you a contractor?
                 </TextTypography>{" "}
                 <img
-                  src="contractor.png"
+                  src={imageurls + "contractor.png"}
                   style={{ height: "100px", objectFit: "contain" }}
                 />
               </StyledPaper>
@@ -110,7 +112,7 @@ export default function SignUp({}: Props) {
                   Are you a company?
                 </TextTypography>
                 <img
-                  src="company.png"
+                  src={imageurls + "company.png"}
                   style={{ height: "100px", objectFit: "contain" }}
                 />
               </StyledPaper>

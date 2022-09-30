@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["res.cloudinary.com", "i.picsum.photos"],
+    domains: ["res.cloudinary.com"],
     minimumCacheTTL: 60,
     formats: ["image/webp"],
   },

@@ -28,6 +28,7 @@ import {
   BasicServiceDiv,
   BasicServiceGrid,
 } from "../Featured/styles";
+import Image from "next/image";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { LoginModal } from "../LoginModal/LoginModal";
 import { useRouter } from "next/router";
@@ -44,7 +45,7 @@ export default function Banner({}: Props) {
   return (
     <CustomImage
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(95, 84, 84, 0) -42.37%, #000000 100%),url("banner.jpeg")`,
+        backgroundImage: `linear-gradient(180deg, rgba(95, 84, 84, 0) -42.37%, #000000 100%),url("https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558631/banner_i6aofn.jpg")`,
         backgroundSize: "100% 137%",
         backgroundRepeat: "no-repeat",
 
@@ -62,7 +63,7 @@ export default function Banner({}: Props) {
             }}
           >
             <img
-              src="logo.png"
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558638/logo_lz8d80.png"
               style={{ height: "55px", marginTop: "-20px" }}
             />
             <div

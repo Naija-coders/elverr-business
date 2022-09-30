@@ -22,10 +22,9 @@ export default function RightSide({}: Props) {
       <div
         style={{
           height: "100%",
-          width: "170px",
+          width: "200px",
           position: "sticky",
           top: 0,
-          overflow: "scroll",
 
           background: "#FFFFFF",
           borderRight: "1px solid #EBEBEB",

@@ -1,6 +1,6 @@
 import { Avatar, Button, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
-import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import { StyledBox1, StyleContainer } from "../NotLoggedIn/style";
 import { StyledText } from "./styles";
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -39,7 +39,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
         width: "100%",
       }}
     >
-      <StyledBox>
+      <StyledBox1>
         <StyleContainer>
           <div
             style={{
@@ -56,7 +56,6 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
               style={{
                 width: "160px",
                 objectFit: "contain",
-                marginLeft: "-30px",
               }}
             />
 
@@ -151,12 +150,15 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                 >
                   Publish
                 </Button>
-                <Avatar sx={{ height: "40px", width: "40px" }} />
+                <Avatar
+                  src={AuthState.user?.profile_photo_url}
+                  sx={{ height: "40px", width: "40px" }}
+                />
               </div>
             </div>
           </div>
         </StyleContainer>
-      </StyledBox>
+      </StyledBox1>
     </div>
   );
 };

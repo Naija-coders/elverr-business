@@ -1,13 +1,13 @@
 import React from "react";
 import LeftSide from "./LeftSide/LeftSide";
 import RightSide from "./RightSide/RightSide";
-import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import { StyledBox1, StyleContainer } from "../NotLoggedIn/style";
 type Props = {
   children: any;
 };
 const Child: React.FC<Props> = ({ children }) => (
   <div style={{ marginTop: "-31px", height: "100%", width: "100%" }}>
-    <StyledBox>
+    <StyledBox1>
       <StyleContainer>
         <div
           style={{
@@ -21,7 +21,7 @@ const Child: React.FC<Props> = ({ children }) => (
           <LeftSide />
         </div>
       </StyleContainer>
-    </StyledBox>
+    </StyledBox1>
   </div>
 );
 

@@ -5,7 +5,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { StyledListItem, StyledListItemText } from "./styles";
+import { StyledListItem, StyledText } from "./styles";
+import SearchTextField from "./SearchTextField/SearchTextField";
+import { TextField } from "@mui/material";
 type Props = {};
 
 export default function RightSide({}: Props) {
@@ -22,14 +24,88 @@ export default function RightSide({}: Props) {
       <div
         style={{
           height: "100%",
-          width: "170px",
+          width: "220px",
           position: "sticky",
           top: 0,
 
           background: "#FFFFFF",
           borderLeft: "1px solid #EBEBEB",
         }}
-      ></div>
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              marginTop: "50px",
+              textAlign: "center",
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <StyledText align="left">Search keyword</StyledText>
+
+            <div>
+              <SearchTextField placeholders="Type keywords.." />
+            </div>
+          </div>
+          <div
+            style={{
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <StyledText align="left">Location</StyledText>
+
+            <div>
+              <SearchTextField placeholders="Enter location.." />
+            </div>
+          </div>
+          <div
+            style={{
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <StyledText align="left">Experience Level</StyledText>
+
+            <div style={{ display: "flex", gap: "1rem" }}>
+              <div>1-2 Years</div>
+              <div>3-5 Years</div>
+            </div>
+            <div style={{ display: "flex", gap: "1rem" }}>
+              <div>6-8 Years</div>
+              <div>9+ Years</div>
+            </div>
+          </div>
+          <div
+            style={{
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <StyledText align="left">Interest</StyledText>
+
+            <div>
+              <SearchTextField placeholders="Select.." />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

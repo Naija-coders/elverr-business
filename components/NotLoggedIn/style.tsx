@@ -23,6 +23,17 @@ export const StyleContainer = styled("div")(
     width: "100%",
   })
 );
+export const StyledBox1 = styled(Box)(
+  sx({
+    boxSizing: "border-box",
+
+    paddingTop: "2rem",
+    paddingBottom: "1rem",
+    display: { xs: "none", md: "flex" },
+    justifyContent: "center",
+    width: "100%",
+  })
+);
 export const StyledBox = styled(Box)(
   sx({
     boxSizing: "border-box",

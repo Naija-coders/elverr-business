@@ -24,15 +24,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-export const StyledListItem = styled(ListItem)(
-  sx({
-    width: "150px",
-  })
-);
+export const StyledListItem = styled(ListItem)(sx({}));
 export const StyledListItemText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bolder",
-    fontSize: "0.9rem !important",
+    fontSize: "1rem !important",
   })
 );

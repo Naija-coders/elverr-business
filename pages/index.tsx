@@ -18,6 +18,7 @@ import DispatchContext from "../context/DispatchContext";
 import HomePageLayout from "./homepagelayout";
 import Child from "../components/BodyContainer/Child";
 import ListingCategories from "../components/Navbar/ListingCategories";
+import DiscoverBanner from "../components/Banner/DiscoverBanner";
 
 interface Props {
   query: any;
@@ -55,6 +56,7 @@ const Home: NextPage = () => {
               }}
             >
               <ListingCategories />
+              <DiscoverBanner />
             </div>
           </Child>
         </div>

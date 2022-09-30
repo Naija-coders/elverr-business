@@ -29,11 +29,11 @@ export const StyledListItem = styled(ListItem)(
     width: "150px",
   })
 );
-export const StyledListItemText = styled(Typography)(
+export const StyledText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bolder",
-    fontSize: "0.9rem !important",
+    fontSize: "1rem !important",
   })
 );
 

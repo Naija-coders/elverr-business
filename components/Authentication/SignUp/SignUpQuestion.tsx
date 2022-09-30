@@ -42,6 +42,7 @@ export default function SignUp({}: Props) {
         >
           <img
             src="businesslogo.png"
+            alt="businesslogo"
             style={{
               width: "250px",
               height: "60px",

@@ -13,7 +13,6 @@ export default function SearchTextField({ placeholders }: Props) {
       autoFocus={true}
       placeholder={placeholders}
       InputProps={{
-        disableUnderline: true,
         endAdornment: (
           <InputAdornment position="start">
             <svg

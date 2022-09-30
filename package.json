@@ -24,6 +24,7 @@
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-slick": "^0.23.10",
     "axios": "^0.27.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "i18next": "^20.2.4",
     "i18next-browser-languagedetector": "^6.1.1",
     "i18next-http-backend": "^1.4.1",

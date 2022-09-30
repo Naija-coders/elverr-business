@@ -148,7 +148,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                     fontFamily: "DM Sans",
                   }}
                 >
-                  Publish
+                  Project
                 </Button>
                 <Avatar
                   src={AuthState.user?.profile_photo_url}

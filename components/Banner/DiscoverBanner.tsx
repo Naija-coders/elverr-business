@@ -23,6 +23,7 @@ export default function DiscoverBanner({}: Props) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          cursor: "pointer",
         }}
       >
         <div

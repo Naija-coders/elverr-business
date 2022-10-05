@@ -57,11 +57,26 @@ export const HeaderText = styled(Typography)(
   })
 );
 
+export const StyledTextTypo = styled(Typography)(
+  sx({
+    "fontFamily": "DM Sans",
+
+    "fontSize": "0.9rem",
+    "marginTop": "3px",
+    "lineHeight": "1rem",
+    "fontWeight": 400,
+    "color": "#7C7C8D",
+    "cursor": "pointer",
+    "&:hover": {
+      color: "#34A422",
+    },
+  })
+);
 export const StyledText = styled(Typography)(
   sx({
     fontFamily: "DM Sans",
     fontWeight: "bold",
-    fontSize: "1rem",
+    fontSize: "0.9rem",
   })
 );
 export const StyledTextField = styled(TextField)(

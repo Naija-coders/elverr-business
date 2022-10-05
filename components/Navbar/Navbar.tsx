@@ -1,7 +1,7 @@
-import { Avatar, Button, TextField } from "@mui/material";
+import { Avatar, Button, Divider, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
-import { StyledBox1, StyleContainer } from "../NotLoggedIn/style";
-import { StyledText } from "./styles";
+import { StyledBox1, StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import { StyledText, StyledTextTypo } from "./styles";
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 import Clientapi from "../../pages/api/client";
@@ -33,14 +33,17 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
         background: " #FFFFFF",
         borderBottom: "1px solid #EBEBEB",
         padding: "0rem 1rem",
-        height: "88px",
+
         marginTop: "-20px",
 
         width: "100%",
+        filter: "drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))",
       }}
     >
       <StyledBox1>
-        <StyleContainer>
+        <StyleContainer
+          sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+        >
           <div
             style={{
               display: "flex",
@@ -156,6 +159,23 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                 />
               </div>
             </div>
+          </div>
+          <Divider />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-around",
+              height: "100%",
+            }}
+          >
+            <StyledTextTypo>Trending</StyledTextTypo>
+            <StyledTextTypo>Automative Services</StyledTextTypo>
+            <StyledTextTypo>Video & Animation</StyledTextTypo>
+            <StyledTextTypo>Entertainments Services</StyledTextTypo>
+            <StyledTextTypo>IT Services</StyledTextTypo>
+            <StyledTextTypo>Cleaning Services</StyledTextTypo>
           </div>
         </StyleContainer>
       </StyledBox1>

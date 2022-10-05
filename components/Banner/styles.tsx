@@ -35,6 +35,7 @@ export const MainDiv1 = styled("div")(
     padding: "4rem",
   })
 );
+
 export const MainDivRight = styled("div")(
   sx({
     height: "200px",
@@ -76,6 +77,31 @@ export const CustomDiv1 = styled("div")(
   sx({
     width: { sm: "600px", md: "650px", lg: "750px" },
     padding: "1rem",
+  })
+);
+//make banner text responsive to the width
+export const CustomTypography1 = styled(Typography)(
+  sx({
+    fontWeight: "700",
+    textAlign: "left",
+    color: "#FFFFFF",
+    fontSize: "2.3rem",
+    width: "53%",
+  })
+);
+export const DivButton = styled(Button)(
+  sx({
+    border: " 1.84075px solid rgba(255, 255, 255, 0.8)",
+    filter: "drop-shadow(0px 18.7143px 31.1905px rgba(168, 22, 75, 0.15))",
+    borderRadius: " 119.771px;border: 1.84075px solid rgba(255, 255, 255, 0.8)",
+  })
+);
+export const CustomTypography2 = styled(Typography)(
+  sx({
+    fontWeight: "400",
+    textAlign: "left",
+    color: "#FFFFFF",
+    fontSize: "1remrem",
   })
 );
 export const CustomTypography = styled(Typography)(

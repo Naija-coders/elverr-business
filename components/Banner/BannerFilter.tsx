@@ -1,3 +1,4 @@
+import { Button, Divider } from "@mui/material";
 import React from "react";
 
 type Props = {};
@@ -26,10 +27,31 @@ export default function BannerFilter({}: Props) {
           alignItems: "center",
         }}
       >
-        <div>Location</div>
-        <div>Price</div>
-        <div>Experience</div>
-        <div>Search</div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>Location</div>
+          <div>select</div>
+        </div>
+        <Divider orientation="vertical" sx={{ height: "80%" }} />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>Price</div>
+          <div>select</div>
+        </div>
+        <Divider orientation="vertical" sx={{ height: "80%" }} />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>Experience</div>
+          <div>select</div>
+        </div>
+
+        <Button
+          variant="contained"
+          sx={{
+            "background": "#34A422",
+            "textTransform": "none",
+            "&:hover": { background: "#34A422" },
+          }}
+        >
+          Search
+        </Button>
       </div>
     </div>
   );

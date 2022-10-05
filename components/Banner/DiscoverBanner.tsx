@@ -5,6 +5,7 @@ import {} from "./styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { Text, MainDiv1, MainDivRight } from "./styles";
 import BannerFilter from "./BannerFilter";
+import { CustomTypography1, CustomTypography2 } from "./styles";
 export default function DiscoverBanner({}: Props) {
   return (
     <StyledBox>
@@ -38,8 +39,32 @@ export default function DiscoverBanner({}: Props) {
               src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664967376/arrowvector.png"
             />
           </div>
+          <div
+            style={{
+              position: "absolute",
+              left: "190px",
+
+              top: "55px",
+            }}
+          >
+            <img
+              style={{ width: "203px", height: "83px" }}
+              alt="cirlce"
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664973337/circle.png"
+            />
+          </div>
           <MainDiv1>
-            <div>mano</div>{" "}
+            <div>
+              <CustomTypography1>
+                All your business needs in one place.
+              </CustomTypography1>{" "}
+              <div style={{ marginTop: "10px", width: "60%" }}>
+                <CustomTypography2>
+                  Elverr business helps you organize your projects on one
+                  platform, seamlessly across all digital channels.
+                </CustomTypography2>
+              </div>
+            </div>
             <div style={{ marginRight: "90px" }}>
               <img
                 style={{
@@ -61,9 +86,12 @@ export default function DiscoverBanner({}: Props) {
 
             display: "flex",
             justifyContent: "center",
+            position: "relative",
             zIndex: 1000,
           }}
-        ></div>
+        >
+          <BannerFilter />
+        </div>
       </StyleContainer>
     </StyledBox>
   );

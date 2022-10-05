@@ -12,6 +12,7 @@ import TopAgencies from "../components/Featured/TopAgencies";
 import Joinus from "../components/Featured/Joinus";
 import FAQ from "../components/Featured/FAQ";
 import StateContext from "../context/StateContext";
+import Proposal from "../components/Banner/Proposal";
 
 import dynamic from "next/dynamic";
 
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
         <div>
           <Navbar />
           <DiscoverBanner />
+          <Proposal />
           <FooterNotLoggedIn />
         </div>
       ) : (

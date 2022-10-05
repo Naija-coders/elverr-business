@@ -44,6 +44,7 @@ export default function BannerFilter({}: Props) {
 
         <Button
           variant="contained"
+          size="large"
           sx={{
             "background": "#34A422",
             "textTransform": "none",

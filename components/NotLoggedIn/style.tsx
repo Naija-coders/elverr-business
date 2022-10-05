@@ -79,7 +79,7 @@ export const StyledBoxFooter = styled(Box)(
     paddingRight: "100px",
     paddingLeft: "100px",
     paddingTop: "2rem",
-    background: "#001847",
+    background: "#151B2C",
     paddingBottom: "2rem",
     display: "flex",
     justifyContent: "center",
@@ -94,7 +94,7 @@ export const FooterTypo = styled(Typography)(
     "&:hover": {
       textDecoration: "underline",
       cursor: "pointer",
-      fontSize: "1.1rem",
+      fontSize: "1rem",
     },
   })
 );

@@ -51,6 +51,7 @@ const Home: NextPage = () => {
       {AuthState.isLoggedIn ? (
         <div>
           <Navbar />
+          <DiscoverBanner />
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>

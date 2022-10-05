@@ -3,64 +3,68 @@ import React from "react";
 type Props = {};
 import {} from "./styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
-import { Text } from "./styles";
+import { Text, MainDiv1, MainDivRight } from "./styles";
+import BannerFilter from "./BannerFilter";
 export default function DiscoverBanner({}: Props) {
   return (
-    <div
-      style={{
-        padding: "0rem 2rem",
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          height: "170px",
-          borderRadius: "20px",
-          background: "#001847",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          cursor: "pointer",
-        }}
-      >
+    <StyledBox>
+      <StyleContainer>
         <div
           style={{
-            padding: "2rem",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
+            height: "404px",
+            marginTop: "-32px",
+            position: "relative",
+            background:
+              "linear-gradient(90deg, rgba(54, 157, 41, 0.79) 0%, #369D29 100%)",
+            borderRadius: " 0px 0px 20px 20px",
           }}
         >
-          <Text align="left" style={{ color: "#FFFFFF", fontSize: "1.2rem" }}>
-            Take on your projects from start to Finish
-          </Text>
-          <Text
-            align="left"
+          <div className="div1"></div>
+          <div className="div2"></div>
+          <div className="div3"></div>
+          <div className="div4"></div>
+          <div className="div5"></div>
+          <div className="div6"></div>
+          <MainDivRight></MainDivRight>
+          <div
             style={{
-              color: "#FFFFFF",
-              fontSize: "0.7rem",
-              fontWeight: "normal",
-              width: "80%",
+              position: "absolute",
+              right: "390px",
+              top: "180px",
             }}
           >
-            Check out our popular services on Elverr and meet your project goals
-            in less than no time.
-          </Text>
+            <img
+              style={{ width: "200px" }}
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664967376/arrowvector.png"
+            />
+          </div>
+          <MainDiv1>
+            <div>mano</div>{" "}
+            <div style={{ marginRight: "90px" }}>
+              <img
+                style={{
+                  height: "300px",
+                  zIndex: 100,
+
+                  transform: "matrix(-1, 0, 0, 1, 0, 0)",
+                }}
+                src={
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664952648/studentsimage.png"
+                }
+              />
+            </div>
+          </MainDiv1>
         </div>
-        <img
-          src="content.png"
+        <div
           style={{
-            height: "180px",
-            width: "300px",
-            objectFit: "contain",
-            zIndex: 10000,
+            marginTop: "-40px",
+
+            display: "flex",
+            justifyContent: "center",
+            zIndex: 1000,
           }}
-        />
-      </div>
-    </div>
+        ></div>
+      </StyleContainer>
+    </StyledBox>
   );
 }

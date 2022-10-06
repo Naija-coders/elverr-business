@@ -79,7 +79,10 @@ const GoogleOauth: React.FC<Props> = ({ isLogin }) => {
           login();
         }}
         startIcon={
-          <Avatar src="googleimagelogo.png" sx={{ width: 24, height: 24 }} />
+          <Avatar
+            src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665067052/googleimagelogo_taxt4l.png"
+            sx={{ width: 24, height: 24 }}
+          />
         }
         variant="contained"
         style={{ borderRadius: "10px" }}

@@ -53,7 +53,7 @@ export default function PopularServices({}: Props) {
           <Divs2>
             <Divs3>
               <img
-                src="mobile.png"
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066869/mobile_rhuvxd.png"
                 style={{ width: "30px", height: "30px", objectFit: "contain" }}
               />
             </Divs3>
@@ -62,7 +62,7 @@ export default function PopularServices({}: Props) {
           <Divs2>
             <Divs3>
               <img
-                src="computer.png"
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066839/computer_efnszy.png"
                 style={{ width: "30px", height: "30px", objectFit: "contain" }}
               />
             </Divs3>
@@ -71,7 +71,7 @@ export default function PopularServices({}: Props) {
           <Divs2>
             <Divs3>
               <img
-                src="ps4.png"
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066904/ps4_swzl59.png"
                 style={{ width: "30px", height: "30px", objectFit: "contain" }}
               />
             </Divs3>

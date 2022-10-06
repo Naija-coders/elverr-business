@@ -88,7 +88,9 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 }}
               >
                 <img
-                  src={"groupicon.png"}
+                  src={
+                    "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066333/groupicon.png"
+                  }
                   style={{
                     width: "50px",
                     height: "50px",
@@ -131,7 +133,9 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 }}
               >
                 <img
-                  src={"menuicon.png"}
+                  src={
+                    "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066279/menuicon.png"
+                  }
                   style={{
                     width: "40px",
                     height: "50px",
@@ -174,7 +178,9 @@ const SmartChoice: React.FunctionComponent<IAppProps> = (props) => {
                 }}
               >
                 <img
-                  src={"jobicon.png"}
+                  src={
+                    "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066383/jobicon.png"
+                  }
                   style={{
                     width: "40px",
                     height: "50px",

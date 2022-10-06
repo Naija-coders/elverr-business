@@ -31,19 +31,27 @@ export default function CompaniesFeatured({}: Props) {
         <StyledDiv>
           <img
             style={{ width: "203px", height: "75.33px" }}
-            src={"slack.png"}
+            src={
+              "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066646/slack_hsvmte.png"
+            }
           />
           <img
             style={{ width: "220px", height: "75.33px" }}
-            src={"prudential.png"}
+            src={
+              "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066616/prudential_fr31ec.png"
+            }
           />
           <img
             style={{ width: "230px", height: "75.33px" }}
-            src={"microsoft.png"}
+            src={
+              "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066545/microsoft.png"
+            }
           />
           <img
             style={{ width: "203px", height: "60.33px" }}
-            src={"zoover.png"}
+            src={
+              "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066586/zoover_ocar6l.png"
+            }
           />
         </StyledDiv>
       </div>

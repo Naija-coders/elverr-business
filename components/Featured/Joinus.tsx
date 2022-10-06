@@ -71,7 +71,10 @@ export default function JoinUs({}: Props) {
               </Button>
             </div>
           </div>
-          <img src="joinnow.png" alt="description" />
+          <img
+            src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1665066969/joinnow_clkwaa.png"
+            alt="description"
+          />
         </div>
       </StyleContainer>
     </StyledBox>

@@ -5,6 +5,7 @@ import { AuthReducer, initialAuthState } from "../store/auth.store";
 import { useImmerReducer } from "use-immer";
 import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
+import Head from "next/head";
 import store from "../state";
 function MyApp({ Component, pageProps }: AppProps) {
   const [AuthState, AuthDispatcher] = useImmerReducer<any>(
@@ -15,13 +16,22 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const DispatchProviders: any = { AuthDispatcher };
   return (
-    <GoogleOAuthProvider clientId="810142204796-f4ben70l6156k4vl9fpfpifrgmt48aji.apps.googleusercontent.com">
-      <StateContext.Provider value={{ ...StateProviders }}>
-        <DispatchContext.Provider value={{ ...DispatchProviders }}>
-          <Component {...pageProps} />
-        </DispatchContext.Provider>
-      </StateContext.Provider>
-    </GoogleOAuthProvider>
+    <>
+      <Head>
+        <title>
+          Elverr - Run your business on one platform, seamlessly across all
+          digital channels{" "}
+        </title>
+      </Head>
+
+      <GoogleOAuthProvider clientId="810142204796-f4ben70l6156k4vl9fpfpifrgmt48aji.apps.googleusercontent.com">
+        <StateContext.Provider value={{ ...StateProviders }}>
+          <DispatchContext.Provider value={{ ...DispatchProviders }}>
+            <Component {...pageProps} />
+          </DispatchContext.Provider>
+        </StateContext.Provider>
+      </GoogleOAuthProvider>
+    </>
   );
 }
 

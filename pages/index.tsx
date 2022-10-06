@@ -49,27 +49,17 @@ const Home: NextPage = () => {
         content="akR2jwmrZi2Uam2Y0H-VUckRGWE7VSQyxO676zfQg_Y"
       />
 
-      {AuthState.isLoggedIn ? (
-        <div>
-          <Navbar />
-          <DiscoverBanner />
-          <CreateProject />
-
-          <FooterNotLoggedIn />
-        </div>
-      ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
-          <Banner />
-          <CompaniesFeatured />
-          <Swiper />
-          <SmartChoice />
-          <PopularServices />
-          <TopAgencies />
-          <FAQ />
-          <Joinus />
-          <FooterNotLoggedIn />
-        </div>
-      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+        <Banner />
+        <CompaniesFeatured />
+        <Swiper />
+        <SmartChoice />
+        <PopularServices />
+        <TopAgencies />
+        <FAQ />
+        <Joinus />
+        <FooterNotLoggedIn />
+      </div>
     </div>
   );
 };

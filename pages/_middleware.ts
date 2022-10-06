@@ -10,7 +10,7 @@ try {
     return NextResponse.rewrite(new URL('/', request.url))
   }
   else{
-    return NextResponse.rewrite(new URL('/', request.url))
+    return NextResponse.rewrite(new URL('/mainpage', request.url))
   }
 
 } catch (error) {

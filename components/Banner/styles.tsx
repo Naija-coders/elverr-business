@@ -86,7 +86,7 @@ export const CustomTypography1 = styled(Typography)(
     textAlign: "left",
     color: "#FFFFFF",
     fontSize: "2.3rem",
-    width: "53%",
+    width: { md: "100%", lg: "53%" },
   })
 );
 export const DivButton = styled(Button)(
@@ -340,6 +340,23 @@ export const StyledTextField = styled(TextField)(
     "& fieldset": {
       borderRadius: "20px",
     },
+  })
+);
+
+export const MainBodyTypo = styled(Typography)(
+  sx({
+    fontSize: "1.7rem",
+    color: " #000000",
+    fontWeight: "800",
+    fontFamily: "DM Sans",
+  })
+);
+export const DescriptionText = styled(Typography)(
+  sx({
+    fontSize: "0.9rem",
+    color: "#3F3F46",
+    fontWeight: "400",
+    fontFamily: "DM Sans",
   })
 );
 

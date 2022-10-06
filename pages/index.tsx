@@ -13,7 +13,7 @@ import Joinus from "../components/Featured/Joinus";
 import FAQ from "../components/Featured/FAQ";
 import StateContext from "../context/StateContext";
 import Proposal from "../components/Banner/Proposal";
-
+import CreateProject from "../components/Banner/CreateProject";
 import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("../components/Navbar"), {
@@ -53,7 +53,8 @@ const Home: NextPage = () => {
         <div>
           <Navbar />
           <DiscoverBanner />
-          <Proposal />
+          <CreateProject />
+
           <FooterNotLoggedIn />
         </div>
       ) : (

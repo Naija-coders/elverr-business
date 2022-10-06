@@ -7,6 +7,7 @@ export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/')) {
 try {
   if(jwt=== undefined){
+    console.log("requested url",request.url)
     return NextResponse.rewrite(new URL('/', request.url))
   }
   else{
@@ -30,7 +31,7 @@ export const config = {
      * - static (static files)
      * - favicon.ico (favicon file)
      */
-    '/((?!api|static|favicon.ico).*)',
+    
     'favicon.ico.*'
   ],
 }

@@ -9,7 +9,7 @@ export async function middleware(req) {
       return NextResponse.redirect("https://business.elverr.com/");
     }
     if (verify && url === "https://business.elverr.com/") {
-      return NextResponse.rewrite("http://localhost:3000/mainpage");
+      return NextResponse.rewrite("https://business.elverr.com/mainpage");
     }
   }
   if (url === "http://localhost:3000/") {

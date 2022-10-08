@@ -14,10 +14,6 @@ import { Button, Avatar } from "@mui/material";
 
 import axios from "axios";
 
-import Image from "next/image";
-import { resolve } from "path";
-import { route } from "next/dist/server/router";
-
 interface Props {
   isLogin: any;
 }

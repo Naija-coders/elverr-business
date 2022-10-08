@@ -73,7 +73,7 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                 display: "flex",
                 flexDirection: "row",
                 gap: "30px",
-                marginTop: "1rem",
+                marginTop: "200px",
               }}
             >
               <Avatar sx={{ background: "#F5F5F5", width: 33, height: 33 }}>

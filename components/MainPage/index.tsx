@@ -2,7 +2,7 @@ import * as React from "react";
 import CreateProject from "../Banner/CreateProject";
 import DiscoverBanner from "../Banner/DiscoverBanner";
 import Navbar from "../Navbar";
-import FooterNotLoggedIn from "../NotLoggedIn/FooterNotLoggedIn";
+import FooterLoggedIn from "../LoggedIn/FooterLoggedIn";
 
 interface IAppProps {}
 
@@ -13,7 +13,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
       <DiscoverBanner />
       <CreateProject />
 
-      <FooterNotLoggedIn />
+      <FooterLoggedIn />
     </div>
   );
 };

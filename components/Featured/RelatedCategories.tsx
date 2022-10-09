@@ -24,14 +24,14 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
             style={{
               display: "flex",
               gap: "1rem",
-              width: "90% !important",
+              width: "100% !important",
               marginTop: "10px",
             }}
           >
             <div
               style={{
                 display: "flex",
-                width: "48%",
+                width: "50%",
                 flexDirection: "column",
                 gap: "10px",
               }}
@@ -39,7 +39,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: " 150px",
+                  height: " 170px",
                   borderRadius: "10px",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "100% 150%",
@@ -54,7 +54,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                     alignItems: "center",
 
                     flexDirection: "row",
-                    marginTop: "114px",
+                    marginTop: "134px",
                     background: "rgba(255, 255, 255, 0.2)",
                     borderRadius: "0px 0px 10px 10px",
                     justifyContent: "center",
@@ -107,7 +107,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: " 150px",
+                  height: " 170px",
 
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "100% 150%",
@@ -124,7 +124,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                     alignItems: "center",
 
                     flexDirection: "row",
-                    marginTop: "114px",
+                    marginTop: "134px",
                     background: "rgba(255, 255, 255, 0.2)",
                     borderRadius: "0px 0px 10px 10px",
                     justifyContent: "center",
@@ -176,7 +176,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
             </div>
 
             <div
-              style={{ width: "46%", height: " 310px", position: "relative" }}
+              style={{ width: "50%", height: " 350px", position: "relative" }}
             >
               <div
                 style={{

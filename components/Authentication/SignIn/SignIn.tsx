@@ -69,7 +69,7 @@ export const Signin: React.FC<Props> = ({ onSuccess }) => {
         AuthDispatcher({ type: "login" });
         AuthDispatcher({ type: "addUser", payload: response.data });
 
-        route.push("/");
+        route.push("/mainpage");
       })
       .catch((err: AxiosError) => {
         console.log("invalid data entered");

@@ -69,7 +69,7 @@ export default function AgencyRegister({}: Props) {
         const user = response.data;
 
         Cookies.set("auth_token", response.data.auth_token, { expires: 10 });
-        route.push("/");
+        route.push("/mainpage");
       })
 
       .catch((err: AxiosError) => {

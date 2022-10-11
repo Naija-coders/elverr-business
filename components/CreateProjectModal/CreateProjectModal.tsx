@@ -92,7 +92,7 @@ export const CreateProjectModal: React.FC<Props> = ({
               </CustomLabel>
               <CustomLabel>
                 <CustomLabelText>
-                  What type of skills are you looking for?
+                  How do you want your project to be carried out?
                 </CustomLabelText>
                 <div style={{ display: "flex", marginTop: "-8px" }}>
                   <FormControlLabel

@@ -48,7 +48,7 @@ const GoogleOauth: React.FC<Props> = ({ isLogin }) => {
           .then((res) => {
             Cookies.set("auth_token", res?.data.auth_token, { expires: 10 });
             isLogin();
-            route.push("/");
+            route.push("/mainpage");
           })
           .catch((err: AxiosError) => {
             console.log("failed to regsiter this user");

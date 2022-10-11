@@ -17,6 +17,10 @@ import {
   CustomHeader,
   CustomLabelText,
   StyledTextField,
+  Checkboxlabel,
+  FormTextField,
+  CustomBox,
+  CustomCheckbox,
 } from "./styles";
 import CloseIcon from "@mui/icons-material/Close";
 import dynamic from "next/dynamic";
@@ -52,20 +56,7 @@ export const CreateProjectModal: React.FC<Props> = ({
       aria-labelledby="modal-create-project"
       aria-describedby="create project for elverr business"
     >
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: { xs: 305, md: 670 },
-          height: "700px",
-
-          overflowY: "scroll",
-
-          outline: 0,
-        }}
-      >
+      <CustomBox>
         <Paper
           sx={{
             paddingLeft: "3rem",
@@ -78,95 +69,82 @@ export const CreateProjectModal: React.FC<Props> = ({
           >
             <CloseIcon />
           </IconButton>
-          <CustomDiv>
-            <CustomHeader>Create a new project</CustomHeader>
-            <CustomLabel>
-              <CustomLabelText>Project title</CustomLabelText>
-              <StyledTextField size="small" />
-            </CustomLabel>
-            <CustomLabel>
-              {" "}
-              <CustomLabelText>Describe your project brief</CustomLabelText>
-              <Editor
-                editorState={editors}
-                toolbarClassName="toolbarClassName"
-                wrapperClassName="wrapperClassName"
-                editorClassName="editorClassName"
-                onEditorStateChange={onEditorStateChange}
-              />
-            </CustomLabel>
-            <CustomLabel>
-              <CustomLabelText>
-                What type of skills are you looking for?
-              </CustomLabelText>
-              <div style={{ display: "flex" }}>
-                <FormControlLabel
-                  value="start"
-                  control={
-                    <Checkbox
-                      sx={{
-                        "color": "#747582",
-                        "&.Mui-checked": {
-                          color: "green",
-                        },
-                      }}
-                    />
+          <form>
+            <CustomDiv>
+              <CustomHeader>Create a new project</CustomHeader>
+              <CustomLabel>
+                <CustomLabelText>Project title</CustomLabelText>
+                <StyledTextField size="small" placeholder={"Web Developer"} />
+              </CustomLabel>
+              <CustomLabel>
+                {" "}
+                <CustomLabelText>Describe your project brief</CustomLabelText>
+                <Editor
+                  editorState={editors}
+                  toolbarClassName="toolbarClassName"
+                  wrapperClassName="wrapperClassName"
+                  editorClassName="editorClassName"
+                  onEditorStateChange={onEditorStateChange}
+                  placeholder={
+                    "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
                   }
-                  label="Remote"
-                  labelPlacement="end"
-                />{" "}
-                <FormControlLabel
-                  value="start"
-                  control={
-                    <Checkbox
-                      sx={{
-                        "color": "#747582",
-                        "&.Mui-checked": {
-                          color: "green",
-                        },
-                      }}
-                    />
-                  }
-                  label="On-site"
-                  labelPlacement="end"
                 />
-              </div>
-            </CustomLabel>
-            <CustomLabel>
-              <CustomLabelText>Category</CustomLabelText>
-              <TextField sx={{ width: "50%" }} select size="small" />
-            </CustomLabel>
-            <CustomLabel>
-              <CustomLabelText>Whats your budget</CustomLabelText>
-              <TextField sx={{ width: "50%" }} size="small" />
-            </CustomLabel>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "end",
-              }}
-            >
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  textTransform: "none",
-                  background: "#34A422",
-                  fontFamily: "Inter",
-                  fontSize: "0.9rem",
-                  width: "30%",
-                  borderRadius: "8px",
+              </CustomLabel>
+              <CustomLabel>
+                <CustomLabelText>
+                  What type of skills are you looking for?
+                </CustomLabelText>
+                <div style={{ display: "flex", marginTop: "-8px" }}>
+                  <FormControlLabel
+                    value="start"
+                    control={<CustomCheckbox size="small" />}
+                    label={<Checkboxlabel>Remote</Checkboxlabel>}
+                    labelPlacement="end"
+                  />{" "}
+                  <FormControlLabel
+                    value="start"
+                    control={<CustomCheckbox size="small" />}
+                    label={<Checkboxlabel>{"On-Site"}</Checkboxlabel>}
+                    labelPlacement="end"
+                  />
+                </div>
+              </CustomLabel>
+              <CustomLabel>
+                <CustomLabelText>Category</CustomLabelText>
+                <FormTextField select size="small" />
+              </CustomLabel>
+              <CustomLabel sx={{ marginTop: "10px" }}>
+                <CustomLabelText>Whats your budget</CustomLabelText>
+                <FormTextField size="small" />
+              </CustomLabel>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "end",
                 }}
               >
-                {" "}
-                Submit
-              </Button>
-            </div>
-          </CustomDiv>
+                <Button
+                  variant="contained"
+                  disableElevation
+                  sx={{
+                    textTransform: "none",
+                    background: "#34A422",
+                    fontFamily: "Inter",
+                    fontSize: "0.9rem",
+                    width: "30%",
+                    borderRadius: "8px",
+                  }}
+                >
+                  {" "}
+                  Confirm
+                </Button>
+              </div>
+            </CustomDiv>
+          </form>
           <br></br>
         </Paper>
-      </Box>
+      </CustomBox>
     </Modal>
   );
 };

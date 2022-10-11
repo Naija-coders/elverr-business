@@ -2,9 +2,19 @@ import { Button } from "@mui/material";
 import React from "react";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { MainBodyTypo, DescriptionText } from "./styles";
+import { CreateProjectModal } from "../CreateProjectModal/CreateProjectModal";
+import { useRouter } from "next/router";
+
 type Props = {};
 
 export default function CreateProject({}: Props) {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const route = useRouter();
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <StyledBox>
       <StyleContainer>
@@ -31,6 +41,7 @@ export default function CreateProject({}: Props) {
               a living while executing and delivering your projects for you.
             </DescriptionText>
             <Button
+              onClick={handleOpen}
               variant="contained"
               sx={{
                 "background": "#34A422",
@@ -55,6 +66,7 @@ export default function CreateProject({}: Props) {
           </div>
         </div>
       </StyleContainer>
+      <CreateProjectModal OpenModalForm={open} CloseModalForm={handleClose} />
     </StyledBox>
   );
 }

@@ -6,6 +6,7 @@ import { useImmerReducer } from "use-immer";
 import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
 import Head from "next/head";
+import "@fontsource/inter";
 import store from "../state";
 function MyApp({ Component, pageProps }: AppProps) {
   const [AuthState, AuthDispatcher] = useImmerReducer<any>(

@@ -6,7 +6,7 @@ export async function middleware(req) {
   //if local host is this then odo it
   if (url === "https://business.elverr.com/") {
     if (!verify && url.includes("/mainpage")) {
-      return NextResponse.rewrite("https://business.elverr.com/");
+      return NextResponse.redirect("https://business.elverr.com/");
     }
     if (verify && url === "https://business.elverr.com/") {
       return NextResponse.rewrite("https://business.elverr.com/mainpage");
@@ -14,9 +14,25 @@ export async function middleware(req) {
   }
   if (url === "http://localhost:3000/") {
     if (!verify && url.includes("/mainpage")) {
-      return NextResponse.rewrite("http://localhost:3000/");
+      return NextResponse.redirect("http://localhost:3000/");
     }
     if (verify && url === "http://localhost:3000/") {
+      return NextResponse.rewrite("http://localhost:3000/mainpage");
+    }
+  }
+  if (url === "https://business.elverr.com/mainpage") {
+    if (!verify && url.includes("/mainpage")) {
+      return NextResponse.redirect("https://business.elverr.com/");
+    }
+    if (verify && url === "https://business.elverr.com/mainpage") {
+      return NextResponse.rewrite("https://business.elverr.com/mainpage");
+    }
+  }
+  if (url === "http://localhost:3000/mainpage") {
+    if (!verify && url.includes("/mainpage")) {
+      return NextResponse.redirect("http://localhost:3000/");
+    }
+    if (verify && url === "http://localhost:3000/mainpage") {
       return NextResponse.rewrite("http://localhost:3000/mainpage");
     }
   }

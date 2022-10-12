@@ -1,19 +1,13 @@
 import React, { useContext, useState } from "react";
 import {
-  Box,
-  Fade,
   Modal,
   IconButton,
   Paper,
-  Typography,
-  TextField,
   Button,
   FormControlLabel,
-  Checkbox,
   MenuItem,
-  Select,
 } from "@mui/material";
-import Tagsinput from "./TagsInput";
+
 import {
   CustomDiv,
   CustomLabel,
@@ -36,14 +30,34 @@ import Clientapi from "../../pages/api/client";
 import { actionCreators } from "../../state";
 import { Dispatch } from "redux";
 // install @types/draft-js @types/react-draft-wysiwyg and @types/draft-js @types/react-draft-wysiwyg for types
-
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
 const Editor = dynamic<EditorProps>(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   { ssr: false }
 );
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import { EditorState } from "draft-js";
+import { EditorState, convertToRaw } from "draft-js";
+const currency = [
+  {
+    id: 0,
+    currency: "NGN",
+  },
+  {
+    id: 1,
+    currency: "EUR",
+  },
+  {
+    id: 2,
+    currency: "USD",
+  },
+  {
+    id: 3,
+    currency: "GBP",
+  },
+  { id: 4, currency: "INR" },
+];
 import TagsInput from "./TagsInput";
 type Props = {
   OpenModalForm: any;
@@ -53,7 +67,9 @@ export const CreateProjectModal: React.FC<Props> = ({
   CloseModalForm,
   OpenModalForm,
 }) => {
-  const [editors, setEditors] = React.useState<any>(EditorState.createEmpty());
+  const [editorState, setEditorState] = React.useState<any>(
+    EditorState.createEmpty()
+  );
   const state = useSelector((state: RootState) => state.appstate);
   const [category, setcategory] = useState<any>(state.categories);
   const dispatch: Dispatch<any> = useDispatch();
@@ -63,6 +79,7 @@ export const CreateProjectModal: React.FC<Props> = ({
     servicedata = Clientapi.get("api/Categories").then((response: any) => {
       console.log("checking userservice response", response);
       storecategory(response.data);
+      setcategory(response.data);
       console.log("confirmation of the state ", state);
 
       console.log("checking the category state", state.categories);
@@ -70,14 +87,16 @@ export const CreateProjectModal: React.FC<Props> = ({
   }, [servicedata]);
 
   const onEditorStateChange = (editorState: EditorState) => {
-    setEditors(editorState);
+    setEditorState(editorState);
+
+    console.log(
+      "editorState changes",
+      draftToHtml(convertToRaw(editorState.getCurrentContent()))
+    );
   };
   const [checked, setChecked] = React.useState([true, false]);
   const [onsite, setOnsite] = React.useState(false);
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked([event.target.checked, event.target.checked]);
-  };
   function handleSelecetedTags(items: any) {
     console.log("checking selected tags", items);
   }
@@ -91,12 +110,20 @@ export const CreateProjectModal: React.FC<Props> = ({
   ) => {
     console.log("value is", event.target.value);
   };
+  const [mycurrency, setMycurrency] = React.useState("USD");
+  const handleCurrencyChanges = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setMycurrency(event.target.value);
+  };
   const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([!event.target.checked, event.target.checked]);
     console.log("this is on-site");
     setOnsite(true);
   };
-
+  const DisplayEditorState = () => {
+    return draftToHtml(convertToRaw(editorState.getCurrentContent()));
+  };
   return (
     <Modal
       open={OpenModalForm}
@@ -128,7 +155,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                 {" "}
                 <CustomLabelText>Describe your project brief</CustomLabelText>
                 <Editor
-                  editorState={editors}
+                  editorState={editorState}
                   toolbarClassName="toolbarClassName"
                   wrapperClassName="wrapperClassName"
                   editorClassName="editorClassName"
@@ -216,10 +243,29 @@ export const CreateProjectModal: React.FC<Props> = ({
                 <div style={{ display: "flex", gap: "1%" }}>
                   {" "}
                   <FormTextField
-                    sx={{ width: "10%" }}
                     select
                     size="small"
-                  />{" "}
+                    value={mycurrency}
+                    onChange={handleCurrencyChanges}
+                    sx={{ width: "30%" }}
+                    SelectProps={{
+                      MenuProps: {
+                        PaperProps: {
+                          sx: {
+                            background: "green",
+                            maxHeight: "70px",
+                            color: "white",
+                          },
+                        },
+                      },
+                    }}
+                  >
+                    {currency.map((data: any) => (
+                      <MenuItem key={data?.id} value={data?.currency}>
+                        {data?.currency}
+                      </MenuItem>
+                    ))}
+                  </FormTextField>
                   <FormTextField sx={{ width: "39%" }} size="small" />
                 </div>
               </CustomLabel>
@@ -249,6 +295,7 @@ export const CreateProjectModal: React.FC<Props> = ({
             </CustomDiv>
           </form>
           <br></br>
+          <DisplayEditorState />
         </Paper>
       </CustomBox>
     </Modal>

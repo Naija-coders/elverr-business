@@ -32,6 +32,7 @@ import { Dispatch } from "redux";
 // install @types/draft-js @types/react-draft-wysiwyg and @types/draft-js @types/react-draft-wysiwyg for types
 import draftToHtml from "draftjs-to-html";
 import htmlToDraft from "html-to-draftjs";
+import ReactHtmlParser from "react-html-parser";
 const Editor = dynamic<EditorProps>(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   { ssr: false }
@@ -121,8 +122,13 @@ export const CreateProjectModal: React.FC<Props> = ({
     console.log("this is on-site");
     setOnsite(true);
   };
+  //displaying the editor state in dom form
   const DisplayEditorState = () => {
-    return draftToHtml(convertToRaw(editorState.getCurrentContent()));
+    const userdraft = draftToHtml(
+      convertToRaw(editorState.getCurrentContent())
+    );
+
+    return <>{ReactHtmlParser(userdraft)}</>;
   };
   return (
     <Modal
@@ -295,7 +301,7 @@ export const CreateProjectModal: React.FC<Props> = ({
             </CustomDiv>
           </form>
           <br></br>
-          <DisplayEditorState />
+          {/* <DisplayEditorState /> */}
         </Paper>
       </CustomBox>
     </Modal>

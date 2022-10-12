@@ -106,10 +106,14 @@ export const StyledTextField = styled(TextField)(
     },
   })
 );
-
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
 export const FormTextField = styled(TextField)(
   sx({
-    "width": "50%",
+    "width": "100%",
+    "& .MuiMenuItem-root": {
+      height: "50px",
+    },
     "& .MuiInputBase-root": {
       height: { xs: "30px", md: "35px" },
       borderRadius: " 8.4585px",

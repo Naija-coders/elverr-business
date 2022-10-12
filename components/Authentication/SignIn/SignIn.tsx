@@ -5,6 +5,8 @@ import GoogleOauth from "./GoogleAuth";
 import Clientapi from "../../../pages/api/client";
 import StateContext from "../../../context/StateContext";
 import DispatchContext from "../../../context/DispatchContext";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../state/reducers";
 import { AxiosError, AxiosResponse } from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -42,6 +44,7 @@ type Props = {
 export const Signin: React.FC<Props> = ({ onSuccess }) => {
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
+
   const {
     register,
     handleSubmit,

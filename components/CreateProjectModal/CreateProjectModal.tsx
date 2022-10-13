@@ -59,6 +59,96 @@ const currency = [
   },
   { id: 4, currency: "INR" },
 ];
+const NGN = [
+  {
+    id: 0,
+    currency: "Between ₦1,000 and ₦5,000",
+  },
+  {
+    id: 1,
+    currency: "Between ₦5,000 and ₦20,000",
+  },
+  {
+    id: 2,
+    currency: "Between ₦20,000 and ₦50,000",
+  },
+  {
+    id: 3,
+    currency: "Customize ",
+  },
+];
+const EUR = [
+  {
+    id: 0,
+    currency: "Between €10 and €50 ",
+  },
+  {
+    id: 1,
+    currency: " Between €50 and €200 ",
+  },
+  {
+    id: 2,
+    currency: "Between €200 and €500 ",
+  },
+  {
+    id: 3,
+    currency: "Customize ",
+  },
+];
+const USD = [
+  {
+    id: 0,
+    currency: " Between $10 and $50",
+  },
+  {
+    id: 1,
+    currency: " Between $50 and $200",
+  },
+  {
+    id: 2,
+    currency: " Between $200 and $500",
+  },
+  {
+    id: 3,
+    currency: "Customize ",
+  },
+];
+const GBP = [
+  {
+    id: 0,
+    currency: " Between £10 and £50",
+  },
+  {
+    id: 1,
+    currency: "Between £50 and £200",
+  },
+  {
+    id: 2,
+    currency: "Between £200 and £500",
+  },
+  {
+    id: 3,
+    currency: "Customize",
+  },
+];
+const INR = [
+  {
+    id: 0,
+    currency: "Between ₹10 and ₹50 ",
+  },
+  {
+    id: 1,
+    currency: "Between ₹50 and ₹200 ",
+  },
+  {
+    id: 2,
+    currency: "Between ₹200 and ₹500",
+  },
+  {
+    id: 3,
+    currency: "Customize ",
+  },
+];
 import TagsInput from "./TagsInput";
 type Props = {
   OpenModalForm: any;
@@ -73,6 +163,8 @@ export const CreateProjectModal: React.FC<Props> = ({
   );
   const state = useSelector((state: RootState) => state.appstate);
   const [category, setcategory] = useState<any>(state.categories);
+  const [custombudget, setCustombudget] = useState(false);
+
   const dispatch: Dispatch<any> = useDispatch();
   const { storecategory } = bindActionCreators(actionCreators, dispatch);
   let servicedata;
@@ -111,17 +203,54 @@ export const CreateProjectModal: React.FC<Props> = ({
   ) => {
     console.log("value is", event.target.value);
   };
+  const [naira, setNaira] = useState<any>("");
+  const [dollars, setDollars] = useState<any>("");
+  const [euros, setEuros] = useState<any>("");
+  const [pounds, setPounds] = useState<any>("");
+  const [india, setIndia] = useState<any>("");
   const [mycurrency, setMycurrency] = React.useState("USD");
   const handleCurrencyChanges = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setMycurrency(event.target.value);
+    console.log("watching currency", event.target.value);
   };
+  React.useEffect(() => {
+    if (mycurrency.toString() == "NGN") {
+      setNaira("this is naira");
+      console.log(naira);
+      setBudget(NGN);
+    } else if (mycurrency.toString() === "GBP") {
+      setPounds("this is pounds");
+      setBudget(GBP);
+      console.log(pounds);
+    } else if (mycurrency.toString() === "EUR") {
+      setEuros("this is euros");
+      console.log(euros);
+      setBudget(EUR);
+    } else if (mycurrency.toString() === "USD") {
+      setDollars("this is usd");
+      console.log(dollars);
+      setBudget(USD);
+    } else if (mycurrency.toString() === "INR") {
+      setIndia("this is india");
+      console.log(india);
+      setBudget(INR);
+    }
+  });
+
   const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([!event.target.checked, event.target.checked]);
     console.log("this is on-site");
     setOnsite(true);
   };
+  const [budget, setBudget] = useState(USD);
+  const [budgetval, setBudgetval] = useState("");
+  const handleBudgetChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("the event is", event.target.value);
+    setBudgetval(event.target.value);
+  };
+
   //displaying the editor state in dom form
   const DisplayEditorState = () => {
     const userdraft = draftToHtml(
@@ -158,17 +287,39 @@ export const CreateProjectModal: React.FC<Props> = ({
                 <StyledTextField size="small" placeholder={"Web Developer"} />
               </CustomLabel>
               <CustomLabel>
-                {" "}
-                <CustomLabelText>Describe your project brief</CustomLabelText>
-                <Editor
-                  editorState={editorState}
-                  toolbarClassName="toolbarClassName"
-                  wrapperClassName="wrapperClassName"
-                  editorClassName="editorClassName"
-                  onEditorStateChange={onEditorStateChange}
-                  placeholder={
-                    "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
-                  }
+                <CustomLabelText>Category</CustomLabelText>
+                <FormTextField
+                  select
+                  size="small"
+                  onChange={handleCategoriesChanges}
+                  SelectProps={{
+                    MenuProps: {
+                      PaperProps: {
+                        sx: {
+                          background: "green",
+                          maxHeight: "150px",
+                          color: "white",
+                        },
+                      },
+                    },
+                  }}
+                >
+                  {category.map((data: any) => (
+                    <MenuItem key={data?.id} value={data?.id}>
+                      {data?.type}
+                    </MenuItem>
+                  ))}
+                </FormTextField>
+              </CustomLabel>{" "}
+              <CustomLabel>
+                <CustomLabelText>Sub Category</CustomLabelText>
+                <TagsInput
+                  selectedTags={handleSelecetedTags}
+                  fullWidth
+                  variant="outlined"
+                  id="tags"
+                  name="tags"
+                  placeholder="Enter subcategories here.."
                 />
               </CustomLabel>
               <CustomLabel>
@@ -209,39 +360,17 @@ export const CreateProjectModal: React.FC<Props> = ({
                 </CustomLabel>
               )}
               <CustomLabel>
-                <CustomLabelText>Category</CustomLabelText>
-                <FormTextField
-                  select
-                  size="small"
-                  onChange={handleCategoriesChanges}
-                  SelectProps={{
-                    MenuProps: {
-                      PaperProps: {
-                        sx: {
-                          background: "green",
-                          maxHeight: "150px",
-                          color: "white",
-                        },
-                      },
-                    },
-                  }}
-                >
-                  {category.map((data: any) => (
-                    <MenuItem key={data?.id} value={data?.id}>
-                      {data?.type}
-                    </MenuItem>
-                  ))}
-                </FormTextField>
-              </CustomLabel>{" "}
-              <CustomLabel>
-                <CustomLabelText>Sub Category</CustomLabelText>
-                <TagsInput
-                  selectedTags={handleSelecetedTags}
-                  fullWidth
-                  variant="outlined"
-                  id="tags"
-                  name="tags"
-                  placeholder="Enter subcategories here.."
+                {" "}
+                <CustomLabelText>Describe your project brief</CustomLabelText>
+                <Editor
+                  editorState={editorState}
+                  toolbarClassName="toolbarClassName"
+                  wrapperClassName="wrapperClassName"
+                  editorClassName="editorClassName"
+                  onEditorStateChange={onEditorStateChange}
+                  placeholder={
+                    "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
+                  }
                 />
               </CustomLabel>
               <CustomLabel sx={{ marginTop: "10px" }}>
@@ -272,14 +401,46 @@ export const CreateProjectModal: React.FC<Props> = ({
                       </MenuItem>
                     ))}
                   </FormTextField>
-                  <FormTextField sx={{ width: "39%" }} size="small" />
+                  <FormTextField
+                    value={budgetval}
+                    onChange={handleBudgetChanges}
+                    select
+                    sx={{ width: "39%" }}
+                    SelectProps={{
+                      MenuProps: {
+                        PaperProps: {
+                          sx: {
+                            background: "green",
+                            maxHeight: "70px",
+                            color: "white",
+                          },
+                        },
+                      },
+                    }}
+                    size="small"
+                  >
+                    {budget.map((data: any) => (
+                      <MenuItem key={data?.id} value={data?.currency}>
+                        {data?.currency}
+                      </MenuItem>
+                    ))}
+                  </FormTextField>
                 </div>
               </CustomLabel>
+              {custombudget && (
+                <CustomLabel>
+                  <CustomLabelText>Minimum Bugdet</CustomLabelText>
+                  <FormTextField size="small" />
+                  <CustomLabelText>Maximum Bugdet</CustomLabelText>
+                  <FormTextField size="small" />
+                </CustomLabel>
+              )}
               <div
                 style={{
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "end",
+                  marginTop: "5px",
                 }}
               >
                 <Button

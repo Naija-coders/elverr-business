@@ -7,7 +7,7 @@ import {
   FormControlLabel,
   MenuItem,
 } from "@mui/material";
-
+import axios from "axios";
 import {
   CustomDiv,
   CustomLabel,
@@ -20,12 +20,14 @@ import {
   CustomCheckbox,
 } from "./styles";
 import CloseIcon from "@mui/icons-material/Close";
+import { AxiosError, AxiosResponse } from "axios";
 import dynamic from "next/dynamic";
 import { EditorProps } from "react-draft-wysiwyg";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { RootState } from "../../state/reducers";
 import Clientapi from "../../pages/api/client";
+import { useForm } from "react-hook-form";
 
 import { actionCreators } from "../../state";
 import { Dispatch } from "redux";
@@ -40,116 +42,9 @@ const Editor = dynamic<EditorProps>(
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import { EditorState, convertToRaw } from "draft-js";
-const currency = [
-  {
-    id: 0,
-    currency: "NGN",
-  },
-  {
-    id: 1,
-    currency: "EUR",
-  },
-  {
-    id: 2,
-    currency: "USD",
-  },
-  {
-    id: 3,
-    currency: "GBP",
-  },
-  { id: 4, currency: "INR" },
-];
-const NGN = [
-  {
-    id: 0,
-    currency: "Between ₦1,000 and ₦5,000",
-  },
-  {
-    id: 1,
-    currency: "Between ₦5,000 and ₦20,000",
-  },
-  {
-    id: 2,
-    currency: "Between ₦20,000 and ₦50,000",
-  },
-  {
-    id: 3,
-    currency: "Customize ",
-  },
-];
-const EUR = [
-  {
-    id: 0,
-    currency: "Between €10 and €50 ",
-  },
-  {
-    id: 1,
-    currency: " Between €50 and €200 ",
-  },
-  {
-    id: 2,
-    currency: "Between €200 and €500 ",
-  },
-  {
-    id: 3,
-    currency: "Customize ",
-  },
-];
-const USD = [
-  {
-    id: 0,
-    currency: " Between $10 and $50",
-  },
-  {
-    id: 1,
-    currency: " Between $50 and $200",
-  },
-  {
-    id: 2,
-    currency: " Between $200 and $500",
-  },
-  {
-    id: 3,
-    currency: "Customize ",
-  },
-];
-const GBP = [
-  {
-    id: 0,
-    currency: " Between £10 and £50",
-  },
-  {
-    id: 1,
-    currency: "Between £50 and £200",
-  },
-  {
-    id: 2,
-    currency: "Between £200 and £500",
-  },
-  {
-    id: 3,
-    currency: "Customize",
-  },
-];
-const INR = [
-  {
-    id: 0,
-    currency: "Between ₹10 and ₹50 ",
-  },
-  {
-    id: 1,
-    currency: "Between ₹50 and ₹200 ",
-  },
-  {
-    id: 2,
-    currency: "Between ₹200 and ₹500",
-  },
-  {
-    id: 3,
-    currency: "Customize ",
-  },
-];
+import { currency, NGN, EUR, USD, GBP, INR } from "./jsonfile";
 import TagsInput from "./TagsInput";
+import { PriceChange } from "@mui/icons-material";
 type Props = {
   OpenModalForm: any;
   CloseModalForm: any;
@@ -164,10 +59,24 @@ export const CreateProjectModal: React.FC<Props> = ({
   const state = useSelector((state: RootState) => state.appstate);
   const [category, setcategory] = useState<any>(state.categories);
   const [custombudget, setCustombudget] = useState(false);
-
+  const [naira, setNaira] = useState<any>("");
+  const [dollars, setDollars] = useState<any>("");
+  const [euros, setEuros] = useState<any>("");
+  const [pounds, setPounds] = useState<any>("");
+  const [india, setIndia] = useState<any>("");
+  const [mycurrency, setMycurrency] = React.useState("USD");
+  const [checked, setChecked] = React.useState([true, false]);
+  const [onsite, setOnsite] = React.useState(false);
+  const [budget, setBudget] = useState(USD);
+  const [budgetval, setBudgetval] = useState("");
+  const [categoriesval, setCategoriesval] = useState("");
+  const [tagsinp, setTagsinp] = useState("");
+  const [locationproject, setLocationproject] = useState("");
+  const [checkingpricing, setCheckingpricing] = useState("");
   const dispatch: Dispatch<any> = useDispatch();
   const { storecategory } = bindActionCreators(actionCreators, dispatch);
   let servicedata;
+
   React.useEffect(() => {
     servicedata = Clientapi.get("api/Categories").then((response: any) => {
       console.log("checking userservice response", response);
@@ -187,28 +96,19 @@ export const CreateProjectModal: React.FC<Props> = ({
       draftToHtml(convertToRaw(editorState.getCurrentContent()))
     );
   };
-  const [checked, setChecked] = React.useState([true, false]);
-  const [onsite, setOnsite] = React.useState(false);
 
   function handleSelecetedTags(items: any) {
     console.log("checking selected tags", items);
+    setTagsinp(items);
   }
-  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked([event.target.checked, !event.target.checked]);
-    console.log("this is remote");
-    setOnsite(false);
-  };
+
   const handleCategoriesChanges = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     console.log("value is", event.target.value);
+    setCategoriesval(event.target.value);
   };
-  const [naira, setNaira] = useState<any>("");
-  const [dollars, setDollars] = useState<any>("");
-  const [euros, setEuros] = useState<any>("");
-  const [pounds, setPounds] = useState<any>("");
-  const [india, setIndia] = useState<any>("");
-  const [mycurrency, setMycurrency] = React.useState("USD");
+
   const handleCurrencyChanges = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -239,17 +139,38 @@ export const CreateProjectModal: React.FC<Props> = ({
     }
   });
 
+  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked([event.target.checked, !event.target.checked]);
+    console.log("this is remote");
+    setOnsite(false);
+    setLocationproject("on-site");
+  };
   const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([!event.target.checked, event.target.checked]);
     console.log("this is on-site");
     setOnsite(true);
+    setLocationproject("remote");
   };
-  const [budget, setBudget] = useState(USD);
-  const [budgetval, setBudgetval] = useState("");
+
   const handleBudgetChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log("the event is", event.target.value);
     setBudgetval(event.target.value);
   };
+  const [ip, setIp] = React.useState("");
+  const getData = async () => {
+    const res = await axios.get("https://geolocation-db.com/json/");
+    console.log(res.data);
+    setIp(res.data.country_name);
+  };
+  React.useEffect(() => {
+    console.log("budget value is", budgetval);
+    if (budgetval.toString() === "Customize") {
+      setCustombudget(true);
+    } else {
+      setCustombudget(false);
+    }
+    getData();
+  }, [budgetval]);
 
   //displaying the editor state in dom form
   const DisplayEditorState = () => {
@@ -258,6 +179,43 @@ export const CreateProjectModal: React.FC<Props> = ({
     );
 
     return <>{ReactHtmlParser(userdraft)}</>;
+  };
+  //watching text changes
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = async (data: any) => {
+    if (checkingpricing.toString() === "Customize") {
+      const custompricing = data.maximum + "-" + data.minimum;
+      console.log("checking out the pricing value", custompricing);
+      setCheckingpricing(custompricing.toString());
+      console.log("checking out pricing state", checkingpricing);
+    } else {
+      setCheckingpricing(budgetval.toString());
+      console.log("checking if its undefined", checkingpricing);
+    }
+
+    const datas = {
+      ...data,
+      overview: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+      type: categoriesval,
+      currency: mycurrency.toString(),
+      price: checkingpricing.toString(),
+      location_type: locationproject.toString(),
+      location: ip.toString(),
+      tag_name: tagsinp.toString(),
+    };
+    console.log("the entered data below", datas);
+    await Clientapi.post("api/projectupdate", datas)
+      .then((response) => {
+        console.log("response for this data is", response);
+      })
+      .catch((err: AxiosError) => {
+        console.log("invalid data entered");
+      });
   };
   return (
     <Modal
@@ -279,12 +237,19 @@ export const CreateProjectModal: React.FC<Props> = ({
           >
             <CloseIcon />
           </IconButton>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <CustomDiv>
               <CustomHeader>Create a new project</CustomHeader>
               <CustomLabel>
-                <CustomLabelText>Project title</CustomLabelText>
-                <StyledTextField size="small" placeholder={"Web Developer"} />
+                <CustomLabelText>Project Title</CustomLabelText>
+                <StyledTextField
+                  required
+                  {...register("title", {
+                    required: true,
+                  })}
+                  size="small"
+                  placeholder={"Web Developer"}
+                />
               </CustomLabel>
               <CustomLabel>
                 <CustomLabelText>Category</CustomLabelText>
@@ -292,6 +257,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                   select
                   size="small"
                   onChange={handleCategoriesChanges}
+                  required
                   SelectProps={{
                     MenuProps: {
                       PaperProps: {
@@ -305,7 +271,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                   }}
                 >
                   {category.map((data: any) => (
-                    <MenuItem key={data?.id} value={data?.id}>
+                    <MenuItem key={data?.id} value={data?.type}>
                       {data?.type}
                     </MenuItem>
                   ))}
@@ -353,12 +319,6 @@ export const CreateProjectModal: React.FC<Props> = ({
                   />
                 </div>
               </CustomLabel>
-              {onsite && (
-                <CustomLabel>
-                  <CustomLabelText>Location</CustomLabelText>
-                  <FormTextField select size="small" />
-                </CustomLabel>
-              )}
               <CustomLabel>
                 {" "}
                 <CustomLabelText>Describe your project brief</CustomLabelText>
@@ -382,7 +342,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                     size="small"
                     value={mycurrency}
                     onChange={handleCurrencyChanges}
-                    sx={{ width: "30%" }}
+                    sx={{ width: "37%" }}
                     SelectProps={{
                       MenuProps: {
                         PaperProps: {
@@ -405,7 +365,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                     value={budgetval}
                     onChange={handleBudgetChanges}
                     select
-                    sx={{ width: "39%" }}
+                    sx={{ width: "37%" }}
                     SelectProps={{
                       MenuProps: {
                         PaperProps: {
@@ -429,10 +389,46 @@ export const CreateProjectModal: React.FC<Props> = ({
               </CustomLabel>
               {custombudget && (
                 <CustomLabel>
-                  <CustomLabelText>Minimum Bugdet</CustomLabelText>
-                  <FormTextField size="small" />
-                  <CustomLabelText>Maximum Bugdet</CustomLabelText>
-                  <FormTextField size="small" />
+                  <div style={{ display: "flex", gap: "1%" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <CustomLabelText>Minimum Bugdet</CustomLabelText>
+                      <FormTextField
+                        placeholder="Enter minimum budget"
+                        sx={{ width: "100%" }}
+                        size="small"
+                        type="number"
+                        required
+                        {...register("minimum", {
+                          required: true,
+                        })}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <CustomLabelText>Maximum Bugdet</CustomLabelText>
+                      <FormTextField
+                        placeholder="Enter minimum budget"
+                        type="number"
+                        sx={{ width: "100%" }}
+                        required
+                        size="small"
+                        {...register("maximum", {
+                          required: true,
+                        })}
+                      />
+                    </div>
+                  </div>
                 </CustomLabel>
               )}
               <div
@@ -446,6 +442,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                 <Button
                   variant="contained"
                   disableElevation
+                  type="submit"
                   sx={{
                     textTransform: "none",
                     background: "#34A422",

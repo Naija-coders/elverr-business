@@ -45,6 +45,7 @@ import { EditorState, convertToRaw } from "draft-js";
 import { currency, NGN, EUR, USD, GBP, INR } from "./jsonfile";
 import TagsInput from "./TagsInput";
 import { PriceChange } from "@mui/icons-material";
+import { useRouter } from "next/router";
 type Props = {
   OpenModalForm: any;
   CloseModalForm: any;
@@ -76,7 +77,7 @@ export const CreateProjectModal: React.FC<Props> = ({
   const dispatch: Dispatch<any> = useDispatch();
   const { storecategory } = bindActionCreators(actionCreators, dispatch);
   let servicedata;
-
+  const route = useRouter();
   React.useEffect(() => {
     servicedata = Clientapi.get("api/Categories").then((response: any) => {
       console.log("checking userservice response", response);
@@ -212,6 +213,7 @@ export const CreateProjectModal: React.FC<Props> = ({
     await Clientapi.post("api/projectupdate", datas)
       .then((response) => {
         console.log("response for this data is", response);
+        route.push("/dashboard");
       })
       .catch((err: AxiosError) => {
         console.log("invalid data entered");
@@ -449,12 +451,16 @@ export const CreateProjectModal: React.FC<Props> = ({
                   disableElevation
                   type="submit"
                   sx={{
-                    textTransform: "none",
-                    background: "#34A422",
-                    fontFamily: "Inter",
-                    fontSize: "0.9rem",
-                    width: "30%",
-                    borderRadius: "8px",
+                    "textTransform": "none",
+                    "background": "#34A422",
+                    "fontFamily": "Inter",
+                    "fontSize": "0.9rem",
+                    "width": "30%",
+                    "borderRadius": "8px",
+                    "marginTop": "10px",
+                    "&:hover": {
+                      background: "#34A422",
+                    },
                   }}
                 >
                   {" "}

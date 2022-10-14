@@ -92,7 +92,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                   sx={{ display: { xs: "none", lg: "flex" } }}
                 ></StyledText>
                 <StyledText sx={{ display: { xs: "none", lg: "flex" } }}>
-                  Contact Us
+                  Project
                 </StyledText>
               </div>
               <div
@@ -157,7 +157,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                     fontFamily: "DM Sans",
                   }}
                 >
-                  Project
+                  Post
                 </Button>
                 <Avatar
                   src={AuthState.user?.profile_photo_url}

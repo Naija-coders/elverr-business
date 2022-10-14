@@ -278,14 +278,16 @@ export const CreateProjectModal: React.FC<Props> = ({
                 </FormTextField>
               </CustomLabel>{" "}
               <CustomLabel>
-                <CustomLabelText>Sub Category</CustomLabelText>
+                <CustomLabelText>
+                  What skills are you interested in?
+                </CustomLabelText>
                 <TagsInput
                   selectedTags={handleSelecetedTags}
                   fullWidth
                   variant="outlined"
                   id="tags"
                   name="tags"
-                  placeholder="Enter subcategories here.."
+                  placeholder="Enter skills here.."
                 />
               </CustomLabel>
               <CustomLabel>
@@ -328,6 +330,9 @@ export const CreateProjectModal: React.FC<Props> = ({
                   wrapperClassName="wrapperClassName"
                   editorClassName="editorClassName"
                   onEditorStateChange={onEditorStateChange}
+                  toolbar={{
+                    options: ["list", "textAlign", "colorPicker", "history"],
+                  }}
                   placeholder={
                     "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
                   }

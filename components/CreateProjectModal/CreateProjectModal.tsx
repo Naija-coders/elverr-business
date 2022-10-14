@@ -17,6 +17,7 @@ import {
   Checkboxlabel,
   FormTextField,
   CustomBox,
+  StyleLoadingButton,
   CustomCheckbox,
 } from "./styles";
 import CloseIcon from "@mui/icons-material/Close";
@@ -74,6 +75,7 @@ export const CreateProjectModal: React.FC<Props> = ({
   const [tagsinp, setTagsinp] = useState("");
   const [locationproject, setLocationproject] = useState("");
   const [checkingpricing, setCheckingpricing] = useState("");
+  const [loading, setLoading] = React.useState(false);
   const dispatch: Dispatch<any> = useDispatch();
   const { storecategory } = bindActionCreators(actionCreators, dispatch);
   let servicedata;
@@ -215,15 +217,19 @@ export const CreateProjectModal: React.FC<Props> = ({
       categoriesval !== "" &&
       locationproject.toString() !== "" &&
       ip.toString() !== "" &&
-      tagsinp.toString()
+      tagsinp.toString() &&
+      draftToHtml(convertToRaw(editorState.getCurrentContent())) !== "<p></p>\n"
     ) {
+      setLoading(true);
       await Clientapi.post("api/projectupdate", datas)
         .then((response) => {
           console.log("response for this data is", response);
+          setLoading(false);
           route.push("/dashboard");
         })
         .catch((err: AxiosError) => {
           console.log("invalid data entered");
+          setLoading(false);
         });
     }
     console.log("the entered data below", datas);
@@ -455,27 +461,37 @@ export const CreateProjectModal: React.FC<Props> = ({
                   marginTop: "5px",
                 }}
               >
-                <Button
-                  variant="contained"
-                  disableElevation
-                  type="submit"
-                  onClick={handleSubmit(onSubmit)}
-                  sx={{
-                    "textTransform": "none",
-                    "background": "#34A422",
-                    "fontFamily": "Inter",
-                    "fontSize": "0.9rem",
-                    "width": "30%",
-                    "borderRadius": "8px",
-                    "marginTop": "10px",
-                    "&:hover": {
-                      background: "#34A422",
-                    },
-                  }}
-                >
-                  {" "}
-                  Confirm
-                </Button>
+                {loading ? (
+                  <StyleLoadingButton
+                    loading={loading}
+                    loadingPosition="end"
+                    variant="contained"
+                  >
+                    Confirm
+                  </StyleLoadingButton>
+                ) : (
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    type="submit"
+                    onClick={handleSubmit(onSubmit)}
+                    sx={{
+                      "textTransform": "none",
+                      "background": "#34A422",
+                      "fontFamily": "Inter",
+                      "fontSize": "0.9rem",
+                      "width": "30%",
+                      "borderRadius": "8px",
+                      "marginTop": "10px",
+                      "&:hover": {
+                        background: "#34A422",
+                      },
+                    }}
+                  >
+                    {" "}
+                    Confirm
+                  </Button>
+                )}
               </div>
             </CustomDiv>
           </div>

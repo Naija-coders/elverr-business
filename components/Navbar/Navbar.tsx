@@ -7,6 +7,7 @@ import DispatchContext from "../../context/DispatchContext";
 import Clientapi from "../../pages/api/client";
 import SearchTextField from "./SearchTextField/SearchTextField";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 interface Props {}
 
@@ -14,6 +15,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
   console.log("this is it");
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
+  const route = useRouter();
 
   React.useEffect(() => {
     if (AuthState.isLoggedIn) {
@@ -59,6 +61,9 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
               style={{
                 width: "160px",
                 objectFit: "contain",
+              }}
+              onClick={() => {
+                route.push("/");
               }}
             />
 

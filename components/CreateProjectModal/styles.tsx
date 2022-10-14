@@ -1,3 +1,4 @@
+import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Paper,
   Button,
@@ -21,6 +22,21 @@ export const CustomHeader = styled(Typography)(
     fontSize: "1.4rem",
     fontWeight: "bolder",
     marginTop: "20px",
+  })
+);
+export const StyleLoadingButton = styled(LoadingButton)(
+  sx({
+    "textTransform": "none",
+    "background": "#FFA500",
+    "fontFamily": "Inter",
+    "fontSize": "0.9rem",
+    "width": "30%",
+    "borderRadius": "8px",
+    "marginTop": "10px",
+
+    "&:hover": {
+      background: "#FFA500",
+    },
   })
 );
 export const CustomBox = styled(Box)(

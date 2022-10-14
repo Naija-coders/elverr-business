@@ -209,15 +209,24 @@ export const CreateProjectModal: React.FC<Props> = ({
       location: ip.toString(),
       tag_name: tagsinp.toString(),
     };
+    if (
+      checkingpricing.toString() !== "" &&
+      mycurrency.toString() !== "" &&
+      categoriesval !== "" &&
+      locationproject.toString() !== "" &&
+      ip.toString() !== "" &&
+      tagsinp.toString()
+    ) {
+      await Clientapi.post("api/projectupdate", datas)
+        .then((response) => {
+          console.log("response for this data is", response);
+          route.push("/dashboard");
+        })
+        .catch((err: AxiosError) => {
+          console.log("invalid data entered");
+        });
+    }
     console.log("the entered data below", datas);
-    await Clientapi.post("api/projectupdate", datas)
-      .then((response) => {
-        console.log("response for this data is", response);
-        route.push("/dashboard");
-      })
-      .catch((err: AxiosError) => {
-        console.log("invalid data entered");
-      });
   };
   return (
     <Modal
@@ -239,7 +248,7 @@ export const CreateProjectModal: React.FC<Props> = ({
           >
             <CloseIcon />
           </IconButton>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
             <CustomDiv>
               <CustomHeader>Create a new project</CustomHeader>
               <CustomLabel>
@@ -450,6 +459,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                   variant="contained"
                   disableElevation
                   type="submit"
+                  onClick={handleSubmit(onSubmit)}
                   sx={{
                     "textTransform": "none",
                     "background": "#34A422",
@@ -468,7 +478,7 @@ export const CreateProjectModal: React.FC<Props> = ({
                 </Button>
               </div>
             </CustomDiv>
-          </form>
+          </div>
           <br></br>
           {/* <DisplayEditorState /> */}
         </Paper>

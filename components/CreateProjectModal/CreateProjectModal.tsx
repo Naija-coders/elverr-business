@@ -230,7 +230,7 @@ export const CreateProjectModal: React.FC<Props> = ({
     } else {
       setTitleerror(false);
     }
-    if (data?.minimum.toString() === "") {
+    /*     if (data?.minimum.toString() === "") {
       setMinimumerror(true);
     } else {
       setMinimumerror(false);
@@ -240,7 +240,7 @@ export const CreateProjectModal: React.FC<Props> = ({
     } else {
       setMaximumerror(false);
     }
-
+ */
     if (
       draftToHtml(convertToRaw(editorState.getCurrentContent())) === "<p></p>\n"
     ) {

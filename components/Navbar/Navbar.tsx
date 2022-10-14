@@ -61,6 +61,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
               style={{
                 width: "160px",
                 objectFit: "contain",
+                cursor: "pointer",
               }}
               onClick={() => {
                 route.push("/");

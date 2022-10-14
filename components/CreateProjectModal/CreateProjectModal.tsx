@@ -6,8 +6,10 @@ import {
   Button,
   FormControlLabel,
   MenuItem,
+  FormHelperText,
 } from "@mui/material";
 import axios from "axios";
+
 import {
   CustomDiv,
   CustomLabel,
@@ -78,8 +80,17 @@ export const CreateProjectModal: React.FC<Props> = ({
   const [loading, setLoading] = React.useState(false);
   const dispatch: Dispatch<any> = useDispatch();
   const { storecategory } = bindActionCreators(actionCreators, dispatch);
+
   let servicedata;
   const route = useRouter();
+  const [titleerror, setTitleerror] = React.useState(false);
+  const [categoryerror, setCategoryerror] = React.useState(false);
+  const [skillerror, setSkillerror] = React.useState(false);
+  const [carriedouterror, setCarriedouterror] = React.useState(false);
+  const [overviewerror, setOverviewerror] = React.useState(false);
+  const [budgeterror, setBudgeterror] = React.useState(false);
+  const [minimumuerror, setMinimumerror] = React.useState(false);
+  const [maximumerror, setMaximumerror] = React.useState(false);
   React.useEffect(() => {
     servicedata = Clientapi.get("api/Categories").then((response: any) => {
       console.log("checking userservice response", response);
@@ -200,6 +211,8 @@ export const CreateProjectModal: React.FC<Props> = ({
       setCheckingpricing(budgetval.toString());
       console.log("checking if its undefined", checkingpricing);
     }
+    const datatyles = data.title;
+    console.log("checking the project title", datatyles);
 
     const datas = {
       ...data,
@@ -211,6 +224,51 @@ export const CreateProjectModal: React.FC<Props> = ({
       location: ip.toString(),
       tag_name: tagsinp.toString(),
     };
+
+    if (data.title.toString() === "") {
+      setTitleerror(true);
+    } else {
+      setTitleerror(false);
+    }
+    if (data?.minimum.toString() === "") {
+      setMinimumerror(true);
+    } else {
+      setMinimumerror(false);
+    }
+    if (data?.maximum.toString() === "") {
+      setMaximumerror(true);
+    } else {
+      setMaximumerror(false);
+    }
+
+    if (
+      draftToHtml(convertToRaw(editorState.getCurrentContent())) === "<p></p>\n"
+    ) {
+      setOverviewerror(true);
+    } else {
+      setOverviewerror(false);
+    }
+    if (categoriesval.toString() === "") {
+      setCategoryerror(true);
+    } else {
+      setCategoryerror(false);
+    }
+    if (tagsinp.toString() === "") {
+      setSkillerror(true);
+    } else {
+      setSkillerror(false);
+    }
+    if (locationproject.toString() === "") {
+      setCarriedouterror(true);
+    } else {
+      setCarriedouterror(false);
+    }
+    if (checkingpricing.toString() === "") {
+      setBudgeterror(true);
+    } else {
+      setBudgeterror(false);
+    }
+
     if (
       checkingpricing.toString() !== "" &&
       mycurrency.toString() !== "" &&
@@ -260,13 +318,13 @@ export const CreateProjectModal: React.FC<Props> = ({
               <CustomLabel>
                 <CustomLabelText>Project Title</CustomLabelText>
                 <StyledTextField
-                  required
-                  {...register("title", {
-                    required: true,
-                  })}
+                  {...register("title", {})}
                   size="small"
                   placeholder={"Web Developer"}
                 />
+                {titleerror && (
+                  <FormHelperText error>Please enter title</FormHelperText>
+                )}
               </CustomLabel>
               <CustomLabel>
                 <CustomLabelText>Category</CustomLabelText>
@@ -294,6 +352,9 @@ export const CreateProjectModal: React.FC<Props> = ({
                   ))}
                 </FormTextField>
               </CustomLabel>{" "}
+              {categoryerror && (
+                <FormHelperText error>Please enter category</FormHelperText>
+              )}
               <CustomLabel>
                 <CustomLabelText>
                   What skills are you interested in?
@@ -307,6 +368,12 @@ export const CreateProjectModal: React.FC<Props> = ({
                   placeholder="Enter skills here.."
                 />
               </CustomLabel>
+              {skillerror && (
+                <FormHelperText error>
+                  {" "}
+                  Please enter skills and click enter
+                </FormHelperText>
+              )}
               <CustomLabel>
                 <CustomLabelText>
                   How do you want your project to be carried out?
@@ -337,6 +404,12 @@ export const CreateProjectModal: React.FC<Props> = ({
                     labelPlacement="end"
                   />
                 </div>
+                {carriedouterror && (
+                  <FormHelperText error>
+                    {" "}
+                    Please select how you want your project to be carried
+                  </FormHelperText>
+                )}
               </CustomLabel>
               <CustomLabel>
                 {" "}
@@ -354,6 +427,11 @@ export const CreateProjectModal: React.FC<Props> = ({
                     "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
                   }
                 />
+                {overviewerror && (
+                  <FormHelperText error>
+                    Please enter an overview of your project
+                  </FormHelperText>
+                )}
               </CustomLabel>
               <CustomLabel sx={{ marginTop: "10px" }}>
                 <CustomLabelText>Whats your budget</CustomLabelText>
@@ -408,6 +486,11 @@ export const CreateProjectModal: React.FC<Props> = ({
                     ))}
                   </FormTextField>
                 </div>
+                {budgeterror && (
+                  <FormHelperText error>
+                    Please enter your budget
+                  </FormHelperText>
+                )}
               </CustomLabel>
               {custombudget && (
                 <CustomLabel>
@@ -430,6 +513,11 @@ export const CreateProjectModal: React.FC<Props> = ({
                           required: true,
                         })}
                       />
+                      {minimumuerror && (
+                        <FormHelperText error>
+                          Please enter minimum budget
+                        </FormHelperText>
+                      )}
                     </div>
                     <div
                       style={{
@@ -449,6 +537,11 @@ export const CreateProjectModal: React.FC<Props> = ({
                           required: true,
                         })}
                       />
+                      {maximumerror && (
+                        <FormHelperText error>
+                          Please enter maximum budget
+                        </FormHelperText>
+                      )}
                     </div>
                   </div>
                 </CustomLabel>

@@ -26,6 +26,34 @@ export const CustomImage = styled("div")(
       "linear-gradient(180deg, rgba(95, 84, 84, 0) -42.37%, #000000 100%)",
   })
 );
+export const CustomImg = styled("img")(
+  sx({
+    height: "350px",
+    position: "absolute",
+    right: "100px",
+    marginTop: "-50px",
+  })
+);
+export const CustomImgblur = styled("div")(
+  sx({
+    background: "#80CC28",
+    height: "210px",
+    width: "300px",
+    borderRadius: "50%",
+    right: "140px",
+    marginTop: "50px",
+    position: "absolute",
+    filter: "blur(43.6654px)",
+  })
+);
+export const CustomAddiv = styled("div")(
+  sx({
+    position: "absolute",
+    marginTop: "50px",
+    left: { lg: "150px" },
+    width: { lg: "700px", md: "350px" },
+  })
+);
 export const MainDiv1 = styled("div")(
   sx({
     display: "flex",

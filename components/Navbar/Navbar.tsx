@@ -156,8 +156,11 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                     borderRadius: "10px",
                     fontFamily: "DM Sans",
                   }}
+                  onClick={() => {
+                    route.push("post-advert");
+                  }}
                 >
-                  Post
+                  Post Ad
                 </Button>
                 <Avatar
                   src={AuthState.user?.profile_photo_url}

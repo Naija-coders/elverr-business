@@ -1,7 +1,12 @@
 import { Avatar, Button, Divider, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { StyledBox1, StyledBox, StyleContainer } from "../NotLoggedIn/style";
-import { StyledText, StyledTextTypo } from "./styles";
+import {
+  StyledText,
+  StyledTextTypo,
+  StyledMainDiv,
+  StyleContainerDiv,
+} from "./styles";
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 import Clientapi from "../../pages/api/client";
@@ -46,15 +51,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
         <StyleContainer
           sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              gap: "5rem",
-              width: "100%",
-            }}
-          >
+          <StyleContainerDiv>
             <img
               src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664558625/businesselverr_yf57tg.png"
               alt="businesslogo"
@@ -77,24 +74,15 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                 alignItems: "center",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1.2rem",
-                  alignItems: "center",
-                  width: "70%",
-                }}
-              >
+              <StyledMainDiv>
                 <SearchTextField />
                 <StyledText style={{ color: "#34A422" }}>Explore</StyledText>
                 <StyledText>Categories</StyledText>
-                <StyledText
-                  sx={{ display: { xs: "none", lg: "flex" } }}
-                ></StyledText>
-                <StyledText sx={{ display: { xs: "none", lg: "flex" } }}>
+
+                <StyledText sx={{ display: { lg: "flex" } }}>
                   Project
                 </StyledText>
-              </div>
+              </StyledMainDiv>
               <div
                 style={{
                   display: "flex",
@@ -168,7 +156,7 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
                 />
               </div>
             </div>
-          </div>
+          </StyleContainerDiv>
           <Divider />
           <div
             style={{

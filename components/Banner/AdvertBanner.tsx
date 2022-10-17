@@ -1,5 +1,10 @@
 import React from "react";
-import { CustomAddiv, CustomImg, CustomImgblur } from "./styles";
+import {
+  CustomAddiv,
+  CustomImg,
+  CustomImgblur,
+  CustomElverrArrow,
+} from "./styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { Text, MainDiv1, MainDivRight } from "./styles";
 import BannerFilter from "./BannerFilter";
@@ -29,15 +34,7 @@ export default function AdvertBanner({}: Props) {
             </CustomTypography2>
           </CustomAddiv>
           <CustomImgblur></CustomImgblur>
-          <img
-            style={{
-              width: "150px",
-              position: "absolute",
-              right: "420px",
-              marginTop: "0px",
-            }}
-            src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666004779/advertarrow.png"
-          />
+          <CustomElverrArrow src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666004779/advertarrow.png" />
           <CustomImg
             src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666003433/advertbanner.png"
             alt="advertimage"

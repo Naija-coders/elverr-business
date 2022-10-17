@@ -28,6 +28,25 @@ export const StyledDiv = styled("div")(
     marginTop: "-50px",
   })
 );
+export const StyledMainDiv = styled("div")(
+  sx({
+    display: "flex",
+    justifyContent: { md: "space-evenly" },
+
+    alignItems: "center",
+
+    width: { md: "60%" },
+  })
+);
+export const StyleContainerDiv = styled("div")(
+  sx({
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: { md: "0rem", lg: "5rem" },
+    width: "100%",
+  })
+);
 export const CommonText = styled(Button)(
   sx({
     "fontFamily": "DM Sans",

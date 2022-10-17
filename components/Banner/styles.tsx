@@ -54,6 +54,14 @@ export const CustomAddiv = styled("div")(
     width: { lg: "700px", md: "350px" },
   })
 );
+export const CustomElverrArrow = styled("img")(
+  sx({
+    width: { md: "110px", lg: "150px" },
+    position: "absolute",
+    right: "420px",
+    marginTop: "0px",
+  })
+);
 export const MainDiv1 = styled("div")(
   sx({
     display: "flex",

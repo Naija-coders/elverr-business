@@ -4,12 +4,15 @@ import {
   CustomImg,
   CustomImgblur,
   CustomElverrArrow,
+  CustomAddiv1,
+  CustomAddiv3,
 } from "./styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { Text, MainDiv1, MainDivRight } from "./styles";
 import BannerFilter from "./BannerFilter";
 import { Avatar, Typography } from "@mui/material";
 import { CustomTypography1, CustomTypography2 } from "./styles";
+import PostingForm from "../CreateAdvert/PostingForm";
 
 type Props = {};
 
@@ -23,7 +26,7 @@ export default function AdvertBanner({}: Props) {
       }}
     >
       <StyleContainer>
-        <div style={{ position: "relative" }}>
+        <CustomAddiv3>
           <CustomAddiv>
             <CustomTypography1 sx={{ fontSize: { md: "28px", lg: "2.3rem" } }}>
               Post an Ad on Elverr
@@ -92,7 +95,10 @@ export default function AdvertBanner({}: Props) {
               </Typography>
             </div>
           </div>
-        </div>
+          <CustomAddiv1>
+            <PostingForm />
+          </CustomAddiv1>
+        </CustomAddiv3>
       </StyleContainer>
     </StyledBox>
   );

@@ -259,6 +259,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
             size="small"
             onChange={handleCategoriesChanges}
             required
+            sx={{ width: "75%" }}
             SelectProps={{
               MenuProps: {
                 PaperProps: {
@@ -337,16 +338,97 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
         </CustomLabel>
         <CustomLabel>
           <CustomLabelText>Standard delivery time*</CustomLabelText>
-          <FormTextField select />
+          <FormTextField select sx={{ width: "75%" }} />
         </CustomLabel>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "10px",
+            gap: "1rem",
             padding: "2rem",
+            boxSizing: "border-box",
+
+            border: "1px solid #D0D5DD",
+            borderRadius: " 8px",
           }}
-        ></div>
+        >
+          <CustomLabelText>Additional Information</CustomLabelText>{" "}
+          <CustomLabel>
+            <CustomLabelText>Pitch</CustomLabelText>
+            <StyledTextField />
+          </CustomLabel>
+          <CustomLabel>
+            <CustomLabelText>Upload image</CustomLabelText>
+            <input style={{ fontSize: "1rem" }} type="file" />
+          </CustomLabel>
+          <CustomLabel>
+            <CustomLabelText>Porfolio website</CustomLabelText>
+            <StyledTextField />
+          </CustomLabel>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "end",
+            marginTop: "5px",
+            gap: "1rem",
+          }}
+        >
+          <Button
+            variant="contained"
+            disableElevation
+            type="submit"
+            sx={{
+              "textTransform": "none",
+              "background": "#FFFFFF",
+              "fontFamily": "Inter",
+              "fontSize": "0.9rem",
+              "color": "black",
+              "width": "20%",
+              "borderRadius": "8px",
+              "border": "1px #D0D5DD solid",
+              "marginTop": "10px",
+              "&:hover": {
+                background: "#FFFFFF",
+              },
+            }}
+          >
+            {" "}
+            Cancel
+          </Button>
+
+          {loading ? (
+            <StyleLoadingButton
+              loading={loading}
+              loadingPosition="end"
+              variant="contained"
+            >
+              Preview
+            </StyleLoadingButton>
+          ) : (
+            <Button
+              variant="contained"
+              disableElevation
+              type="submit"
+              sx={{
+                "textTransform": "none",
+                "background": "#34A422",
+                "fontFamily": "Inter",
+                "fontSize": "0.9rem",
+                "width": "20%",
+                "borderRadius": "8px",
+                "marginTop": "10px",
+                "&:hover": {
+                  background: "#34A422",
+                },
+              }}
+            >
+              {" "}
+              Preview
+            </Button>
+          )}
+        </div>
       </div>
     </CustomDiv>
   );

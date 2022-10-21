@@ -107,3 +107,11 @@ export const INR = [
     currency: "Customize",
   },
 ];
+
+export const Delivery_time = [
+  { id: 0, time: "1 - 2 hours" },
+  { id: 1, time: "3 - 4 hours" },
+  { id: 2, time: "5 - 6 hours" },
+  { id: 3, time: "7 - 8 hours" },
+  { id: 4, time: "Customize" },
+];

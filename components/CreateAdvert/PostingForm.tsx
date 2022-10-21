@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CustomDiv } from "./styles";
 import { MainBodyTypo, DescriptionText } from "../Banner/styles";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Clientapi from "../../pages/api/client";
+import { useForm } from "react-hook-form";
 import {
   CustomLabel,
   CustomHeader,
@@ -21,6 +22,7 @@ import { EditorProps } from "react-draft-wysiwyg";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { RootState } from "../../state/reducers";
+import TagsInput from "../CreateProjectModal/TagsInput";
 import {
   Modal,
   IconButton,
@@ -30,12 +32,14 @@ import {
   MenuItem,
   FormHelperText,
 } from "@mui/material";
-import { currency, NGN, EUR, USD, GBP, INR } from "./jsonfile";
+import { currency, NGN, EUR, USD, GBP, INR, Delivery_time } from "./jsonfile";
 
 import { actionCreators } from "../../state";
 import { Dispatch } from "redux";
 import draftToHtml from "draftjs-to-html";
 import ReactHtmlParser from "react-html-parser";
+
+const imageMimeType = /image\/(png|jpg|jpeg)/i;
 const Editor = dynamic<EditorProps>(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   { ssr: false }
@@ -49,6 +53,8 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const state = useSelector((state: RootState) => state.appstate);
   const [category, setcategory] = useState<any>(state.categories);
   const [custombudget, setCustombudget] = useState(false);
+  const [deliverytime, setDeliverytime] = useState(Delivery_time);
+
   const [naira, setNaira] = useState<any>("");
   const [dollars, setDollars] = useState<any>("");
   const [euros, setEuros] = useState<any>("");
@@ -57,7 +63,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const [mycurrency, setMycurrency] = React.useState("USD");
   const [checked, setChecked] = React.useState([true, false]);
   const [onsite, setOnsite] = React.useState(false);
-  const [budget, setBudget] = useState(USD);
+  const [budget, setBudget] = useState(Delivery_time);
   const [budgetval, setBudgetval] = useState("");
   const [categoriesval, setCategoriesval] = useState("");
   const [tagsinp, setTagsinp] = useState("");
@@ -77,6 +83,38 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const [budgeterror, setBudgeterror] = React.useState(false);
   const [minimumuerror, setMinimumerror] = React.useState(false);
   const [maximumerror, setMaximumerror] = React.useState(false);
+  const [file, setFile] = useState(null);
+  const [fileDataURL, setFileDataURL] = useState();
+  const [time, setTime] = useState("");
+
+  const changeHandler = (e: any) => {
+    const file = e.target.files[0];
+    if (!file.type.match(imageMimeType)) {
+      alert("Image mime type is not valid");
+      return;
+    }
+    setFile(file);
+  };
+  useEffect(() => {
+    let fileReader: any,
+      isCancel = false;
+    if (file) {
+      fileReader = new FileReader();
+      fileReader.onload = (e: any) => {
+        const { result } = e.target;
+        if (result && !isCancel) {
+          setFileDataURL(result);
+        }
+      };
+      fileReader.readAsDataURL(file);
+    }
+    return () => {
+      isCancel = true;
+      if (fileReader && fileReader.readyState === 1) {
+        fileReader.abort();
+      }
+    };
+  }, [file]);
   React.useEffect(() => {
     servicedata = Clientapi.get("api/Categories").then((response: any) => {
       console.log("checking userservice response", response);
@@ -116,7 +154,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
     console.log("watching currency", event.target.value);
   };
   React.useEffect(() => {
-    if (mycurrency.toString() == "NGN") {
+    /* if (mycurrency.toString() == "NGN") {
       setNaira("this is naira");
       console.log(naira);
       setBudget(NGN);
@@ -136,25 +174,30 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       setIndia("this is india");
       console.log(india);
       setBudget(INR);
-    }
+    } */
   });
-
   const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([event.target.checked, !event.target.checked]);
     console.log("this is remote");
     setOnsite(false);
-    setLocationproject("on-site");
+    setLocationproject("remote");
   };
   const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([!event.target.checked, event.target.checked]);
     console.log("this is on-site");
     setOnsite(true);
-    setLocationproject("remote");
+    setLocationproject("on-site");
   };
 
   const handleBudgetChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log("the event is", event.target.value);
     setBudgetval(event.target.value);
+  };
+  const handleDeliverytimeChanges = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    console.log("the event is", event.target.value);
+    setTime(event.target.value);
   };
   const [ip, setIp] = React.useState("");
   const getData = async () => {
@@ -170,7 +213,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       setCustombudget(false);
     }
     getData();
-  }, [budgetval]);
+  }, [budgetval, locationproject]);
 
   //displaying the editor state in dom form
   const DisplayEditorState = () => {
@@ -181,7 +224,36 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
     return <>{ReactHtmlParser(userdraft)}</>;
   };
   //watching text changes
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = async (data: any) => {
+    const datas = {
+      ...data,
+      overview: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+      type: categoriesval,
+      currency: mycurrency.toString(),
+      location_type: locationproject.toString(),
+      location: ip.toString(),
+      tag_name: tagsinp.toString(),
+      image_url: fileDataURL,
+      delivery_time: time.toString(),
+    };
+    setLoading(true);
+    await Clientapi.post("api/serviceupdate", datas)
+      .then((response) => {
+        console.log("response for this data is", response);
+        setLoading(false);
+      })
+      .catch((err: AxiosError) => {
+        console.log("invalid data entered");
+        setLoading(false);
+      });
 
+    console.log("checking the data inserted", datas);
+  };
   return (
     <CustomDiv>
       <div
@@ -196,24 +268,31 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       >
         <CustomHeader>Describe your role</CustomHeader>
         <CustomLabel>
-          <CustomLabelText>Job title*</CustomLabelText>
-          <StyledTextField />
-        </CustomLabel>
-        <CustomLabel>
-          <CustomLabelText>Job description*</CustomLabelText>
-          <Editor
-            editorState={editorState}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
-            onEditorStateChange={onEditorStateChange}
-            toolbar={{
-              options: ["list", "textAlign", "colorPicker", "history"],
+          <CustomLabelText>Category*</CustomLabelText>
+          <FormTextField
+            select
+            size="small"
+            onChange={handleCategoriesChanges}
+            required
+            sx={{ width: "75%" }}
+            SelectProps={{
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    background: "green",
+                    maxHeight: "150px",
+                    color: "white",
+                  },
+                },
+              },
             }}
-            placeholder={
-              "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
-            }
-          />
+          >
+            {category.map((data: any) => (
+              <MenuItem key={data?.id} value={data?.type}>
+                {data?.type}
+              </MenuItem>
+            ))}
+          </FormTextField>
         </CustomLabel>
         <CustomLabel>
           <CustomLabelText>
@@ -253,32 +332,39 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           )}
         </CustomLabel>
         <CustomLabel>
-          <CustomLabelText>Category*</CustomLabelText>
-          <FormTextField
-            select
-            size="small"
-            onChange={handleCategoriesChanges}
-            required
-            sx={{ width: "75%" }}
-            SelectProps={{
-              MenuProps: {
-                PaperProps: {
-                  sx: {
-                    background: "green",
-                    maxHeight: "150px",
-                    color: "white",
-                  },
-                },
-              },
-            }}
-          >
-            {category.map((data: any) => (
-              <MenuItem key={data?.id} value={data?.type}>
-                {data?.type}
-              </MenuItem>
-            ))}
-          </FormTextField>
+          <CustomLabelText>What skills are you interested in?</CustomLabelText>
+          <TagsInput
+            selectedTags={handleSelecetedTags}
+            fullWidth
+            variant="outlined"
+            id="tags"
+            name="tags"
+            placeholder="Enter skills here.."
+          />
         </CustomLabel>
+        {skillerror && (
+          <FormHelperText error>
+            {" "}
+            Please enter skills and click enter
+          </FormHelperText>
+        )}
+        <CustomLabel>
+          <CustomLabelText>Job description*</CustomLabelText>
+          <Editor
+            editorState={editorState}
+            toolbarClassName="toolbarClassName"
+            wrapperClassName="wrapperClassName"
+            editorClassName="editorClassName"
+            onEditorStateChange={onEditorStateChange}
+            toolbar={{
+              options: ["list", "textAlign", "colorPicker", "history"],
+            }}
+            placeholder={
+              "e.g. A business platform needs a Customer Success Manager to help them scale their checkout product and focus mainly on onboarding new customers and resolving complaints."
+            }
+          />
+        </CustomLabel>
+
         <CustomLabel sx={{ marginTop: "10px" }}>
           <CustomLabelText>Whats your budget</CustomLabelText>
           <div style={{ display: "flex", gap: "1%" }}>
@@ -308,29 +394,12 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
               ))}
             </FormTextField>
             <FormTextField
-              value={budgetval}
-              onChange={handleBudgetChanges}
-              select
               sx={{ width: "37%" }}
-              SelectProps={{
-                MenuProps: {
-                  PaperProps: {
-                    sx: {
-                      background: "green",
-                      maxHeight: "70px",
-                      color: "white",
-                    },
-                  },
-                },
-              }}
               size="small"
-            >
-              {budget.map((data: any) => (
-                <MenuItem key={data?.id} value={data?.currency}>
-                  {data?.currency}
-                </MenuItem>
-              ))}
-            </FormTextField>
+              placeholder="200"
+              type="number"
+              {...register("price", {})}
+            />
           </div>
           {budgeterror && (
             <FormHelperText error>Please enter your budget</FormHelperText>
@@ -338,7 +407,17 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
         </CustomLabel>
         <CustomLabel>
           <CustomLabelText>Standard delivery time*</CustomLabelText>
-          <FormTextField select sx={{ width: "75%" }} />
+          <FormTextField
+            select
+            sx={{ width: "75%" }}
+            onChange={handleDeliverytimeChanges}
+          >
+            {deliverytime.map((data: any) => (
+              <MenuItem key={data?.id} value={data?.time}>
+                {data?.time}
+              </MenuItem>
+            ))}
+          </FormTextField>
         </CustomLabel>
         <div
           style={{
@@ -355,15 +434,22 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           <CustomLabelText>Additional Information</CustomLabelText>{" "}
           <CustomLabel>
             <CustomLabelText>Pitch</CustomLabelText>
-            <StyledTextField />
+            <StyledTextField
+              type="text"
+              {...register("pitch", {})}
+              placeholder={
+                "eg. I will build a responsive website for your business from start to finish. "
+              }
+            />
           </CustomLabel>
           <CustomLabel>
             <CustomLabelText>Upload image</CustomLabelText>
-            <input style={{ fontSize: "1rem" }} type="file" />
-          </CustomLabel>
-          <CustomLabel>
-            <CustomLabelText>Porfolio website</CustomLabelText>
-            <StyledTextField />
+            <input
+              style={{ fontSize: "1rem" }}
+              type="file"
+              onChange={changeHandler}
+            />
+            {fileDataURL && <img src={fileDataURL} alt="preview" />}
           </CustomLabel>
         </div>
         <div
@@ -411,6 +497,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
               variant="contained"
               disableElevation
               type="submit"
+              onClick={handleSubmit(onSubmit)}
               sx={{
                 "textTransform": "none",
                 "background": "#34A422",

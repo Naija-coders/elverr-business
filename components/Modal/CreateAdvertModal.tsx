@@ -127,7 +127,7 @@ const CreateAdvertModal: React.FunctionComponent<IAppProps> = ({
                     loadingPosition="end"
                     variant="contained"
                   >
-                    Preview
+                    Confirm
                   </StyleLoadingButton>
                 ) : (
                   <Button
@@ -149,7 +149,7 @@ const CreateAdvertModal: React.FunctionComponent<IAppProps> = ({
                     }}
                   >
                     {" "}
-                    Preview
+                    Confirm
                   </Button>
                 )}
               </div>

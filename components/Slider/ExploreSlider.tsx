@@ -60,6 +60,7 @@ export default function ExploreSlider({}: Props) {
       <Slider {...settings}>
         {servicedata?.slice(0, 8).map((item: any) => (
           <div
+            key={Math.random()}
             style={{
               width: "300px",
               position: "relative",

@@ -21,6 +21,7 @@ const FeaturedAgencies: React.FunctionComponent<IAppProps> = (props) => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             {" "}

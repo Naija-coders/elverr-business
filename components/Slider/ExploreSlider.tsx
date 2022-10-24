@@ -35,13 +35,15 @@ export default function ExploreSlider({}: Props) {
   const [servicedata, setServicedata] = React.useState<any>();
 
   React.useEffect(() => {
-    Clientapi.get("api/company/services")
-      .then((response) => {
-        setServicedata(response.data);
-      })
-      .catch((err: AxiosError) => {
-        console.log("couldn't find company services");
-      });
+    if (servicedata === null || servicedata === undefined) {
+      Clientapi.get("api/company/services")
+        .then((response) => {
+          setServicedata(response.data);
+        })
+        .catch((err: AxiosError) => {
+          console.log("couldn't find company services");
+        });
+    }
   }, [servicedata]);
   console.log("watching the service data", servicedata);
   return (
@@ -76,7 +78,7 @@ export default function ExploreSlider({}: Props) {
             />
             <div
               style={{
-                marginTop: "-50px",
+                marginTop: "-45px",
                 display: "flex",
                 justifyContent: "end",
                 marginRight: "20px",
@@ -102,9 +104,12 @@ export default function ExploreSlider({}: Props) {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                paddingLeft: "0.75rem",
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
+                paddingTop: "0.5rem",
                 justifyContent: "space-between",
-                marginTop: "20px",
+                marginTop: "10px",
+                width: "100%",
               }}
             >
               <div
@@ -113,6 +118,7 @@ export default function ExploreSlider({}: Props) {
                   flexDirection: "row",
                   gap: "1rem",
                   alignItems: "center",
+                  justifyContent: "space-between",
                 }}
               >
                 <Avatar src={item?.profile_photo_path} />
@@ -138,17 +144,17 @@ export default function ExploreSlider({}: Props) {
                     {item?.type}
                   </Typography>
                 </div>
-                <Typography
-                  sx={{
-                    fontWeight: 700,
-                    fontSize: "0.9rem",
-                    color: "#34A422",
-                    fontFamily: "DM Sans",
-                  }}
-                >
-                  {item?.price}
-                </Typography>
               </div>
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  color: "#34A422",
+                  fontFamily: "DM Sans",
+                }}
+              >
+                $ {item?.price}
+              </Typography>
             </div>
           </div>
         ))}

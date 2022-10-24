@@ -24,6 +24,9 @@ import { bindActionCreators } from "redux";
 import { RootState } from "../../state/reducers";
 import TagsInput from "../CreateProjectModal/TagsInput";
 import { useRouter } from "next/router";
+import Snackbar from "@mui/material/Snackbar";
+
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Modal,
   IconButton,
@@ -39,7 +42,14 @@ import { actionCreators } from "../../state";
 import { Dispatch } from "redux";
 import draftToHtml from "draftjs-to-html";
 import ReactHtmlParser from "react-html-parser";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 const imageMimeType = /image\/(png|jpg|jpeg)/i;
 const Editor = dynamic<EditorProps>(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
@@ -90,6 +100,22 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const [pitcherror, setPitcherror] = React.useState(false);
   const [filedataerror, setFiledataerror] = React.useState(false);
   const [deliverytimeerror, setDeliverytimeerror] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  //adding toast message when user it is successful
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const changeHandler = (e: any) => {
     const file = e.target.files[0];
@@ -247,6 +273,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       image_url: fileDataURL,
       delivery_time: time.toString(),
     };
+
     if (data.pitch.toString() === "") {
       setPitcherror(true);
     } else {
@@ -307,11 +334,13 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
         .then((response) => {
           console.log("response for this data is", response);
           setLoading(false);
+          setOpen(true);
           route.push("/dashboard");
         })
         .catch((err: AxiosError) => {
           console.log("invalid data entered");
           setLoading(false);
+          setOpen(false);
         });
 
       console.log("checking the data inserted", datas);
@@ -481,6 +510,17 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           <FormTextField
             select
             sx={{ width: "75%" }}
+            SelectProps={{
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    background: "green",
+                    maxHeight: "150px",
+                    color: "white",
+                  },
+                },
+              },
+            }}
             onChange={handleDeliverytimeChanges}
           >
             {deliverytime.map((data: any) => (
@@ -611,6 +651,15 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           )}
         </div>
       </div>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          sx={{ width: "100%", background: "green", color: "white" }}
+        >
+          Your advert has been posted successfully!
+        </Alert>
+      </Snackbar>
     </CustomDiv>
   );
 };

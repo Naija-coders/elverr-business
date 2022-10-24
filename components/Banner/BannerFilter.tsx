@@ -1,4 +1,4 @@
-import { Button, Divider } from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 import React from "react";
 
 type Props = {};
@@ -28,18 +28,42 @@ export default function BannerFilter({}: Props) {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div>Location</div>
-          <div>select</div>
+          <Typography
+            sx={{
+              fontFamily: "DM Sans",
+              fontWeight: "bolder",
+              fontSize: "1.1rem",
+            }}
+          >
+            Location
+          </Typography>
+          <Typography>select</Typography>
         </div>
         <Divider orientation="vertical" sx={{ height: "80%" }} />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div>Price</div>
-          <div>select</div>
+          <Typography
+            sx={{
+              fontFamily: "DM Sans",
+              fontWeight: "bolder",
+              fontSize: "1.1rem",
+            }}
+          >
+            Price
+          </Typography>
+          <Typography>select</Typography>
         </div>
         <Divider orientation="vertical" sx={{ height: "80%" }} />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div>Experience</div>
-          <div>select</div>
+          <Typography
+            sx={{
+              fontFamily: "DM Sans",
+              fontWeight: "bolder",
+              fontSize: "1.1rem",
+            }}
+          >
+            Experience
+          </Typography>
+          <Typography>select</Typography>
         </div>
 
         <Button

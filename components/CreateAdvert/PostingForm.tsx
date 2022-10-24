@@ -84,8 +84,11 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const [minimumuerror, setMinimumerror] = React.useState(false);
   const [maximumerror, setMaximumerror] = React.useState(false);
   const [file, setFile] = useState(null);
-  const [fileDataURL, setFileDataURL] = useState();
+  const [fileDataURL, setFileDataURL] = useState<any>();
   const [time, setTime] = useState("");
+  const [pitcherror, setPitcherror] = React.useState(false);
+  const [filedataerror, setFiledataerror] = React.useState(false);
+  const [deliverytimeerror, setDeliverytimeerror] = React.useState(false);
 
   const changeHandler = (e: any) => {
     const file = e.target.files[0];
@@ -224,6 +227,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
     return <>{ReactHtmlParser(userdraft)}</>;
   };
   //watching text changes
+
   const {
     register,
     handleSubmit,
@@ -241,18 +245,75 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       image_url: fileDataURL,
       delivery_time: time.toString(),
     };
-    setLoading(true);
-    await Clientapi.post("api/serviceupdate", datas)
-      .then((response) => {
-        console.log("response for this data is", response);
-        setLoading(false);
-      })
-      .catch((err: AxiosError) => {
-        console.log("invalid data entered");
-        setLoading(false);
-      });
+    if (data.pitch.toString() === "") {
+      setPitcherror(true);
+    } else {
+      setPitcherror(false);
+    }
+    if (fileDataURL === undefined) {
+      setFiledataerror(true);
+    } else {
+      setFiledataerror(false);
+    }
 
-    console.log("checking the data inserted", datas);
+    if (
+      draftToHtml(convertToRaw(editorState.getCurrentContent())) === "<p></p>\n"
+    ) {
+      setOverviewerror(true);
+    } else {
+      setOverviewerror(false);
+    }
+    if (categoriesval.toString() === "") {
+      setCategoryerror(true);
+    } else {
+      setCategoryerror(false);
+    }
+    if (tagsinp.toString() === "") {
+      setSkillerror(true);
+    } else {
+      setSkillerror(false);
+    }
+    if (locationproject.toString() === "") {
+      setCarriedouterror(true);
+    } else {
+      setCarriedouterror(false);
+    }
+    if (data?.price.toString() === "") {
+      setBudgeterror(true);
+    } else {
+      setBudgeterror(false);
+    }
+    if (time.toString() === "") {
+      setDeliverytimeerror(true);
+    } else {
+      setDeliverytimeerror(false);
+    }
+    if (
+      data?.price.toString() !== "" &&
+      mycurrency.toString() !== "" &&
+      categoriesval !== "" &&
+      locationproject.toString() !== "" &&
+      tagsinp.toString() !== "" &&
+      ip.toString() !== "" &&
+      tagsinp.toString() !== "" &&
+      data.pitch.toString() !== "" &&
+      time.toString() !== "" &&
+      draftToHtml(convertToRaw(editorState.getCurrentContent())) !== "<p></p>\n"
+    ) {
+      setLoading(true);
+      await Clientapi.post("api/serviceupdate", datas)
+        .then((response) => {
+          console.log("response for this data is", response);
+          setLoading(false);
+          route.push("/dashboard");
+        })
+        .catch((err: AxiosError) => {
+          console.log("invalid data entered");
+          setLoading(false);
+        });
+
+      console.log("checking the data inserted", datas);
+    }
   };
   return (
     <CustomDiv>
@@ -294,45 +355,11 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
             ))}
           </FormTextField>
         </CustomLabel>
+        {categoryerror && (
+          <FormHelperText error>Please enter category</FormHelperText>
+        )}
         <CustomLabel>
-          <CustomLabelText>
-            How do you want your project to be carried out?
-          </CustomLabelText>
-          <div style={{ display: "flex", marginTop: "-8px" }}>
-            <FormControlLabel
-              value="start"
-              control={
-                <CustomCheckbox
-                  checked={checked[0]}
-                  onChange={handleChange2}
-                  size="small"
-                />
-              }
-              label={<Checkboxlabel>Remote</Checkboxlabel>}
-              labelPlacement="end"
-            />{" "}
-            <FormControlLabel
-              value="start"
-              control={
-                <CustomCheckbox
-                  checked={checked[1]}
-                  onChange={handleChange3}
-                  size="small"
-                />
-              }
-              label={<Checkboxlabel>{"On-Site"}</Checkboxlabel>}
-              labelPlacement="end"
-            />
-          </div>
-          {carriedouterror && (
-            <FormHelperText error>
-              {" "}
-              Please select how you want your project to be carried
-            </FormHelperText>
-          )}
-        </CustomLabel>
-        <CustomLabel>
-          <CustomLabelText>What skills are you interested in?</CustomLabelText>
+          <CustomLabelText>What skills do you have?</CustomLabelText>
           <TagsInput
             selectedTags={handleSelecetedTags}
             fullWidth
@@ -349,6 +376,44 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           </FormHelperText>
         )}
         <CustomLabel>
+          <CustomLabel>
+            <CustomLabelText>
+              How do you want your project to be carried out?
+            </CustomLabelText>
+            <div style={{ display: "flex", marginTop: "-8px" }}>
+              <FormControlLabel
+                value="start"
+                control={
+                  <CustomCheckbox
+                    checked={checked[0]}
+                    onChange={handleChange2}
+                    size="small"
+                  />
+                }
+                label={<Checkboxlabel>Remote</Checkboxlabel>}
+                labelPlacement="end"
+              />{" "}
+              <FormControlLabel
+                value="start"
+                control={
+                  <CustomCheckbox
+                    checked={checked[1]}
+                    onChange={handleChange3}
+                    size="small"
+                  />
+                }
+                label={<Checkboxlabel>{"On-Site"}</Checkboxlabel>}
+                labelPlacement="end"
+              />
+            </div>
+            {carriedouterror && (
+              <FormHelperText error>
+                {" "}
+                Please select how you want your project to be carried
+              </FormHelperText>
+            )}
+          </CustomLabel>
+
           <CustomLabelText>Job description*</CustomLabelText>
           <Editor
             editorState={editorState}
@@ -364,7 +429,11 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
             }
           />
         </CustomLabel>
-
+        {overviewerror && (
+          <FormHelperText error>
+            Please enter an overview of your project
+          </FormHelperText>
+        )}
         <CustomLabel sx={{ marginTop: "10px" }}>
           <CustomLabelText>Whats your budget</CustomLabelText>
           <div style={{ display: "flex", gap: "1%" }}>
@@ -419,6 +488,9 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
             ))}
           </FormTextField>
         </CustomLabel>
+        {deliverytimeerror && (
+          <FormHelperText error>Please enter upload a thumbnail</FormHelperText>
+        )}
         <div
           style={{
             display: "flex",
@@ -442,6 +514,9 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
               }
             />
           </CustomLabel>
+          {pitcherror && (
+            <FormHelperText error>Please enter a pitch</FormHelperText>
+          )}
           <CustomLabel>
             <CustomLabelText>Upload image</CustomLabelText>
             <input
@@ -449,8 +524,25 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
               type="file"
               onChange={changeHandler}
             />
-            {fileDataURL && <img src={fileDataURL} alt="preview" />}
+            {fileDataURL && (
+              <div>
+                <img
+                  src={fileDataURL}
+                  alt="preview"
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+            )}
           </CustomLabel>
+          {filedataerror && (
+            <FormHelperText error>
+              Please enter upload a thumbnail
+            </FormHelperText>
+          )}
         </div>
         <div
           style={{

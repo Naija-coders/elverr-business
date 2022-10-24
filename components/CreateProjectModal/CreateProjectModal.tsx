@@ -275,7 +275,7 @@ export const CreateProjectModal: React.FC<Props> = ({
       categoriesval !== "" &&
       locationproject.toString() !== "" &&
       ip.toString() !== "" &&
-      tagsinp.toString() &&
+      tagsinp.toString() !== "" &&
       draftToHtml(convertToRaw(editorState.getCurrentContent())) !== "<p></p>\n"
     ) {
       setLoading(true);

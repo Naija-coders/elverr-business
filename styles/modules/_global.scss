@@ -192,3 +192,11 @@ h3 {
   border-color: #d9d9d9;
   border-width: 1px 1px 0px 1px;
 }
+/* .slick-disabled:before {
+  opacity: 0 !important;
+  background-color: none !important;
+}
+ */
+.slick-list {
+  margin: 0 -5px !important;
+}

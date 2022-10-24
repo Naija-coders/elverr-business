@@ -48,4 +48,8 @@ interface ViewedAction {
     type:ActionType.VIEWED,
     payload:any
 }
-export type Action = DepositAction | WithdrawAction | BankruptAction | UserAction | CategoryAction | ServiceAction | MainServiceAction | FavoriteAction | UserserviceAction | AllserviceAction | RecommendedAction | ViewedAction
+interface PreviewserviceAction{
+    type:ActionType.PREVIEWSERVICE,
+    payload:any
+}
+export type Action = DepositAction | WithdrawAction | BankruptAction | UserAction | CategoryAction | ServiceAction | MainServiceAction | FavoriteAction | UserserviceAction | AllserviceAction | RecommendedAction | ViewedAction | PreviewserviceAction

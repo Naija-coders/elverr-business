@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/CreateProjectModal/ChipController.js"
+    "components/Modal/ChipController.js"
   ],
   "exclude": ["node_modules"]
 }

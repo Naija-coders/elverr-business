@@ -15,18 +15,19 @@ import {
   CustomBox,
   StyleLoadingButton,
   CustomCheckbox,
-} from "../CreateProjectModal/styles";
+} from "../Modal/styles";
 import { EditorState, convertToRaw } from "draft-js";
 import dynamic from "next/dynamic";
 import { EditorProps } from "react-draft-wysiwyg";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { RootState } from "../../state/reducers";
-import TagsInput from "../CreateProjectModal/TagsInput";
+import TagsInput from "../Modal/TagsInput";
 import { useRouter } from "next/router";
 import Snackbar from "@mui/material/Snackbar";
 
 import CloseIcon from "@mui/icons-material/Close";
+import CreateAdvertModal from "../Modal/CreateAdvertModal";
 import {
   Modal,
   IconButton,
@@ -101,6 +102,13 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
   const [filedataerror, setFiledataerror] = React.useState(false);
   const [deliverytimeerror, setDeliverytimeerror] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [openmodal, setOpenmodal] = React.useState(false);
+
+  const handleOpen = () => setOpenmodal(true);
+
+  const handleCloseModal = () => {
+    setOpenmodal(false);
+  };
   //adding toast message when user it is successful
   const handleClick = () => {
     setOpen(true);
@@ -125,6 +133,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
     }
     setFile(file);
   };
+  const { previewedServices } = bindActionCreators(actionCreators, dispatch);
   useEffect(() => {
     let fileReader: any,
       isCancel = false;
@@ -317,6 +326,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
     } else {
       setDeliverytimeerror(false);
     }
+
     if (
       data?.price.toString() !== "" &&
       mycurrency.toString() !== "" &&
@@ -329,8 +339,12 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       time.toString() !== "" &&
       draftToHtml(convertToRaw(editorState.getCurrentContent())) !== "<p></p>\n"
     ) {
-      setLoading(true);
-      await Clientapi.post("api/serviceupdate", datas)
+      console.log("checking if dispatch come here");
+      await previewedServices(datas);
+      await setLoading(false);
+      await setOpenmodal(true);
+
+      /*  await Clientapi.post("api/serviceupdate", datas)
         .then((response) => {
           console.log("response for this data is", response);
           setLoading(false);
@@ -341,7 +355,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           console.log("invalid data entered");
           setLoading(false);
           setOpen(false);
-        });
+        }); */
 
       console.log("checking the data inserted", datas);
     }
@@ -660,6 +674,10 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
           Your advert has been posted successfully!
         </Alert>
       </Snackbar>
+      <CreateAdvertModal
+        OpenModalForm={openmodal}
+        CloseModalForm={handleCloseModal}
+      ></CreateAdvertModal>
     </CustomDiv>
   );
 };

@@ -65,6 +65,15 @@ export const recommendedServices = (recommendedservices: any) => {
     
     }
 }
+export const previewedServices = (previewservice: any) => {
+    return (dispatch:Dispatch<Action> ) => {
+        dispatch({
+            type: ActionType.PREVIEWSERVICE,
+            payload:previewservice
+        })
+    
+    }
+}
 
 
 export const mainServices = (mainservices: any) => {
@@ -84,11 +93,12 @@ export const withdrawMoney = (amount: any) => {
         })
     }
 }
-export const user = (amount : any) => {
+export const loggedinuser = (user : any) => {
+    console.log("did the user dispatch come here",user)
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: ActionType.USER,
-            payload: amount
+            payload: user
         })
     }
 }

@@ -13,7 +13,10 @@ import Clientapi from "../../pages/api/client";
 import SearchTextField from "./SearchTextField/SearchTextField";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
-
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../state";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
 interface Props {}
 
 const Navbar: React.FunctionComponent<Props> = ({}) => {
@@ -21,13 +24,16 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
   const route = useRouter();
-
+  const dispatch: Dispatch<any> = useDispatch();
+  const { depositMoney } = bindActionCreators(actionCreators, dispatch);
   React.useEffect(() => {
     if (AuthState.isLoggedIn) {
       Clientapi.get("api/getuserprofile").then((response: any) => {
-        const user = response.data;
-        AuthDispatcher({ type: "addUser", payload: user });
+        const users = response.data;
+        AuthDispatcher({ type: "addUser", payload: users });
         console.log(AuthState.user);
+        depositMoney(response.data);
+        console.log("checking if it came here for users");
 
         //checking dispatch for reducer
       });

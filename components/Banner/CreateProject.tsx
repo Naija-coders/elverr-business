@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { MainBodyTypo, DescriptionText } from "./styles";
-import { CreateProjectModal } from "../CreateProjectModal/CreateProjectModal";
+import { CreateProjectModal } from "../Modal/CreateProjectModal";
 import { useRouter } from "next/router";
 
 type Props = {};

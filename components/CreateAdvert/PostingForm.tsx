@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { RootState } from "../../state/reducers";
 import TagsInput from "../CreateProjectModal/TagsInput";
+import { useRouter } from "next/router";
 import {
   Modal,
   IconButton,
@@ -128,6 +129,7 @@ const PostingForm: React.FunctionComponent<IAppProps> = (props) => {
       console.log("checking the category state", state.categories);
     });
   }, [servicedata]);
+  const route = useRouter();
 
   const onEditorStateChange = (editorState: EditorState) => {
     setEditorState(editorState);

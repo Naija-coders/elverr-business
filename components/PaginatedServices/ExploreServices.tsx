@@ -51,10 +51,11 @@ export default function ExploreServices({}: Props) {
             flexDirection: "row",
             width: "100%",
             justifyContent: "space-between",
+
             alignItems: "center",
           }}
         >
-          <div style={{ width: "15%" }}>sort by Popular</div>
+          <div style={{}}>sort by Popular</div>
           <div
             style={{
               display: "flex",

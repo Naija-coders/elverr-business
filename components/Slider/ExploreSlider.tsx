@@ -64,6 +64,7 @@ export default function ExploreSlider({}: Props) {
         {servicedata?.slice(0, 8).map((item: any) => (
           <CustomContainer
             sx={{ width: { lg: "230.34px", md: "260px" }, height: "294.82px" }}
+            key={Math.random()}
           >
             <img
               src={item.image_url}

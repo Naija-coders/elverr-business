@@ -16,15 +16,17 @@ export const CustomDiv = styled("div")(
   sx({
     display: "grid",
 
-    width: "94%",
-    marginLeft: "-15px",
+    width: "91%",
+
     gridTemplateColumns: {
-      md: "25% 25% 25%",
+      md: "150px 150px  150px ",
       lg: "150px 150px 150px 150px",
+      xl: "150px 150px 150px 150px 150px",
     },
-    justifyContent: "space-between",
+    columnGap: { lg: "9rem", md: "10rem" },
+    justifyContent: "center",
   })
 );
 export const CustomContainer = styled("div")(
-  sx({ width: "250.34px", height: "294.82px" })
+  sx({ width: { lg: "270.34px", md: "260px" }, height: "294.82px" })
 );

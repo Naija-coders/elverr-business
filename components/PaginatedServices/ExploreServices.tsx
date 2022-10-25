@@ -23,6 +23,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Clientapi from "../../pages/api/client";
 import { AxiosError } from "axios";
 import ServiceGridCard from "../CustomCard/ServiceGridCard";
+import { Divider } from "@mui/material";
 type Props = {};
 
 export default function ExploreServices({}: Props) {
@@ -43,20 +44,34 @@ export default function ExploreServices({}: Props) {
     <StyledBox>
       <StyleContainer>
         <MainHeaderText sx={{ fontSize: "1.7rem" }}>Explore</MainHeaderText>
-        <BasicTextbody>
-          Find the best agency on Elverr to suit your project needs.
-        </BasicTextbody>
-        <ServiceGridCard data={servicedata} />
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Pagination
-            count={10}
-            renderItem={(item) => (
-              <PaginationItem
-                components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
-                {...item}
-              />
-            )}
-          />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "35px",
+            marginTop: "5px",
+          }}
+        >
+          <BasicTextbody sx={{ fontSize: "1rem", color: "#515151" }}>
+            Find the best agency on Elverr to suit your project needs.
+          </BasicTextbody>
+          <ServiceGridCard data={servicedata} />
+          <div style={{ marginTop: "50px" }}></div>
+          <Divider />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Pagination
+              count={10}
+              renderItem={(item) => (
+                <PaginationItem
+                  components={{
+                    previous: ArrowBackIcon,
+                    next: ArrowForwardIcon,
+                  }}
+                  {...item}
+                />
+              )}
+            />
+          </div>
         </div>
       </StyleContainer>
     </StyledBox>

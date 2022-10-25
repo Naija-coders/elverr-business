@@ -22,6 +22,7 @@ import {
 } from "../Featured/styles";
 import { Avatar, Button, IconButton, Typography } from "@mui/material";
 import { AxiosError } from "axios";
+import { CustomContainer } from "../CustomCard/styles";
 
 type Props = {};
 
@@ -61,27 +62,23 @@ export default function ExploreSlider({}: Props) {
       />
       <Slider {...settings}>
         {servicedata?.slice(0, 8).map((item: any) => (
-          <div
-            key={Math.random()}
-            style={{
-              width: "300px",
-              position: "relative",
-            }}
+          <CustomContainer
+            sx={{ width: { lg: "230.34px", md: "260px" }, height: "294.82px" }}
           >
             <img
+              src={item.image_url}
               style={{
-                width: "280px",
-                height: "150px",
-                borderRadius: "18.7065px 18.7065px 0px 0px",
+                height: "203.px",
+                borderRadius: "16.7039px 16.7039px 0px 0px",
+                width: "100%",
               }}
-              src={item?.image_url}
             />
             <div
               style={{
                 marginTop: "-45px",
                 display: "flex",
                 justifyContent: "end",
-                marginRight: "20px",
+                marginRight: "10px",
               }}
             >
               <div
@@ -104,7 +101,7 @@ export default function ExploreSlider({}: Props) {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                paddingLeft: "1rem",
+                paddingLeft: "10px",
                 paddingRight: "1rem",
                 paddingTop: "0.5rem",
                 justifyContent: "space-between",
@@ -121,14 +118,17 @@ export default function ExploreSlider({}: Props) {
                   justifyContent: "space-between",
                 }}
               >
-                <Avatar src={item?.profile_photo_path} />
+                <Avatar
+                  /* src={item?.profile_photo_path} */ variant="circular"
+                  src={item.image_url}
+                />
                 <div>
                   <Typography
                     sx={{
-                      fontWeight: 500,
-                      fontSize: "0.8rem",
-                      color: "#303030",
+                      fontWeight: 600,
+                      fontSize: "0.9rem",
                       fontFamily: "DM Sans",
+                      color: "#303030",
                     }}
                   >
                     {item?.name}
@@ -136,8 +136,8 @@ export default function ExploreSlider({}: Props) {
                   <Typography
                     sx={{
                       fontWeight: 300,
-                      fontSize: "0.9rem",
-                      color: "#303030",
+                      fontSize: "0.rem",
+                      color: " #747582",
                       fontFamily: "DM Sans",
                     }}
                   >
@@ -156,7 +156,7 @@ export default function ExploreSlider({}: Props) {
                 $ {item?.price}
               </Typography>
             </div>
-          </div>
+          </CustomContainer>
         ))}
       </Slider>
     </div>

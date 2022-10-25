@@ -82,7 +82,7 @@ export default function ServiceGridCard({ data }: Props) {
                   <Typography
                     sx={{
                       fontWeight: 300,
-                      fontSize: "0.rem",
+                      fontSize: "0.8rem",
                       color: " #747582",
                       fontFamily: "DM Sans",
                     }}

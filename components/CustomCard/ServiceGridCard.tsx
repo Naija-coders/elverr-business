@@ -11,7 +11,7 @@ export default function ServiceGridCard({ data }: Props) {
     <div>
       <CustomDiv>
         {data?.map((item: any) => (
-          <CustomContainer>
+          <CustomContainer key={Math.random()}>
             <img
               src={item.image_url}
               style={{
@@ -82,7 +82,7 @@ export default function ServiceGridCard({ data }: Props) {
                   <Typography
                     sx={{
                       fontWeight: 300,
-                      fontSize: "0.85rem",
+                      fontSize: "0.rem",
                       color: " #747582",
                       fontFamily: "DM Sans",
                     }}

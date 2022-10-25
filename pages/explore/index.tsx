@@ -12,7 +12,7 @@ export default function index({}: Props) {
     <div>
       <Navbar nosubbar={false} />
       <DiscoverBanner />
-      <Filter />
+
       <ExploreServices />
       <FooterLoggedIn />
     </div>

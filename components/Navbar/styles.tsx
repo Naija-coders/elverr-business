@@ -93,9 +93,13 @@ export const StyledTextTypo = styled(Typography)(
 );
 export const StyledText = styled(Typography)(
   sx({
-    fontFamily: "DM Sans",
-    fontWeight: "bold",
-    fontSize: "0.9rem",
+    "fontFamily": "DM Sans",
+    "fontWeight": "bold",
+    "fontSize": "0.9rem",
+    "&:hover": {
+      textDecoration: "underline",
+      cursor: "pointer",
+    },
   })
 );
 export const StyledTextField = styled(TextField)(

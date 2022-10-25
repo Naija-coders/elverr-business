@@ -7,7 +7,7 @@ type Props = {};
 export default function PostAd({}: Props) {
   return (
     <div>
-      <Navbar />
+      <Navbar nosubbar={true} />
       <CreateAdvert />
     </div>
   );

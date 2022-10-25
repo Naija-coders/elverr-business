@@ -19,7 +19,7 @@ import {
 export const StyleContainer = styled("div")(
   sx({
     justifyContent: "space-around",
-    maxWidth: "1500px",
+    maxWidth: "1600px",
     width: "100%",
   })
 );

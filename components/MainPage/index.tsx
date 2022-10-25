@@ -14,7 +14,7 @@ interface IAppProps {}
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <div>
-      <Navbar />
+      <Navbar nosubbar={true} />
       <div
         style={{
           display: "flex",

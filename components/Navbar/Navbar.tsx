@@ -17,9 +17,11 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-interface Props {}
+interface Props {
+  nosubbar: boolean;
+}
 
-const Navbar: React.FunctionComponent<Props> = ({}) => {
+const Navbar: React.FunctionComponent<Props> = ({ nosubbar }) => {
   console.log("this is it");
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
@@ -82,7 +84,14 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
             >
               <StyledMainDiv>
                 <SearchTextField />
-                <StyledText style={{ color: "#34A422" }}>Explore</StyledText>
+                <StyledText
+                  onClick={() => {
+                    route.push("explore");
+                  }}
+                  style={{ color: "#34A422" }}
+                >
+                  Explore
+                </StyledText>
                 <StyledText>Categories</StyledText>
 
                 <StyledText sx={{ display: { lg: "flex" } }}>
@@ -163,23 +172,27 @@ const Navbar: React.FunctionComponent<Props> = ({}) => {
               </div>
             </div>
           </StyleContainerDiv>
-          <Divider />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-around",
-              height: "100%",
-            }}
-          >
-            <StyledTextTypo>Trending</StyledTextTypo>
-            <StyledTextTypo>Automative Services</StyledTextTypo>
-            <StyledTextTypo>Video & Animation</StyledTextTypo>
-            <StyledTextTypo>Entertainments Services</StyledTextTypo>
-            <StyledTextTypo>IT Services</StyledTextTypo>
-            <StyledTextTypo>Cleaning Services</StyledTextTypo>
-          </div>
+          {nosubbar && (
+            <>
+              <Divider />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  height: "100%",
+                }}
+              >
+                <StyledTextTypo>Trending</StyledTextTypo>
+                <StyledTextTypo>Automative Services</StyledTextTypo>
+                <StyledTextTypo>Video & Animation</StyledTextTypo>
+                <StyledTextTypo>Entertainments Services</StyledTextTypo>
+                <StyledTextTypo>IT Services</StyledTextTypo>
+                <StyledTextTypo>Cleaning Services</StyledTextTypo>
+              </div>
+            </>
+          )}
         </StyleContainer>
       </StyledBox1>
     </div>

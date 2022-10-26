@@ -1,14 +1,10 @@
 import React from "react";
 import MainPage from "../components/MainPage";
 import Clientapi from "./api/client";
-import { useRouter } from "next/router";
+
 type Props = { servicedata: any };
 
 export default function mainpage({ servicedata }: Props) {
-  const route = useRouter();
-  if (route.isFallback) {
-    return <div>Loading...</div>;
-  }
   return (
     <>
       <MainPage exploredata={servicedata} />

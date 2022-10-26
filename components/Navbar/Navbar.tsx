@@ -17,6 +17,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
+import Link from "next/link";
 interface Props {
   nosubbar: boolean;
   filter: string;
@@ -85,14 +86,9 @@ const Navbar: React.FunctionComponent<Props> = ({ nosubbar, filter }) => {
             >
               <StyledMainDiv>
                 <SearchTextField />
-                <StyledText
-                  onClick={() => {
-                    route.push("explore");
-                  }}
-                  style={{ color: "#34A422" }}
-                >
-                  Explore
-                </StyledText>
+                <Link href="/explore">
+                  <StyledText style={{ color: "#34A422" }}>Explore</StyledText>
+                </Link>
                 <StyledText>Categories</StyledText>
 
                 <StyledText sx={{ display: { lg: "flex" } }}>

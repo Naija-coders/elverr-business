@@ -2,7 +2,9 @@ import * as React from "react";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { MainBodyTypo, DescriptionText } from "../Banner/styles";
 import ExploreSlider from "../Slider/ExploreSlider";
-interface IAppProps {}
+interface IAppProps {
+  servicedata: any;
+}
 
 const FeaturedAgencies: React.FunctionComponent<IAppProps> = (props) => {
   return (
@@ -38,7 +40,7 @@ const FeaturedAgencies: React.FunctionComponent<IAppProps> = (props) => {
           </DescriptionText>
         </div>
         <div>
-          <ExploreSlider />
+          <ExploreSlider servicedata={props.servicedata} />
         </div>
       </StyleContainer>
     </StyledBox>

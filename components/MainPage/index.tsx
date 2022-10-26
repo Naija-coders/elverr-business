@@ -9,7 +9,9 @@ import FeaturedAgencies from "../Featured/FeaturedAgencies";
 import Proposal from "../Banner/Proposal";
 import BasedonLikes from "../Featured/BasedonLikes";
 
-interface IAppProps {}
+interface IAppProps {
+  exploredata?: any;
+}
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
@@ -27,9 +29,10 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
       >
         <DiscoverBanner />
         <CreateProject />
-        <ExploreFeature /> <FeaturedAgencies />
+        <ExploreFeature servicedata={props.exploredata} />{" "}
+        <FeaturedAgencies servicedata={props.exploredata} />
         <Proposal />
-        <BasedonLikes />
+        <BasedonLikes servicedata={props.exploredata} />
         <RelatedCategories />
         <FooterLoggedIn />
       </div>

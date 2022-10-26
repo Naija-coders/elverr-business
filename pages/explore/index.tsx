@@ -48,7 +48,7 @@ export async function getServerSideProps(context: any) {
       console.log("does the query data comes here?", datas);
     })
     .catch((error) => {});
-  mydata;
+  await mydata;
   const servicedata = datas;
   if (query === "" || query?.page === undefined) {
     console.log("is query defined");

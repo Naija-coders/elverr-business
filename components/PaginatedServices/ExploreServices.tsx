@@ -41,13 +41,7 @@ export default function ExploreServices({ servicedata, query }: Props) {
     setFirst(value);
     route.push(`explore?page=${first}`);
   };
-  React.useEffect(() => {
-    Clientapi.get(`api/company/exploreservices`)
-      .then((response) => {
-        console.log("the response data is ", response.data);
-      })
-      .catch((err: AxiosError) => {});
-  }, []);
+
   React.useEffect(() => {
     if (query === undefined || query === "") {
       setPagenumber(1);

@@ -11,7 +11,7 @@ type Props = {
   servicedata: any;
 };
 
-export default function index({ query, servicedata }: Props) {
+export default function Index({ query, servicedata }: Props) {
   console.log("the service data is", servicedata);
   console.log("the query is", query);
   return (
@@ -30,8 +30,15 @@ export default function index({ query, servicedata }: Props) {
 export async function getServerSideProps(context: any) {
   const query = context.query;
   let datas;
-  const { res } = context;
-  res.setHeader("Cache-Control", `s-maxage=3660, stale-while-revalidate=4600`);
+  const { res, req } = context;
+  if (!req) {
+    const servicedata = [];
+    console.log("is request defined");
+    return {
+      props: { servicedata: [] },
+    };
+  }
+
   const mydata = Clientapi.get(
     `api/company/exploreservices?page=${query?.page}`
   )
@@ -41,9 +48,14 @@ export async function getServerSideProps(context: any) {
       console.log("does the query data comes here?", datas);
     })
     .catch((error) => {});
-  await mydata;
+  mydata;
   const servicedata = datas;
-
+  if (query === "" || query?.page === undefined) {
+    console.log("is query defined");
+    return {
+      props: { query: 1, servicedata },
+    };
+  }
   return {
     props: { query, servicedata },
   };

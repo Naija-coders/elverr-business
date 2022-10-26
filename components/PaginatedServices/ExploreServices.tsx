@@ -140,7 +140,7 @@ export default function ExploreServices({ servicedata, query }: Props) {
           <Divider />
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
-              count={parseInt(servicedata.last_page, 10)}
+              count={parseInt(servicedata?.last_page, 10)}
               page={query}
               onChange={handleChange}
             />

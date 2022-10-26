@@ -17,7 +17,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import Link from "next/link";
+import { Link } from "@mui/material";
 interface Props {
   nosubbar: boolean;
   filter: string;

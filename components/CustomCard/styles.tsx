@@ -24,9 +24,11 @@ export const CustomDiv = styled("div")(
       xl: "150px 150px 150px 150px 150px",
     },
     columnGap: { lg: "9rem", md: "10rem" },
-    justifyContent: "center",
   })
 );
 export const CustomContainer = styled("div")(
-  sx({ width: { lg: "270.34px", md: "260px" }, height: "294.82px" })
+  sx({
+    width: { xl: "280px", lg: "270.34px", md: "260px" },
+    height: "294.82px",
+  })
 );

@@ -19,9 +19,10 @@ import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 interface Props {
   nosubbar: boolean;
+  filter: string;
 }
 
-const Navbar: React.FunctionComponent<Props> = ({ nosubbar }) => {
+const Navbar: React.FunctionComponent<Props> = ({ nosubbar, filter }) => {
   console.log("this is it");
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
@@ -52,7 +53,7 @@ const Navbar: React.FunctionComponent<Props> = ({ nosubbar }) => {
         marginTop: "-20px",
 
         width: "100%",
-        filter: "drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))",
+        filter: filter,
       }}
     >
       <StyledBox1>

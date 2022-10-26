@@ -14,7 +14,10 @@ interface IAppProps {}
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <div>
-      <Navbar nosubbar={true} />
+      <Navbar
+        nosubbar={true}
+        filter="drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))"
+      />
       <div
         style={{
           display: "flex",

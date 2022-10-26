@@ -10,7 +10,7 @@ type Props = {};
 export default function index({}: Props) {
   return (
     <div>
-      <Navbar nosubbar={false} />
+      <Navbar nosubbar={false} filter="none" />
       <ExploreBanner />
 
       <ExploreServices />

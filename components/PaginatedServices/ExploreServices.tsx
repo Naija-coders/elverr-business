@@ -26,22 +26,34 @@ import Clientapi from "../../pages/api/client";
 import { AxiosError } from "axios";
 import ServiceGridCard from "../CustomCard/ServiceGridCard";
 import { Divider } from "@mui/material";
-type Props = {};
+import { useRouter } from "next/router";
+type Props = {
+  servicedata: any;
+  query: any;
+};
 
-export default function ExploreServices({}: Props) {
-  const [servicedata, setServicedata] = React.useState<any>();
-
+export default function ExploreServices({ servicedata, query }: Props) {
+  /*   const [servicedata, setServicedata] = React.useState<any>(); */
+  const [first, setFirst] = React.useState(1);
+  const [pagenumber, setPagenumber] = React.useState<number>();
+  const route = useRouter();
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setFirst(value);
+    route.push(`explore?page=${first}`);
+  };
   React.useEffect(() => {
-    if (servicedata === "" || servicedata === undefined) {
-      Clientapi.get("api/company/exploreservices?page=1")
-        .then((response) => {
-          console.log("the response data is ", response.data);
-          setServicedata(response.data.data);
-        })
-        .catch((err: AxiosError) => {});
+    Clientapi.get(`api/company/exploreservices`)
+      .then((response) => {
+        console.log("the response data is ", response.data);
+      })
+      .catch((err: AxiosError) => {});
+  }, []);
+  React.useEffect(() => {
+    if (query === undefined || query === "") {
+      setPagenumber(1);
     }
-  }, [servicedata]);
-
+  }, [pagenumber]);
+  console.log("the page number is", pagenumber);
   return (
     <StyledBox>
       <StyleContainer>
@@ -129,21 +141,14 @@ export default function ExploreServices({}: Props) {
           <BasicTextbody sx={{ fontSize: "1rem", color: "#515151" }}>
             Find the best agency on Elverr to suit your project needs.
           </BasicTextbody>
-          <ServiceGridCard data={servicedata} />
+          <ServiceGridCard data={servicedata?.data} />
           <div style={{ marginTop: "50px" }}></div>
           <Divider />
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
-              count={10}
-              renderItem={(item) => (
-                <PaginationItem
-                  components={{
-                    previous: ArrowBackIcon,
-                    next: ArrowForwardIcon,
-                  }}
-                  {...item}
-                />
-              )}
+              count={parseInt(servicedata.last_page, 10)}
+              page={query}
+              onChange={handleChange}
             />
           </div>
         </div>

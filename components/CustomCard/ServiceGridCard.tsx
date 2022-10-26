@@ -8,6 +8,12 @@ type Props = {
 };
 
 export default function ServiceGridCard({ data }: Props) {
+  React.useEffect(() => {
+    if (data === undefined) {
+      console.log("data is undefined");
+    }
+  }, [data]);
+
   return (
     <div>
       {data === undefined ? (

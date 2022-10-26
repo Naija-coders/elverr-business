@@ -187,12 +187,13 @@ export default function ExploreSlider({ servicedata }: Props) {
               key={Math.random()}
             >
               <img
-                src={item.image_url}
                 style={{
-                  height: "203.px",
+                  height: "68%",
+
                   borderRadius: "16.7039px 16.7039px 0px 0px",
                   width: "100%",
                 }}
+                src={item.image_url}
               />
               <div
                 style={{
@@ -226,6 +227,7 @@ export default function ExploreSlider({ servicedata }: Props) {
                   paddingRight: "1rem",
                   paddingTop: "0.5rem",
                   justifyContent: "space-between",
+
                   marginTop: "10px",
                   width: "100%",
                 }}
@@ -239,10 +241,15 @@ export default function ExploreSlider({ servicedata }: Props) {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Avatar
-                    /* src={item?.profile_photo_path} */
+                  <img
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "50%",
+                    }}
                     src={item.image_url}
                   />
+
                   <div>
                     <Typography
                       sx={{

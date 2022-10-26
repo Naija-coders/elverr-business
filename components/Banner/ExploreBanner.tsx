@@ -1,12 +1,12 @@
 import React from "react";
 
 type Props = {};
-import {} from "./styles";
+import { LadyDiv } from "./styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { Text, MainDiv1, MainDivRight } from "./styles";
 import BannerFilter from "./BannerFilter";
 import { CustomTypography1, CustomTypography2 } from "./styles";
-import { Button } from "@mui/material";
+import { Avatar, Button, Typography } from "@mui/material";
 export default function DiscoverBanner({}: Props) {
   return (
     <StyledBox>
@@ -18,7 +18,6 @@ export default function DiscoverBanner({}: Props) {
             position: "relative",
 
             borderRadius: " 0px 0px 20px 20px",
-            marginTop: "30px",
           }}
         >
           <div
@@ -26,6 +25,7 @@ export default function DiscoverBanner({}: Props) {
               width: "150.53px",
               position: "absolute",
               left: "10px",
+              marginTop: "50px",
             }}
           >
             <CustomTypography1
@@ -112,9 +112,100 @@ export default function DiscoverBanner({}: Props) {
               borderRadius: "10px",
             }}
           ></div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666771765/worldmap.png" />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              style={{ width: "62%" }}
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666777525/worldmap_tz0yjz.png"
+            />
           </div>
+
+          <LadyDiv>
+            <img
+              style={{ height: "320px" }}
+              src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666777172/Screenshot_2022-10-26_at_12.38.29_PM-removebg-preview_ub9tbi.png"
+            />
+          </LadyDiv>
+          <div
+            style={{
+              background: "rgba(52, 164, 34, 0.1)",
+              filter: " blur(36.4456px)",
+              position: "absolute",
+              right: "50px",
+              width: "250px",
+              height: "100px",
+              top: 0,
+              marginTop: "200px",
+
+              borderRadius: "10px",
+            }}
+          ></div>
+          <div
+            style={{
+              background: "#FFFFFF",
+              boxShadow: " 0px 17.475px 43.6876px rgba(119, 115, 170, 0.1)",
+              borderRadius: "11.9148px",
+              position: "absolute",
+              right: "170px",
+              top: 0,
+              marginTop: "190px",
+
+              height: " 60.49px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: "1rem",
+                height: "100%",
+                padding: "1rem",
+                justifyItems: "center",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                style={{ display: "flex", flexDirection: "row", gap: "1rem" }}
+              >
+                <Avatar src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666006880/makeupartist.jpg" />
+                <div>
+                  <Typography sx={{ fontSize: "0.8rem", color: "#303030" }}>
+                    {" "}
+                    Clarisse Meyer
+                  </Typography>
+                  <Typography sx={{ fontSize: "0.8rem", color: "#747582" }}>
+                    Makeup Artist
+                  </Typography>
+                </div>
+              </div>
+              <Typography
+                sx={{
+                  color: "#34A422",
+                  fontSize: "1rem",
+                  fontWeight: "700",
+                  marginLeft: "1rem",
+
+                  opacity: "0.8",
+                }}
+              >
+                $15.00
+              </Typography>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <BannerFilter />
         </div>
       </StyleContainer>
     </StyledBox>

@@ -441,3 +441,10 @@ export const StyledDivButton = styled(Button)(
     },
   })
 );
+export const LadyDiv = styled("div")(
+  sx({
+    position: "absolute",
+    top: 10,
+    right: { md: "-100px", lg: "-80px" },
+  })
+);

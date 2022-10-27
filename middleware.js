@@ -12,6 +12,22 @@ export async function middleware(req) {
       return NextResponse.rewrite("https://business.elverr.com/mainpage");
     }
   }
+  if (url === "http://localhost:3000/explore") {
+    if (!verify && url.includes("/explore")) {
+      return NextResponse.redirect("http://localhost:3000/");
+    }
+    if (verify && url === "http://localhost:3000/explore") {
+      return NextResponse.rewrite("http://localhost:3000/explore?page=1");
+    }
+  }
+  if (url === "https://business.elverr.com/explore") {
+    if (!verify && url.includes("/explore")) {
+      return NextResponse.redirect("https://business.elverr.com/");
+    }
+    if (verify && url === "https://business.elverr.com/explore") {
+      return NextResponse.rewrite("https://business.elverr.com/explore?page=1");
+    }
+  }
   if (url === "http://localhost:3000/") {
     if (!verify && url.includes("/mainpage")) {
       return NextResponse.redirect("http://localhost:3000/");

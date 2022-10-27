@@ -6,6 +6,7 @@ import ExploreServices from "../../components/PaginatedServices/ExploreServices"
 import FooterLoggedIn from "../../components/LoggedIn/FooterLoggedIn";
 import Clientapi from "../api/client";
 import { useRouter } from "next/router";
+import { ParsedUrlQuery } from "querystring";
 type Props = {
   query: any;
   servicedata: any;
@@ -16,14 +17,16 @@ export default function Index({ query, servicedata }: Props) {
   console.log("the query is", query);
   const route = useRouter();
   const [servicedataList, setServicedataList] = React.useState(servicedata);
+  const [querydata, setQuerydata] = React.useState<ParsedUrlQuery>();
 
   React.useEffect(() => {
     console.log("checkin gthe state of service data", servicedata);
+
     if (servicedata.length == 0) {
       Clientapi.get(`api/company/exploreservices?page=${route.query?.page}`)
         .then((response: any) => {
           setServicedataList(response.data);
-
+          setQuerydata(route.query);
           console.log("checking our the query", query);
           console.log("does the query data comes here?", servicedata);
         })
@@ -44,7 +47,7 @@ export default function Index({ query, servicedata }: Props) {
     </div>
   );
 }
-Index.getInitialProps = async (ctx) => {
+Index.getInitialProps = async (ctx: any) => {
   const query = ctx.query;
   let datas;
   const { res, req } = ctx;

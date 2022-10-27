@@ -97,13 +97,16 @@ const Navbar: React.FunctionComponent<Props> = ({
             >
               <StyledMainDiv>
                 <SearchTextField />
-                <Link href="/explore" sx={{ textDecoration: "none" }}>
-                  <StyledText
-                    style={{ color: isexploreactive ? "#34A422" : "black" }}
-                  >
-                    Explore
-                  </StyledText>
-                </Link>
+
+                <StyledText
+                  onClick={() => {
+                    route.push("/explore");
+                  }}
+                  style={{ color: isexploreactive ? "#34A422" : "black" }}
+                >
+                  Explore
+                </StyledText>
+
                 <StyledText
                   style={{
                     color: ispagecategoriesactive ? "#34A422" : "black",

@@ -1,12 +1,19 @@
 import React from "react";
 import { CustomDiv, CustomContainer } from "./styles";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Avatar, Button, IconButton, Typography } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  IconButton,
+  Typography,
+  Checkbox,
+} from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 type Props = {
   data: any;
 };
-
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+const label = { inputProps: { "aria-label": "Likes" } };
 export default function ServiceGridCard({ data }: Props) {
   React.useEffect(() => {
     if (data === undefined) {
@@ -410,8 +417,16 @@ export default function ServiceGridCard({ data }: Props) {
                     alignItems: "center",
                   }}
                 >
-                  <FavoriteBorderIcon
-                    sx={{ fontSize: "20px", color: "#34A422" }}
+                  <Checkbox
+                    {...label}
+                    icon={
+                      <FavoriteBorder
+                        sx={{ fontSize: "20px", color: "#34A422" }}
+                      />
+                    }
+                    checkedIcon={
+                      <Favorite sx={{ fontSize: "20px", color: "red" }} />
+                    }
                   />
                 </div>
               </div>

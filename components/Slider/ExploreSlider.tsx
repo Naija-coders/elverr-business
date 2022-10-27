@@ -27,11 +27,13 @@ import {
   IconButton,
   Typography,
   Skeleton,
+  Checkbox,
 } from "@mui/material";
 import { AxiosError } from "axios";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 
 type Props = { servicedata: any };
-
+const label = { inputProps: { "aria-label": "Likes" } };
 export default function ExploreSlider({ servicedata }: Props) {
   const settings = {
     speed: 500,
@@ -39,7 +41,11 @@ export default function ExploreSlider({ servicedata }: Props) {
     slidesToShow: 4,
     slidesToScroll: 3,
   };
+  const [likes, setLikes] = React.useState(false);
 
+  const handleLikesClicks = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setLikes(!likes);
+  };
   return (
     <div className="">
       <link
@@ -214,8 +220,16 @@ export default function ExploreSlider({ servicedata }: Props) {
                     alignItems: "center",
                   }}
                 >
-                  <FavoriteBorderIcon
-                    sx={{ fontSize: "20px", color: "#34A422" }}
+                  <Checkbox
+                    {...label}
+                    icon={
+                      <FavoriteBorder
+                        sx={{ fontSize: "20px", color: "#34A422" }}
+                      />
+                    }
+                    checkedIcon={
+                      <Favorite sx={{ fontSize: "20px", color: "red" }} />
+                    }
                   />
                 </div>
               </div>

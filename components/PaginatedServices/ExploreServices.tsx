@@ -34,17 +34,21 @@ type Props = {
 
 export default function ExploreServices({ servicedata, query }: Props) {
   /*   const [servicedata, setServicedata] = React.useState<any>(); */
-  const [first, setFirst] = React.useState(1);
+  const [first, setFirst] = React.useState(query);
   const [pagenumber, setPagenumber] = React.useState<number>();
   const route = useRouter();
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    /* route.reload().then(() => push(`explore?page=${value}`)); */
+
+    window.location.href = `explore?page=${value}`;
     setFirst(value);
-    route.push(`explore?page=${first}`);
   };
 
   React.useEffect(() => {
     if (query === undefined || query === "") {
       setPagenumber(1);
+    } else {
+      setPagenumber(query);
     }
   }, [pagenumber]);
   console.log("the page number is", pagenumber);
@@ -141,7 +145,7 @@ export default function ExploreServices({ servicedata, query }: Props) {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
               count={parseInt(servicedata?.last_page, 10)}
-              page={query}
+              page={first}
               onChange={handleChange}
             />
           </div>

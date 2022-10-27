@@ -7,6 +7,7 @@ import FooterLoggedIn from "../../components/LoggedIn/FooterLoggedIn";
 import Clientapi from "../api/client";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
+
 type Props = {
   query: any;
   servicedata: any;
@@ -41,7 +42,7 @@ export default function Index({ query, servicedata }: Props) {
 
       <ExploreServices
         servicedata={servicedataList}
-        query={parseInt(query?.page, 10)}
+        query={parseInt(query?.page || "1", 10)}
       />
       <FooterLoggedIn />
     </div>

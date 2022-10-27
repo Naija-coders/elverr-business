@@ -21,9 +21,19 @@ import { Link } from "@mui/material";
 interface Props {
   nosubbar: boolean;
   filter: string;
+  isexploreactive?: boolean;
+  ispagecategoriesactive?: boolean;
+  ispageprojectactive?: boolean;
 }
 
-const Navbar: React.FunctionComponent<Props> = ({ nosubbar, filter }) => {
+const Navbar: React.FunctionComponent<Props> = ({
+  nosubbar,
+  filter,
+
+  ispagecategoriesactive,
+  isexploreactive,
+  ispageprojectactive,
+}) => {
   console.log("this is it");
   const { AuthState } = useContext<any>(StateContext);
   const { AuthDispatcher } = useContext<any>(DispatchContext);
@@ -43,6 +53,7 @@ const Navbar: React.FunctionComponent<Props> = ({ nosubbar, filter }) => {
       });
     }
   }, []);
+  //color "#34A422"
 
   return (
     <div
@@ -86,12 +97,27 @@ const Navbar: React.FunctionComponent<Props> = ({ nosubbar, filter }) => {
             >
               <StyledMainDiv>
                 <SearchTextField />
-                <Link href="/explore">
-                  <StyledText style={{ color: "#34A422" }}>Explore</StyledText>
+                <Link href="/explore" sx={{ textDecoration: "none" }}>
+                  <StyledText
+                    style={{ color: isexploreactive ? "#34A422" : "black" }}
+                  >
+                    Explore
+                  </StyledText>
                 </Link>
-                <StyledText>Categories</StyledText>
+                <StyledText
+                  style={{
+                    color: ispagecategoriesactive ? "#34A422" : "black",
+                  }}
+                >
+                  Categories
+                </StyledText>
 
-                <StyledText sx={{ display: { lg: "flex" } }}>
+                <StyledText
+                  sx={{
+                    color: ispageprojectactive ? "#34A422" : "black",
+                    display: { lg: "flex" },
+                  }}
+                >
                   Project
                 </StyledText>
               </StyledMainDiv>

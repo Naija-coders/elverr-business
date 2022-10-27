@@ -16,7 +16,7 @@ export default function Index({ query, servicedata }: Props) {
   console.log("the query is", query);
   return (
     <div>
-      <Navbar nosubbar={false} filter="none" />
+      <Navbar nosubbar={false} filter="none" isexploreactive={true} />
       <ExploreBanner />
 
       <ExploreServices

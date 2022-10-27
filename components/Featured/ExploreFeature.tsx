@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { MainBodyTypo, DescriptionText } from "../Banner/styles";
 import ExploreSlider from "../Slider/ExploreSlider";
+import { Link } from "@mui/material";
 interface IAppProps {
   servicedata: any;
 }
@@ -27,7 +28,9 @@ const ExploreFeature: React.FunctionComponent<IAppProps> = (props) => {
             }}
           >
             {" "}
-            <MainBodyTypo>Explore</MainBodyTypo>
+            <Link href={"explore"} sx={{ textDecoration: "none" }}>
+              <MainBodyTypo>Explore</MainBodyTypo>
+            </Link>
             <DescriptionText
               sx={{ color: "#34A422", textDecoration: "underline" }}
             >
@@ -35,6 +38,7 @@ const ExploreFeature: React.FunctionComponent<IAppProps> = (props) => {
               {"See all>>"}
             </DescriptionText>
           </div>
+
           <DescriptionText>
             Find the best talents on Elverr to suit your project needs.
           </DescriptionText>

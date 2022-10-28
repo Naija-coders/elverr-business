@@ -16,19 +16,20 @@ export const CustomDiv = styled("div")(
   sx({
     display: "grid",
 
-    width: "91%",
+    width: "100%",
 
     gridTemplateColumns: {
-      md: "150px 150px  150px ",
-      lg: "150px 150px 150px 150px",
-      xl: "150px 150px 150px 150px 150px",
+      md: "repeat(auto-fill, 30%)",
+      lg: "repeat(auto-fill, 24%)",
+      xl: "repeat(auto-fill,19%)",
     },
-    columnGap: { lg: "9rem", md: "10rem" },
+    /* columnGap: { lg: "9rem", md: "10rem" }, */
+    columnGap: { md: "3%", lg: "1%" },
   })
 );
 export const CustomContainer = styled("div")(
   sx({
-    width: { xl: "280px", lg: "270.34px", md: "260px" },
+    width: { xl: "100%", lg: "100%", md: "100%" },
     height: "294.82px",
   })
 );

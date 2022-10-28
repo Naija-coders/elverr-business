@@ -5,6 +5,19 @@ import Clientapi from "./api/client";
 type Props = { servicedata: any };
 
 export default function mainpage({ servicedata }: Props) {
+  React.useEffect(() => {
+    Clientapi.get("api/company/services")
+      .then((response: any) => {
+        servicedata = response.data;
+        console.log(
+          "hey checking the static prop to see if theres any changes"
+        );
+      })
+      .catch((error: any) => {
+        console.log("it didnt work");
+      });
+  }, []);
+
   return (
     <>
       <MainPage exploredata={servicedata} />
@@ -12,7 +25,7 @@ export default function mainpage({ servicedata }: Props) {
   );
 }
 
-export async function getStaticProps(context: any) {
+/* export async function getStaticProps(context: any) {
   let datas;
   const mydata = Clientapi.get("api/company/services")
     .then((response: any) => {
@@ -26,6 +39,6 @@ export async function getStaticProps(context: any) {
   const servicedata = datas;
   return {
     props: { servicedata },
-    revalidate: 360,
+    
   };
-}
+} */

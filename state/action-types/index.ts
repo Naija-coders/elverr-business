@@ -11,7 +11,10 @@ export enum ActionType {
     ALLSERVICE="allservice",
     RECOMMENDED="recommended",
     VIEWED = "viewed",
-    PREVIEWSERVICE="previewservice"
+    PREVIEWSERVICE="previewservice",
+    PAGENUMBER = "pagenumber",
+    
+
 
     
 }

@@ -111,6 +111,14 @@ export const setViewed = (view : any) => {
         })
     }
 }
+export const pagenumber = (pagenumber:any)=>{
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.PAGENUMBER,
+            payload: pagenumber
+        })
+    }
+}
 export const bankrupt = () => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({

@@ -23,7 +23,7 @@ export default function ServiceGridCard({ data }: Props) {
 
   return (
     <div>
-      {data === undefined ? (
+      {data?.length == 0 || data == undefined ? (
         <CustomDiv>
           <CustomContainer>
             <Skeleton variant="rectangular" width={"100%"} height={"173px"} />

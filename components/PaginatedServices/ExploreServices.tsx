@@ -27,31 +27,55 @@ import { AxiosError } from "axios";
 import ServiceGridCard from "../CustomCard/ServiceGridCard";
 import { Divider } from "@mui/material";
 import { useRouter } from "next/router";
-type Props = {
-  servicedata: any;
-  query: any;
-};
+import { bindActionCreators, Dispatch } from "redux";
+import { actionCreators } from "../../state";
 
-export default function ExploreServices({ servicedata, query }: Props) {
+import StateContext from "../../context/StateContext";
+import DispatchContext from "../../context/DispatchContext";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../state/reducers";
+type Props = {};
+
+export default function ExploreServices({}: Props) {
   /*   const [servicedata, setServicedata] = React.useState<any>(); */
-  const [first, setFirst] = React.useState(query);
-  const [pagenumber, setPagenumber] = React.useState<number>();
+
   const route = useRouter();
+  const querys = route.query?.page;
+  const [first, setFirst] = React.useState(
+    parseInt(querys?.toString() || "1", 10)
+  );
+
+  const [servicedataList, setServicedataList] = React.useState<any>([]);
+
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     /* route.reload().then(() => push(`explore?page=${value}`)); */
+    route.push(`explore?page=${value}`, undefined, { shallow: true });
 
-    window.location.href = `explore?page=${value}`;
+    setServicedataList([]);
+
     setFirst(value);
   };
-
+  const dispatch: Dispatch<any> = useDispatch();
+  const { pagenumber } = bindActionCreators(actionCreators, dispatch);
+  const state = useSelector((state: RootState) => state.appstate);
   React.useEffect(() => {
-    if (query === undefined || query === "") {
-      setPagenumber(1);
-    } else {
-      setPagenumber(query);
+    if (servicedataList.length == 0) {
+      Clientapi.get(`api/company/exploreservices?page=${route.query?.page}`)
+        .then((response: any) => {
+          setServicedataList(response.data);
+          pagenumber(response?.data.last_page);
+          console.log(
+            "the response for last page after fetch",
+            response?.data.last_page
+          );
+        })
+        .catch((error) => {});
     }
-  }, [pagenumber]);
+  }, [route.query.page]);
+
   console.log("the page number is", pagenumber);
+  console.log("the state of the page numner is", state);
+  const pagevalue = parseInt(state?.pagenumber, 10);
   return (
     <StyledBox>
       <StyleContainer>
@@ -139,12 +163,12 @@ export default function ExploreServices({ servicedata, query }: Props) {
           <BasicTextbody sx={{ fontSize: "1rem", color: "#515151" }}>
             Find the best agency on Elverr to suit your project needs.
           </BasicTextbody>
-          <ServiceGridCard data={servicedata?.data} />
+          <ServiceGridCard data={servicedataList?.data} />
           <div style={{ marginTop: "50px" }}></div>
           <Divider />
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
-              count={parseInt(servicedata?.last_page, 10)}
+              count={pagevalue}
               page={first}
               onChange={handleChange}
             />

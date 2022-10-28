@@ -20,35 +20,18 @@ export default function Index({ query, servicedata }: Props) {
   const [servicedataList, setServicedataList] = React.useState(servicedata);
   const [querydata, setQuerydata] = React.useState<ParsedUrlQuery>();
 
-  React.useEffect(() => {
-    console.log("checkin gthe state of service data", servicedata);
-
-    if (servicedata.length == 0) {
-      Clientapi.get(`api/company/exploreservices?page=${route.query?.page}`)
-        .then((response: any) => {
-          setServicedataList(response.data);
-          setQuerydata(route.query);
-          console.log("checking our the query", query);
-          console.log("does the query data comes here?", servicedata);
-        })
-        .catch((error) => {});
-    }
-  }, [route.query.page, servicedata]);
   const querys = route.query?.page;
   return (
     <div>
       <Navbar nosubbar={false} filter="none" isexploreactive={true} />
       <ExploreBanner />
 
-      <ExploreServices
-        servicedata={servicedataList}
-        query={parseInt(querys?.toString() || "1", 10)}
-      />
+      <ExploreServices />
       <FooterLoggedIn />
     </div>
   );
 }
-Index.getInitialProps = async (ctx: any) => {
+/* Index.getInitialProps = async (ctx: any) => {
   const query = ctx.query;
   let datas;
   const { res, req } = ctx;
@@ -82,7 +65,7 @@ Index.getInitialProps = async (ctx: any) => {
     query,
     servicedata,
   };
-};
+}; */
 /* 
 export async function getServerSideProps(context: any) {
   const query = context.query;

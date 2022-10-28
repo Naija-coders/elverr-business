@@ -175,7 +175,7 @@ export default function ExploreServices({}: Props) {
               page={first}
               onChange={handleChange}
               shape="rounded"
-              color="primary"
+              color="secondary"
               renderItem={(item) => (
                 <PaginationItem
                   components={{

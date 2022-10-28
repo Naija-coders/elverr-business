@@ -33,8 +33,8 @@ export default function Index({ query, servicedata }: Props) {
         })
         .catch((error) => {});
     }
-  }, [servicedata]);
-
+  }, [route.query.page, servicedata]);
+  const querys = route.query?.page;
   return (
     <div>
       <Navbar nosubbar={false} filter="none" isexploreactive={true} />
@@ -42,7 +42,7 @@ export default function Index({ query, servicedata }: Props) {
 
       <ExploreServices
         servicedata={servicedataList}
-        query={parseInt(query?.page || "1", 10)}
+        query={parseInt(querys?.toString() || "1", 10)}
       />
       <FooterLoggedIn />
     </div>

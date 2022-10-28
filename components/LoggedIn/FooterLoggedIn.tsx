@@ -60,6 +60,7 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                 "&:hover": {
                   textDecoration: "none",
                   cursor: "text",
+                  color: "#71717A",
                   fontSize: "0.9rem",
                 },
               }}
@@ -75,17 +76,35 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                 gap: "30px",
               }}
             >
-              <Avatar sx={{ background: "#F5F5F5", width: 33, height: 33 }}>
-                <FacebookOutlinedIcon
-                  style={{ color: "#34A422", fontSize: "2rem" }}
-                />
-              </Avatar>{" "}
-              <Avatar style={{ background: "#F5F5F5", width: 33, height: 33 }}>
-                <TwitterIcon style={{ fontSize: "2rem", color: "#34A422" }} />
-              </Avatar>{" "}
-              <Avatar style={{ background: "#F5F5F5", width: 33, height: 33 }}>
-                <LinkedInIcon style={{ fontSize: "2rem", color: "#34A422" }} />
-              </Avatar>{" "}
+              <img
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666958316/facebook_cv99gu.png"
+                style={{
+                  background: "#F5F5F5",
+                  width: 33,
+                  height: 33,
+                  borderRadius: "50%",
+                }}
+              />
+
+              <img
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666958301/twitter_twbpyo.png"
+                style={{
+                  background: "#F5F5F5",
+                  width: 33,
+                  height: 33,
+                  borderRadius: "50%",
+                }}
+              />
+
+              <img
+                src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666958310/linkedin_qbwcti.png"
+                style={{
+                  background: "#F5F5F5",
+                  width: 33,
+                  height: 33,
+                  borderRadius: "50%",
+                }}
+              />
             </div>
           </div>
           <div
@@ -150,6 +169,7 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                     textDecoration: "none",
                     cursor: "text",
                     fontSize: "0.9rem",
+                    color: "#71717A",
                   },
                 }}
               >

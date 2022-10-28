@@ -21,6 +21,8 @@ export default function ServiceGridCard({ data }: Props) {
     }
   }, [data]);
 
+  const [confirmed, setConfirmed] = React.useState(false);
+
   return (
     <div>
       {data?.length == 0 || data == undefined ? (
@@ -419,6 +421,9 @@ export default function ServiceGridCard({ data }: Props) {
                 >
                   <Checkbox
                     {...label}
+                    onChange={() => {
+                      console.log("you liked the resulte", item?.id);
+                    }}
                     icon={
                       <FavoriteBorder
                         sx={{ fontSize: "20px", color: "#34A422" }}
@@ -458,7 +463,7 @@ export default function ServiceGridCard({ data }: Props) {
                     <Typography
                       sx={{
                         fontWeight: 600,
-                        fontSize: "0.9rem",
+                        fontSize: "1rem",
                         fontFamily: "DM Sans",
                         color: "#303030",
                       }}
@@ -468,7 +473,7 @@ export default function ServiceGridCard({ data }: Props) {
                     <Typography
                       sx={{
                         fontWeight: 300,
-                        fontSize: "0.8rem",
+                        fontSize: "0.9rem",
                         color: " #747582",
                         fontFamily: "DM Sans",
                       }}
@@ -480,7 +485,7 @@ export default function ServiceGridCard({ data }: Props) {
                 <Typography
                   sx={{
                     fontWeight: 700,
-                    fontSize: "0.95rem",
+                    fontSize: "1.2rem",
                     color: "#34A422",
                     fontFamily: "DM Sans",
                   }}

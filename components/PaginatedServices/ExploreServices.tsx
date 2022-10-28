@@ -55,9 +55,11 @@ export default function ExploreServices({}: Props) {
 
     setFirst(value);
   };
+
   const dispatch: Dispatch<any> = useDispatch();
   const { pagenumber } = bindActionCreators(actionCreators, dispatch);
   const state = useSelector((state: RootState) => state.appstate);
+  console.log(Pagination, "pagination function");
   React.useEffect(() => {
     if (servicedataList.length == 0) {
       Clientapi.get(`api/company/exploreservices?page=${route.query?.page}`)
@@ -87,6 +89,7 @@ export default function ExploreServices({}: Props) {
             justifyContent: "space-between",
 
             alignItems: "center",
+            position: "relative",
           }}
         >
           <div style={{}}>sort by Popular</div>
@@ -171,6 +174,17 @@ export default function ExploreServices({}: Props) {
               count={pagevalue}
               page={first}
               onChange={handleChange}
+              shape="rounded"
+              color="primary"
+              renderItem={(item) => (
+                <PaginationItem
+                  components={{
+                    previous: ArrowBackIcon,
+                    next: ArrowForwardIcon,
+                  }}
+                  {...item}
+                />
+              )}
             />
           </div>
         </div>

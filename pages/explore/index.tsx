@@ -7,7 +7,24 @@ import FooterLoggedIn from "../../components/LoggedIn/FooterLoggedIn";
 import Clientapi from "../api/client";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: "#34a4221a",
+      main: "#34a4221a",
+      dark: "#34a4221a",
+      contrastText: "#000000",
+    },
+    secondary: {
+      light: "#ff7961",
+      main: "#f44336",
+      dark: "#ba000d",
+      contrastText: "#000",
+    },
+  },
+});
 type Props = {
   query: any;
   servicedata: any;
@@ -22,13 +39,15 @@ export default function Index({ query, servicedata }: Props) {
 
   const querys = route.query?.page;
   return (
-    <div>
-      <Navbar nosubbar={false} filter="none" isexploreactive={true} />
-      <ExploreBanner />
+    <ThemeProvider theme={theme}>
+      <div>
+        <Navbar nosubbar={false} filter="none" isexploreactive={true} />
+        <ExploreBanner />
 
-      <ExploreServices />
-      <FooterLoggedIn />
-    </div>
+        <ExploreServices />
+        <FooterLoggedIn />
+      </div>
+    </ThemeProvider>
   );
 }
 /* Index.getInitialProps = async (ctx: any) => {

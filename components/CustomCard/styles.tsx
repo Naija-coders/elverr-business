@@ -60,7 +60,7 @@ export const CustomDivServices = styled("div")(
 
     width: "100%",
     gap: "2rem",
-    marginTop: "0.9rem",
+    marginTop: "30px",
 
     gridTemplateColumns: {
       md: "repeat(auto-fill, 30%)",

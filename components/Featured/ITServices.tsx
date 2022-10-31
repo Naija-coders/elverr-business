@@ -10,7 +10,7 @@ import {
 } from "../CustomCard/styles";
 import RelatedCategories from "../Slider/RelatedCategories";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
-
+import Footer from "../LoggedIn/FooterLoggedIn";
 type Props = {};
 
 export default function ITServices({}: Props) {
@@ -229,6 +229,7 @@ export default function ITServices({}: Props) {
       <RelatedCategories itservices={true} />
 
       <FAQ />
+      <Footer />
     </div>
   );
 }

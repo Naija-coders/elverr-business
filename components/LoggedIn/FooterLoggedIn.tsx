@@ -126,13 +126,55 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                 marginTop: "1rem",
               }}
             >
-              <FooterTypo>IT Services</FooterTypo>
-              <FooterTypo>Cleaning Services</FooterTypo>
-              <FooterTypo>Event Services</FooterTypo>
-              <FooterTypo>Automative Services</FooterTypo>
-              <FooterTypo>Logistic Services</FooterTypo>
-              <FooterTypo>Repair Services</FooterTypo>
-              <FooterTypo>Fitness Services</FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("It-services");
+                }}
+              >
+                IT Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Cleaning-services");
+                }}
+              >
+                Cleaning Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Event-services");
+                }}
+              >
+                Event Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Automative-services");
+                }}
+              >
+                Automative Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Logistic-services");
+                }}
+              >
+                Logistic Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Repair-services");
+                }}
+              >
+                Repair Services
+              </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("Fitness-services");
+                }}
+              >
+                Fitness Services
+              </FooterTypo>
             </div>
             <div
               style={{

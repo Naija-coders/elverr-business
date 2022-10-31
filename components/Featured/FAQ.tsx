@@ -55,7 +55,7 @@ export default function NestedList() {
       <StyleContainer>
         <div
           style={{
-            background: "#F8FFF7",
+            background: "#FCFBFB",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

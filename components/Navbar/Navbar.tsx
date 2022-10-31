@@ -211,10 +211,11 @@ const Navbar: React.FunctionComponent<Props> = ({
                 }}
               >
                 <StyledTextTypo>Trending</StyledTextTypo>
-                <StyledTextTypo>Automative Services</StyledTextTypo>
-                <StyledTextTypo>Video & Animation</StyledTextTypo>
-                <StyledTextTypo>Entertainments Services</StyledTextTypo>
                 <StyledTextTypo>IT Services</StyledTextTypo>
+                <StyledTextTypo>Automative Services</StyledTextTypo>
+                <StyledTextTypo>Event Services</StyledTextTypo>
+                <StyledTextTypo>Entertainments Services</StyledTextTypo>
+
                 <StyledTextTypo>Cleaning Services</StyledTextTypo>
               </div>
             </>

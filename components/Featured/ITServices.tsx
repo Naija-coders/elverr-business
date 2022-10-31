@@ -20,7 +20,6 @@ export default function ITServices({}: Props) {
       <StyledBox>
         <StyleContainer>
           <CustomTypographyHeader>Explore IT Services </CustomTypographyHeader>
-          <br></br>
 
           <CustomDivServices>
             <CustomContainerItServices>

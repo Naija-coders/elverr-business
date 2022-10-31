@@ -211,7 +211,13 @@ const Navbar: React.FunctionComponent<Props> = ({
                 }}
               >
                 <StyledTextTypo>Trending</StyledTextTypo>
-                <StyledTextTypo>IT Services</StyledTextTypo>
+                <StyledTextTypo
+                  onClick={() => {
+                    route.push("It-services");
+                  }}
+                >
+                  IT Services
+                </StyledTextTypo>
                 <StyledTextTypo>Automative Services</StyledTextTypo>
                 <StyledTextTypo>Event Services</StyledTextTypo>
                 <StyledTextTypo>Entertainments Services</StyledTextTypo>

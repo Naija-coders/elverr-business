@@ -15,8 +15,7 @@ export default function DiscoverBanner({}: Props) {
             height: "404px",
             marginTop: "-32px",
             position: "relative",
-            background:
-              "linear-gradient(90deg, rgba(54, 157, 41, 0.79) 0%, #369D29 100%)",
+            background: "#151B2C",
             borderRadius: " 0px 0px 20px 20px",
           }}
         >

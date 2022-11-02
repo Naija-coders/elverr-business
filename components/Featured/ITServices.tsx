@@ -7,12 +7,15 @@ import {
   CustomFlex,
   CustomTypography,
   CustomTypographyHeader,
+  CustomButtonDiv,
 } from "../CustomCard/styles";
 import RelatedCategories from "../Slider/RelatedCategories";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import Footer from "../LoggedIn/FooterLoggedIn";
 import Itservices from "../Banner/ITservices";
 import { useRouter } from "next/router";
+import { ArrowForwardIos } from "@mui/icons-material";
+
 type Props = {};
 
 export default function ITServices({}: Props) {
@@ -24,6 +27,35 @@ export default function ITServices({}: Props) {
         <StyleContainer>
           <Itservices />
           <br></br> <br></br>
+          <CustomTypographyHeader>Trending services</CustomTypographyHeader>
+          <CustomDivServices>
+            <CustomContainerItServices>
+              <CustomButtonDiv>
+                <div>Graphic Design</div>
+                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+              </CustomButtonDiv>
+            </CustomContainerItServices>
+            <CustomContainerItServices>
+              <CustomButtonDiv>
+                Digital Marketing
+                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+              </CustomButtonDiv>
+            </CustomContainerItServices>
+            <CustomContainerItServices>
+              <CustomButtonDiv>
+                Writing & Translation
+                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+              </CustomButtonDiv>
+            </CustomContainerItServices>
+            <CustomContainerItServices>
+              <CustomButtonDiv>
+                Video & Animation
+                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+              </CustomButtonDiv>
+            </CustomContainerItServices>
+          </CustomDivServices>
+          <br></br>
+          <br></br>
           <CustomTypographyHeader>Explore IT Services </CustomTypographyHeader>
           <CustomDivServices>
             <CustomContainerItServices>

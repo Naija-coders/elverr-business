@@ -12,6 +12,7 @@ import {
   ThemeProvider,
   experimental_sx as sx,
 } from "@mui/system";
+
 export const CustomDiv = styled("div")(
   sx({
     display: "grid",
@@ -46,6 +47,28 @@ export const CustomTypographyHeader = styled(Typography)(
     fontSize: "1.3rem",
     fontFamily: "DM Sans",
     fontWeight: 900,
+  })
+);
+export const CustomButtonDiv = styled(Button)(
+  sx({
+    "background": "#FFFFFF",
+    "border": "2px solid #F5F5F5",
+    "borderRadius": " 14px",
+    "width": "100%",
+    "textTransform": "none",
+    "color": "#11151F",
+    "fontFamily": "DM Sans",
+    "fontSize": "1rem",
+    "fontWeight": 500,
+    "height": "60px",
+    "display": "flex",
+    "justifyContent": "space-between",
+    "paddingLeft": "1rem",
+    "paddingRight": "1rem",
+    "&:hover": {
+      border: "2px solid #34A422",
+      filter: "drop-shadow(0px 3px 6px rgba(52, 164, 34, 0.19))",
+    },
   })
 );
 export const CustomFlex = styled("div")(

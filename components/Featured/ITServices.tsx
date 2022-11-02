@@ -11,6 +11,7 @@ import {
 import RelatedCategories from "../Slider/RelatedCategories";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import Footer from "../LoggedIn/FooterLoggedIn";
+import Itservices from "../Banner/ITservices";
 type Props = {};
 
 export default function ITServices({}: Props) {
@@ -19,8 +20,9 @@ export default function ITServices({}: Props) {
       <Navbar nosubbar={false} filter="none" ispagecategoriesactive={true} />
       <StyledBox>
         <StyleContainer>
+          <Itservices />
+          <br></br> <br></br>
           <CustomTypographyHeader>Explore IT Services </CustomTypographyHeader>
-
           <CustomDivServices>
             <CustomContainerItServices>
               <img
@@ -146,8 +148,9 @@ export default function ITServices({}: Props) {
             <CustomContainerItServices>
               <img
                 src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667203871/graphicdesign_aqcyk9.png"
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667376829/programming_tech_lpxnh6.png"
                 }
+                alt="programming & tech"
                 style={{
                   height: "173px",
                   borderRadius: "16.7039px 16.7039px 0px 0px",
@@ -174,13 +177,14 @@ export default function ITServices({}: Props) {
             <CustomContainerItServices>
               <img
                 src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667203871/graphicdesign_aqcyk9.png"
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667376837/business_svkbch.png"
                 }
                 style={{
                   height: "173px",
                   borderRadius: "16.7039px 16.7039px 0px 0px",
                   width: "100%",
                 }}
+                alt="business"
               />
               <CustomFlex>
                 <CustomTypographyHeader>Business </CustomTypographyHeader>
@@ -197,8 +201,9 @@ export default function ITServices({}: Props) {
             <CustomContainerItServices>
               <img
                 src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667203871/graphicdesign_aqcyk9.png"
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1667376833/trending_bs3o8c.png"
                 }
+                alt="trending"
                 style={{
                   height: "173px",
                   borderRadius: "16.7039px 16.7039px 0px 0px",

@@ -32,6 +32,8 @@ export const CustomTypography = styled(Typography)(
     "color": "#71717A",
     "fontFamily": "DM Sans",
     "fontSize": "0.9rem",
+    "width": "100%",
+
     "&:hover": {
       textDecoration: "underline",
       cursor: "pointer",

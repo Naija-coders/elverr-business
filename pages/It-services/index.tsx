@@ -1,5 +1,5 @@
 import * as React from "react";
-import ITServices from "../components/Featured/ITServices";
+import ITServices from "../../components/Featured/ITServices";
 
 interface IAppProps {}
 

@@ -490,7 +490,7 @@ export default function ServiceGridCard({ data }: Props) {
                     fontFamily: "DM Sans",
                   }}
                 >
-                  $ {item?.price}
+                  ${item?.price}
                 </Typography>
               </div>
             </CustomContainer>

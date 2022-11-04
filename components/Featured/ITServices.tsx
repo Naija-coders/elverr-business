@@ -73,21 +73,21 @@ export default function ITServices({}: Props) {
                 <CustomTypographyHeader>Graphic Design</CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Logo Design & Brand Identity");
+                    route.push("/It-services/Logo Design & Brand Identity");
                   }}
                 >
                   Logo Design & Brand Identity
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Web & Mobile Design");
+                    route.push("/It-services/Web & Mobile Design");
                   }}
                 >
                   Web & Mobile Design
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Visual Design");
+                    route.push("/It-services/Visual Design");
                   }}
                 >
                   Visual Design
@@ -117,56 +117,56 @@ export default function ITServices({}: Props) {
               <CustomFlex>
                 <CustomTypographyHeader
                   onClick={() => {
-                    route.push("It-services/Digital Marketing");
+                    route.push("/It-services/Digital Marketing");
                   }}
                 >
                   Digital Marketing
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Search Engine Optimization");
+                    route.push("/It-services/Search Engine Optimization");
                   }}
                 >
                   Search Engine Optimization
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Public Relations");
+                    route.push("/It-services/Public Relations");
                   }}
                 >
                   Public Relations
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Video Marketing");
+                    route.push("/It-services/Video Marketing");
                   }}
                 >
                   Video Marketing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Web Analytics");
+                    route.push("/It-services/Web Analytics");
                   }}
                 >
                   Web Analytics
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Music Promotion");
+                    route.push("/It-services/Music Promotion");
                   }}
                 >
                   Music Promotion
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Book & E-book Marketing");
+                    route.push("/It-services/Book & E-book Marketing");
                   }}
                 >
                   Book & E-book Marketing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Search Engine Marketing");
+                    route.push("/It-services/Search Engine Marketing");
                   }}
                 >
                   Search Engine Marketing
@@ -190,77 +190,77 @@ export default function ITServices({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Articles & Blog posts");
+                    route.push("/It-services/Articles & Blog posts");
                   }}
                 >
                   Articles & Blog posts
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Website Content");
+                    route.push("/It-services/Website Content");
                   }}
                 >
                   Website Content
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Translation");
+                    route.push("/It-services/Translation");
                   }}
                 >
                   Translation
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Resume & Cover letters");
+                    route.push("/It-services/Resume & Cover letters");
                   }}
                 >
                   Resume & Cover letters
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Case Studies");
+                    route.push("/It-services/Case Studies");
                   }}
                 >
                   Case Studies
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Book & Ebook Writing");
+                    route.push("/It-services/Book & Ebook Writing");
                   }}
                 >
                   Book & Ebook Writing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Creative Writing");
+                    route.push("/It-services/Creative Writing");
                   }}
                 >
                   Creative Writing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Speech Writing");
+                    route.push("/It-services/Speech Writing");
                   }}
                 >
                   Speech Writing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/UX Writing");
+                    route.push("/It-services/UX Writing");
                   }}
                 >
                   UX Writing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Script Writing");
+                    route.push("/It-services/Script Writing");
                   }}
                 >
                   Script Writing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Research & Summaries");
+                    route.push("/It-services/Research & Summaries");
                   }}
                 >
                   Research & Summaries
@@ -285,49 +285,49 @@ export default function ITServices({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Video Editing");
+                    route.push("/It-services/Video Editing");
                   }}
                 >
                   Video Editing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Trailers");
+                    route.push("/It-services/Trailers");
                   }}
                 >
                   Trailers
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Visuals Effects");
+                    route.push("/It-services/Visuals Effects");
                   }}
                 >
                   Visuals Effects
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Crowdfunding Videos");
+                    route.push("/It-services/Crowdfunding Videos");
                   }}
                 >
                   Crowdfunding Videos
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/3D Product Animation");
+                    route.push("/It-services/3D Product Animation");
                   }}
                 >
                   3D Product Animation
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Animation");
+                    route.push("/It-services/Animation");
                   }}
                 >
                   Animation
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Filmed Video Production");
+                    route.push("/It-services/Filmed Video Production");
                   }}
                 >
                   Filmed Video Production
@@ -350,35 +350,35 @@ export default function ITServices({}: Props) {
                 <CustomTypographyHeader>Music & Audio</CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Voice Over");
+                    route.push("/It-services/Voice Over");
                   }}
                 >
                   Voice Over
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Podcasts");
+                    route.push("/It-services/Podcasts");
                   }}
                 >
                   Podcasts
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Producers & Composers");
+                    route.push("/It-services/Producers & Composers");
                   }}
                 >
                   Producers & Composers
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/AudioBook Production");
+                    route.push("/It-services/AudioBook Production");
                   }}
                 >
                   AudioBook Production
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Remixing & Mashups");
+                    route.push("/It-services/Remixing & Mashups");
                   }}
                 >
                   Remixing & Mashups
@@ -403,56 +403,56 @@ export default function ITServices({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/WordPress");
+                    route.push("/It-services/WordPress");
                   }}
                 >
                   WordPress
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Web builders & CMS");
+                    route.push("/It-services/Web builders & CMS");
                   }}
                 >
                   Web builders & CMS
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Database");
+                    route.push("/It-services/Database");
                   }}
                 >
                   Database
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Mobile apps");
+                    route.push("/It-services/Mobile apps");
                   }}
                 >
                   Mobile apps
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Chatbox");
+                    route.push("/It-services/Chatbox");
                   }}
                 >
                   Chatbox
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Data Processing");
+                    route.push("/It-services/Data Processing");
                   }}
                 >
                   Data Processing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Blockchain");
+                    route.push("/It-services/Blockchain");
                   }}
                 >
                   Blockchain & Cryptocurrency
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Coding lessons");
+                    route.push("/It-services/Coding lessons");
                   }}
                 >
                   {" "}
@@ -460,7 +460,7 @@ export default function ITServices({}: Props) {
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Cyber security & Data protection");
+                    route.push("/It-services/Cyber security & Data protection");
                   }}
                 >
                   Cyber security & Data protection
@@ -483,56 +483,56 @@ export default function ITServices({}: Props) {
                 <CustomTypographyHeader>Business </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Sale");
+                    route.push("/It-services/Sale");
                   }}
                 >
                   Sales
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Market Research");
+                    route.push("/It-services/Market Research");
                   }}
                 >
                   Market Research
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Customer Care");
+                    route.push("/It-services/Customer Care");
                   }}
                 >
                   Customer Care
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Foreign Exchange");
+                    route.push("/It-services/Foreign Exchange");
                   }}
                 >
                   Foreign Exchange
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Data Analytics");
+                    route.push("/It-services/Data Analytics");
                   }}
                 >
                   Data Analytics
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Data Visualization");
+                    route.push("/It-services/Data Visualization");
                   }}
                 >
                   Data Visualization
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Creative Writing");
+                    route.push("/It-services/Creative Writing");
                   }}
                 >
                   Creative Writing{" "}
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Career Counselling");
+                    route.push("/It-services/Career Counselling");
                   }}
                 >
                   {" "}
@@ -556,56 +556,56 @@ export default function ITServices({}: Props) {
                 <CustomTypographyHeader>Trending </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Dropshipping");
+                    route.push("/It-services/Dropshipping");
                   }}
                 >
                   Dropshipping
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/E-commerce Marketing");
+                    route.push("/It-services/E-commerce Marketing");
                   }}
                 >
                   E-commerce Marketing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Lead Generation");
+                    route.push("/It-services/Lead Generation");
                   }}
                 >
                   Lead Generation
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Discord Services");
+                    route.push("/It-services/Discord Services");
                   }}
                 >
                   Discord Services
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/NFT Services");
+                    route.push("/It-services/NFT Services");
                   }}
                 >
                   NFT Services
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Architecture & Interior Design");
+                    route.push("/It-services/Architecture & Interior Design");
                   }}
                 >
                   Architecture & Interior Design
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Resume Writing");
+                    route.push("/It-services/Resume Writing");
                   }}
                 >
                   Resume Writing{" "}
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Search Engine Optimization");
+                    route.push("/It-services/Search Engine Optimization");
                   }}
                 >
                   {" "}
@@ -613,21 +613,21 @@ export default function ITServices({}: Props) {
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Character Animation");
+                    route.push("/It-services/Character Animation");
                   }}
                 >
                   Character Animation
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Image Editing");
+                    route.push("/It-services/Image Editing");
                   }}
                 >
                   Image Editing
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("It-services/Arts & Crafts");
+                    route.push("/It-services/Arts & Crafts");
                   }}
                 >
                   Arts & Crafts

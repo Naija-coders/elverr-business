@@ -128,49 +128,49 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
             >
               <FooterTypo
                 onClick={() => {
-                  route.push("It-services");
+                  route.push("/It-services");
                 }}
               >
                 IT Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Cleaning-services");
+                  route.push("/Cleaning-services");
                 }}
               >
                 Cleaning Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Event-services");
+                  route.push("/Event-services");
                 }}
               >
                 Event Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Automative-services");
+                  route.push("/Automative-services");
                 }}
               >
                 Automative Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Logistic-services");
+                  route.push("/Logistic-services");
                 }}
               >
                 Logistic Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Repair-services");
+                  route.push("/Repair-services");
                 }}
               >
                 Repair Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("Fitness-services");
+                  route.push("/Fitness-services");
                 }}
               >
                 Fitness Services

@@ -17,11 +17,12 @@ import BasedonLikes from "../Featured/BasedonLikes";
 import ITserviceBanner from "../Banner/ITservices";
 import Footer from "../LoggedIn/FooterLoggedIn";
 import FAQ from "../Featured/FAQ";
+import ReuseablePaginatedService from "../PaginatedServices/ReuseablePaginatedService";
 type Props = {};
 
 const ITservices = (props: Props) => {
   const route = useRouter();
-  console.log("route query", route.query.subcat);
+  console.log("route query", route.query?.subcat);
 
   let service: any = route.query.subcat?.toString();
   return (
@@ -49,6 +50,7 @@ const ITservices = (props: Props) => {
               <CustomTypography>
                 Find the best agency on Elverr to suit your project needs
               </CustomTypography>
+              <ReuseablePaginatedService />
             </ContainerWrapperDiv>
           </div>
         </StyleContainer>

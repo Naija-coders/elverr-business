@@ -186,7 +186,7 @@ const Navbar: React.FunctionComponent<Props> = ({
                     fontFamily: "DM Sans",
                   }}
                   onClick={() => {
-                    route.push("post-advert");
+                    route.push("/post-advert");
                   }}
                 >
                   Post Ad
@@ -213,7 +213,7 @@ const Navbar: React.FunctionComponent<Props> = ({
                 <StyledTextTypo>Trending</StyledTextTypo>
                 <StyledTextTypo
                   onClick={() => {
-                    route.push("It-services");
+                    route.push("/It-services");
                   }}
                 >
                   IT Services

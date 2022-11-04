@@ -14,6 +14,9 @@ import { useRouter } from "next/router";
 import { StyledTypography, ContainerWrapperDiv } from "./styles";
 import ExploreFilter from "../Filters/ExploreFilter";
 import BasedonLikes from "../Featured/BasedonLikes";
+import ITserviceBanner from "../Banner/ITservices";
+import Footer from "../LoggedIn/FooterLoggedIn";
+import FAQ from "../Featured/FAQ";
 type Props = {};
 
 const ITservices = (props: Props) => {
@@ -40,7 +43,7 @@ const ITservices = (props: Props) => {
               </div>
               <ExploreFilter />
             </ContainerWrapperDiv>
-            <div>banner</div>
+            <ITserviceBanner />
             <ContainerWrapperDiv>
               <CustomTypographyHeader> {service}</CustomTypographyHeader>
               <CustomTypography>
@@ -50,6 +53,8 @@ const ITservices = (props: Props) => {
           </div>
         </StyleContainer>
       </StyledBox>
+      <FAQ />
+      <Footer />
     </div>
   );
 };

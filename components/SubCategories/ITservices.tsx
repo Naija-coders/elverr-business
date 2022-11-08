@@ -19,6 +19,16 @@ import Footer from "../LoggedIn/FooterLoggedIn";
 import FAQ from "../Featured/FAQ";
 import ReuseablePaginatedService from "../PaginatedServices/ReuseablePaginatedService";
 import ITSubCategoriesslider from "../Slider/ITSubCategoriesslider";
+import {
+  graphicDesign,
+  digitalMarketing,
+  writingTranslation,
+  videoAnimation,
+  musicAudio,
+  programming,
+  business,
+} from "./json";
+import RelatedSubCat from "./RelatedSubCat";
 type Props = {};
 
 const ITservices = (props: Props) => {
@@ -26,6 +36,15 @@ const ITservices = (props: Props) => {
   console.log("route query", route.query?.subcat);
 
   let service: any = route.query.subcat?.toString();
+  const result =
+    graphicDesign.find(({ name }) => name === service) ||
+    digitalMarketing.find(({ name }) => name === service) ||
+    writingTranslation.find(({ name }) => name === service) ||
+    musicAudio.find(({ name }) => name === service) ||
+    programming.find(({ name }) => name === service) ||
+    business.find(({ name }) => name === service) ||
+    videoAnimation.find(({ name }) => name === service);
+  console.log("the result is really true", result?.type);
   return (
     <div>
       {" "}
@@ -38,6 +57,12 @@ const ITservices = (props: Props) => {
             <ContainerWrapperDiv>
               <div style={{ display: "flex", gap: "0.8rem" }}>
                 <StyledTypography
+                  sx={{
+                    "&:hover": {
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    },
+                  }}
                   onClick={() => {
                     route.push("/It-services");
                   }}
@@ -59,6 +84,7 @@ const ITservices = (props: Props) => {
               </CustomTypography>
               <ReuseablePaginatedService />
             </ContainerWrapperDiv>
+            <RelatedSubCat title={result?.type} />
           </div>
         </StyleContainer>
       </StyledBox>

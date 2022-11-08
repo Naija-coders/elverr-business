@@ -445,7 +445,7 @@ export default function ITServices({}: Props) {
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Blockchain");
+                    route.push("/It-services/Blockchain & Cryptocurrency");
                   }}
                 >
                   Blockchain & Cryptocurrency

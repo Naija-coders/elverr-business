@@ -37,7 +37,13 @@ const ITservices = (props: Props) => {
           >
             <ContainerWrapperDiv>
               <div style={{ display: "flex", gap: "0.8rem" }}>
-                <StyledTypography>IT SERVICES</StyledTypography>
+                <StyledTypography
+                  onClick={() => {
+                    route.push("/It-services");
+                  }}
+                >
+                  IT SERVICES
+                </StyledTypography>
                 <span style={{ color: "#747582" }}>&gt;</span>
                 <StyledTypography sx={{ color: "#34A422" }}>
                   {service?.toUpperCase()}

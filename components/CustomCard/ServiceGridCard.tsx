@@ -392,14 +392,19 @@ export default function ServiceGridCard({ data }: Props) {
         <CustomDiv>
           {data?.map((item: any) => (
             <CustomContainer key={Math.random()}>
-              <img
-                src={item.image_url}
-                style={{
-                  height: "173px",
-                  borderRadius: "16.7039px 16.7039px 0px 0px",
-                  width: "100%",
-                }}
-              />
+              <div>
+                <img
+                  src={item.image_url}
+                  style={{
+                    height: "173px",
+                    borderRadius: "16.7039px 16.7039px 0px 0px",
+                    border: "1px solid #d1d7dc",
+                    backgroundColor: "#1c1d1f",
+                    objectFit: "contain",
+                    width: "100%",
+                  }}
+                />
+              </div>
               <div
                 style={{
                   marginTop: "-45px",

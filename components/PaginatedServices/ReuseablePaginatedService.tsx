@@ -68,8 +68,9 @@ export default function ExploreServices({}: Props) {
   React.useEffect(() => {
     const tags = { tags: route.query?.subcat };
     console.log("checking tags", tags);
+
     if (servicedataList.length == 0 || route.query?.subcat) {
-      Clientapi.post(`api/subcategory?page=${route.query?.page}`, tags)
+      Clientapi.post(`api/subcategory?page=${first}`, tags)
         .then((response: any) => {
           setServicedataList(response.data);
           pagenumber(response?.data.last_page);
@@ -81,7 +82,7 @@ export default function ExploreServices({}: Props) {
         })
         .catch((error) => {});
     }
-  }, [route.query?.subcat, servicedataList.length, servicedataList, pageinfo]);
+  }, [route.query?.subcat, first, servicedataList.length, pageinfo]);
 
   console.log("the page number is", pagenumber);
   console.log("the state of the page numner is", state);

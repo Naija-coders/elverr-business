@@ -22,13 +22,24 @@ const PreviewCard: React.FunctionComponent<IAppProps> = (props) => {
           }}
         >
           <img
+            src={item?.image_url}
+            style={{
+              height: "173px",
+              borderRadius: "16.7039px 16.7039px 0px 0px",
+              border: "1px solid #d1d7dc",
+              backgroundColor: "#1c1d1f",
+              objectFit: "contain",
+              width: "100%",
+            }}
+          />
+          {/*  <img
             style={{
               width: "280px",
               height: "150px",
               borderRadius: "18.7065px 18.7065px 0px 0px",
             }}
             src={item?.image_url}
-          />
+          /> */}
           <div
             style={{
               marginTop: "-45px",

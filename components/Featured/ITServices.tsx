@@ -8,6 +8,8 @@ import {
   CustomTypography,
   CustomTypographyHeader,
   CustomButtonDiv,
+  RelatedServicetypo,
+  CustomArrowForwardIos,
 } from "../CustomCard/styles";
 import RelatedCategories from "../Slider/RelatedCategories";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
@@ -35,8 +37,8 @@ export default function ITServices({}: Props) {
                   route.push("/It-services/Visual Design");
                 }}
               >
-                <div>Visual Design</div>
-                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+                <RelatedServicetypo>Visual Design</RelatedServicetypo>
+                <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
@@ -45,8 +47,8 @@ export default function ITServices({}: Props) {
                   route.push("/It-services/NFT Services");
                 }}
               >
-                NFT Service
-                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+                <RelatedServicetypo>NFT Service</RelatedServicetypo>
+                <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
@@ -55,8 +57,8 @@ export default function ITServices({}: Props) {
                   route.push("/It-services/Dropshipping");
                 }}
               >
-                Dropshipping
-                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+                <RelatedServicetypo>Dropshipping</RelatedServicetypo>
+                <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
@@ -65,8 +67,8 @@ export default function ITServices({}: Props) {
                   route.push("/It-services/Translation");
                 }}
               >
-                Translation
-                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+                <RelatedServicetypo>Translation</RelatedServicetypo>
+                <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
           </CustomDivServices>

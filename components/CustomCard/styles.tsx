@@ -1,3 +1,4 @@
+import { ArrowForwardIos } from "@mui/icons-material";
 import {
   Paper,
   Button,
@@ -68,7 +69,20 @@ export const CustomButtonDiv = styled(Button)(
     "&:hover": {
       border: "2px solid #34A422",
       filter: "drop-shadow(0px 3px 6px rgba(52, 164, 34, 0.19))",
+      color: "green",
     },
+  })
+);
+export const RelatedServicetypo = styled(Typography)(
+  sx({
+    fontFamily: "DM Sans",
+    fontSize: "0.9rem",
+  })
+);
+export const CustomArrowForwardIos = styled(ArrowForwardIos)(
+  sx({
+    fontFamily: "DM Sans",
+    fontSize: "0.9rem",
   })
 );
 export const CustomFlex = styled("div")(

@@ -242,6 +242,7 @@ export const BasicServiceTitle = styled(Typography)(
     color: "#282C4B;",
   })
 );
+
 export const BasicTextQuote = styled(Typography)(
   sx({
     fontFamily: "DM Sans",

@@ -7,6 +7,7 @@ import {
   CustomTypography,
   CustomTypographyHeader,
   CustomButtonDiv,
+  RelatedServicetypo,
 } from "../CustomCard/styles";
 import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
 import { useRouter } from "next/router";
@@ -41,7 +42,7 @@ export default function RelatedSubCat({ title, related }: Props) {
                   route.push(data?.link);
                 }}
               >
-                <Typography>{data?.name}</Typography>
+                <RelatedServicetypo>{data?.name}</RelatedServicetypo>
                 <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </Link>

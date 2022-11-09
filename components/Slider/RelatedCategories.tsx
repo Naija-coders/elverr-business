@@ -36,8 +36,31 @@ interface IAppProps {
 const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
   const settings = {
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
   const route = useRouter();
 
@@ -55,7 +78,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
 
-      <StyleContainer>
+      <StyleContainer sx={{}}>
         <div
           style={{
             marginTop: "50px",

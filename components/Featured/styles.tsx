@@ -209,7 +209,8 @@ export const BasicPaper = styled(Paper)(
   sx({
     minHeight: "315.4px",
 
-    filter: "drop-shadow(0px 22.2652px 55.663px rgba(119, 115, 170, 0.1))",
+    width: "94%",
+    filter: "drop-shadow(0px 10.2652px 10.663px rgba(119, 115, 170, 0.1))",
     borderRadius: "21.5532px 21.5532px 21.5532px  21.5532px ",
   })
 );
@@ -217,6 +218,7 @@ export const BasicImage = styled("img")(
   sx({
     height: "170.15px",
     width: "100%",
+
     borderRadius: "21.5532px 21.5532px 0px 0px",
     objectFit: "cover",
   })

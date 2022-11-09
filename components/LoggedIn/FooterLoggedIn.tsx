@@ -149,10 +149,10 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
               </FooterTypo>
               <FooterTypo
                 onClick={() => {
-                  route.push("/Automative-services");
+                  route.push("/Automotive-services");
                 }}
               >
-                Automative Services
+                Automotive Services
               </FooterTypo>
               <FooterTypo
                 onClick={() => {

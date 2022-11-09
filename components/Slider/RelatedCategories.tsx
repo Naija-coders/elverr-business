@@ -120,7 +120,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                     src={imageurls + "serviceautomative_tanxmr.jpg"}
                   />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -204,7 +204,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                     src={imageurls + "serviceautomative_tanxmr.jpg"}
                   />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -355,7 +355,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                 <BasicPaper elevation={0}>
                   <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicesit_noaztv.jpg" />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -437,7 +437,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                 <BasicPaper elevation={0}>
                   <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicesit_noaztv.jpg" />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -519,7 +519,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                 <BasicPaper elevation={0}>
                   <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicesit_noaztv.jpg" />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy
@@ -601,7 +601,7 @@ const RelatedCategories: React.FunctionComponent<IAppProps> = (props) => {
                 <BasicPaper elevation={0}>
                   <BasicImage src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1664560272/servicesit_noaztv.jpg" />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy

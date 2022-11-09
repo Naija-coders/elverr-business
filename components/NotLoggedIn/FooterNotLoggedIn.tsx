@@ -103,7 +103,7 @@ const FooterNotLoggedIn: React.FC<Props> = ({}) => {
               <FooterTypo>IT Services</FooterTypo>
               <FooterTypo>Cleaning Services</FooterTypo>
               <FooterTypo>Event Services</FooterTypo>
-              <FooterTypo>Automative Services</FooterTypo>
+              <FooterTypo>Automotive Services</FooterTypo>
               <FooterTypo>Logistic Services</FooterTypo>
               <FooterTypo>Repair Services</FooterTypo>
               <FooterTypo>Fitness Services</FooterTypo>

@@ -218,7 +218,7 @@ const Navbar: React.FunctionComponent<Props> = ({
                 >
                   IT Services
                 </StyledTextTypo>
-                <StyledTextTypo>Automative Services</StyledTextTypo>
+                <StyledTextTypo>Automotive Services</StyledTextTypo>
                 <StyledTextTypo>Event Services</StyledTextTypo>
                 <StyledTextTypo>Entertainments Services</StyledTextTypo>
 

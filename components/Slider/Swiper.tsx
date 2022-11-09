@@ -122,7 +122,7 @@ export default class SimpleSlider extends Component {
                     src={imageurls + "serviceautomative_tanxmr.jpg"}
                   />
                   <BasicDiv>
-                    <BasicServiceTitle> Automative Services</BasicServiceTitle>
+                    <BasicServiceTitle> Automotive Services</BasicServiceTitle>
                     <BasicTextbody align="center">
                       {" "}
                       We’ll get you directly seated and inside for you to enjoy

@@ -218,7 +218,13 @@ const Navbar: React.FunctionComponent<Props> = ({
                 >
                   IT Services
                 </StyledTextTypo>
-                <StyledTextTypo>Automotive Services</StyledTextTypo>
+                <StyledTextTypo
+                  onClick={() => {
+                    route.push("/Automotive-services");
+                  }}
+                >
+                  Automotive Services
+                </StyledTextTypo>
                 <StyledTextTypo>Event Services</StyledTextTypo>
                 <StyledTextTypo>Entertainments Services</StyledTextTypo>
 

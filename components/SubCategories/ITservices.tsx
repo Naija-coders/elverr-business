@@ -45,6 +45,53 @@ const ITservices = (props: Props) => {
     business.find(({ name }) => name === service) ||
     videoAnimation.find(({ name }) => name === service);
   console.log("the result is really true", result?.type);
+
+  const [type, settype] = React.useState(result?.type);
+  const [relatedinfo, setRelatedinfo] = React.useState<any>();
+
+  console.log("the result for the type is", type);
+
+  const array = graphicDesign.filter((item) => item.name !== result?.name);
+
+  React.useEffect(() => {
+    var array;
+    if (type?.toString() === "Graphic Design") {
+      array = graphicDesign.filter((item) => item.name !== result?.name);
+      console.group("the result for graphic design", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Digital Marketing") {
+      array = digitalMarketing.filter((item) => item.name !== result?.name);
+      console.group("the result for Digital Marketing", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Writing & Translation") {
+      array = writingTranslation.filter((item) => item.name !== result?.name);
+      console.group("the result for Writing & Translation", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Video & Animation") {
+      array = videoAnimation.filter((item) => item.name !== result?.name);
+      console.group("the result for Video & Animation", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Music & Audio") {
+      array = musicAudio.filter((item) => item.name !== result?.name);
+      console.group("the result for Music & Audio", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Programming & Tech") {
+      array = programming.filter((item) => item.name !== result?.name);
+      console.group("the result for Programming & Tech", array);
+      setRelatedinfo(array);
+    }
+    if (type?.toString() === "Business") {
+      array = business.filter((item) => item.name !== result?.name);
+      console.group("the result for Business", array);
+      setRelatedinfo(array);
+    }
+  }, [type, route.query?.subcat]);
+
   return (
     <div>
       {" "}
@@ -84,7 +131,7 @@ const ITservices = (props: Props) => {
               </CustomTypography>
               <ReuseablePaginatedService />
             </ContainerWrapperDiv>
-            <RelatedSubCat title={result?.type} />
+            <RelatedSubCat title={result?.type} related={relatedinfo} />
           </div>
         </StyleContainer>
       </StyledBox>

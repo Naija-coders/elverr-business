@@ -95,7 +95,7 @@ export default function ITServices({}: Props) {
                 <CustomTypography
                   onClick={() => {
                     route.push(
-                      "It-services/Art,Illustration & Cover art design"
+                      "/It-services/Art,Illustration & Cover art design"
                     );
                   }}
                 >
@@ -483,7 +483,7 @@ export default function ITServices({}: Props) {
                 <CustomTypographyHeader>Business </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Sale");
+                    route.push("/It-services/Sales");
                   }}
                 >
                   Sales

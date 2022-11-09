@@ -44,7 +44,7 @@ export const CustomTypography = styled(Typography)(
 );
 export const CustomTypographyHeader = styled(Typography)(
   sx({
-    fontSize: "1.3rem",
+    fontSize: "1.4rem",
     fontFamily: "DM Sans",
     fontWeight: 900,
   })

@@ -36,6 +36,7 @@ const ITservices = (props: Props) => {
   console.log("route query", route.query?.subcat);
 
   let service: any = route.query.subcat?.toString();
+
   const result =
     graphicDesign.find(({ name }) => name === service) ||
     digitalMarketing.find(({ name }) => name === service) ||
@@ -44,9 +45,8 @@ const ITservices = (props: Props) => {
     programming.find(({ name }) => name === service) ||
     business.find(({ name }) => name === service) ||
     videoAnimation.find(({ name }) => name === service);
-  console.log("the result is really true", result?.type);
 
-  const [type, settype] = React.useState(result?.type);
+  const [type, settype] = React.useState<any>();
   const [relatedinfo, setRelatedinfo] = React.useState<any>();
 
   console.log("the result for the type is", type);
@@ -55,40 +55,55 @@ const ITservices = (props: Props) => {
 
   React.useEffect(() => {
     var array;
-    if (type?.toString() === "Graphic Design") {
-      array = graphicDesign.filter((item) => item.name !== result?.name);
-      console.group("the result for graphic design", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Digital Marketing") {
-      array = digitalMarketing.filter((item) => item.name !== result?.name);
-      console.group("the result for Digital Marketing", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Writing & Translation") {
-      array = writingTranslation.filter((item) => item.name !== result?.name);
-      console.group("the result for Writing & Translation", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Video & Animation") {
-      array = videoAnimation.filter((item) => item.name !== result?.name);
-      console.group("the result for Video & Animation", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Music & Audio") {
-      array = musicAudio.filter((item) => item.name !== result?.name);
-      console.group("the result for Music & Audio", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Programming & Tech") {
-      array = programming.filter((item) => item.name !== result?.name);
-      console.group("the result for Programming & Tech", array);
-      setRelatedinfo(array);
-    }
-    if (type?.toString() === "Business") {
-      array = business.filter((item) => item.name !== result?.name);
-      console.group("the result for Business", array);
-      setRelatedinfo(array);
+    const result =
+      graphicDesign.find(({ name }) => name === service) ||
+      digitalMarketing.find(({ name }) => name === service) ||
+      writingTranslation.find(({ name }) => name === service) ||
+      musicAudio.find(({ name }) => name === service) ||
+      programming.find(({ name }) => name === service) ||
+      business.find(({ name }) => name === service) ||
+      videoAnimation.find(({ name }) => name === service);
+    console.log("the result is really true", result?.type);
+    if (result) {
+      settype(result?.type);
+
+      if (type?.toString() === "Graphic Design") {
+        array = graphicDesign.filter((item) => item.name !== result?.name);
+        console.group("the result for graphic design", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Digital Marketing") {
+        array = digitalMarketing.filter((item) => item.name !== result?.name);
+        console.group("the result for Digital Marketing", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Writing & Translation") {
+        array = writingTranslation.filter((item) => item.name !== result?.name);
+        console.group("the result for Writing & Translation", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Video & Animation") {
+        array = videoAnimation.filter((item) => item.name !== result?.name);
+        console.group("the result for Video & Animation", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Music & Audio") {
+        array = musicAudio.filter((item) => item.name !== result?.name);
+        console.group("the result for Music & Audio", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Programming & Tech") {
+        array = programming.filter((item) => item.name !== result?.name);
+        console.group("the result for Programming & Tech", array);
+        setRelatedinfo(array);
+      }
+      if (type?.toString() === "Business") {
+        array = business.filter((item) => item.name !== result?.name);
+        console.group("the result for Business", array);
+        setRelatedinfo(array);
+      }
+    } else {
+      route.push("/");
     }
   }, [type, route.query?.subcat]);
 

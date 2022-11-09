@@ -109,6 +109,11 @@ export const writingTranslation = [
     type: "Writing & Translation",
     link: "/It-services/Research & Summaries",
   },
+  {
+    name: "Articles & Blog posts",
+    type: "Writing & Translation",
+    link: "/It-services/Articles & Blog posts",
+  },
 ];
 export const videoAnimation = [
   {

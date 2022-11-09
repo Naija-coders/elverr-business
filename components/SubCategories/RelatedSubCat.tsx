@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 import { ArrowForwardIos } from "@mui/icons-material";
 import { StyledTypography, ContainerWrapperDiv } from "./styles";
 import { Typography } from "@mui/material";
-
+import { Link } from "@mui/material";
 type Props = { title: any; related: any };
 
 export default function RelatedSubCat({ title, related }: Props) {
@@ -34,9 +34,8 @@ export default function RelatedSubCat({ title, related }: Props) {
       </ContainerWrapperDiv>
       <CustomDivServices>
         {related?.map((data: any) => (
-          <CustomContainerItServices>
+          <CustomContainerItServices key={Math.random()}>
             <CustomButtonDiv
-              key={Math.random()}
               onClick={() => {
                 route.push(data?.link);
               }}

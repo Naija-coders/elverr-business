@@ -30,26 +30,42 @@ export default function ITServices({}: Props) {
           <CustomTypographyHeader>Trending services</CustomTypographyHeader>
           <CustomDivServices>
             <CustomContainerItServices>
-              <CustomButtonDiv>
-                <div>Graphic Design</div>
+              <CustomButtonDiv
+                onClick={() => {
+                  route.push("/It-services/Visual Design");
+                }}
+              >
+                <div>Visual Design</div>
                 <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
-              <CustomButtonDiv>
-                Digital Marketing
+              <CustomButtonDiv
+                onClick={() => {
+                  route.push("/It-services/NFT Services");
+                }}
+              >
+                NFT Service
                 <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
-              <CustomButtonDiv>
-                Writing & Translation
+              <CustomButtonDiv
+                onClick={() => {
+                  route.push("/It-services/Dropshipping");
+                }}
+              >
+                Dropshipping
                 <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
-              <CustomButtonDiv>
-                Video & Animation
+              <CustomButtonDiv
+                onClick={() => {
+                  route.push("/It-services/Translation");
+                }}
+              >
+                Translation
                 <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>

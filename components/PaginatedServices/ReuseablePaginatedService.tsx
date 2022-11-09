@@ -35,6 +35,7 @@ import DispatchContext from "../../context/DispatchContext";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/reducers";
 import ExploreFilter from "../Filters/ExploreFilter";
+import { ContactlessOutlined } from "@mui/icons-material";
 type Props = {};
 
 export default function ExploreServices({}: Props) {
@@ -47,11 +48,14 @@ export default function ExploreServices({}: Props) {
   );
 
   const [servicedataList, setServicedataList] = React.useState<any>([]);
-
+  const [pageinfo, setPageinfo] = React.useState<any>(route.query);
+  console.log("pageinfo", pageinfo?.subcat);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     /* route.reload().then(() => push(`explore?page=${value}`)); */
-    route.push(`?page=${value}`, undefined, { shallow: true });
 
+    route.push(`${pageinfo?.subcat?.toString()}?page=${value}`, undefined, {
+      shallow: true,
+    });
     setServicedataList([]);
 
     setFirst(value);
@@ -77,7 +81,7 @@ export default function ExploreServices({}: Props) {
         })
         .catch((error) => {});
     }
-  }, [route.query?.subcat, servicedataList.length]);
+  }, [route.query?.subcat, servicedataList.length, servicedataList, pageinfo]);
 
   console.log("the page number is", pagenumber);
   console.log("the state of the page numner is", state);

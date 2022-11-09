@@ -58,6 +58,64 @@ export const digitalMarketing = [
     link: "/It-services/Search Engine Marketing",
   },
 ];
+export const trending = [
+  {
+    name: "Dropshipping",
+    type: "Trending",
+    link: "/It-services/Dropshipping",
+  },
+  {
+    name: "E-commerce Marketing",
+    type: "Trending",
+    link: "/It-services/E-commerce Marketing",
+  },
+  {
+    name: "Lead Generation",
+    type: "Trending",
+    link: "/It-services/Lead Generation",
+  },
+  {
+    name: "Discord Services",
+    type: "Trending",
+    link: "/It-services/Discord Services",
+  },
+  {
+    name: "NFT Services",
+    type: "Trending",
+    link: "/It-services/NFT Services",
+  },
+  {
+    name: "Architecture & Interior Design",
+    type: "Trending",
+    link: "/It-services/Architecture & Interior Design",
+  },
+  {
+    name: "Resume Writing",
+    type: "Trending",
+    link: "/It-services/Resume Writing",
+  },
+  {
+    name: "Search Engine & Optimization",
+    type: "Trending",
+    link: "/It-services/Search Engine & Optimization",
+  },
+  {
+    name: "Character Animation",
+    type: "Trending",
+    link: "/It-services/Character Animation",
+  },
+  {
+    name: "Image Editing",
+    type: "Trending",
+    link: "/It-services/Image Editing",
+  },
+  {
+    name: "Arts & Crafts",
+    type: "Trending",
+    link: "/It-services/Arts & Crafts",
+  },
+];
+
 export const writingTranslation = [
   {
     name: "Website Content",

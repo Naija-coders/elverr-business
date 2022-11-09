@@ -35,14 +35,16 @@ export default function RelatedSubCat({ title, related }: Props) {
       <CustomDivServices>
         {related?.map((data: any) => (
           <CustomContainerItServices key={Math.random()}>
-            <CustomButtonDiv
-              onClick={() => {
-                route.push(data?.link);
-              }}
-            >
-              <Typography>{data?.name}</Typography>
-              <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
-            </CustomButtonDiv>
+            <Link sx={{ textDecoration: "none" }} href={data?.link}>
+              <CustomButtonDiv
+                onClick={() => {
+                  route.push(data?.link);
+                }}
+              >
+                <Typography>{data?.name}</Typography>
+                <ArrowForwardIos sx={{ fontSize: "0.9rem" }} />
+              </CustomButtonDiv>
+            </Link>
           </CustomContainerItServices>
         ))}
         {/* <CustomContainerItServices>

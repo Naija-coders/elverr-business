@@ -27,6 +27,7 @@ import {
   musicAudio,
   programming,
   business,
+  trending,
 } from "./json";
 import RelatedSubCat from "./RelatedSubCat";
 type Props = {};
@@ -37,6 +38,11 @@ const ITservices = (props: Props) => {
 
   let service: any = route.query.subcat?.toString();
 
+  const [type, settype] = React.useState<any>();
+  const [relatedinfo, setRelatedinfo] = React.useState<any>();
+
+  console.log("the result for the type is", type);
+
   const result =
     graphicDesign.find(({ name }) => name === service) ||
     digitalMarketing.find(({ name }) => name === service) ||
@@ -44,25 +50,10 @@ const ITservices = (props: Props) => {
     musicAudio.find(({ name }) => name === service) ||
     programming.find(({ name }) => name === service) ||
     business.find(({ name }) => name === service) ||
-    videoAnimation.find(({ name }) => name === service);
-
-  const [type, settype] = React.useState<any>();
-  const [relatedinfo, setRelatedinfo] = React.useState<any>();
-
-  console.log("the result for the type is", type);
-
-  const array = graphicDesign.filter((item) => item.name !== result?.name);
-
+    videoAnimation.find(({ name }) => name === service) ||
+    trending.find(({ name }) => name === service);
   React.useEffect(() => {
     var array;
-    const result =
-      graphicDesign.find(({ name }) => name === service) ||
-      digitalMarketing.find(({ name }) => name === service) ||
-      writingTranslation.find(({ name }) => name === service) ||
-      musicAudio.find(({ name }) => name === service) ||
-      programming.find(({ name }) => name === service) ||
-      business.find(({ name }) => name === service) ||
-      videoAnimation.find(({ name }) => name === service);
     console.log("the result is really true", result?.type);
     if (result) {
       settype(result?.type);
@@ -102,8 +93,12 @@ const ITservices = (props: Props) => {
         console.group("the result for Business", array);
         setRelatedinfo(array);
       }
+      if (type?.toString() === "Trending") {
+        array = trending.filter((item) => item.name !== result?.name);
+        console.group("the result for Business", array);
+        setRelatedinfo(array);
+      }
     } else {
-      route.push("/");
     }
   }, [type, route.query?.subcat]);
 
@@ -144,7 +139,7 @@ const ITservices = (props: Props) => {
               <CustomTypography>
                 Find the best agency on Elverr to suit your project needs
               </CustomTypography>
-              <ReuseablePaginatedService />
+              <ReuseablePaginatedService query={route.query?.subcat} />
             </ContainerWrapperDiv>
             <RelatedSubCat title={result?.type} related={relatedinfo} />
           </div>

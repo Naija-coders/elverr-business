@@ -36,9 +36,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../state/reducers";
 import ExploreFilter from "../Filters/ExploreFilter";
 import { ContactlessOutlined } from "@mui/icons-material";
-type Props = {};
+type Props = {
+  query?: any;
+};
 
-export default function ExploreServices({}: Props) {
+export default function ExploreServices({ query }: Props) {
   /*   const [servicedata, setServicedata] = React.useState<any>(); */
 
   const route = useRouter();
@@ -53,7 +55,7 @@ export default function ExploreServices({}: Props) {
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     /* route.reload().then(() => push(`explore?page=${value}`)); */
 
-    route.push(`${pageinfo?.subcat?.toString()}?page=${value}`, undefined, {
+    route.push(`${query?.toString()}?page=${value}`, undefined, {
       shallow: true,
     });
     setServicedataList([]);

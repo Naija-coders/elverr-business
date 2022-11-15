@@ -34,7 +34,7 @@ export default function Automotive({}: Props) {
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/It-services/Visual Design");
+                  route.push("/Automotive-services/Tire Replacement");
                 }}
               >
                 <RelatedServicetypo>Tire Replacement</RelatedServicetypo>
@@ -44,17 +44,17 @@ export default function Automotive({}: Props) {
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/It-services/NFT Services");
+                  route.push("/Automotive-services/Towing Services");
                 }}
               >
-                <RelatedServicetypo>Towing Service</RelatedServicetypo>
+                <RelatedServicetypo>Towing Services</RelatedServicetypo>
                 <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/It-services/Dropshipping");
+                  route.push("/Automotive-services/Safety & Security");
                 }}
               >
                 <RelatedServicetypo>Safety & Security</RelatedServicetypo>
@@ -64,7 +64,7 @@ export default function Automotive({}: Props) {
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/It-services/Translation");
+                  route.push("/Automotive-services/Fabrication");
                 }}
               >
                 <RelatedServicetypo>Fabrication</RelatedServicetypo>
@@ -95,33 +95,40 @@ export default function Automotive({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Logo Design & Brand Identity");
+                    route.push("/Automotive-services/Wholesaling Parts");
                   }}
                 >
-                  Logo Design & Brand Identity
+                  Wholesaling Parts
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Web & Mobile Design");
+                    route.push("/Automotive-services/Retailing Parts");
                   }}
                 >
-                  Web & Mobile Design
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Visual Design");
-                  }}
-                >
-                  Visual Design
+                  Retailing Parts
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
                     route.push(
-                      "/It-services/Art,Illustration & Cover art design"
+                      "/Automotive-services/Motor Vehicle Maintenance"
                     );
                   }}
                 >
-                  Art, Illustration & Cover art design
+                  Motor Vehicle Maintenance
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Automotive-services/Part Fabrication");
+                  }}
+                >
+                  Part Fabrication
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Automotive-services/Safety & Security");
+                  }}
+                >
+                  Safety & Security
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>
@@ -142,80 +149,24 @@ export default function Automotive({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Articles & Blog posts");
+                    route.push("/Automotive-services/Lubrication System");
                   }}
                 >
-                  Articles & Blog posts
+                  Lubrication System
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Website Content");
+                    route.push("/Automotive-services/Electrical System");
                   }}
                 >
-                  Website Content
+                  Electical System
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Translation");
+                    route.push("/Automotive-services/Cooling System");
                   }}
                 >
-                  Translation
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Resume & Cover letters");
-                  }}
-                >
-                  Resume & Cover letters
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Case Studies");
-                  }}
-                >
-                  Case Studies
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Book & Ebook Writing");
-                  }}
-                >
-                  Book & Ebook Writing
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Creative Writing");
-                  }}
-                >
-                  Creative Writing
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Speech Writing");
-                  }}
-                >
-                  Speech Writing
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/UX Writing");
-                  }}
-                >
-                  UX Writing
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Script Writing");
-                  }}
-                >
-                  Script Writing
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Research & Summaries");
-                  }}
-                >
-                  Research & Summaries
+                  Cooling System
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>
@@ -235,52 +186,66 @@ export default function Automotive({}: Props) {
                 <CustomTypographyHeader>Vehicle Repairs</CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Video Editing");
+                    route.push("/Automotive-services/Transmission Repairs");
                   }}
                 >
-                  Video Editing
+                  Transmission Repairs
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Trailers");
+                    route.push("/Automotive-services/Wiper Blade Replacement");
                   }}
                 >
-                  Trailers
+                  Wiper Blade Replacement
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Visuals Effects");
+                    route.push("/Automotive-services/Tire Replacement");
                   }}
                 >
-                  Visuals Effects
+                  Tire Replacement
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Crowdfunding Videos");
+                    route.push("/Automotive-services/Fuel Filter");
                   }}
                 >
-                  Crowdfunding Videos
+                  Fuel Filter
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/3D Product Animation");
+                    route.push("/Automotive-services/Scheduled Maintenance");
                   }}
                 >
-                  3D Product Animation
+                  Scheduled Maintenance
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Animation");
+                    route.push("/Automotive-services/Oil Replacement");
                   }}
                 >
-                  Animation
+                  Oil Replacement
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Filmed Video Production");
+                    route.push("/Automotive-services/Air Filter Replacement");
                   }}
                 >
-                  Filmed Video Production
+                  Air Filter Replacement
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Automotive-services/Towing Services");
+                  }}
+                >
+                  Towing Services
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Automotive-services/Body Repair & Painting");
+                  }}
+                >
+                  Body Repair & Painting
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>
@@ -302,38 +267,43 @@ export default function Automotive({}: Props) {
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Voice Over");
+                    route.push("/Automotive-services/Air Filter Change");
                   }}
                 >
-                  Voice Over
+                  Air Filter Change
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Podcasts");
+                    route.push(
+                      "/Automotive-services/Extensive Break Inspection"
+                    );
                   }}
                 >
-                  Podcasts
+                  Extensive Break Inspection
+                </CustomTypography>
+
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Automotive-services/Air Condition Inspection");
+                  }}
+                >
+                  Air Condition Inspection
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/Producers & Composers");
+                    route.push(
+                      "/Automotive-services/Shock Absorber Inspection"
+                    );
                   }}
                 >
-                  Producers & Composers
+                  Shock Absorber Inspection
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/It-services/AudioBook Production");
+                    route.push("/Automotive-services/Electrical Test");
                   }}
                 >
-                  AudioBook Production
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/It-services/Remixing & Mashups");
-                  }}
-                >
-                  Remixing & Mashups
+                  Electrical Test
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>

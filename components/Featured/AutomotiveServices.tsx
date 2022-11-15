@@ -263,7 +263,7 @@ export default function Automotive({}: Props) {
               />
               <CustomFlex>
                 <CustomTypographyHeader>
-                  Full Car Service
+                  Full Car Services
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {

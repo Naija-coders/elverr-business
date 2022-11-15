@@ -58,6 +58,7 @@ export const digitalMarketing = [
     link: "/It-services/Search Engine Marketing",
   },
 ];
+
 export const trending = [
   {
     name: "Dropshipping",
@@ -315,5 +316,124 @@ export const business = [
     name: "Career Counselling",
     type: "Business",
     link: "/It-services/Career Counselling",
+  },
+];
+
+// Automative Industry
+
+export const automotiveIndustry = [
+  {
+    name: "Wholesaling Parts",
+    type: "Automative Industry",
+    link: "/Automotive-services/Wholesaling Parts",
+  },
+  {
+    name: "Retailing Parts",
+    type: "Automative Industry",
+    link: "/Automotive-services/Retailing Parts",
+  },
+  {
+    name: "Motor Vehicle Maintenance",
+    type: "Automative Industry",
+    link: "/Automotive-services/Motor Vehicle Maintenance",
+  },
+  {
+    name: "Part Fabrication",
+    type: "Automative Industry",
+    link: "/Automotive-services/Part Fabrication",
+  },
+  {
+    name: "Safety & Security",
+    type: "Automative Industry",
+    link: "/Automotive-services/Safety & Security",
+  },
+];
+
+export const automobileServices = [
+  {
+    name: "Lubrication System",
+    type: "Automobile Services",
+    link: "/Automotive-services/Lubrication System",
+  },
+  {
+    name: "Electrical System",
+    type: "Automobile Services",
+    link: "/Automotive-services/Electrical System",
+  },
+  {
+    name: "Cooling System",
+    type: "Automobile Services",
+    link: "/Automotive-services/Cooling System",
+  },
+];
+
+export const vehicleRepairs = [
+  {
+    name: "Transmission Repairs",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Transmission Repairs",
+  },
+  {
+    name: "Wiper Blade Replacement",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Wiper Blade Replacement",
+  },
+  {
+    name: "Tire Replacement",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Tire Replacement",
+  },
+  {
+    name: "Fuel Filter",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Fuel Filter",
+  },
+  {
+    name: "Oil Replacement",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Oil Replacement",
+  },
+  {
+    name: "Air Filter Replacement",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Air Filter Replacement",
+  },
+  {
+    name: "Towing Services",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Towing Services",
+  },
+  {
+    name: "Body Repair & Painting",
+    type: "Vehicle Repairs",
+    link: "/Automotive-services/Body Repair & Painting",
+  },
+];
+
+export const fullCarService = [
+  {
+    name: "Air Filter Change",
+    type: "Full Car Services",
+    link: "/Automotive-services/Air Filter Change",
+  },
+  {
+    name: "Extensive Break Inspection",
+    type: "Full Car Services",
+    link: "/Automotive-services/Extensive Break Inspection",
+  },
+  {
+    name: "Air Condition Inspection",
+    type: "Full Car Services",
+    link: "/Automotive-services/Air Condition Inspection",
+  },
+  {
+    name: "Shock Absorber Inspection",
+    type: "Full Car Services",
+    link: "/Automotive-services/Shock Absorber Inspection",
+  },
+  {
+    name: "Electrical Test",
+    type: "Full Car Services",
+    link: "/Automotive-services/Electrical Test",
   },
 ];

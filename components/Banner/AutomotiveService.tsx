@@ -26,30 +26,32 @@ export default function ITservices({}: Props) {
           gap: "1rem",
         }}
       >
-        <Typography
-          sx={{
-            fontSize: "1.3rem",
-            color: "#FFFFFF",
-            width: { md: "60%", lg: "100%" },
-            fontWeight: 700,
+        <div>
+          <Typography
+            sx={{
+              fontSize: "1.3rem",
+              color: "#FFFFFF",
+              width: { md: "60%", lg: "100%" },
+              fontWeight: 700,
 
-            fontFamily: "DM Sans",
-          }}
-        >
-          Choose Elver Business for innovative Automative solutions
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: "0.9rem",
-            color: "#FFFFFF",
-            width: { md: "60%", lg: "100%" },
-            fontWeight: 700,
+              fontFamily: "DM Sans",
+            }}
+          >
+            Choose Elver Business for innovative Automative solutions
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "0.9rem",
+              color: "#FFFFFF",
+              width: { md: "60%", lg: "100%" },
+              fontWeight: 700,
 
-            fontFamily: "DM Sans",
-          }}
-        >
-          Browse our collection of 50+ Automotive Services on Elverr
-        </Typography>
+              fontFamily: "DM Sans",
+            }}
+          >
+            Browse our collection of 50+ Automotive Services on Elverr
+          </Typography>
+        </div>
         <Button
           disableElevation
           variant="contained"

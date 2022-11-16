@@ -437,3 +437,90 @@ export const fullCarService = [
     link: "/Automotive-services/Electrical Test",
   },
 ];
+
+//Cleaning services
+
+export const residentialCleaning = [
+  {
+    name: "Floor Mopping",
+    type: "Residential Cleaning",
+    link: "/Cleaning-services/Floor Mopping",
+  },
+  {
+    name: "Disinfect your home",
+    type: "Residential Cleaning",
+    link: "/Cleaning-services/Disinfect your home",
+  },
+  {
+    name: "Dust & Shine",
+    type: "Residential Cleaning",
+    link: "/Cleaning-services/Dust & Shine",
+  },
+  {
+    name: "Laundry & Dry Cleaning",
+    type: "Residential Cleaning",
+    link: "/Cleaning-services/Laundry & Dry Cleaning",
+  },
+];
+export const commercialCleaning = [
+  {
+    name: "Janitorial Services",
+    type: "Commercial Cleaning",
+    link: "/Cleaning-services/Janitorial Services",
+  },
+  {
+    name: "Disinfection Cleaning",
+    type: "Commercial Cleaning",
+    link: "/Cleaning-services/Disinfection Cleaning",
+  },
+  {
+    name: "Project Based Cleaning",
+    type: "Commercial Cleaning",
+    link: "/Cleaning-services/Project Based Cleaning",
+  },
+  {
+    name: "Pressure Washing",
+    type: "Commercial Cleaning",
+    link: "/Cleaning-services/Pressure Washing",
+  },
+];
+export const constructionCleaning = [
+  {
+    name: "Air Vent Cleaning",
+    type: "Construction Cleaning",
+    link: "/Cleaning-services/Air Vent Cleaning",
+  },
+  {
+    name: "Windows & Frames Cleaning",
+    type: "Construction Cleaning",
+    link: "/Cleaning-services/Windows & Frames Cleaning",
+  },
+  {
+    name: "Wiping of switches & outlets",
+    type: "Construction Cleaning",
+    link: "/Cleaning-services/Wiping of switches & outlets",
+  },
+  {
+    name: "Packaging and removal of debris",
+    type: "Construction Cleaning",
+    link: "/Cleaning-services/Packaging and removal of debris",
+  },
+];
+
+export const upholsteryCleaning = [
+  {
+    name: "Steam Cleaning",
+    type: "Upholstery Cleaning",
+    link: "/Cleaning-services/Steam Cleaning",
+  },
+  {
+    name: "Sofa Cleaning",
+    type: "Upholstery Cleaning",
+    link: "/Cleaning-services/Sofa Cleaning",
+  },
+  {
+    name: "Leather Cleaning",
+    type: "Upholstery Cleaning",
+    link: "/Cleaning-services/Leather Cleaning",
+  },
+];

@@ -30,7 +30,7 @@ export default function ITservices({}: Props) {
           sx={{
             fontSize: "1.3rem",
             color: "#FFFFFF",
-            width: "60%",
+            width: { md: "60%", lg: "100%" },
             fontWeight: 700,
 
             fontFamily: "DM Sans",

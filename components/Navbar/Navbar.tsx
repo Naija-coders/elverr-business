@@ -225,10 +225,28 @@ const Navbar: React.FunctionComponent<Props> = ({
                 >
                   Automotive Services
                 </StyledTextTypo>
-                <StyledTextTypo>Event Services</StyledTextTypo>
-                <StyledTextTypo>Entertainments Services</StyledTextTypo>
+                <StyledTextTypo
+                  onClick={() => {
+                    route.push("/Event-services");
+                  }}
+                >
+                  Event Services
+                </StyledTextTypo>
+                <StyledTextTypo
+                  onClick={() => {
+                    route.push("/Entertainments-services");
+                  }}
+                >
+                  Entertainments Services
+                </StyledTextTypo>
 
-                <StyledTextTypo>Cleaning Services</StyledTextTypo>
+                <StyledTextTypo
+                  onClick={() => {
+                    route.push("/Cleaning-services");
+                  }}
+                >
+                  Cleaning Services
+                </StyledTextTypo>
               </div>
             </>
           )}

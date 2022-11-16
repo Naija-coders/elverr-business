@@ -36,7 +36,19 @@ export default function ITservices({}: Props) {
             fontFamily: "DM Sans",
           }}
         >
-          Browse our collection of 50+ Automotive Service on Elverr
+          Choose Elver Business for innovative Automative solutions
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "0.9rem",
+            color: "#FFFFFF",
+            width: { md: "60%", lg: "100%" },
+            fontWeight: 700,
+
+            fontFamily: "DM Sans",
+          }}
+        >
+          Browse our collection of 50+ Automotive Services on Elverr
         </Typography>
         <Button
           disableElevation

@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import { StyledTypography, ContainerWrapperDiv } from "./styles";
 import ExploreFilter from "../Filters/ExploreFilter";
 import BasedonLikes from "../Featured/BasedonLikes";
-import ITserviceBanner from "../Banner/ITSubcategorybanner";
+import AutomotiveserviceBanner from "../Banner/AutomotiveService";
 import Footer from "../LoggedIn/FooterLoggedIn";
 import FAQ from "../Featured/FAQ";
 import ReuseablePaginatedService from "../PaginatedServices/ReuseablePaginatedService";
@@ -106,7 +106,7 @@ const ITservices = (props: Props) => {
               </div>
               <ExploreFilter />
             </ContainerWrapperDiv>
-            <ITserviceBanner />
+            <AutomotiveserviceBanner />
             <ContainerWrapperDiv>
               <CustomTypographyHeader> {service}</CustomTypographyHeader>
               <CustomTypography>

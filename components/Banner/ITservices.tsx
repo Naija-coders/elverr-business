@@ -29,13 +29,25 @@ export default function ITservices({}: Props) {
           sx={{
             fontSize: "1.3rem",
             color: "#FFFFFF",
-            width: "60%",
+            width: { md: "60%", lg: "100%" },
             fontWeight: 700,
 
             fontFamily: "DM Sans",
           }}
         >
-          Browse our collection of 50+ IT Service on Elverr
+          Choose Elver Business for innovative IT solutions
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "0.9rem",
+            color: "#FFFFFF",
+            width: { md: "60%", lg: "100%" },
+            fontWeight: 700,
+
+            fontFamily: "DM Sans",
+          }}
+        >
+          Browse our collection of 50+ IT Services on Elverr
         </Typography>
         <Button
           disableElevation

@@ -211,11 +211,11 @@ export default function CleaningService({}: Props) {
                 <CustomTypography
                   onClick={() => {
                     route.push(
-                      "/Cleaning-services/Packaging anf removal of debris"
+                      "/Cleaning-services/Packaging and removal of debris"
                     );
                   }}
                 >
-                  Packaging anf removal of debris
+                  Packaging and removal of debris
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>

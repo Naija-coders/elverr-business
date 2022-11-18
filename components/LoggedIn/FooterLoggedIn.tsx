@@ -175,6 +175,13 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
               >
                 Fitness Services
               </FooterTypo>
+              <FooterTypo
+                onClick={() => {
+                  route.push("/Other-services");
+                }}
+              >
+                Other Services
+              </FooterTypo>
             </div>
             <div
               style={{

@@ -524,3 +524,226 @@ export const upholsteryCleaning = [
     link: "/Cleaning-services/Leather Cleaning",
   },
 ];
+
+//other services
+
+export const buildingandtrading = [
+  {
+    name: "Electrical Installation & Testing",
+    type: "Building & Trading",
+    link: "/Other-services/Electrical Installation & Testing",
+  },
+  {
+    name: "Carpentry & Joinery",
+    type: "Building & Trading",
+    link: "/Other-services/Carpentry & Joinery",
+  },
+  {
+    name: "Oil & Gas Industry",
+    type: "Building & Trading",
+    link: "/Other-services/Oil & Gas Industry",
+  },
+  {
+    name: "Electrician",
+    type: "Building & Trading",
+    link: "/Other-services/Electrician",
+  },
+  {
+    name: "Heavy Equipment Operator",
+    type: "Building & Trading",
+    link: "/Other-services/Heavy Equipment Operator",
+  },
+  {
+    name: "Alarm & CCTV Installation",
+    type: "Building & Trading",
+    link: "/Other-services/Alarm & CCTV Installation",
+  },
+  {
+    name: "Drainage Services",
+    type: "Building & Trading",
+    link: "/Other-services/Drainage Services",
+  },
+];
+
+export const healthandbeauty = [
+  {
+    name: "Make-up",
+    type: "Health & Beauty Service",
+    link: "/Other-services/Make-up",
+  },
+  {
+    name: "Hair Dresser & Barber",
+    type: "Health & Beauty Service",
+    link: "/Other-services/Hair Dresser & Barber",
+  },
+  {
+    name: "Skin Care",
+    type: "Health & Beauty Service",
+    link: "/Other-services/Skin Care",
+  },
+  {
+    name: "Pedicure",
+    type: "Health & Beauty Service",
+    link: "/Other-services/Pedicure",
+  },
+];
+
+export const landscapingandgarden = [
+  {
+    name: "Prunning",
+    type: "Landscaping & Garden",
+    link: "/Other-services/Prunning",
+  },
+  {
+    name: "Garden Design",
+    type: "Landscaping & Garden",
+    link: "/Other-services/Garden Design",
+  },
+  {
+    name: "Soil Enrichment",
+    type: "Landscaping & Garden",
+    link: "/Other-services/Soil Enrichment",
+  },
+  {
+    name: "Landscape & Garden Cleanup",
+    type: "Landscaping & Garden",
+    link: "/Other-services/Landscape & Garden Cleanup",
+  },
+];
+
+export const printingservice = [
+  {
+    name: "Gravure Printing",
+    type: "Printing Services",
+    link: "/Other-services/Gravure Printing",
+  },
+  {
+    name: "Engraving",
+    type: "Printing Services",
+    link: "/Other-services/Engraving",
+  },
+  {
+    name: "Flexographic Printing",
+    type: "Printing Services",
+    link: "/Other-services/Flexographic Printing",
+  },
+  {
+    name: "Thermographic Printing",
+    type: "Printing Services",
+    link: "/Other-services/Thermographic Printing",
+  },
+  {
+    name: "Screen Printing",
+    type: "Printing Services",
+    link: "/Other-services/Screen Printing",
+  },
+  {
+    name: "Digital Printing",
+    type: "Printing Services",
+    link: "/Other-services/Digital Printing",
+  },
+  {
+    name: "Rotary Screen",
+    type: "Printing Services",
+    link: "/Other-services/Rotary Screen",
+  },
+];
+
+export const repairservices = [
+  {
+    name: "Dry Docking & Repairs",
+    type: "Repair Services",
+    link: "/Other-services/Dry Docking & Repairs",
+  },
+  {
+    name: "Machine Service",
+    type: "Repair Services",
+    link: "/Other-services/Machine Service",
+  },
+  {
+    name: "Emergency Repairs",
+    type: "Repair Services",
+    link: "/Other-services/Emergency Repairs",
+  },
+  {
+    name: "Home Repairs",
+    type: "Repair Services",
+    link: "/Other-services/Home Repairs",
+  },
+  {
+    name: "Remixing & Mashups",
+    type: "Repair Services",
+    link: "/Other-services/Remixing & Mashups",
+  },
+];
+
+export const logisticservices = [
+  {
+    name: "Warehousing",
+    type: "Logistics Services",
+    link: "/Other-services/Warehousing",
+  },
+  {
+    name: "Customs Clearance",
+    type: "Logistics Services",
+    link: "/Other-services/Customs Clearance",
+  },
+  {
+    name: "Freight Forwarding",
+    type: "Logistics Services",
+    link: "/Other-services/Freight Forwarding",
+  },
+  {
+    name: "Supply Chain Management",
+    type: "Logistics Services",
+    link: "/Other-services/Supply Chain Management",
+  },
+  {
+    name: "Industrial Distribution",
+    type: "Logistics Services",
+    link: "/Other-services/Industrial Distribution",
+  },
+  {
+    name: "Data Processing",
+    type: "Logistics Services",
+    link: "/Other-services/Data Processing",
+  },
+  {
+    name: "Blockchain & Cryptocurrency",
+    type: "Logistics Services",
+    link: "/Other-services/Blockchain & Cryptocurrency",
+  },
+  {
+    name: "Coding Lessons",
+    type: "Logistics Services",
+    link: "/Other-services/Coding Lessons",
+  },
+  {
+    name: "Cyber Security & Data Protection",
+    type: "Logistics Services",
+    link: "/Other-services/Cyber Security & Data Protection",
+  },
+];
+
+export const travelandtour = [
+  {
+    name: "Travel Management",
+    type: "Travel & Tour Services",
+    link: "/Other-services/Travel Management",
+  },
+  {
+    name: "Travel Agent",
+    type: "Travel & Tour Services",
+    link: "/Other-services/Travel Agent",
+  },
+  {
+    name: "Tour Operators",
+    type: "Travel & Tour Services",
+    link: "/Other-services/Tour Operators",
+  },
+  {
+    name: "Online Travel Agencies",
+    type: "Travel & Tour Services",
+    link: "/Other-services/Online Travel Agencies",
+  },
+];

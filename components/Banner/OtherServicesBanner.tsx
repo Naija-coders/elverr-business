@@ -37,7 +37,7 @@ export default function ITservices({}: Props) {
               fontFamily: "DM Sans",
             }}
           >
-            Got a business need? We've got brilliant minds
+            {"  Got a business need? We've got brilliant minds"}
           </Typography>
           <Typography
             sx={{

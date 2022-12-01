@@ -34,6 +34,29 @@ export const CustomImg = styled("img")(
     marginTop: "-50px",
   })
 );
+
+export const Ovie = styled("div")(sx({}));
+
+export const OvieTypography = styled(Typography)(
+  sx({
+    fontSize: "35px",
+    textTransform: "none",
+
+    fontWeight: 800,
+
+    color: "#FFFFFF",
+  })
+);
+
+export const OviesmallTypography = styled(Typography)(
+  sx({
+    fontSize: "10px",
+    textTransform: "none",
+
+    color: "#FFFFFF",
+  })
+);
+
 export const CustomImgblur = styled("div")(
   sx({
     background: "#80CC28",

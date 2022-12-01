@@ -35,7 +35,20 @@ export const CustomImg = styled("img")(
   })
 );
 
-export const Ovie = styled("div")(sx({}));
+export const Ovie = styled("div")(
+  sx({
+    height: "90px",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+
+    width: "90px",
+    background: "rgba(254, 254, 254, 0.1)",
+    borderRadius: "15px",
+  })
+);
 
 export const OvieTypography = styled(Typography)(
   sx({

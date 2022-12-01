@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
-import { OvieTypography, OviesmallTypography } from "./styles";
+import { OvieTypography, OviesmallTypography, Ovie } from "./styles";
 
 type Props = {};
 
@@ -85,71 +85,22 @@ export default function Eventservices({}: Props) {
           marginRight: "30px",
         }}
       >
-        <div
-          style={{
-            height: "90px",
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-
-            width: "90px",
-            background: "rgba(254, 254, 254, 0.1)",
-            borderRadius: "15px",
-          }}
-        >
+        <Ovie>
           <OvieTypography>360</OvieTypography>
           <OviesmallTypography>Days</OviesmallTypography>
-        </div>
-        <div
-          style={{
-            height: "90px",
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "90px",
-            background: "rgba(254, 254, 254, 0.1)",
-            borderRadius: "10px",
-          }}
-        >
+        </Ovie>
+        <Ovie>
           <OvieTypography>24</OvieTypography>
           <OviesmallTypography>Hours</OviesmallTypography>
-        </div>
-        <div
-          style={{
-            height: "90px",
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "90px",
-            background: "rgba(254, 254, 254, 0.1)",
-            borderRadius: "15px",
-          }}
-        >
+        </Ovie>
+        <Ovie>
           <OvieTypography>60</OvieTypography>
           <OviesmallTypography>minutes</OviesmallTypography>
-        </div>
-        <div
-          style={{
-            height: "90px",
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "90px",
-            background: "rgba(254, 254, 254, 0.1)",
-            borderRadius: "15px",
-          }}
-        >
+        </Ovie>
+        <Ovie>
           <OvieTypography>30</OvieTypography>
           <OviesmallTypography>Seconds</OviesmallTypography>
-        </div>
+        </Ovie>
         <div>
           {" "}
           <img

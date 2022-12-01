@@ -38,40 +38,40 @@ export default function Automotive({}: Props) {
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/Automotive-services/Tire Replacement");
+                  route.push("/Event-services/Decor Setup & Styling");
                 }}
               >
-                <RelatedServicetypo>Tire Replacement</RelatedServicetypo>
+                <RelatedServicetypo>Decor Setup & Styling</RelatedServicetypo>
                 <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/Automotive-services/Towing Services");
+                  route.push("/Event-services/Conferences");
                 }}
               >
-                <RelatedServicetypo>Towing Services</RelatedServicetypo>
+                <RelatedServicetypo>Conferences</RelatedServicetypo>
                 <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/Automotive-services/Safety & Security");
+                  route.push("/Event-services/Location Scouting");
                 }}
               >
-                <RelatedServicetypo>Safety & Security</RelatedServicetypo>
+                <RelatedServicetypo>Location Scouting</RelatedServicetypo>
                 <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
             <CustomContainerItServices>
               <CustomButtonDiv
                 onClick={() => {
-                  route.push("/Automotive-services/Fabrication");
+                  route.push("/Event-services/Festivals");
                 }}
               >
-                <RelatedServicetypo>Fabrication</RelatedServicetypo>
+                <RelatedServicetypo>Festivals</RelatedServicetypo>
                 <CustomArrowForwardIos sx={{ fontSize: "0.9rem" }} />
               </CustomButtonDiv>
             </CustomContainerItServices>
@@ -79,13 +79,13 @@ export default function Automotive({}: Props) {
           <br></br>
           <br></br>
           <CustomTypographyHeader>
-            Explore Automotive Services{" "}
+            Explore Event Services{" "}
           </CustomTypographyHeader>
           <CustomDivServices>
             <CustomContainerItServices>
               <img
                 src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668029498/Rectangle_4333_p6pzpx.png"
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1669898916/Rectangle_4333_n9kpvy.png"
                 }
                 style={{
                   height: "173px",
@@ -94,52 +94,133 @@ export default function Automotive({}: Props) {
                 }}
               />
               <CustomFlex>
-                <CustomTypographyHeader>
-                  Automative Industry
-                </CustomTypographyHeader>
+                <CustomTypographyHeader>Event Manager</CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Wholesaling Parts");
+                    route.push("/Event-services/Conference");
                   }}
                 >
-                  Wholesaling Parts
+                  Conference
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Retailing Parts");
+                    route.push("/Event-services/Concerts");
                   }}
                 >
-                  Retailing Parts
+                  Concerts
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push(
-                      "/Automotive-services/Motor Vehicle Maintenance"
-                    );
+                    route.push("/Event-services/Festivals");
                   }}
                 >
-                  Motor Vehicle Maintenance
+                  Festivals
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Part Fabrication");
+                    route.push("/Event-services/Part Fabrication");
                   }}
                 >
                   Part Fabrication
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Safety & Security");
+                    route.push("/Event-services/Ceremonies");
                   }}
                 >
-                  Safety & Security
+                  Ceremonies
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>
             <CustomContainerItServices>
               <img
                 src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668029499/Rectangle_4334_bkhp4w.png"
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1669898931/Rectangle_4334_nz8pz9.png"
+                }
+                style={{
+                  height: "173px",
+                  borderRadius: "16.7039px 16.7039px 0px 0px",
+                  width: "100%",
+                }}
+              />
+              <CustomFlex>
+                <CustomTypographyHeader>Event Planner</CustomTypographyHeader>
+                <CustomTypography
+                  onClick={() => {
+                    route.push(
+                      "/Event-services/Conception & Event Planning &Service"
+                    );
+                  }}
+                >
+                  Conception & Event Planning & Service
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Event-services/Location Scouting");
+                  }}
+                >
+                  Location Scouting
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push(
+                      "/Event-services/Service Bid & Contract Management"
+                    );
+                  }}
+                >
+                  Service Bid & Contract Management
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Event-services/Pressure Washing");
+                  }}
+                >
+                  Pressure Washing
+                </CustomTypography>
+              </CustomFlex>
+            </CustomContainerItServices>
+
+            <CustomContainerItServices>
+              <img
+                src={
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1669898938/Rectangle_4335_cdexgd.png"
+                }
+                style={{
+                  height: "173px",
+                  borderRadius: "16.7039px 16.7039px 0px 0px",
+                  width: "100%",
+                }}
+              />
+              <CustomFlex>
+                <CustomTypographyHeader>Budgeting</CustomTypographyHeader>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Event-services/Design Proposol");
+                  }}
+                >
+                  Design Proposol
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Event-services/Decor Setup & Styling");
+                  }}
+                >
+                  Decor Setup & Styling
+                </CustomTypography>
+                <CustomTypography
+                  onClick={() => {
+                    route.push("/Event-services/Vendor Sourcing & Curating");
+                  }}
+                >
+                  Vendor Sourcing & Curating
+                </CustomTypography>
+              </CustomFlex>
+            </CustomContainerItServices>
+
+            <CustomContainerItServices>
+              <img
+                src={
+                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1669898923/Rectangle_4336_gmkhle.png"
                 }
                 style={{
                   height: "173px",
@@ -149,165 +230,29 @@ export default function Automotive({}: Props) {
               />
               <CustomFlex>
                 <CustomTypographyHeader>
-                  Automobile Services
+                  Corporate Events
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Lubrication System");
+                    route.push("/Event-services/Seminars");
                   }}
                 >
-                  Lubrication System
+                  Seminars
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Electrical System");
+                    route.push("/Event-services/Product Launch Events");
                   }}
                 >
-                  Electical System
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Cooling System");
-                  }}
-                >
-                  Cooling System
-                </CustomTypography>
-              </CustomFlex>
-            </CustomContainerItServices>
-
-            <CustomContainerItServices>
-              <img
-                src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668029498/Rectangle_4335_cctui7.png"
-                }
-                style={{
-                  height: "173px",
-                  borderRadius: "16.7039px 16.7039px 0px 0px",
-                  width: "100%",
-                }}
-              />
-              <CustomFlex>
-                <CustomTypographyHeader>Vehicle Repairs</CustomTypographyHeader>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Transmission Repairs");
-                  }}
-                >
-                  Transmission Repairs
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Wiper Blade Replacement");
-                  }}
-                >
-                  Wiper Blade Replacement
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Tire Replacement");
-                  }}
-                >
-                  Tire Replacement
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Fuel Filter");
-                  }}
-                >
-                  Fuel Filter
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Scheduled Maintenance");
-                  }}
-                >
-                  Scheduled Maintenance
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Oil Replacement");
-                  }}
-                >
-                  Oil Replacement
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Air Filter Replacement");
-                  }}
-                >
-                  Air Filter Replacement
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Towing Services");
-                  }}
-                >
-                  Towing Services
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Body Repair & Painting");
-                  }}
-                >
-                  Body Repair & Painting
-                </CustomTypography>
-              </CustomFlex>
-            </CustomContainerItServices>
-
-            <CustomContainerItServices>
-              <img
-                src={
-                  "https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668029496/Rectangle_4336_a5yaco.png"
-                }
-                style={{
-                  height: "173px",
-                  borderRadius: "16.7039px 16.7039px 0px 0px",
-                  width: "100%",
-                }}
-              />
-              <CustomFlex>
-                <CustomTypographyHeader>
-                  Full Car Services
-                </CustomTypographyHeader>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Air Filter Change");
-                  }}
-                >
-                  Air Filter Change
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push(
-                      "/Automotive-services/Extensive Break Inspection"
-                    );
-                  }}
-                >
-                  Extensive Break Inspection
+                  Product Launch Events
                 </CustomTypography>
 
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Automotive-services/Air Condition Inspection");
+                    route.push("/Event-services/Workshops");
                   }}
                 >
-                  Air Condition Inspection
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push(
-                      "/Automotive-services/Shock Absorber Inspection"
-                    );
-                  }}
-                >
-                  Shock Absorber Inspection
-                </CustomTypography>
-                <CustomTypography
-                  onClick={() => {
-                    route.push("/Automotive-services/Electrical Test");
-                  }}
-                >
-                  Electrical Test
+                  Workshops
                 </CustomTypography>
               </CustomFlex>
             </CustomContainerItServices>
@@ -315,7 +260,7 @@ export default function Automotive({}: Props) {
         </StyleContainer>
       </StyledBox>
 
-      <RelatedCategories automativeservices={true} />
+      <RelatedCategories eventservices={true} />
 
       <FAQ />
       <Footer />

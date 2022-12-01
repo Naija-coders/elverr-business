@@ -82,7 +82,7 @@ export default function Eventservices({}: Props) {
           display: "flex",
           flexDirection: "row",
           gap: "20px",
-          marginRight: "30px",
+          marginRight: "90px",
         }}
       >
         <Ovie>
@@ -105,10 +105,10 @@ export default function Eventservices({}: Props) {
           {" "}
           <img
             style={{
-              height: "190px",
+              height: "240px",
               position: "absolute",
-              right: "50px",
-              marginTop: "-45px",
+              right: "70px",
+              marginTop: "-95px",
 
               objectFit: "contain",
             }}

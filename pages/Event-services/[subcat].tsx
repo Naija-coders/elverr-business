@@ -1,5 +1,5 @@
 import React from "react";
-import ITservices from "../../components/SubCategories/ITservices";
+import EventServicesSubcatogories from "../../components/SubCategories/EventServices";
 
 type Props = {};
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -17,7 +17,7 @@ const theme = createTheme({
 export default function subcat({}: Props) {
   return (
     <ThemeProvider theme={theme}>
-      <ITservices />
+      <EventServicesSubcatogories />
     </ThemeProvider>
   );
 }

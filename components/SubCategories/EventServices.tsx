@@ -20,16 +20,7 @@ import FAQ from "../Featured/FAQ";
 import ReuseablePaginatedService from "../PaginatedServices/ReuseablePaginatedService";
 import ITSubCategoriesslider from "../Slider/ITSubCategoriesslider";
 import EventservicesBanner from "../Banner/Eventservices";
-import {
-  graphicDesign,
-  digitalMarketing,
-  writingTranslation,
-  videoAnimation,
-  musicAudio,
-  programming,
-  business,
-  trending,
-} from "./json";
+import { eventmanager, eventplanner, budgeting, corporateevent } from "./json";
 import RelatedSubCat from "./RelatedSubCat";
 type Props = {};
 
@@ -45,58 +36,34 @@ const ITservices = (props: Props) => {
   console.log("the result for the type is", type);
 
   const result =
-    graphicDesign.find(({ name }) => name === service) ||
-    digitalMarketing.find(({ name }) => name === service) ||
-    writingTranslation.find(({ name }) => name === service) ||
-    musicAudio.find(({ name }) => name === service) ||
-    programming.find(({ name }) => name === service) ||
-    business.find(({ name }) => name === service) ||
-    videoAnimation.find(({ name }) => name === service) ||
-    trending.find(({ name }) => name === service);
+    eventmanager.find(({ name }) => name === service) ||
+    eventplanner.find(({ name }) => name === service) ||
+    budgeting.find(({ name }) => name === service) ||
+    corporateevent.find(({ name }) => name === service);
   React.useEffect(() => {
     var array;
     console.log("the result is really true", result?.type);
     if (result) {
       settype(result?.type);
 
-      if (type?.toString() === "Graphic Design") {
-        array = graphicDesign.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Event Manager") {
+        array = eventmanager.filter((item) => item.name !== result?.name);
         console.group("the result for graphic design", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Digital Marketing") {
-        array = digitalMarketing.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Event Planner") {
+        array = eventplanner.filter((item) => item.name !== result?.name);
         console.group("the result for Digital Marketing", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Writing & Translation") {
-        array = writingTranslation.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Budgeting") {
+        array = budgeting.filter((item) => item.name !== result?.name);
         console.group("the result for Writing & Translation", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Video & Animation") {
-        array = videoAnimation.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Corporate Events") {
+        array = corporateevent.filter((item) => item.name !== result?.name);
         console.group("the result for Video & Animation", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Music & Audio") {
-        array = musicAudio.filter((item) => item.name !== result?.name);
-        console.group("the result for Music & Audio", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Programming & Tech") {
-        array = programming.filter((item) => item.name !== result?.name);
-        console.group("the result for Programming & Tech", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Business") {
-        array = business.filter((item) => item.name !== result?.name);
-        console.group("the result for Business", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Trending") {
-        array = trending.filter((item) => item.name !== result?.name);
-        console.group("the result for Business", array);
         setRelatedinfo(array);
       }
     } else {
@@ -122,10 +89,10 @@ const ITservices = (props: Props) => {
                     },
                   }}
                   onClick={() => {
-                    route.push("/It-services");
+                    route.push("/Event-services");
                   }}
                 >
-                  IT SERVICES
+                  EVENT SERVICES
                 </StyledTypography>
                 <span style={{ color: "#747582" }}>&gt;</span>
                 <StyledTypography sx={{ color: "#34A422" }}>

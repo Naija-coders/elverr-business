@@ -747,3 +747,90 @@ export const travelandtour = [
     link: "/Other-services/Online Travel Agencies",
   },
 ];
+
+// event services json file
+
+export const eventmanager = [
+  {
+    name: "Conference",
+    type: "Event Manager",
+    link: "/Event-services/Conference",
+  },
+  {
+    name: "Concerts",
+    type: "Event Manager",
+    link: "/Event-services/Concerts",
+  },
+  {
+    name: "Festivals",
+    type: "Event Manager",
+    link: "/Event-services/Festivals",
+  },
+  {
+    name: "Part Fabrication",
+    type: "Event Manager",
+    link: "/Event-services/Part Fabrication",
+  },
+  {
+    name: "Ceremonies",
+    type: "Event Manager",
+    link: "/Event-services/Ceremonies",
+  },
+];
+
+export const eventplanner = [
+  {
+    name: "Conception & Event Planning & Service",
+    type: "Event Planner",
+    link: "/Event-services/Conception & Event Planning & Service",
+  },
+  {
+    name: "Location Scouting",
+    type: "Event Planner",
+    link: "/Event-services/Location Scouting",
+  },
+  {
+    name: "Service Bid & Contract Management",
+    type: "Event Planner",
+    link: "/Event-services/Service Bid & Contract Management",
+  },
+  {
+    name: "Pressure Washing",
+    type: "Event Planner",
+    link: "/Event-services/Pressure Washing",
+  },
+];
+export const budgeting = [
+  {
+    name: "Design Proposal",
+    type: "Budgeting",
+    link: "/Event-services/Design Proposal",
+  },
+  {
+    name: "Decor Setup & Styling",
+    type: "Budgeting",
+    link: "/Event-services/Decor Setup & Styling",
+  },
+  {
+    name: "Vendor Sourcing & Curating",
+    type: "Budgeting",
+    link: "/Event-services/Vendor Sourcing & Curating",
+  },
+];
+export const corporateevent = [
+  {
+    name: "Seminars",
+    type: "Corporate Events",
+    link: "/Event-services/Seminars",
+  },
+  {
+    name: "Producr Launch Events",
+    type: "Corporate Events",
+    link: "/Event-services/Producr Launch Events",
+  },
+  {
+    name: "Workshops",
+    type: "Corporate Events",
+    link: "/Event-services/Workshops",
+  },
+];

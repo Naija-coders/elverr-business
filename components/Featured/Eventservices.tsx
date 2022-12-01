@@ -195,10 +195,10 @@ export default function Automotive({}: Props) {
                 <CustomTypographyHeader>Budgeting</CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
-                    route.push("/Event-services/Design Proposol");
+                    route.push("/Event-services/Design Proposal");
                   }}
                 >
-                  Design Proposol
+                  Design Proposal
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {

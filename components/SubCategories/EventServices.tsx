@@ -73,14 +73,20 @@ const ITservices = (props: Props) => {
   return (
     <div>
       {" "}
-      <Navbar nosubbar={false} filter="none" ispagecategoriesactive={true} />
+      <Navbar
+        nosubbar={true}
+        filter="drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))"
+        ispagecategoriesactive={true}
+      />
       <StyledBox>
         <StyleContainer>
           <div
             style={{ display: "flex", flexDirection: "column", gap: "40px" }}
           >
             <ContainerWrapperDiv>
-              <div style={{ display: "flex", gap: "0.8rem" }}>
+              <div
+                style={{ display: "flex", gap: "0.8rem", marginTop: "20px" }}
+              >
                 <StyledTypography
                   sx={{
                     "&:hover": {

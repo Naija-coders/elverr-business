@@ -105,7 +105,11 @@ const ITservices = (props: Props) => {
   return (
     <div>
       {" "}
-      <Navbar nosubbar={false} filter="none" ispagecategoriesactive={true} />
+      <Navbar
+        nosubbar={true}
+        filter="drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))"
+        ispagecategoriesactive={true}
+      />
       <StyledBox>
         <StyleContainer>
           <div

@@ -39,6 +39,6 @@ export const ContainerWrapperDiv = styled("div")(
   sx({
     display: "flex",
     flexDirection: "column",
-    gap: "20px",
+    gap: "30px",
   })
 );

@@ -312,14 +312,14 @@ export default function EntertainmentServices({}: Props) {
               />
               <CustomFlex>
                 <CustomTypographyHeader>
-                  Live Music & Dj's
+                  {"    Live Music & Dj's"}
                 </CustomTypographyHeader>
                 <CustomTypography
                   onClick={() => {
                     route.push("/Entertainments-services/Function Dj's & VS");
                   }}
                 >
-                  Function Dj's & VS
+                  {"Function Dj's & VS"}
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {

@@ -56,7 +56,24 @@ const Home: NextPage = () => {
         <SmartChoice />
         <PopularServices />
         <TopAgencies />
-        <FAQ />
+        <FAQ
+          firstheader={"What are the services offered"}
+          firsttitle={
+            "We offer a wide range of services, including but not limited to cleaning, landscaping, plumbing, and electrical work."
+          }
+          secondheader={"Are Elverr services guaranteed?"}
+          secondtitle={
+            "Yes, all of our services are backed by a 100% satisfaction guarantee. If you are not satisfied with the quality of our work, we will come back and redo the job at no extra cost to you."
+          }
+          thirdheader={"Do Elverr offer any discounts or promotions?"}
+          thirdtitle={
+            "Yes, we frequently offer discounts and promotions on our services. You can find out more by signing up for our email newsletter or following us on social media."
+          }
+          fourthheader={"How do I pay for the services?"}
+          fourthtitle={
+            "We accept a variety of payment methods, including credit card, debit card, and cash. You can pay for the services at the time of booking or at the time of service, depending on the service being booked."
+          }
+        />
         <Joinus />
         <FooterNotLoggedIn />
       </div>

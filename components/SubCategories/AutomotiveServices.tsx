@@ -122,7 +122,24 @@ const ITservices = (props: Props) => {
           </div>
         </StyleContainer>
       </StyledBox>
-      <FAQ />
+      <FAQ
+        firstheader={"What services does an automotive service center offer?"}
+        firsttitle={
+          "Automotive service centers typically offer a range of services including oil changes, tire rotations, brake repairs, engine tune-ups, and more. Some centers may also offer specialized services such as transmission repairs or emissions testing."
+        }
+        secondheader={"How often should I have my car serviced?"}
+        secondtitle={
+          "It is generally recommended to have your car serviced every 3,000 to 5,000 miles or every three to six months, depending on the type of vehicle you have and how you use it. Consult your owner's manual for specific recommendations."
+        }
+        thirdheader={"How much does it cost to have my car serviced?"}
+        thirdtitle={
+          "The cost of car servicing can vary depending on the type of service needed and the make and model of your vehicle. Some basic services, such as an oil change, may cost around $50, while more complex repairs could cost several hundred dollars. It is best to check with the service center for specific pricing information."
+        }
+        fourthheader={"Can I schedule a pickup and delivery for my car?"}
+        fourthtitle={
+          "Some automotive service centers  offer pickup and delivery services for customers who are unable to bring their vehicle to the center for servicing. Availability of this service may vary, so it is best to check with the service center to see if it is offered."
+        }
+      />
       <Footer />
     </div>
   );

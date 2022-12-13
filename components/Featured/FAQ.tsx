@@ -30,7 +30,27 @@ import {
 } from "./styles";
 import { fontFamily } from "@mui/system";
 
-export default function NestedList() {
+type Props = {
+  firstheader?: any;
+  secondheader?: any;
+  thirdheader?: any;
+  fourthheader?: any;
+  firsttitle?: any;
+  secondtitle?: any;
+  thirdtitle?: any;
+  fourthtitle?: any;
+};
+
+export default function NestedList({
+  firstheader,
+  secondheader,
+  thirdheader,
+  fourthheader,
+  firsttitle,
+  secondtitle,
+  thirdtitle,
+  fourthtitle,
+}: Props) {
   const [open, setOpen] = React.useState(true);
   const [favorite, setFavorite] = React.useState(false);
   const [agency, setAgency] = React.useState(false);
@@ -80,7 +100,7 @@ export default function NestedList() {
               onClick={handleClick}
               sx={{ padding: "1.5rem 2rem" }}
             >
-              <ListItemText primary="What is Elverr business?" />
+              <ListItemText primary={firstheader} />
               {open ? (
                 <ExpandLess
                   sx={{
@@ -109,7 +129,7 @@ export default function NestedList() {
               <List component="div" disablePadding>
                 <ListItemButton sx={{ pl: 4 }}>
                   <ListItemText
-                    primary="StaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    primary={firsttitle}
                     sx={{ color: "#6F6C90", fontFamily: "DM Sans" }}
                   />
                 </ListItemButton>
@@ -130,7 +150,7 @@ export default function NestedList() {
           >
             <ListItemButton onClick={handleFav} sx={{ padding: "1.5rem 2rem" }}>
               <ListItemText
-                primary="What is your favorite feature from Elverr?"
+                primary={secondheader}
                 sx={{ fontFamily: "DM Sans" }}
               />
               {favorite ? (
@@ -164,7 +184,7 @@ export default function NestedList() {
                 <List component="div" disablePadding>
                   <ListItemButton sx={{ pl: 4 }}>
                     <ListItemText
-                      primary="StaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      primary={secondtitle}
                       sx={{ color: "#6F6C90", fontFamily: "DM Sans" }}
                     />
                   </ListItemButton>
@@ -188,7 +208,7 @@ export default function NestedList() {
               onClick={handleAgen}
               sx={{ padding: "1.5rem 2rem" }}
             >
-              <ListItemText primary="How do you hire an Agency from the Showcase?" />
+              <ListItemText primary={thirdheader} />
               {agency ? (
                 <ExpandLess
                   sx={{
@@ -220,7 +240,7 @@ export default function NestedList() {
                 <List component="div" disablePadding>
                   <ListItemButton sx={{ pl: 4 }}>
                     <ListItemText
-                      primary="StaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      primary={thirdtitle}
                       sx={{ color: "#6F6C90", fontFamily: "DM Sans" }}
                     />
                   </ListItemButton>
@@ -244,7 +264,7 @@ export default function NestedList() {
               onClick={handleFreelance}
               sx={{ padding: "1.5rem 2rem" }}
             >
-              <ListItemText primary="Why is Elverr business the best freelance agency out there?" />
+              <ListItemText primary={fourthheader} />
               {freelance ? (
                 <ExpandLess
                   sx={{
@@ -276,7 +296,7 @@ export default function NestedList() {
                 <List component="div" disablePadding>
                   <ListItemButton sx={{ pl: 4 }}>
                     <ListItemText
-                      primary="StaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      primary={fourthtitle}
                       sx={{ color: "#6F6C90", fontFamily: "DM Sans" }}
                     />
                   </ListItemButton>

@@ -268,7 +268,24 @@ export default function CleaningService({}: Props) {
 
       <RelatedCategories cleaningservices={true} />
 
-      <FAQ />
+      <FAQ
+        firstheader={"What kind of cleaning services do Elverr offer?"}
+        firsttitle={
+          "Our cleaning services include general cleaning, deep cleaning, and specialized services such as carpet cleaning and window washing.        "
+        }
+        secondheader={"Do you have a satisfaction guarantee?"}
+        secondtitle={
+          "Yes, we offer a 100% satisfaction guarantee. If you are not happy with the quality of our cleaning services, please contact us and we will make it right."
+        }
+        thirdheader={"Do you offer one-time cleaning services"}
+        thirdtitle={
+          "Yes, we offer one-time cleaning services for those who need a deep clean or specialized service on a one-time basis."
+        }
+        fourthheader={"How often should I schedule cleaning services?"}
+        fourthtitle={
+          "The frequency of cleaning services will depend on your individual needs and preferences. Some people may want daily cleaning, while others may only need weekly or monthly services."
+        }
+      />
       <Footer />
     </div>
   );

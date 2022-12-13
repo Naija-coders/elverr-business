@@ -262,7 +262,30 @@ export default function Automotive({}: Props) {
 
       <RelatedCategories eventservices={true} />
 
-      <FAQ />
+      <FAQ
+        firstheader={"What services does an event planning company offer?"}
+        firsttitle={
+          "Event planning companies typically offer a range of services including venue selection, decor and design, catering and food service, entertainment, and more. Some companies may also offer event management services, such as coordinating vendors and managing the flow of the event."
+        }
+        secondheader={
+          "How much does it cost to hire an event planning company?"
+        }
+        secondtitle={
+          "The cost of hiring an event planning company can vary depending on the type of event, the services required, and the location. Some companies may charge a flat fee, while others may charge an hourly rate. It is best to contact the company for a quote and discuss your specific needs."
+        }
+        thirdheader={
+          "Can I hire an event planning company to plan a small party or event?"
+        }
+        thirdtitle={
+          "Yes, event planning companies can typically plan events of any size, from large weddings or corporate events to small parties or gatherings. The services offered and the cost may vary depending on the size and scope of the event."
+        }
+        fourthheader={
+          "Do I need to book an event planning company far in advance?"
+        }
+        fourthtitle={
+          "It is generally recommended to book an event planning company as far in advance as possible to ensure that they are available on the date of your event and to give them enough time to plan and coordinate all of the details. However, some companies may be able to accommodate last-minute events if they have availability."
+        }
+      />
       <Footer />
     </div>
   );

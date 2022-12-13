@@ -149,7 +149,24 @@ const ITservices = (props: Props) => {
           </div>
         </StyleContainer>
       </StyledBox>
-      <FAQ />
+      <FAQ
+        firstheader={"What is an IT service?"}
+        firsttitle={
+          "IT services are services related to the use of information technology (IT) to improve business operations, such as data management, networking, software development, and cybersecurity."
+        }
+        secondheader={"What types of IT services do you offer?"}
+        secondtitle={
+          "Our IT services may include data management, networking, software development, cybersecurity, and other services that help businesses improve their operations and productivity."
+        }
+        thirdheader={"What is included in your IT support services"}
+        thirdtitle={
+          "Our IT support services may include help with hardware and software installations, troubleshooting technical issues, providing technical guidance and advice, and assisting with the maintenance and management of your IT systems."
+        }
+        fourthheader={"How do I get started with your IT services"}
+        fourthtitle={
+          "To get started with our IT services, please contact us to discuss your needs and schedule a consultation. Our team will work with you to understand your business and develop a personalized plan to help you improve your operations and productivity."
+        }
+      />
       <Footer />
     </div>
   );

@@ -39,6 +39,7 @@ const EntertainmentServices = (props: Props) => {
     dancers.find(({ name }) => name === service) ||
     artists.find(({ name }) => name === service) ||
     livemusics.find(({ name }) => name === service);
+
   React.useEffect(() => {
     var array;
     console.log("the result is really true", result?.type);
@@ -116,7 +117,24 @@ const EntertainmentServices = (props: Props) => {
           </div>
         </StyleContainer>
       </StyledBox>
-      <FAQ />
+      <FAQ
+        firstheader={"What types of entertainment do you offer?"}
+        firsttitle={
+          "We offer a wide range of entertainment options, including live music, DJ services, sports, and dance performances."
+        }
+        secondheader={"Can I request a specific type of entertainment?"}
+        secondtitle={
+          "Yes, you can request a specific type of entertainment for your event. Please contact us with your request and we will do our best to accommodate you."
+        }
+        thirdheader={"Do you have a list of available entertainers?"}
+        thirdtitle={
+          "Yes, we have a roster of talented entertainers available for hire. You can view their profiles and listen to their demos on our website.         "
+        }
+        fourthheader={"Do you provide sound and lighting equipment?"}
+        fourthtitle={
+          "Yes, we provide all necessary sound and lighting equipment for our entertainment services."
+        }
+      />
       <Footer />
     </div>
   );

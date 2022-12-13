@@ -19,16 +19,7 @@ import Footer from "../LoggedIn/FooterLoggedIn";
 import FAQ from "../Featured/FAQ";
 import ReuseablePaginatedService from "../PaginatedServices/ReuseablePaginatedService";
 import ITSubCategoriesslider from "../Slider/ITSubCategoriesslider";
-import {
-  graphicDesign,
-  digitalMarketing,
-  writingTranslation,
-  videoAnimation,
-  musicAudio,
-  programming,
-  business,
-  trending,
-} from "./json";
+import { sports, dancers, artists, livemusics } from "./json";
 import RelatedSubCat from "./RelatedSubCat";
 type Props = {};
 
@@ -44,58 +35,34 @@ const EntertainmentServices = (props: Props) => {
   console.log("the result for the type is", type);
 
   const result =
-    graphicDesign.find(({ name }) => name === service) ||
-    digitalMarketing.find(({ name }) => name === service) ||
-    writingTranslation.find(({ name }) => name === service) ||
-    musicAudio.find(({ name }) => name === service) ||
-    programming.find(({ name }) => name === service) ||
-    business.find(({ name }) => name === service) ||
-    videoAnimation.find(({ name }) => name === service) ||
-    trending.find(({ name }) => name === service);
+    sports.find(({ name }) => name === service) ||
+    dancers.find(({ name }) => name === service) ||
+    artists.find(({ name }) => name === service) ||
+    livemusics.find(({ name }) => name === service);
   React.useEffect(() => {
     var array;
     console.log("the result is really true", result?.type);
     if (result) {
       settype(result?.type);
 
-      if (type?.toString() === "Graphic Design") {
-        array = graphicDesign.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Sports") {
+        array = sports.filter((item) => item.name !== result?.name);
         console.group("the result for graphic design", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Digital Marketing") {
-        array = digitalMarketing.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Dancers") {
+        array = dancers.filter((item) => item.name !== result?.name);
         console.group("the result for Digital Marketing", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Writing & Translation") {
-        array = writingTranslation.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Artists") {
+        array = artists.filter((item) => item.name !== result?.name);
         console.group("the result for Writing & Translation", array);
         setRelatedinfo(array);
       }
-      if (type?.toString() === "Video & Animation") {
-        array = videoAnimation.filter((item) => item.name !== result?.name);
+      if (type?.toString() === "Live Musics & Dj's") {
+        array = livemusics.filter((item) => item.name !== result?.name);
         console.group("the result for Video & Animation", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Music & Audio") {
-        array = musicAudio.filter((item) => item.name !== result?.name);
-        console.group("the result for Music & Audio", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Programming & Tech") {
-        array = programming.filter((item) => item.name !== result?.name);
-        console.group("the result for Programming & Tech", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Business") {
-        array = business.filter((item) => item.name !== result?.name);
-        console.group("the result for Business", array);
-        setRelatedinfo(array);
-      }
-      if (type?.toString() === "Trending") {
-        array = trending.filter((item) => item.name !== result?.name);
-        console.group("the result for Business", array);
         setRelatedinfo(array);
       }
     } else {
@@ -125,10 +92,10 @@ const EntertainmentServices = (props: Props) => {
                     },
                   }}
                   onClick={() => {
-                    route.push("/It-services");
+                    route.push("/Entertainments-services");
                   }}
                 >
-                  IT SERVICES
+                  ENTERTAINMENT SERVICES
                 </StyledTypography>
                 <span style={{ color: "#747582" }}>&gt;</span>
                 <StyledTypography sx={{ color: "#34A422" }}>

@@ -9,7 +9,7 @@ export default function Eventservices({}: Props) {
     <div
       style={{
         background:
-          "linear-gradient(90deg, #0F0C29 0%, #302B63 50%, #24243E 100%);",
+          "linear-gradient(90deg, #0F0C29 0%, #302B63 50%, #24243E 100%)",
 
         height: "200px",
         width: "100%",

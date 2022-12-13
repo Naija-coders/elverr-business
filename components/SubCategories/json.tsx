@@ -834,3 +834,171 @@ export const corporateevent = [
     link: "/Event-services/Workshops",
   },
 ];
+
+//entertainment services
+
+export const sports = [
+  {
+    name: "Athletic Director",
+    type: "Sports",
+    link: "/Entertainments-services/Athletic Director",
+  },
+  {
+    name: "Coach",
+    type: "Sports",
+    link: "/Entertainments-services/Coach",
+  },
+  {
+    name: "Event Coordinator",
+    type: "Sports",
+    link: "/Entertainments-services/Event Coordinator",
+  },
+  {
+    name: "Facility Operations Manager",
+    type: "Sports",
+    link: "/Entertainments-services/Facility Operations Manager",
+  },
+  {
+    name: "Personal Trainer",
+    type: "Sports",
+    link: "/Entertainments-services/Personal Trainer",
+  },
+  {
+    name: "Sports Message Therapist",
+    type: "Sports",
+    link: "/Entertainments-services/Sports Message Therapist",
+  },
+  {
+    name: "Sports Physician",
+    type: "Sports",
+    link: "/Entertainments-services/Sports Physician",
+  },
+];
+
+export const dancers = [
+  {
+    name: "Ballet Dancers",
+    type: "Dancers",
+    link: "/Entertainments-services/Ballet Dancers",
+  },
+  {
+    name: "LED Dancers",
+    type: "Dancers",
+    link: "/Entertainments-services/LED Dancers",
+  },
+  {
+    name: "Ballroom Dancers",
+    type: "Dancers",
+    link: "/Entertainments-services/Ballroom Dancers",
+  },
+  {
+    name: "Pole Dancers",
+    type: "Dancers",
+    link: "/Entertainments-services/Pole Dancers",
+  },
+  {
+    name: "Street Dancers",
+    type: "Dancers",
+    link: "/Entertainments-services/Street Dancers",
+  },
+  {
+    name: "Cherr Leaders",
+    type: "Dancers",
+    link: "/Entertainments-services/Cherr Leaders",
+  },
+  {
+    name: "Martial Arts Performances",
+    type: "Dancers",
+    link: "/Entertainments-services/Martial Arts Performances",
+  },
+  {
+    name: "Roller Skating Acts",
+    type: "Dancers",
+    link: "/Entertainments-services/Roller Skating Acts",
+  },
+];
+export const artists = [
+  {
+    name: "Painters",
+    type: "Artists",
+    link: "/Entertainments-services/Painters",
+  },
+  {
+    name: "Illustrators",
+    type: "Artists",
+    link: "/Entertainments-services/Illustrators",
+  },
+  {
+    name: "Textile Artists",
+    type: "Artists",
+    link: "/Entertainments-services/Textile Artists",
+  },
+  {
+    name: "Cinematography",
+    type: "Artists",
+    link: "/Entertainments-services/Cinematography",
+  },
+  {
+    name: "Sculptors",
+    type: "Artists",
+    link: "/Entertainments-services/Sculptors",
+  },
+  {
+    name: "Tatoo Arts",
+    type: "Artists",
+    link: "/Entertainments-services/Tatoo Arts",
+  },
+  {
+    name: "Craft Making",
+    type: "Artists",
+    link: "/Entertainments-services/Craft Making",
+  },
+  {
+    name: "Face & Body Painting",
+    type: "Artists",
+    link: "/Entertainments-services/Face & Body Painting",
+  },
+];
+
+export const livemusics = [
+  {
+    name: "Function Dj's & VS",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Function Dj's & VS",
+  },
+  {
+    name: "Drummers",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Drummers",
+  },
+  {
+    name: "Pianist",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Pianist",
+  },
+  {
+    name: "Saxophonist",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Saxophonist",
+  },
+  {
+    name: "Bands",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Bands",
+  },
+  {
+    name: "Singers & Vocalist",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Singers & Vocalist",
+  },
+  {
+    name: "Violinist",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Violinist",
+  },
+  {
+    name: "Guitarists",
+    type: "Live Musics & Dj's",
+    link: "/Entertainments-services/Guitarists",
+  },
+];

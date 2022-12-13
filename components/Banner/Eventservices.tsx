@@ -18,6 +18,7 @@ export default function Eventservices({}: Props) {
         justifyItems: "center",
 
         alignItems: "center",
+        position: "relative",
       }}
     >
       <div
@@ -26,7 +27,7 @@ export default function Eventservices({}: Props) {
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
-          position: "relative",
+          position: "absolute",
         }}
       >
         <div>
@@ -46,7 +47,7 @@ export default function Eventservices({}: Props) {
             sx={{
               fontSize: "0.9rem",
               color: "#FFFFFF",
-              width: { md: "60%", lg: "100%" },
+              width: { md: "50%", lg: "100%" },
               fontWeight: 700,
 
               fontFamily: "DM Sans",
@@ -82,7 +83,8 @@ export default function Eventservices({}: Props) {
           display: "flex",
           flexDirection: "row",
           gap: "20px",
-          marginRight: "90px",
+          right: "100px",
+          position: "absolute",
         }}
       >
         <Ovie>
@@ -107,7 +109,7 @@ export default function Eventservices({}: Props) {
             style={{
               height: "240px",
               position: "absolute",
-              right: "70px",
+              right: "-80px",
               marginTop: "-95px",
 
               objectFit: "contain",

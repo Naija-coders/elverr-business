@@ -77,10 +77,8 @@ export default function ITservices({}: Props) {
       <img
         style={{
           height: "240px",
-          position: "absolute",
-          right: -20,
-
-          marginTop: "40px",
+          marginRight: "-70px",
+          marginTop: "70px",
 
           objectFit: "contain",
         }}

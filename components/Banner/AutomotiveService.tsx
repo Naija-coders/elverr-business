@@ -16,6 +16,7 @@ export default function ITservices({}: Props) {
         borderRadius: "10px",
         justifyItems: "center",
         alignItems: "center",
+        position: "relative",
       }}
     >
       <div
@@ -24,6 +25,7 @@ export default function ITservices({}: Props) {
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
+          position: "absolute",
         }}
       >
         <div>
@@ -31,7 +33,7 @@ export default function ITservices({}: Props) {
             sx={{
               fontSize: "1.3rem",
               color: "#FFFFFF",
-              width: { md: "60%", lg: "100%" },
+              width: { md: "50%", lg: "100%" },
               fontWeight: 700,
 
               fontFamily: "DM Sans",
@@ -77,8 +79,9 @@ export default function ITservices({}: Props) {
       <img
         style={{
           height: "240px",
-          marginRight: "-70px",
+          right: "-70px",
           marginTop: "70px",
+          position: "absolute",
 
           objectFit: "contain",
         }}

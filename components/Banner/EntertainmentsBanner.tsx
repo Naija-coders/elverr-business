@@ -17,7 +17,7 @@ export default function Eventservices({}: Props) {
         justifyContent: "space-between",
         borderRadius: "10px",
         justifyItems: "center",
-
+        position: "relative",
         alignItems: "center",
       }}
     >
@@ -27,7 +27,6 @@ export default function Eventservices({}: Props) {
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
-          position: "relative",
         }}
       >
         <div>

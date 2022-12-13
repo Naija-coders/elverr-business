@@ -12,11 +12,15 @@ export default function CleaningServices({}: Props) {
         height: "200px",
         width: "100%",
         display: "flex",
+        position: "relative",
+
         justifyContent: "space-between",
+        backgroundSize: "100%",
         backgroundImage: `url("https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668590709/Rectangle_4328_zd4gfo.png")`,
         borderRadius: "10px",
         justifyItems: "center",
         alignItems: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div
@@ -81,7 +85,7 @@ export default function CleaningServices({}: Props) {
           position: "absolute",
           width: "238px",
           right: "150px",
-          marginTop: "20px",
+          marginTop: "40px",
 
           objectFit: "contain",
         }}
@@ -93,7 +97,7 @@ export default function CleaningServices({}: Props) {
           position: "absolute",
           width: "408px",
           right: 20,
-          marginTop: "-15px",
+          marginTop: "-34px",
 
           objectFit: "contain",
         }}

@@ -15,7 +15,7 @@ export default function CleaningServices({}: Props) {
         position: "relative",
 
         justifyContent: "space-between",
-        backgroundSize: "100%",
+        backgroundSize: "100% 200px",
         backgroundImage: `url("https://res.cloudinary.com/dxsmdvaqq/image/upload/v1668590709/Rectangle_4328_zd4gfo.png")`,
         borderRadius: "10px",
         justifyItems: "center",

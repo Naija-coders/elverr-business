@@ -1,6 +1,7 @@
 import { Avatar, Button, Divider, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { StyledBox1, StyledBox, StyleContainer } from "../NotLoggedIn/style";
+
 import {
   StyledText,
   StyledTextTypo,
@@ -17,7 +18,28 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { Link } from "@mui/material";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Profilemenu from "./Profilemenu";
+import {
+  Link,
+  Tooltip,
+  Box,
+  Menu,
+  MenuItem,
+  List,
+  ListItem,
+  ListItemButton,
+  Collapse,
+} from "@mui/material";
+import {
+  IconlyProvider,
+  Document,
+  Notification,
+  User,
+  InfoSquare,
+} from "react-iconly";
+
 interface Props {
   nosubbar: boolean;
   filter: string;
@@ -40,6 +62,33 @@ const Navbar: React.FunctionComponent<Props> = ({
   const route = useRouter();
   const dispatch: Dispatch<any> = useDispatch();
   const { depositMoney } = bindActionCreators(actionCreators, dispatch);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  const settings = [{ link: "/", name: "profile" }];
   React.useEffect(() => {
     if (AuthState.isLoggedIn) {
       Clientapi.get("api/getuserprofile").then((response: any) => {
@@ -191,9 +240,10 @@ const Navbar: React.FunctionComponent<Props> = ({
                 >
                   Post Ad
                 </Button>
-                <Avatar
-                  src={AuthState.user?.profile_photo_url}
-                  sx={{ height: "40px", width: "40px" }}
+                <Profilemenu
+                  userstateprofileurl={AuthState.user?.profile_photo_url}
+                  userstatename={AuthState.user?.name}
+                  userstateemail={AuthState.user?.email}
                 />
               </div>
             </div>

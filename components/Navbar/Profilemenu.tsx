@@ -49,6 +49,12 @@ export default function Profilemenu({
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
+  const [color1, setColor1] = useState("grey");
+  const [color2, setColor2] = useState("grey");
+  const [color3, setColor3] = useState("grey");
+  const [color4, setColor4] = useState("grey");
+  const [color5, setColor5] = useState("grey");
+
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -101,10 +107,25 @@ export default function Profilemenu({
         onClose={handleCloseUserMenu}
       >
         <div>
-          <StyledTextTypo sx={{ marginLeft: "1rem", marginTop: "1rem" }}>
+          <StyledTextTypo
+            sx={{
+              "marginLeft": "1rem",
+              "marginTop": "1rem",
+              "&:hover": { color: "grey" },
+              "cursor": "text",
+            }}
+          >
             Profile Information
           </StyledTextTypo>
-          <MenuItem sx={{ padding: "1rem 2rem", marginTop: "1rem" }}>
+          <MenuItem
+            sx={{ padding: "1rem 2rem", marginTop: "1rem" }}
+            onMouseEnter={() => {
+              setColor1("green");
+            }}
+            onMouseLeave={() => {
+              setColor1("grey");
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -113,12 +134,22 @@ export default function Profilemenu({
                 justifyItems: "center",
               }}
             >
-              <Category size={"medium"} />
+              <Category style={{ color: color1 }} size={"medium"} />
 
-              <StyledTextTypo>Dashboard</StyledTextTypo>
+              <StyledTextTypo style={{ color: color1 }}>
+                Dashboard
+              </StyledTextTypo>
             </div>
           </MenuItem>
-          <MenuItem sx={{ padding: "1rem 2rem " }}>
+          <MenuItem
+            sx={{ padding: "1rem 2rem " }}
+            onMouseEnter={() => {
+              setColor2("green");
+            }}
+            onMouseLeave={() => {
+              setColor2("grey");
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -127,9 +158,11 @@ export default function Profilemenu({
                 justifyItems: "center",
               }}
             >
-              <Notification size={"medium"} />
+              <Notification style={{ color: color2 }} size={"medium"} />
 
-              <StyledTextTypo>Notification</StyledTextTypo>
+              <StyledTextTypo style={{ color: color2 }}>
+                Notification
+              </StyledTextTypo>
             </div>
           </MenuItem>
 
@@ -144,14 +177,26 @@ export default function Profilemenu({
               justifyItems: "center",
               flexDirection: "row",
             }}
+            onMouseEnter={() => {
+              setColor3("green");
+            }}
+            onMouseLeave={() => {
+              setColor3("grey");
+            }}
             onClick={handleClick}
           >
-            <Setting size={"medium"} />
+            <Setting style={{ color: color3 }} size={"medium"} />
 
-            <StyledTextTypo>Account Settings</StyledTextTypo>
+            <StyledTextTypo style={{ color: color3 }}>
+              Account Settings
+            </StyledTextTypo>
 
             <div style={{ marginTop: "10px", marginLeft: "2rem" }}>
-              {open ? <ExpandLess /> : <ExpandMore />}
+              {open ? (
+                <ExpandLess style={{ color: color3 }} />
+              ) : (
+                <ExpandMore style={{ color: color3 }} />
+              )}
             </div>
           </MenuItem>
           <Collapse in={open} timeout="auto" unmountOnExit>
@@ -162,25 +207,11 @@ export default function Profilemenu({
                 paddingRight: "1rem",
                 paddingBottom: "1rem",
               }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              >
-                <ShieldDone size={"medium"} />
-
-                <StyledTextTypo>{"Security & Privacy"}</StyledTextTypo>
-              </div>
-            </MenuItem>
-            <MenuItem
-              sx={{
-                paddingTop: "1rem",
-                paddingLeft: "2rem",
-                paddingRight: "1rem",
+              onMouseEnter={() => {
+                setColor4("green");
+              }}
+              onMouseLeave={() => {
+                setColor4("grey");
               }}
             >
               <div
@@ -191,9 +222,39 @@ export default function Profilemenu({
                   justifyItems: "center",
                 }}
               >
-                <Delete size={"medium"} />
+                <ShieldDone style={{ color: color4 }} size={"medium"} />
 
-                <StyledTextTypo>Delete Account</StyledTextTypo>
+                <StyledTextTypo style={{ color: color4 }}>
+                  {"Security & Privacy"}
+                </StyledTextTypo>
+              </div>
+            </MenuItem>
+            <MenuItem
+              sx={{
+                paddingTop: "1rem",
+                paddingLeft: "2rem",
+                paddingRight: "1rem",
+              }}
+              onMouseEnter={() => {
+                setColor5("green");
+              }}
+              onMouseLeave={() => {
+                setColor5("grey");
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5rem",
+                  alignItems: "center",
+                  justifyItems: "center",
+                }}
+              >
+                <Delete style={{ color: color5 }} size={"medium"} />
+
+                <StyledTextTypo style={{ color: color5 }}>
+                  Delete Account
+                </StyledTextTypo>
               </div>
             </MenuItem>
           </Collapse>
@@ -207,7 +268,14 @@ export default function Profilemenu({
               padding: "0.5rem",
             }}
           ></Divider>
-          <StyledTextTypo sx={{ marginLeft: "1rem", marginTop: "1rem" }}>
+          <StyledTextTypo
+            sx={{
+              "marginLeft": "1rem",
+              "marginTop": "1rem",
+              "&:hover": { color: "grey" },
+              "cursor": "text",
+            }}
+          >
             Profile
           </StyledTextTypo>
           <div
@@ -223,21 +291,27 @@ export default function Profilemenu({
             <div>
               <StyledTextTypo
                 sx={{
-                  color: "black",
-                  fontSize: "0.9rem",
-                  fontWeight: "bold",
+                  "color": "black",
+                  "fontSize": "0.9rem",
+                  "fontWeight": "bold",
+                  "cursor": "text",
+                  "&:hover": { color: "black" },
                 }}
               >
                 {userstatename}
               </StyledTextTypo>
-              <StyledTextTypo>{userstateemail}</StyledTextTypo>
+              <StyledTextTypo
+                sx={{ "&:hover": { color: "grey", cursor: "text" } }}
+              >
+                {userstateemail}
+              </StyledTextTypo>
             </div>
           </div>
           <div
             style={{
               display: "flex",
               justifyContent: "center",
-              padding: "1rem",
+              padding: "0.7rem",
             }}
           >
             <Button

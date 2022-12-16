@@ -9,11 +9,75 @@ import {
   NavbarDiv,
 } from "./styles";
 
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import { StyledBox, StyleContainer } from "../NotLoggedIn/style";
+import {
+  Link,
+  Tooltip,
+  Box,
+  Menu,
+  MenuItem,
+  List,
+  ListItem,
+  ListItemButton,
+  Collapse,
+} from "@mui/material";
+import {
+  Document,
+  Notification,
+  User,
+  InfoSquare,
+  Category,
+  Setting,
+  Delete,
+  ShieldDone,
+} from "react-iconly";
 import { useRouter } from "next/router";
-type Props = {};
+type Props = {
+  userstatename?: any;
+  userstateemail?: any;
+  userstateprofileurl?: any;
+};
 
-export default function Cleaningmenu({}: Props) {
+export default function Othermenu({
+  userstatename,
+  userstateemail,
+  userstateprofileurl,
+}: Props) {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [color1, setColor1] = useState("grey");
+  const [color2, setColor2] = useState("grey");
+  const [color3, setColor3] = useState("grey");
+  const [color4, setColor4] = useState("grey");
+  const [color5, setColor5] = useState("grey");
+
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   const route = useRouter();
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   return (
     <div
       style={{
@@ -33,57 +97,57 @@ export default function Cleaningmenu({}: Props) {
             "fontSize": "1rem",
           }}
         >
-          Sports
+          {"Building & Trading"}
         </StyledTextTypo>
 
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Athletic Director");
+            route.push("/Other-services/Electrical Installation & Testing");
           }}
         >
-          Athletic Director
+          Electrical Installation & Testing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Coach");
+            route.push("/Other-services/Carpentry & Joinery");
           }}
         >
-          Coach
+          Carpentry & Joinery
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Event Coordinator");
+            route.push("/Other-services/Oil & Gas Industry");
           }}
         >
-          Event Coordinator
+          Oils & Gas Industry
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Facility Operations Manager");
+            route.push("/Other-services/Electrician");
           }}
         >
-          Facilities Operations Manager
+          Electrician
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Personal Trainer");
+            route.push("/Other-services/Heavy Equipment Operator");
           }}
         >
-          Personal Trainer
+          Heavy Equipment Operator
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Sports Massage Therapist");
+            route.push("/Other-services/Alarm & CCTV Installation");
           }}
         >
-          Sports Message Therapist
+          Alarm & CCTV Installation
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Sports Physician");
+            route.push("/Other-services/Drainage Services");
           }}
         >
-          Sports Physician
+          Drainage Services
         </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
@@ -95,63 +159,35 @@ export default function Cleaningmenu({}: Props) {
             "fontSize": "1rem",
           }}
         >
-          Dancer
+          Health & Beauty Service
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Ballet Dancers");
+            route.push("/Other-services/Make-up");
           }}
         >
-          Ballet Dancers
+          {"Make-up"}
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/LED Dancers");
+            route.push("/Other-services/Hair Dresser & Barber");
           }}
         >
-          LED Dancers
+          Hair Dresser & Barber
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Ballroom Dancers");
+            route.push("/Other-services/Skin Care");
           }}
         >
-          Ballroom Dancers
+          Skin Care
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Pole Dancers");
+            route.push("/Other-services/Pedicure");
           }}
         >
-          Pole Dancers
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Street Dancers");
-          }}
-        >
-          Street Dancers
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Cherr Leaders");
-          }}
-        >
-          Cherr Leaders
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Martial Arts Performances");
-          }}
-        >
-          Martial Arts Performances
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Roller Skating Acts");
-          }}
-        >
-          Roller Skating Acts
+          Pedicure
         </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
@@ -163,63 +199,36 @@ export default function Cleaningmenu({}: Props) {
             "fontSize": "1rem",
           }}
         >
-          Artists
+          LandScaping & Garden
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Painters");
+            route.push("/Other-services/Prunning");
           }}
         >
-          Painters
+          {" "}
+          Prunning
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Illustrators");
+            route.push("/Other-services/Garden Design");
           }}
         >
-          Illustrators
+          Garden Design
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Texttile Artists");
+            route.push("/Other-services/Soil Enrichment");
           }}
         >
-          Texttile Artists
+          Soil Enrichment
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Cinematography");
+            route.push("/Other-services/Landscape & Garden Cleanup");
           }}
         >
-          Cinematography
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Sculptors");
-          }}
-        >
-          Sculptors
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Tattoo Arts");
-          }}
-        >
-          Tattoo Arts
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Craft Making");
-          }}
-        >
-          Craft Making
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Face & Body Painting");
-          }}
-        >
-          Face & Body Painting
+          Landscape & Garden Cleanup
         </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
@@ -231,70 +240,64 @@ export default function Cleaningmenu({}: Props) {
             "fontSize": "1rem",
           }}
         >
-          {"Live Music  & Dj's"}
+          Printing Services
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Function Dj's & VS");
+            route.push("/Other-services/Gravure Printing");
           }}
         >
-          {"Function Dj's & VS"}
+          {" "}
+          Gravure Printing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Drummers");
+            route.push("/Other-services/Engraving");
           }}
         >
-          Drummers{" "}
+          Engraving{" "}
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Pianist");
+            route.push("/Other-services/Flexographic Printing");
           }}
         >
-          Pianist
+          Flexographic Printing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Saxophonist");
+            route.push("/Other-services/Thermographic Printing");
           }}
         >
-          Saxophonist{" "}
+          Thermographic Printing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Bands");
+            route.push("/Other-services/Screen Printing");
           }}
         >
-          Bands
+          Screen Printing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Singers & Vocalist");
+            route.push("/Other-services/Digital Printing");
           }}
         >
-          {"Singer & Vocalist"}{" "}
+          Digital Printing
         </StyledTextTypo>
         <StyledTextTypo
           onClick={() => {
-            route.push("/Entertainments-services/Violinist");
+            route.push("/Other-services/Rotary Screen");
           }}
         >
-          Violinist
-        </StyledTextTypo>
-        <StyledTextTypo
-          onClick={() => {
-            route.push("/Entertainments-services/Guitarists");
-          }}
-        >
-          Guitarists{" "}
+          Rotary Screen
         </StyledTextTypo>
 
         <div style={{ marginTop: "100px" }}></div>
         <StyledTextTypo
           sx={{ marginLeft: "50px" }}
           onClick={() => {
-            route.push("/Entertainments-services");
+            route.push("/Other-services");
           }}
         >
           {"See All >>"}

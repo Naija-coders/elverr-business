@@ -33,14 +33,36 @@ export default function Entertainmentmenu({}: Props) {
             "fontSize": "1rem",
           }}
         >
-          Sports
+          Residential Cleaning
         </StyledTextTypo>
-
-        <StyledTextTypo>Residential Cleaning</StyledTextTypo>
-        <StyledTextTypo>Floor Mopping</StyledTextTypo>
-        <StyledTextTypo>Disinfect your home</StyledTextTypo>
-        <StyledTextTypo>Dust & Shine</StyledTextTypo>
-        <StyledTextTypo>Laundry & Dry Cleaning</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Floor Mopping");
+          }}
+        >
+          Floor Mopping
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Disinfect your home");
+          }}
+        >
+          Disinfect your home
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Dust & Shine");
+          }}
+        >
+          Dust & Shine
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Laundry & Dry Cleaning");
+          }}
+        >
+          Laundry & Dry Cleaning
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -53,10 +75,34 @@ export default function Entertainmentmenu({}: Props) {
         >
           Commercial Cleaning
         </StyledTextTypo>
-        <StyledTextTypo>Janitorial Services</StyledTextTypo>
-        <StyledTextTypo>Disinfection Cleaning</StyledTextTypo>
-        <StyledTextTypo>Project Based Cleaning </StyledTextTypo>
-        <StyledTextTypo>Pressure Washing</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Janitorial Services");
+          }}
+        >
+          Janitorial Services
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Disinfection Cleaning");
+          }}
+        >
+          Disinfection Cleaning
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Project Based Cleaning");
+          }}
+        >
+          Project Based Cleaning{" "}
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Pressure Washing");
+          }}
+        >
+          Pressure Washing
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -69,10 +115,34 @@ export default function Entertainmentmenu({}: Props) {
         >
           Construction Cleaning
         </StyledTextTypo>
-        <StyledTextTypo>Air Vent Cleaning</StyledTextTypo>
-        <StyledTextTypo>Windows & Frames Cleaning</StyledTextTypo>
-        <StyledTextTypo>Wiping of switches & outlets</StyledTextTypo>
-        <StyledTextTypo>Packaging and removal of debris</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Air Vent Cleaning");
+          }}
+        >
+          Air Vent Cleaning
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Windows & Frames Cleaning");
+          }}
+        >
+          Windows & Frames Cleaning
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Wiping of switches & outlets");
+          }}
+        >
+          Wiping of switches & outlets
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Packaging and removal of debris");
+          }}
+        >
+          Packaging and removal of debris
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -85,9 +155,28 @@ export default function Entertainmentmenu({}: Props) {
         >
           Upholstery Cleaning
         </StyledTextTypo>
-        <StyledTextTypo>Steam Cleaning</StyledTextTypo>
-        <StyledTextTypo>Sofa Cleaning </StyledTextTypo>
-        <StyledTextTypo>Leather Cleaning</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Steam Cleaning");
+          }}
+        >
+          {" "}
+          Steam Cleaning
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Sofa Cleaning");
+          }}
+        >
+          Sofa Cleaning{" "}
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Cleaning-services/Leather Cleaning");
+          }}
+        >
+          Leather Cleaning
+        </StyledTextTypo>
 
         <div style={{ marginTop: "100px" }}></div>
         <StyledTextTypo

@@ -46,6 +46,7 @@ import {
   InfoSquare,
 } from "react-iconly";
 import Entertainmentmenu from "./Entertainmentmenu";
+import Othermenu from "./Othermenu";
 
 interface Props {
   nosubbar: boolean;
@@ -267,7 +268,6 @@ const Navbar: React.FunctionComponent<Props> = ({
                   height: "100%",
                 }}
               >
-                <StyledTextTypo>Trending</StyledTextTypo>
                 <HtmlTooltip title={<Categorymenu />}>
                   <StyledTextTypo
                     onClick={() => {
@@ -308,6 +308,15 @@ const Navbar: React.FunctionComponent<Props> = ({
                   title={<CleaningMenu />}
                 >
                   <StyledTextTypo> Cleaning Services</StyledTextTypo>
+                </HtmlTooltip>
+                <HtmlTooltip title={<Othermenu />}>
+                  <StyledTextTypo
+                    onClick={() => {
+                      route.push("/Other-services");
+                    }}
+                  >
+                    Other
+                  </StyledTextTypo>
                 </HtmlTooltip>
               </div>
             </>

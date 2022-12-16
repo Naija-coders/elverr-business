@@ -101,10 +101,34 @@ export default function Profilemenu({
           Graphic Design
         </StyledTextTypo>
 
-        <StyledTextTypo>Logo Design & Brand Identity</StyledTextTypo>
-        <StyledTextTypo>Web & Mobile Design</StyledTextTypo>
-        <StyledTextTypo>Visual Design</StyledTextTypo>
-        <StyledTextTypo>Art, Illustration & Cover Art Design</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Logo Design & Brand Identity");
+          }}
+        >
+          Logo Design & Brand Identity
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Web & Mobile Design");
+          }}
+        >
+          Web & Mobile Design
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Visual Design");
+          }}
+        >
+          Visual Design
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Art,Illustration & Cover art design");
+          }}
+        >
+          Art, Illustration & Cover Art Design
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -117,15 +141,69 @@ export default function Profilemenu({
         >
           Programming & Tech
         </StyledTextTypo>
-        <StyledTextTypo>WordPress</StyledTextTypo>
-        <StyledTextTypo>WebBuilders & CMS</StyledTextTypo>
-        <StyledTextTypo>Database</StyledTextTypo>
-        <StyledTextTypo>Mobile Apps</StyledTextTypo>
-        <StyledTextTypo>Chatbox</StyledTextTypo>
-        <StyledTextTypo>Data Processing</StyledTextTypo>
-        <StyledTextTypo>BlockChain & Cryptocurrency</StyledTextTypo>
-        <StyledTextTypo>Coding Lessons</StyledTextTypo>
-        <StyledTextTypo>Cyber Security & Data Protection</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/WordPress");
+          }}
+        >
+          WordPress
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Web builders & CMS");
+          }}
+        >
+          WebBuilders & CMS
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Database");
+          }}
+        >
+          Database
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Mobile apps");
+          }}
+        >
+          Mobile Apps
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Chatbox");
+          }}
+        >
+          Chatbox
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Data Processing");
+          }}
+        >
+          Data Processing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Blockchain & Cryptocurrency");
+          }}
+        >
+          BlockChain & Cryptocurrency
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Coding lessons");
+          }}
+        >
+          Coding Lessons
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Cyber security & Data protection");
+          }}
+        >
+          Cyber Security & Data Protection
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -138,17 +216,83 @@ export default function Profilemenu({
         >
           Writing & Translation
         </StyledTextTypo>
-        <StyledTextTypo>Articles & Blog Posts</StyledTextTypo>
-        <StyledTextTypo>Website Content</StyledTextTypo>
-        <StyledTextTypo>Translation</StyledTextTypo>
-        <StyledTextTypo>Resume & Cover Letters</StyledTextTypo>
-        <StyledTextTypo>Case Studies</StyledTextTypo>
-        <StyledTextTypo>Book & E-book Writing</StyledTextTypo>
-        <StyledTextTypo>Ceative Writing</StyledTextTypo>
-        <StyledTextTypo>Speech Writing</StyledTextTypo>
-        <StyledTextTypo>Ux Writing</StyledTextTypo>
-        <StyledTextTypo>Script Writing</StyledTextTypo>
-        <StyledTextTypo>Research & Summaries</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Articles & Blog posts");
+          }}
+        >
+          Articles & Blog Posts
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Website Content");
+          }}
+        >
+          Website Content
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Translation");
+          }}
+        >
+          Translation
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Resume & Cover letters");
+          }}
+        >
+          Resume & Cover Letters
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Case Studies");
+          }}
+        >
+          Case Studies
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Book & Ebook Writing");
+          }}
+        >
+          Book & E-book Writing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Creative Writing");
+          }}
+        >
+          Ceative Writing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Speech Writing");
+          }}
+        >
+          Speech Writing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/UX Writing");
+          }}
+        >
+          Ux Writing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Script Writing");
+          }}
+        >
+          Script Writing
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Research & Summaries");
+          }}
+        >
+          Research & Summaries
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -161,14 +305,56 @@ export default function Profilemenu({
         >
           Video & Animation
         </StyledTextTypo>
-        <StyledTextTypo>Video & Animation</StyledTextTypo>
-        <StyledTextTypo>Video Editing</StyledTextTypo>
-        <StyledTextTypo>Trailers</StyledTextTypo>
-        <StyledTextTypo>Visual effects</StyledTextTypo>
-        <StyledTextTypo>Crowd Funding Videos</StyledTextTypo>
-        <StyledTextTypo>3D Product Animation</StyledTextTypo>
-        <StyledTextTypo>Animation</StyledTextTypo>
-        <StyledTextTypo>Full Video Production</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Video Editing");
+          }}
+        >
+          Video & Animation
+        </StyledTextTypo>
+
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Trailers");
+          }}
+        >
+          Trailers
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Visuals Effects");
+          }}
+        >
+          Visual effects
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Crowdfunding Videos");
+          }}
+        >
+          Crowd Funding Videos
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/3D Product Animation");
+          }}
+        >
+          3D Product Animation
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Animation");
+          }}
+        >
+          Animation
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/It-services/Film Video Production");
+          }}
+        >
+          Film Video Production
+        </StyledTextTypo>
         <div style={{ marginTop: "100px" }}></div>
         <StyledTextTypo
           sx={{ marginLeft: "50px" }}

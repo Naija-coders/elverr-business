@@ -206,9 +206,9 @@ export const videoAnimation = [
     link: "/It-services/Animation",
   },
   {
-    name: "Filmed Video Production",
+    name: "Film Video Production",
     type: "Video & Animation",
-    link: "/It-services/Filmed Video Production",
+    link: "/It-services/Film Video Production",
   },
 ];
 

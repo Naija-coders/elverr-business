@@ -100,10 +100,34 @@ export default function EventMenu({
           Event Manager
         </StyledTextTypo>
 
-        <StyledTextTypo>Conference</StyledTextTypo>
-        <StyledTextTypo>Concerts</StyledTextTypo>
-        <StyledTextTypo>Festivals</StyledTextTypo>
-        <StyledTextTypo>Ceremonies</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Conference");
+          }}
+        >
+          Conference
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Concerts");
+          }}
+        >
+          Concerts
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Festivals");
+          }}
+        >
+          Festivals
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Ceremonies");
+          }}
+        >
+          Ceremonies
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -116,12 +140,34 @@ export default function EventMenu({
         >
           Event Planner
         </StyledTextTypo>
-        <StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Conception & Event Planning Service");
+          }}
+        >
           {"Conception & Event Planning  Service"}
         </StyledTextTypo>
-        <StyledTextTypo>Location Scouting</StyledTextTypo>
-        <StyledTextTypo>Service Bid & Contract Management</StyledTextTypo>
-        <StyledTextTypo>Pressure Washing</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Location Scouting");
+          }}
+        >
+          Location Scouting
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Service Bid & Contract Management");
+          }}
+        >
+          Service Bid & Contract Management
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Pressure Washing");
+          }}
+        >
+          Pressure Washing
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -134,9 +180,27 @@ export default function EventMenu({
         >
           Budgeting
         </StyledTextTypo>
-        <StyledTextTypo>Design Proposal</StyledTextTypo>
-        <StyledTextTypo>Decor Setup & Styling</StyledTextTypo>
-        <StyledTextTypo>Vendor Sourcing & Curating</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Design Proposal");
+          }}
+        >
+          Design Proposal
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Decor Setup & Styling");
+          }}
+        >
+          Decor Setup & Styling
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Vendor Sourcing & Curating");
+          }}
+        >
+          Vendor Sourcing & Curating
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -149,9 +213,27 @@ export default function EventMenu({
         >
           Corporate Events
         </StyledTextTypo>
-        <StyledTextTypo>Seminars</StyledTextTypo>
-        <StyledTextTypo>Product Launch Events </StyledTextTypo>
-        <StyledTextTypo>Workshops</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Seminars");
+          }}
+        >
+          Seminars
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Product Launch Events");
+          }}
+        >
+          Product Launch Events{" "}
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Event-services/Workshops");
+          }}
+        >
+          Workshops
+        </StyledTextTypo>
 
         <div style={{ marginTop: "100px" }}></div>
         <StyledTextTypo

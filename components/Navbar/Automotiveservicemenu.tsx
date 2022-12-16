@@ -100,11 +100,41 @@ export default function Automotivemenu({
           Automative Industry
         </StyledTextTypo>
 
-        <StyledTextTypo>Wholesaling Parts</StyledTextTypo>
-        <StyledTextTypo>Retailing Parts</StyledTextTypo>
-        <StyledTextTypo>Motor Vehicle Maintenance</StyledTextTypo>
-        <StyledTextTypo>Part Fabrication</StyledTextTypo>
-        <StyledTextTypo>Safety & Security</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Wholesaling Parts");
+          }}
+        >
+          Wholesaling Parts
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Retailing Parts");
+          }}
+        >
+          Retailing Parts
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Motor Vehicle Maintenance");
+          }}
+        >
+          Motor Vehicle Maintenance
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Part Fabrication");
+          }}
+        >
+          Part Fabrication
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Safety & Security");
+          }}
+        >
+          Safety & Security
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -117,9 +147,27 @@ export default function Automotivemenu({
         >
           Automobile Services
         </StyledTextTypo>
-        <StyledTextTypo>Lubrication System</StyledTextTypo>
-        <StyledTextTypo>Electrical System</StyledTextTypo>
-        <StyledTextTypo>Cooling</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Lubrication System");
+          }}
+        >
+          Lubrication System
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Electrical System");
+          }}
+        >
+          Electrical System
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Cooling System");
+          }}
+        >
+          Cooling
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -132,15 +180,70 @@ export default function Automotivemenu({
         >
           Vehicle Repairs
         </StyledTextTypo>
-        <StyledTextTypo>Transmission Repairs</StyledTextTypo>
-        <StyledTextTypo>Wiper Blade Replacement</StyledTextTypo>
-        <StyledTextTypo>Tire Replacement</StyledTextTypo>
-        <StyledTextTypo>Fuel Filter</StyledTextTypo>
-        <StyledTextTypo>Scheduled Maintenance</StyledTextTypo>
-        <StyledTextTypo>Oil Replacement</StyledTextTypo>
-        <StyledTextTypo>Air Filter Replacement</StyledTextTypo>
-        <StyledTextTypo>Towing Services</StyledTextTypo>
-        <StyledTextTypo>Body Repair & Painting</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Transmission Repairs");
+          }}
+        >
+          {" "}
+          Transmission Repairs
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Wiper Blade Replacement");
+          }}
+        >
+          Wiper Blade Replacement
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Tire Replacement");
+          }}
+        >
+          Tire Replacement
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Fuel Filter");
+          }}
+        >
+          Fuel Filter
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Scheduled Maintenance");
+          }}
+        >
+          Scheduled Maintenance
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Oil Replacement");
+          }}
+        >
+          Oil Replacement
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Air Filter Replacement");
+          }}
+        >
+          Air Filter Replacement
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Towing Services");
+          }}
+        >
+          Towing Services
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Body Repair & Painting");
+          }}
+        >
+          Body Repair & Painting
+        </StyledTextTypo>
       </NavbarDiv>
       <NavbarDiv>
         <StyledTextTypo
@@ -153,11 +256,41 @@ export default function Automotivemenu({
         >
           Full Car Services
         </StyledTextTypo>
-        <StyledTextTypo>Air Filter Change</StyledTextTypo>
-        <StyledTextTypo>Extensive Break Inspection</StyledTextTypo>
-        <StyledTextTypo>Air Condition Inspection</StyledTextTypo>
-        <StyledTextTypo>Shock Absorber Inspection</StyledTextTypo>
-        <StyledTextTypo>Electrical Test</StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Air Filter Change");
+          }}
+        >
+          Air Filter Change
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Extensive Break Inspection");
+          }}
+        >
+          Extensive Break Inspection
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Air Condition Inspection");
+          }}
+        >
+          Air Condition Inspection
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Shock Absorber Inspection");
+          }}
+        >
+          Shock Absorber Inspection
+        </StyledTextTypo>
+        <StyledTextTypo
+          onClick={() => {
+            route.push("/Automotive-services/Electrical Test");
+          }}
+        >
+          Electrical Test
+        </StyledTextTypo>
 
         <div style={{ marginTop: "100px" }}></div>
         <StyledTextTypo

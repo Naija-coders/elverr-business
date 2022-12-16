@@ -35,7 +35,11 @@ export default function Index({ query, servicedata }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Navbar nosubbar={false} filter="none" isexploreactive={true} />
+        <Navbar
+          nosubbar={true}
+          filter="drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1))"
+          isexploreactive={true}
+        />
         <ExploreBanner />
 
         <ExploreServices />

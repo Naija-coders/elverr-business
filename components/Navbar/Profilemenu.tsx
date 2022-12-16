@@ -89,8 +89,11 @@ export default function Profilemenu({
       </Tooltip>
       <Menu
         sx={{
-          mt: "45px",
-          padding: "1rem",
+          "mt": "45px",
+          "padding": "1rem",
+          "&:Muipaper-root": {
+            background: "green",
+          },
         }}
         id="menu-appbar"
         anchorEl={anchorElUser}

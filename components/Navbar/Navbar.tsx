@@ -7,6 +7,7 @@ import {
   StyledTextTypo,
   StyledMainDiv,
   StyleContainerDiv,
+  HtmlTooltip,
 } from "./styles";
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -21,6 +22,11 @@ import { Dispatch } from "redux";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Profilemenu from "./Profilemenu";
+import Categorymenu from "./Categorymenu";
+import Automotivemenu from "./Automotiveservicemenu";
+import EventMenu from "./Eventmenu";
+import CleaningMenu from "./Cleaningmenu";
+
 import {
   Link,
   Tooltip,
@@ -39,6 +45,7 @@ import {
   User,
   InfoSquare,
 } from "react-iconly";
+import Entertainmentmenu from "./Entertainmentmenu";
 
 interface Props {
   nosubbar: boolean;
@@ -261,42 +268,47 @@ const Navbar: React.FunctionComponent<Props> = ({
                 }}
               >
                 <StyledTextTypo>Trending</StyledTextTypo>
-                <StyledTextTypo
-                  onClick={() => {
-                    route.push("/It-services");
-                  }}
-                >
-                  IT Services
-                </StyledTextTypo>
-                <StyledTextTypo
+                <HtmlTooltip title={<Categorymenu />}>
+                  <StyledTextTypo
+                    onClick={() => {
+                      route.push("/It-services");
+                    }}
+                  >
+                    IT Service
+                  </StyledTextTypo>
+                </HtmlTooltip>
+                <HtmlTooltip
                   onClick={() => {
                     route.push("/Automotive-services");
                   }}
+                  title={<Automotivemenu />}
                 >
-                  Automotive Services
-                </StyledTextTypo>
-                <StyledTextTypo
+                  <StyledTextTypo> Automotive Services</StyledTextTypo>
+                </HtmlTooltip>
+                <HtmlTooltip
                   onClick={() => {
                     route.push("/Event-services");
                   }}
+                  title={<EventMenu />}
                 >
-                  Event Services
-                </StyledTextTypo>
-                <StyledTextTypo
+                  <StyledTextTypo> Event Services</StyledTextTypo>
+                </HtmlTooltip>
+                <HtmlTooltip
                   onClick={() => {
                     route.push("/Entertainments-services");
                   }}
+                  title={<Entertainmentmenu />}
                 >
-                  Entertainments Services
-                </StyledTextTypo>
-
-                <StyledTextTypo
+                  <StyledTextTypo> Entertainments Services</StyledTextTypo>
+                </HtmlTooltip>
+                <HtmlTooltip
                   onClick={() => {
                     route.push("/Cleaning-services");
                   }}
+                  title={<CleaningMenu />}
                 >
-                  Cleaning Services
-                </StyledTextTypo>
+                  <StyledTextTypo> Cleaning Services</StyledTextTypo>
+                </HtmlTooltip>
               </div>
             </>
           )}

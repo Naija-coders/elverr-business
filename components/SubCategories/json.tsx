@@ -780,9 +780,9 @@ export const eventmanager = [
 
 export const eventplanner = [
   {
-    name: "Conception & Event Planning & Service",
+    name: "Conception & Event Planning  Service",
     type: "Event Planner",
-    link: "/Event-services/Conception & Event Planning & Service",
+    link: "/Event-services/Conception & Event Planning  Service",
   },
   {
     name: "Location Scouting",

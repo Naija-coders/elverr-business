@@ -148,11 +148,11 @@ export default function Automotive({}: Props) {
                 <CustomTypography
                   onClick={() => {
                     route.push(
-                      "/Event-services/Conception & Event Planning &Service"
+                      "/Event-services/Conception & Event Planning Service"
                     );
                   }}
                 >
-                  Conception & Event Planning & Service
+                  Conception & Event Planning Service
                 </CustomTypography>
                 <CustomTypography
                   onClick={() => {

@@ -26,6 +26,7 @@ import Categorymenu from "./Categorymenu";
 import Automotivemenu from "./Automotiveservicemenu";
 import EventMenu from "./Eventmenu";
 import CleaningMenu from "./Cleaningmenu";
+import MenuCategories from "./Categpriesformenu";
 
 import {
   Link,
@@ -164,13 +165,7 @@ const Navbar: React.FunctionComponent<Props> = ({
                   Explore
                 </StyledText>
 
-                <StyledText
-                  style={{
-                    color: ispagecategoriesactive ? "#34A422" : "black",
-                  }}
-                >
-                  Categories
-                </StyledText>
+                <MenuCategories />
 
                 <StyledText
                   sx={{

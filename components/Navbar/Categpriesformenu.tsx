@@ -10,6 +10,7 @@ import {
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import { useRouter } from "next/router";
 import {
   Link,
   Tooltip,
@@ -57,7 +58,7 @@ export default function MenuCategories({
   const [color6, setColor6] = useState("grey");
 
   const [open, setOpen] = React.useState(true);
-
+  const route = useRouter();
   const handleClick = () => {
     setOpen(!open);
   };
@@ -126,6 +127,9 @@ export default function MenuCategories({
             onMouseEnter={() => {
               setColor1("green");
             }}
+            onClick={() => {
+              route.push("/It-services");
+            }}
             onMouseLeave={() => {
               setColor1("grey");
             }}
@@ -150,6 +154,9 @@ export default function MenuCategories({
             }}
             onMouseLeave={() => {
               setColor2("grey");
+            }}
+            onClick={() => {
+              route.push("/Automotive-services");
             }}
           >
             <div
@@ -181,6 +188,9 @@ export default function MenuCategories({
             onMouseLeave={() => {
               setColor3("grey");
             }}
+            onClick={() => {
+              route.push("/Event-services");
+            }}
           >
             <StyledTextTypo style={{ color: color3 }}>
               Event Services
@@ -196,6 +206,9 @@ export default function MenuCategories({
             }}
             onMouseLeave={() => {
               setColor4("grey");
+            }}
+            onClick={() => {
+              route.push("/Entertainments-services");
             }}
           >
             <div
@@ -221,6 +234,9 @@ export default function MenuCategories({
             onMouseLeave={() => {
               setColor5("grey");
             }}
+            onClick={() => {
+              route.push("/Cleaning-services");
+            }}
           >
             <div
               style={{
@@ -244,6 +260,9 @@ export default function MenuCategories({
             }}
             onMouseLeave={() => {
               setColor6("grey");
+            }}
+            onClick={() => {
+              route.push("/Other-services");
             }}
           >
             <div

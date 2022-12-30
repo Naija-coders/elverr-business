@@ -7,7 +7,9 @@ import {
   IconButton,
   Typography,
   Checkbox,
+  Tooltip,
 } from "@mui/material";
+import { LightTools } from "../Navbar/styles";
 import Skeleton from "@mui/material/Skeleton";
 type Props = {
   data: any;
@@ -19,6 +21,7 @@ export default function ServiceGridCard({ data }: Props) {
     if (data === undefined) {
       console.log("data is undefined");
     }
+    console.log("displaying the data for mano", data);
   }, [data]);
 
   const [confirmed, setConfirmed] = React.useState(false);
@@ -440,64 +443,178 @@ export default function ServiceGridCard({ data }: Props) {
                   />
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  paddingLeft: "10px",
-                  paddingRight: "1rem",
-                  paddingTop: "0.5rem",
-                  justifyContent: "space-between",
-                  marginTop: "10px",
-                  width: "100%",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: "1rem",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Avatar
-                    /* src={item?.profile_photo_path} */ src={item.image_url}
-                  />
-                  <div>
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        fontSize: "1rem",
-                        fontFamily: "DM Sans",
-                        color: "#303030",
+              <LightTools
+                title={
+                  <div
+                    style={{
+                      padding: "1rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1rem",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "1rem",
+                        alignItems: "center",
                       }}
                     >
-                      {item?.name}
-                    </Typography>
+                      <div>
+                        {" "}
+                        <Avatar src={item?.image_url} />
+                      </div>{" "}
+                      <div>
+                        <Typography
+                          style={{
+                            fontWeight: 700,
+                            fontSize: "1rem",
+                            color: " #303030",
+                            fontFamily: "DM Sans",
+                          }}
+                        >
+                          {" "}
+                          {item?.name}
+                        </Typography>
+                        <Typography
+                          style={{
+                            fontWeight: 300,
+                            fontSize: "0.9rem",
+                            color: " #747582",
+                            fontFamily: "DM Sans",
+                          }}
+                        >
+                          {item?.tag_name}
+                        </Typography>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        background: "#F7F8F9",
+
+                        borderRadius: "26px",
+                        padding: "0.5rem",
+                        width: "50%",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Typography
+                        style={{
+                          fontWeight: 300,
+                          fontSize: "0.8rem",
+                          color: " #747582",
+                          fontFamily: "DM Sans",
+                        }}
+                      >
+                        {item?.location_type}, {item?.location}
+                      </Typography>
+                    </div>
                     <Typography
-                      sx={{
+                      style={{
                         fontWeight: 300,
                         fontSize: "0.9rem",
                         color: " #747582",
                         fontFamily: "DM Sans",
                       }}
                     >
-                      {item?.type}
+                      {item?.pitch}
                     </Typography>
+
+                    <Typography
+                      style={{
+                        fontWeight: 300,
+                        fontSize: "0.9rem",
+                        color: " #747582",
+                        fontFamily: "DM Sans",
+                      }}
+                    >
+                      Delivery Time: {item?.delivery_time}
+                    </Typography>
+
+                    <div
+                      style={{ display: "flex", width: "100%", gap: "1rem" }}
+                    >
+                      <Button
+                        variant={"contained"}
+                        disableElevation
+                        style={{
+                          width: "70%",
+                          borderRadius: "6px",
+                          background: "#34A422",
+                          textTransform: "none",
+                        }}
+                      >
+                        {" "}
+                        Read More
+                      </Button>{" "}
+                      <div>text</div>
+                    </div>
                   </div>
-                </div>
-                <Typography
-                  sx={{
-                    fontWeight: 700,
-                    fontSize: "1.2rem",
-                    color: "#34A422",
-                    fontFamily: "DM Sans",
+                }
+                placement="left-end"
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    paddingLeft: "10px",
+                    paddingRight: "1rem",
+                    paddingTop: "0.5rem",
+                    justifyContent: "space-between",
+                    marginTop: "10px",
+                    width: "100%",
+                    cursor: "pointer",
                   }}
                 >
-                  ${item?.price}
-                </Typography>
-              </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: "1rem",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Avatar
+                      /* src={item?.profile_photo_path} */ src={item.image_url}
+                    />
+                    <div>
+                      <Typography
+                        sx={{
+                          fontWeight: 600,
+                          fontSize: "1rem",
+                          fontFamily: "DM Sans",
+                          color: "#303030",
+                        }}
+                      >
+                        {item?.name}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 300,
+                          fontSize: "0.9rem",
+                          color: " #747582",
+                          fontFamily: "DM Sans",
+                        }}
+                      >
+                        {item?.type}
+                      </Typography>
+                    </div>
+                  </div>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: "1.2rem",
+                      color: "#34A422",
+                      fontFamily: "DM Sans",
+                    }}
+                  >
+                    ${item?.price}
+                  </Typography>
+                </div>
+              </LightTools>
             </CustomContainer>
           ))}
         </CustomDiv>

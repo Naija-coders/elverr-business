@@ -140,6 +140,16 @@ export const StyledTextField = styled(TextField)(
     },
   })
 );
+export const LightTools = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: "#ffffff",
+    color: "black",
+    borderRadius: "12px",
+    boxShadow: " -8px 8px 55px rgba(0, 0, 0, 0.15);",
+  },
+}));
 export const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -161,6 +171,7 @@ export const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: "white",
+    cursor: "pointer",
 
     boxShadow: " 1px 1px #888888",
     fontSize: 11,

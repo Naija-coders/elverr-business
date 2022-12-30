@@ -451,6 +451,8 @@ export default function ServiceGridCard({ data }: Props) {
                       display: "flex",
                       flexDirection: "column",
                       gap: "1rem",
+
+                      width: "260px",
                     }}
                   >
                     <div

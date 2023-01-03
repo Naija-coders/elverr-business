@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { LightTools } from "../Navbar/styles";
 import Skeleton from "@mui/material/Skeleton";
+import { Chat } from "react-iconly";
+import { useRouter } from "next/router";
 type Props = {
   data: any;
 };
@@ -25,6 +27,7 @@ export default function ServiceGridCard({ data }: Props) {
   }, [data]);
 
   const [confirmed, setConfirmed] = React.useState(false);
+  const route = useRouter();
 
   return (
     <div>
@@ -547,11 +550,18 @@ export default function ServiceGridCard({ data }: Props) {
                           background: "#34A422",
                           textTransform: "none",
                         }}
+                        onClick={() => {
+                          route.push("services/[id]=" + item.id);
+                        }}
                       >
                         {" "}
                         Read More
                       </Button>{" "}
-                      <div>text</div>
+                      <div
+                      //mano please come back to service id
+                      >
+                        <Chat set="bold" size="large" primaryColor="#747582" />
+                      </div>
                     </div>
                   </div>
                 }

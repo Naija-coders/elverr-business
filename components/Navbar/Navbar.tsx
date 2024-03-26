@@ -1,7 +1,7 @@
 import { Avatar, Button, Divider, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { StyledBox1, StyledBox, StyleContainer } from "../NotLoggedIn/style";
-
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   StyledText,
   StyledTextTypo,
@@ -144,14 +144,7 @@ const Navbar: React.FunctionComponent<Props> = ({
               }}
             />
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                width: "100%",
-                alignItems: "center",
-              }}
+            <div className="flex_resp"
             >
               <StyledMainDiv>
                 <SearchTextField />
@@ -250,18 +243,13 @@ const Navbar: React.FunctionComponent<Props> = ({
                 />
               </div>
             </div>
+            <div className="menu-icon"><MenuIcon/></div>
           </StyleContainerDiv>
           {nosubbar && (
-            <>
+            <div className="ieeeo">
               <Divider />
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  height: "100%",
-                }}
+              className="flex_resp_buttom"
               >
                 <HtmlTooltip title={<Categorymenu />}>
                   <StyledTextTypo
@@ -314,7 +302,7 @@ const Navbar: React.FunctionComponent<Props> = ({
                   </StyledTextTypo>
                 </HtmlTooltip>
               </div>
-            </>
+            </div>
           )}
         </StyleContainer>
       </StyledBox1>

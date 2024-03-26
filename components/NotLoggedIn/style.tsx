@@ -29,7 +29,7 @@ export const StyledBox1 = styled(Box)(
 
     paddingTop: "2rem",
     paddingBottom: "1rem",
-    display: { xs: "none", md: "flex" },
+    display: { xs: "flex", md: "flex" },
     justifyContent: "center",
     width: "100%",
   })
@@ -37,11 +37,11 @@ export const StyledBox1 = styled(Box)(
 export const StyledBox = styled(Box)(
   sx({
     boxSizing: "border-box",
-    paddingRight: { md: "50px", lg: "4rem" },
-    paddingLeft: { md: "50px", lg: "4rem" },
+    paddingRight: { xs:"20px", md: "50px", lg: "4rem" },
+    paddingLeft: {xs:"20px", md: "50px", lg: "4rem" },
     paddingTop: "2rem",
     paddingBottom: "1rem",
-    display: { xs: "none", md: "flex" },
+    display: { xs: "flex", md: "flex" },
     justifyContent: "center",
     width: "100%",
   })

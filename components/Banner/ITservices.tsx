@@ -68,6 +68,8 @@ export default function ITservices({}: Props) {
               background: "#FFFFFF",
               color: "#14505F",
             },
+            display:"flex",
+            justifyContent:"flex-end"
           }}
         >
           Read more

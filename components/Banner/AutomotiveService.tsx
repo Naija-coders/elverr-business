@@ -70,7 +70,9 @@ export default function ITservices({}: Props) {
             "&:hover": {
               background: "#FFFFFF",
               color: "#14505F",
+
             },
+           
           }}
         >
           Read more

@@ -81,7 +81,7 @@ export const StyledBoxFooter = styled(Box)(
     paddingTop: "2rem",
     background: "#FFFFF",
     paddingBottom: "2rem",
-    display: "flex",
+    display: {xs:"none", md:"flex"},
     justifyContent: "center",
     width: "100%",
   })

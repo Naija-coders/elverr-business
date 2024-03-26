@@ -1,3 +1,4 @@
+
 .navbar {
   background-color: $nav-color;
   width: 100%;
@@ -321,3 +322,87 @@
   object-fit: cover;
   z-index: 1000;
 }
+
+.flex_resp{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+ 
+  
+  @include tablet {
+    display: none;
+  }
+
+  
+
+  @include atMediumMax{
+    display: none;
+  }
+  
+
+  
+
+}
+
+.ieeeo{
+   
+  @include tablet {
+    display: none;
+  }
+
+  
+
+  @include atMediumMax{
+    display: none;
+  }
+}
+/* for responsiveness of the buttom */
+.flex_resp_buttom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  margin-top: 5px;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include atMediumMax{
+    display: none;
+  }
+  
+}
+
+/* Menu icon */
+.menu-icon {
+  display: none; /* Hide the icon by default */
+}
+
+/* Show the icon for small screens */
+@media screen and (max-width: 767px) {
+  .menu-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    width: 100%;
+    align-items:flex-end
+ 
+  }
+}
+
+/* Show the icon for tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .menu-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    width: 100%;
+    align-items:flex-end
+ 
+  }
+}
+

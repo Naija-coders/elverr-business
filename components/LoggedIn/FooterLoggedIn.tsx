@@ -28,6 +28,7 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
         <div
           style={{
             display: "flex",
+          
             gap: "50px",
             justifyContent: "space-around",
           }}
@@ -75,6 +76,7 @@ const FooterLoggedIn: React.FC<Props> = ({}) => {
                 flexDirection: "row",
                 gap: "30px",
               }}
+              
             >
               <img
                 src="https://res.cloudinary.com/dxsmdvaqq/image/upload/v1666958316/facebook_cv99gu.png"

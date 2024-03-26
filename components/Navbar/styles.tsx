@@ -48,6 +48,7 @@ export const StyleContainerDiv = styled("div")(
     alignItems: "center",
     gap: { md: "0rem", lg: "5rem" },
     width: "100%",
+ 
   })
 );
 export const CommonText = styled(Button)(

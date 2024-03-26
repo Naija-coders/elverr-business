@@ -118,7 +118,7 @@ export const MainDiv1 = styled("div")(
     flexDirection: "row",
     justifyContent: "space-between",
     justifyItem: "center",
-    padding: "4rem",
+    padding: {xs:"1rem", md:"4rem"},
   })
 );
 
@@ -171,7 +171,8 @@ export const CustomTypography1 = styled(Typography)(
     fontWeight: "700",
     textAlign: "left",
     color: "#FFFFFF",
-    fontSize: "2.3rem",
+    fontSize: {xs:"1.5rem", md:"2.3rem"},
+  
     width: { md: "100%", lg: "53%" },
   })
 );
@@ -187,7 +188,7 @@ export const CustomTypography2 = styled(Typography)(
     fontWeight: "400",
     textAlign: "left",
     color: "#FFFFFF",
-    fontSize: "1remrem",
+    fontSize: "1rem",
   })
 );
 export const CustomTypography = styled(Typography)(

@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 
 export async function middleware(req) {
-  let verify = req.cookies?.get("auth_token");
+ /*  let verify = req.cookies?.get("auth_token");
   let url = req.url;
   //if local host is this then odo it
   if (url === "https://business.elverr.com/") {
@@ -52,4 +52,4 @@ export async function middleware(req) {
       return NextResponse.rewrite("http://localhost:3000/mainpage");
     }
   }
-}
+ */}
